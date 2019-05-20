@@ -7,32 +7,66 @@
   <meta name="description" content="Weather info for Franklin ID.">
   <meta name="viewport" content="width=device-width">
   <meta name="author" content="Aaron Jones">
-  <link href="screen.css" rel="stylesheet" type="text/css" media="screen">
+  <link href="css/screen.css" rel="stylesheet" type="text/css" media="screen">
  </head>
  <body>
   <header>
-    <div class="header">
-      <img src="images/logo.jpeg" alt="branding logo">
-      <h1>The Weather Site</h1>
-    </div>
+      <img src="images/logo.jpeg" alt="branding logo" style="float:left;">
+      <h1><br>The Weather Site<br><br><br></h1>
   </header>
+  <nav>
+    <ul>
+      <li><a href="franklin_weather_page.html" title="Go to the Weather Site home page">Current</a></li>
+      <li><a href="../../../../index.html">Home</a></li>
+      <li><a href="franklin_weather_page.html" title="Takes you to the Franklin Weather Forcast">Franklin</a></li>
+      <li><a href="franklin_weather_page.html" title="Takes you to the Greenville Weather Forcast">Greenville</a></li>
+    </ul>
+  </nav>
   <main>
-    <h1 class="b">Franklin, Idaho</h1>
-    <span class="s"><b>Zip:</b> 83237 | <b>Elevation:</b> 4968 ft. | <b>Location:</b> 42.07&#176; N, 111.79&#176; W</span>
-    <h2 class="border"><b><br>Temperature<br><br></b>
-    <div class="b">24 &#176;F</div>
-    <span class="red">34&#176;F</span> <span class="blue">21&#176;F<br></span>
-        <p class="size">Feels Like 25&#176;F</p>
-    </h2>
+    <h1>Franklin, Idaho</h1>
+    <p>
+      <b>Zip:</b> 83237 |
+      <b>Elevation:</b> 1514.246 ft. |
+      <b>Location:</b> 42.07&#176; N, 111.79&#176; W
+    </p>
+    <h2>Temperature</h2>
+    <p>
+      Current: 40 &#176;F<br>
+      High: 64 &#176;F<br>
+      Low: 41 &#176;F<br>
+    </p>
+    <h2>Wind</h2>
+    <p>
+      Speeds: 5 mph<br>
+      Direction: SW<br>
+      Gusts: 10-12 mph<br>
+    </p>
+    <h2>Summary</h2>
+    <p>Rain</p>
+    <p>
+      <img src="weather-site-images/rain.jpg" alt="Weather forcast display" style="float:left;width:300px;height:300px;">
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </p>
+    <h2>Hourly Forecast</h2>
+    <p>
+      10am: 41&#176;F |
+      11am: 41&#176;F |
+      12pm: 41&#176;F |
+      1pm: 41&#176;F |
+      2pm: 41&#176;F |
+      3pm: 41&#176;F |
+      4pm: 42&#176;F |
+      5pm: 44&#176;F |
+      6pm: 44&#176;F |
+      7pm: 46&#176;F |
+      8pm: 49&#176;F |
+      9pm: 51&#176;F |
+      10pm: 55&#176;F |
+    </p>
+
   </main>
   <footer>
     &copy;2019 The Weather Site
-    <nav>
-      <div style="background-color:#1e90ff;color:white;padding:10px 30px 10px 30px;"> 
-      <a href="franklin_weather_page.html" title="Go to the Weather Site home page">Current</a>
-      <a href="../../../../index.html">Home</a>
-      </div>
-    </nav>
   </footer>
  </body>
 </html>
