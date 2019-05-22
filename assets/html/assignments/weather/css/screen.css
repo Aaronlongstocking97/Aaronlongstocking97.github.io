@@ -44,22 +44,43 @@ h1,h2,h3,h4,h5,h6 {
     border-radius: 15px;
 }
 /*3.  Mobile First (styles specific to small screens) */
-nav ul li { 
-    display: inline-block; 
-    list-style: none; 
+nav ul li{ 
+    float: left;
+    display: block; 
+    list-style: none;
+    text-align: center;
+    padding: 0px 20px 20px 0px;
+    text-decoration-color: none;
+    font-size: 18px;
 }
 
 nav {
+    overflow: hidden;
+    background-color:#1e90ff;
     position: fixed;
     bottom: 0;
-    left: 0;
+    width: 100%;
+    
 }
 
 footer{
-    margin-bottom: 2em;
+    margin-bottom: 4em;
 }
 
 #site-brand {
     font-size: 2em;
+    text-align: left;
     font-weight: 600;
+}
+
+/*Changing the size of the logo */
+#page-header {
+    background-color:#1e90ff;color:black;
+}
+
+#logo {
+    float: left;
+    width: 30px;
+    height: 30px;
+    margin: 10px 0px 0px 10px;
 }
