@@ -55,8 +55,8 @@ nav ul li{
 }
 
 nav {
-    overflow: hidden;
     background-color:#1e90ff;
+    overflow: hidden;
     position: fixed;
     bottom: 0;
     width: 100%;
