@@ -7,11 +7,12 @@
   <meta name="description" content="Weather info for Franklin ID.">
   <meta name="viewport" content="width=device-width">
   <meta name="author" content="Aaron Jones">
+  <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen">
  </head>
  <body>
   <header>
-      <img src="images/logo.jpeg" alt="branding logo" style="float:left;">
-      <h1><br>The Weather Site<br><br><br></h1>
+      <h1 class="header">The Weather Site</h1>
+      <img class="header" src="images/logo.jpeg" alt="branding logo">
   </header>
   <nav>
     <ul>
@@ -23,45 +24,70 @@
   </nav>
   <main>
     <h1>Franklin, Idaho</h1>
-    <p>
-      <b>Zip:</b> 83237 |
-      <b>Elevation:</b> 1514.246 ft. |
-      <b>Location:</b> 42.07&#176; N, 111.79&#176; W
-    </p>
+    <dl>
+      <dt><b>Zip:</b></dt> 
+      <dd><span id="zip">83237</span> |</dd>
+      <dt><b>Elevation:</b></dt>
+      <dd><span id="elevation">1514.246</span> m/ft. |</dd>
+      <dt><b>Location:</b></dt>
+      <dd><span id="locationN">42.07&#176; N, </span></dd>
+      <dd><span id="locationW">111.79&#176; W</span></dd>
+      <!-- use a <span> for characters to change</span> -->
+    </dl>
     <h2>Temperature</h2>
-    <p>
-      Current: 40 &#176;F<br>
-      High: 64 &#176;F<br>
-      Low: 41 &#176;F<br>
-    </p>
+    <dl>
+      <dt>Current:</d>
+      <dd>40 &#176;F</dd> 
+      <dt>High:</dt>
+      <dd>64 &#176;F</dd>
+      <dt>Low:</dt> 
+      <dd>41 &#176;F</dd>
+    </dl>
     <h2>Wind</h2>
-    <p>
-      Speeds: 5 mph<br>
-      Direction: SW<br>
-      Gusts: 10-12 mph<br>
-    </p>
+    <dl>
+      <dt>Speeds:</dt>
+      <dd>5 mph</dd>
+      <dt>Direction:</dt>
+      <dd>SW</dd>
+      <dt>Gusts:</dt>
+      <dd>10-12 mph</dd>
+    </dl>
     <h2>Summary</h2>
-    <p>Rain</p>
-    <p>
-      <img src="weather-site-images/rain.jpg" alt="Weather forcast display" style="float:left;width:300px;height:300px;">
-      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    </p>
+    <dl>
+      <dt>Rain</dt>
+      <dd>
+        <img src="weather-site-images/rain.jpg" alt="Weather forcast display" style="width:300px;height:300px;">
+      </dd>
+    </dl>
     <h2>Hourly Forecast</h2>
-    <p>
-      10am: 41&#176;F |
-      11am: 41&#176;F |
-      12pm: 41&#176;F |
-      1pm: 41&#176;F |
-      2pm: 41&#176;F |
-      3pm: 41&#176;F |
-      4pm: 42&#176;F |
-      5pm: 44&#176;F |
-      6pm: 44&#176;F |
-      7pm: 46&#176;F |
-      8pm: 49&#176;F |
-      9pm: 51&#176;F |
-      10pm: 55&#176;F 
-    </p>
+    <dl>
+      <dt>10am:</dt>
+      <dd>41&#176;F |</dd>
+      <dt>11am:</dt>
+      <dd>41&#176;F |</dd>
+      <dt>12pm:</dt>
+      <dd>41&#176;F |</dd>
+      <dt>1pm:</dt>
+      <dd>41&#176;F |</dd>
+      <dt>2pm:</dt>
+      <dd>41&#176;F |</dd>
+      <dt>3pm:</dt>
+      <dd>41&#176;F |</dd>
+      <dt>4pm:</dt>
+      <dd>42&#176;F |</dd>
+      <dt>5pm:</dt>
+      <dd>44&#176;F |</dd>
+      <dt>6pm:</dt>
+      <dd>44&#176;F |</dd>
+      <dt>7pm:</dt>
+      <dd>46&#176;F |</dd>
+      <dt>8pm:</dt>
+      <dd>49&#176;F |</dd>
+      <dt>9pm:</dt>
+      <dd>51&#176;F |</dd>
+      <dt>10pm:</dt>
+      <dd>55&#176;F</dd>
+    </dl>
 
   </main>
   <footer>
