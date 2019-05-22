@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en-us">
  <head>
@@ -10,10 +9,10 @@
   <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen">
  </head>
  <body>
-  <header>
-      <h1 class="header">The Weather Site</h1>
-      <img class="header" src="images/logo.jpeg" alt="branding logo">
-  </header>
+    <header id="page-header">
+      <div id="logo">&#9748;</div>
+      <p id="site-brand">The Weather Site</p>
+    </header>
   <nav>
     <ul>
       <li><a href="franklin_weather_page.html" title="Go to the Weather Site home page">Current</a></li>
@@ -23,71 +22,77 @@
     </ul>
   </nav>
   <main>
-    <h1>Franklin, Idaho</h1>
-    <dl>
-      <dt><b>Zip:</b></dt> 
-      <dd><span id="zip">83237</span> |</dd>
-      <dt><b>Elevation:</b></dt>
-      <dd><span id="elevation">1514.246</span> m/ft. |</dd>
-      <dt><b>Location:</b></dt>
-      <dd><span id="locationN">42.07&#176; N, </span></dd>
-      <dd><span id="locationW">111.79&#176; W</span></dd>
-      <!-- use a <span> for characters to change</span> -->
-    </dl>
-    <h2>Temperature</h2>
-    <dl>
-      <dt>Current:</d>
-      <dd>40 &#176;F</dd> 
-      <dt>High:</dt>
-      <dd>64 &#176;F</dd>
-      <dt>Low:</dt> 
-      <dd>41 &#176;F</dd>
-    </dl>
-    <h2>Wind</h2>
-    <dl>
-      <dt>Speeds:</dt>
-      <dd>5 mph</dd>
-      <dt>Direction:</dt>
-      <dd>SW</dd>
-      <dt>Gusts:</dt>
-      <dd>10-12 mph</dd>
-    </dl>
-    <h2>Summary</h2>
-    <dl>
-      <dt>Rain</dt>
-      <dd>
-        <img src="weather-site-images/rain.jpg" alt="Weather forcast display" style="width:300px;height:300px;">
-      </dd>
-    </dl>
-    <h2>Hourly Forecast</h2>
-    <dl>
-      <dt>10am:</dt>
-      <dd>41&#176;F |</dd>
-      <dt>11am:</dt>
-      <dd>41&#176;F |</dd>
-      <dt>12pm:</dt>
-      <dd>41&#176;F |</dd>
-      <dt>1pm:</dt>
-      <dd>41&#176;F |</dd>
-      <dt>2pm:</dt>
-      <dd>41&#176;F |</dd>
-      <dt>3pm:</dt>
-      <dd>41&#176;F |</dd>
-      <dt>4pm:</dt>
-      <dd>42&#176;F |</dd>
-      <dt>5pm:</dt>
-      <dd>44&#176;F |</dd>
-      <dt>6pm:</dt>
-      <dd>44&#176;F |</dd>
-      <dt>7pm:</dt>
-      <dd>46&#176;F |</dd>
-      <dt>8pm:</dt>
-      <dd>49&#176;F |</dd>
-      <dt>9pm:</dt>
-      <dd>51&#176;F |</dd>
-      <dt>10pm:</dt>
-      <dd>55&#176;F</dd>
-    </dl>
+      <h1 id="locName">Franklin, Idaho</h1>
+      <!-- locInfo holds zip, elevation, longitude and latitude -->
+      <section id="locInfo">
+        <dl>
+          <dt><b>Zip:</b></dt> 
+          <dd><span id="zip">83237</span> |</dd>
+          <dt><b>Elevation:</b></dt>
+          <dd><span id="elevation">1514.246</span> m/ft. |</dd>
+          <dt><b>Location:</b></dt>
+          <dd><span id="locationN">42.07&#176; N, </span></dd>
+          <dd><span id="locationW">111.79&#176; W</span></dd>
+          <!-- use a <span> for characters to change</span> -->
+        </dl>
+      </section>
+      <!-- curWeather holds temps, wind and summary data -->
+      <div id="curWeather">
+        <section id="temps" class="tile">
+          <h2>Temperature</h2>
+            <p>40 &#176;F</p> 
+            <ul>
+              <li>64 &#176;F</li>
+              <li>41 &#176;F</li>
+            </ul>
+            <p>Feels like 25&#176;F</p>
+        </section>
+        <section id="wind" class="tile">
+          <h2>Wind</h2>
+            <p>5 mph</p>
+            <dl>
+              <dt>Direction:</dt>
+              <dd>SW</dd>
+              <dt>Gusts:</dt>
+              <dd>10-12 mph</dd>
+            </dl>
+        </section>  
+        <section id="summary" class="tile"></section>
+          <h2>Rain</h2>
+            <img src="weather-site-images/rain.jpg" alt="Weather forcast display">
+        </section>
+      </div>
+      <section id="hourly">
+        <h2>Hourly Forecast</h2>
+          <dl>
+            <dt>10am:</dt>
+            <dd>41&#176;F |</dd>
+            <dt>11am:</dt>
+            <dd>41&#176;F |</dd>
+            <dt>12pm:</dt>
+            <dd>41&#176;F |</dd>
+            <dt>1pm:</dt>
+            <dd>41&#176;F |</dd>
+            <dt>2pm:</dt>
+            <dd>41&#176;F |</dd>
+            <dt>3pm:</dt>
+            <dd>41&#176;F |</dd>
+            <dt>4pm:</dt>
+            <dd>42&#176;F |</dd>
+            <dt>5pm:</dt>
+            <dd>44&#176;F |</dd>
+            <dt>6pm:</dt>
+            <dd>44&#176;F |</dd>
+            <dt>7pm:</dt>
+            <dd>46&#176;F |</dd>
+            <dt>8pm:</dt>
+            <dd>49&#176;F |</dd>
+            <dt>9pm:</dt>
+            <dd>51&#176;F |</dd>
+            <dt>10pm:</dt>
+            <dd>55&#176;F</dd>
+          </dl>
+      </section>
 
   </main>
   <footer>
@@ -95,3 +100,5 @@
   </footer>
  </body>
 </html>
+
+<!-- TO DO  -->
