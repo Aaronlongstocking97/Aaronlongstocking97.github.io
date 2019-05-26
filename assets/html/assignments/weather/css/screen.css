@@ -138,7 +138,7 @@ body>div
 
 #curWeather 
 {
-    background-image: url("../weather-site-images/rain.jpg");
+    background-image: url("../weather_site_images/rain.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
 }

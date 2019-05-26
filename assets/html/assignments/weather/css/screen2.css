@@ -139,7 +139,7 @@ body>div
 
 #curWeather 
 {
-    background-image: url("../weather-site-images/thunderstorm.jpg");
+    background-image: url("../weather_site_images/thunderstorm.jpg");
     background-repeat: no-repeat;
     background-attachment: scroll;
 }
