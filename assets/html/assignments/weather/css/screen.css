@@ -82,6 +82,12 @@ nav
 }
 
 /*Changing the size of the logo */
+/* # Add these elements to div 
+   #@media screen and (min-width: 760px){
+   # #conditions{
+   # display: flex;
+   # }
+   #} */
 body>div 
 {
     width: 100vw;
