@@ -15,266 +15,324 @@
 * ****************************** */
 
 /* 1.  Includes (fonts and supplementary stylesheets) */
-/* 1.1 Normalize Import */  
-@import url('normalize.css');    
-/* 1.2 Google Font Import */    
-@import url('https://fonts.googleapis.com/css?family=Sansita');  
+/* 1.1 Normalize Import */
+@import url("normalize.css");
+/* 1.2 Google Font Import */
+@import url("https://fonts.googleapis.com/css?family=Sansita");
 /*2.   General Styles (for all pages and devices) */
-html 
-{
-    box-sizing: border-box;
-}
-   
-*, *:before, *:after 
-{
-    box-sizing: inherit;
+html {
+  box-sizing: border-box;
 }
 
-body
-{
-    font-family: helvetica, verdana, sans-serif;
-    font-size: 20px;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
-h1,h2,h3,h4,h5,h6 
-{
-    font-family: sansita, Eurostyle, sans-serif;
+body {
+  font-family: helvetica, verdana, sans-serif;
+  font-size: 20px;
 }
 
-.tile 
-{
-    background-color: rgba(200,200,200,.6);
-    margin: .2em auto;
-    border: 1px solid;
-    border-radius: 15px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sansita, Eurostyle, sans-serif;
+}
+
+.tile {
+  background-color: rgba(200, 200, 200, 0.6);
+  margin: 0.2em auto;
+  border: 1px solid;
+  border-radius: 15px;
 }
 /*3.  Mobile First (styles specific to small screens) */
-nav ul li
-{ 
-    float: left;
-    display: block; 
-    list-style: none;
-    text-align: center;
-    padding: 0px 20px 20px 0px;
-    font-size: 18px;
+nav ul li {
+  float: left;
+  display: block;
+  list-style: none;
+  text-align: center;
+  padding: 0px 20px 20px 0px;
+  font-size: 18px;
 }
 
 nav ul li a {
-    text-decoration: none;
-    color: whitesmoke;
+  text-decoration: none;
+  color: whitesmoke;
 }
 
-nav 
-{
-    background-color:#1e90ff;
-    overflow: hidden;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+nav {
+  background-color: #1e90ff;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
-#site-brand 
-{
-    font-size: 34px;
-    text-align: left;
-    font-weight: 600;
-    margin: 0px 0px 40px;
+#site-brand {
+  font-size: 34px;
+  text-align: left;
+  font-weight: 600;
+  margin: 0px 0px 40px;
 }
 
 /*Changing the size of the logo */
+body > div {
+  width: 100vw;
+}
+#page-header {
+  background-color: #1e90ff;
+  color: black;
+}
+
+#logo img {
+  float: left;
+  width: 43px;
+  height: 43px;
+  margin: 1px 10px 0px 1px;
+}
+
+#locName {
+  line-height: 0px;
+  height: 10px;
+  margin: -10px 0px 0px 5px;
+}
+
+#locInfo {
+  font-size: 11px;
+}
+
+#locInfo ul {
+  list-style-type: none;
+  margin: 17px 0px 0px -1px;
+  padding-left: 5px;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+}
+
+#locInfo ul li {
+  margin: 0px 3px;
+}
+
+#zip span::after {
+  content: " \007C";
+}
+
+#elevation span::after {
+  content: " \007C";
+}
+
+#curWeather {
+  background-image: url("../weather_site_images/rain.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
 /* # Add these elements to div 
-   #@media screen and (min-width: 760px){
+   @media screen and (min-width: 760px){
    # #conditions{
    # display: flex;
    # }
    #} */
-body>div 
-{
-    width: 100vw;
-}
-#page-header 
-{
-    background-color:#1e90ff;color:black;
+#temps {
+  text-align: center;
 }
 
-#logo img 
-{
-    float: left;
-    width: 43px;
-    height: 43px;
-    margin: 1px 10px 0px 1px;
+#temps h2 {
+  margin: 20px 0px 10px;
+}
+#temps div {
+  font-size: 4em;
+  margin: 0px 0px -10px;
 }
 
-#locName 
-{
-    line-height: 0px;
-    height: 10px;
-    margin: -10px 0px 0px 5px;
+#temps ul {
+  list-style-type: none;
+  margin: 25px 0px 0px 105px;
+  display: flex;
+  flex-direction: row;
 }
 
-#locInfo 
-{
-    font-size: 11px;
+#high {
+  margin: 5px;
+  color: firebrick;
 }
 
-#locInfo ul 
-{
-    list-style-type: none;
-    margin: 17px 0px 0px -1px;
-    padding-left: 5px;
-    white-space: nowrap;
+#low {
+  margin: 10px;
+  color: darkslateblue;
+}
+#temps p {
+  margin: 10px;
+}
+
+#wind div {
+  text-align: center;
+  line-height: 0px;
+}
+
+#wind div p {
+  margin: -70px 0px 115px;
+}
+
+#wind div img {
+  height: 150px;
+  margin: 0px 25% 0px 25%;
+  width: 40%;
+}
+
+#wind ul {
+  list-style-type: none;
+  margin: -25px 0px 0px 0px;
+  padding-left: 25%;
+  display: flex;
+  flex-direction: column;
+}
+
+#wind h2 {
+  text-align: center;
+}
+
+#summary {
+  text-align: center;
+}
+
+#summary img {
+  height: 200px;
+  margin: 0px 25% 0px 25%;
+  width: 50%;
+}
+
+#hourly {
+  text-align: center;
+}
+
+#hourly ol {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 5px;
+  white-space: nowrap;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: row;
+}
+
+#hourly ol li span {
+  margin: 0px 5px;
+}
+
+#hourly ol li span::after {
+  content: "\2109  \007C";
+}
+
+#hourly ol li div {
+  margin: 0px 5px;
+}
+
+#hourly ol li div::after {
+  content: "\2109";
+}
+
+footer {
+  background-color: #1e90ff;
+  overflow: hidden;
+  margin-bottom: 65px;
+}
+
+footer span::after {
+  content: " \2015";
+}
+
+/*4.  Large Screen Styles (Media Queries begin here) */
+@media screen and (min-width: 480px) {
+  #curWeather {
     display: flex;
     flex-direction: row;
-}
-
-#locInfo ul li 
-{
-    margin: 0px 3px;
-}
-
-#zip span::after 
-{
-    content: ' \007C';
-}
-
-#elevation span::after 
-{
-    content: ' \007C';
-}
-
-#curWeather 
-{
-    background-image: url("../weather_site_images/rain.jpg");
-    background-repeat: no-repeat;
-    background-attachment: scroll;
-}
-
-#temps 
-{
-    text-align: center;
-}
-
-#temps h2 
-{
-    margin: 20px 0px 10px;
-}
-#temps div 
-{
-    font-size: 4em;
-    margin: 0px 0px -10px;
-}
-
-#temps ul 
-{
-    list-style-type: none;
-    margin: 25px 0px 0px 105px;
+  }
+  #curWeather {
+    padding-bottom: 30px;
+  }
+  .condition {
+    width: 33.3%;
+    height: 400px;
+  }
+  #locName {
+    height: 0px;
+    margin: 30px 0px 0px 5px;
+    font-size: 42px;
+  }
+  nav {
+    position: relative;
+    margin: 0px 0px 0px 0px;
+  }
+  nav ul {
     display: flex;
-    flex-direction: row;
-}
+    justify-content: space-around;
+  }
+  nav ul li {
+    padding: unset;
+    font-size: unset;
+  }
+  #site-brand {
+    margin: 0px;
+  }
 
-#high 
-{
-    margin: 5px;
-    color: firebrick;
-}
+  #logo img {
+    width: 65px;
+    height: 70px;
+    margin: -5px 10px 0px 1px;
+  }
 
-#low 
-{
-    margin: 10px;
-    color:darkslateblue;
-}
-#temps p 
-{
-    margin: 10px;
-}
-
-#wind div 
-{
-    text-align: center;
-    line-height: 0px;
-}
-
-#wind div p 
-{
-    margin: -70px 0px 115px;
-}
-
-#wind div img
-{
-    height: 150px;
-    margin: 0px 25% 0px 25%;
-    width: 40%;
-}
-#wind ul 
-{
-    list-style-type: none;
-    margin: -25px 0px 0px 0px;
-    padding-left: 25%;
-    display: flex; 
-    flex-direction: column;
-}
-
-#wind h2 
-{
-    text-align: center;
-}
-
-#summary img
-{
-    height: 200px;
-    margin: 0px 25% 0px 25%;
-    width: 50%;
-}
-
-#summary
-{
-    text-align: center;
-}
-
-#hourly 
-{
-    text-align: center;
-}
-
-#hourly ol
-{
-    list-style-type: none;
-    margin: 0;
-    padding-left: 5px;
-    white-space: nowrap;
-    overflow-x: scroll;
-    display: flex; 
-    flex-direction: row;
-}
-
-#hourly ol li span 
-{
-    margin: 0px 5px;
-}
-
-#hourly ol li span::after 
-{
-    content: '\2109  \007C';
-}
-
-#hourly ol li div 
-{
-    margin: 0px 5px;
-}
-
-#hourly ol li div::after 
-{
-    content: '\2109';
-}
-
-footer
-{
-    background-color:#1e90ff;
-    overflow: hidden;
-    margin-bottom: 65px;
-}
-
-footer span::after 
-{
-    content: ' \2015';
+  #page-header {
+    height: 65px;
+    display: flex;
+    align-items: center;
+  }
+  #locInfo ul {
+    font-size: 22px;
+    margin: 30px 0px 10px -1px;
+  }
+  #summary img {
+    height: unset;
+    margin: unset;
+    width: 90%;
+  }
+  #temps h2 {
+    font-size: 2em;
+  }
+  #temps div {
+    font-size: 7em;
+    margin: unset;
+  }
+  #temps ul {
+    justify-content: center;
+    margin: unset;
+  }
+  #temps p {
+    margin: 10px 0px 0px -15px;
+    font-size: 30px;
+  }
+  #high {
+    font-size: 30px;
+    margin: 5px 0px 0px -40px;
+  }
+  #low {
+    font-size: 30px;
+  }
+  #wind h2 {
+    font-size: 2em;
+    margin: 20px;
+  }
+  #summary h2 {
+    font-size: 2em;
+    margin: 20px;
+  }
+  #hourly h2 {
+    font-size: 2em;
+    margin: 15px;
+  }
 }

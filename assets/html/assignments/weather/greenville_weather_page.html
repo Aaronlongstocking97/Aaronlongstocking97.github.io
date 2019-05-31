@@ -1,18 +1,20 @@
 <!doctype html>
 <html lang="en-us">
- <head>
+
+<head>
   <meta charset="UTF-8">
   <title>Greenville, SC | Weather Site</title>
   <meta name="description" content="Weather info for Greenville SC.">
   <meta name="viewport" content="width=device-width">
   <meta name="author" content="Aaron Jones">
   <link rel="stylesheet" type="text/css" href="css/screen2.css" media="screen">
- </head>
- <body>
-    <header id="page-header">
-      <div id="logo"><img src="weather_site_images/logo.jpg" alt="Weather forcast logo"></div>
-      <p id="site-brand">The Weather Site</p>
-    </header>
+</head>
+
+<body>
+  <header id="page-header">
+    <div id="logo"><img src="weather_site_images/logo.jpg" alt="Weather forcast logo"></div>
+    <p id="site-brand">The Weather Site</p>
+  </header>
   <nav>
     <ul>
       <li><a href="franklin_weather_page.html" title="Go to the Weather Site home page">Current</a></li>
@@ -22,80 +24,83 @@
     </ul>
   </nav>
   <main>
-      <!-- locInfo holds zip, elevation, longitude and latitude -->
-      <section id="locInfo">
-        <h1 id="locName">Greenville, SC</h1>
+    <!-- locInfo holds zip, elevation, longitude and latitude -->
+    <section id="locInfo">
+      <h1 id="locName">Greenville, SC</h1>
+      <ul>
+        <li id="zip"><b>Zip:</b> <span>29601</span></li>
+        <li id="elevation"><b>Elevation:</b> <span>294.437 ft.</span></li>
+        <li><b>Location:</b> 34.85&#176; N, -82.4&#176; W</li>
+        <!-- use a <span> for characters to change</span> -->
+      </ul>
+    </section>
+    <!-- curWeather holds temps, wind and summary data -->
+    <div id="curWeather">
+      <section id="temps" class="tile condition">
+        <h2>Temperature</h2>
+        <div>55&#176;F</div>
         <ul>
-          <li id="zip"><b>Zip:</b> <span>29601</span></li> 
-          <li id="elevation"><b>Elevation:</b> <span>294.437 ft.</span></li>
-          <li><b>Location:</b> 34.85&#176; N, -82.4&#176; W</li>
-          <!-- use a <span> for characters to change</span> -->
+          <li><span id="high">72&#176;F</span></li>
+          <li><span id="low">51&#176;F</span></li>
+        </ul>
+        <p>Feels like 57&#176;F</p>
+      </section>
+      <section id="wind" class="tile condition">
+        <h2>Wind</h2>
+        <div>
+          <img src="weather_site_images/wind-pointer.png" alt="Weather forcast display">
+          <p>8 mph</p>
+        </div>
+        <ul>
+          <li><strong>Direction:</strong> SW</li>
+          <li><strong>Gusts:</strong> 15-17 mph</li>
         </ul>
       </section>
-      <!-- curWeather holds temps, wind and summary data -->
-      <div id="curWeather">
-        <section id="temps" class="tile">
-          <h2>Temperature</h2>
-          <div>55&#176;F</div> 
-            <ul>
-              <li><span id="high">72&#176;F</span></li>
-              <li><span id="low">51&#176;F</span></li>
-            </ul>
-            <p>Feels like 57&#176;F</p>
-        </section>
-        <section id="wind" class="tile">
-          <h2>Wind</h2>
-          <div>
-            <img src="weather_site_images/wind-pointer.png" alt="Weather forcast display">
-            <p>8 mph</p>
-          </div>
-            <ul>
-              <li><strong>Direction:</strong> SW</li>
-              <li><strong>Gusts:</strong> 15-17 mph</li>
-            </ul>
-        </section>  
-        <section id="summary" class="tile">
-          <h2>Thunderstorms</h2>
-          <img src="weather_site_images/thunderstorm.jpg" alt="Weather forcast display">
-        </section>
-      </div>
-      <section id="hourly" class="tile">
-        <h2>Hourly Forecast</h2>
-          <ol>
-            <li>10am:</li>
-            <li><span>55</span></li> 
-            <li>11am:</li>
-            <li><span>55</span></li>
-            <li>12pm:</li>
-            <li><span>56</span></li>
-            <li>1pm:</li>
-            <li><span>57</span></li>
-            <li>2pm:</li>
-            <li><span>57</span></li>
-            <li>3pm:</li>
-            <li><span>57</span></li>
-            <li>4pm:</li>
-            <li><span>59</span></li>
-            <li>5pm:</li>
-            <li><span>59</span></li>
-            <li>6pm:</li>
-            <li><span>59</span></li>
-            <li>7pm:</li>
-            <li><span>60</span></li>
-            <li>8pm:</li>
-            <li><span>61</span></li>
-            <li>9pm:</li>
-            <li><span>63</span></li>
-            <li>10pm:</li>
-            <li><div>64</div></li>
-          </ol>
+      <section id="summary" class="tile condition">
+        <h2>Thunderstorms</h2>
+        <img src="weather_site_images/thunderstorm.jpg" alt="Weather forcast display">
       </section>
+    </div>
+    <section id="hourly" class="tile">
+      <h2>Hourly Forecast</h2>
+      <ol>
+        <li>10am:</li>
+        <li><span>55</span></li>
+        <li>11am:</li>
+        <li><span>55</span></li>
+        <li>12pm:</li>
+        <li><span>56</span></li>
+        <li>1pm:</li>
+        <li><span>57</span></li>
+        <li>2pm:</li>
+        <li><span>57</span></li>
+        <li>3pm:</li>
+        <li><span>57</span></li>
+        <li>4pm:</li>
+        <li><span>59</span></li>
+        <li>5pm:</li>
+        <li><span>59</span></li>
+        <li>6pm:</li>
+        <li><span>59</span></li>
+        <li>7pm:</li>
+        <li><span>60</span></li>
+        <li>8pm:</li>
+        <li><span>61</span></li>
+        <li>9pm:</li>
+        <li><span>63</span></li>
+        <li>10pm:</li>
+        <li>
+          <div>64</div>
+        </li>
+      </ol>
+    </section>
 
   </main>
   <footer>
     &copy;<span> 2019</span> The Weather Site
   </footer>
- </body>
+</body>
+
 </html>
 
 <!-- 
