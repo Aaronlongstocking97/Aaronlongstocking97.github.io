@@ -46,7 +46,7 @@ h6 {
 
 .tile {
   background-color: rgba(200, 200, 200, 0.6);
-  margin: 0.2em auto;
+  /* margin: 0.2em -9% 0px 0px; */
   border: 1px solid;
   border-radius: 15px;
 }
@@ -57,7 +57,7 @@ nav ul li {
   list-style: none;
   text-align: center;
   padding: 0px 20px 20px 0px;
-  font-size: 18px;
+  font-size: 4vw;
 }
 
 nav ul li a {
@@ -74,7 +74,7 @@ nav {
 }
 
 #site-brand {
-  font-size: 2em;
+  font-size: 34px;
   text-align: left;
   font-weight: 600;
   margin: 0px 0px 40px;
@@ -91,8 +91,8 @@ body > div {
 
 #logo img {
   float: left;
-  width: 43px;
-  height: 43px;
+  width: 38px;
+  height: 38px;
   margin: 1px 10px 0px 1px;
 }
 
@@ -113,6 +113,7 @@ body > div {
   white-space: nowrap;
   display: flex;
   flex-direction: row;
+  font-size: 3vw;
 }
 
 #locInfo ul li {
@@ -128,11 +129,16 @@ body > div {
 }
 
 #curWeather {
-  background-image: url("../weather_site_images/thunderstorm.jpg");
+  background-image: url("../weather_site_images/rain.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
 }
-
+/* # Add these elements to div 
+   @media screen and (min-width: 760px){
+   # #conditions{
+   # display: flex;
+   # }
+   #} */
 #temps {
   text-align: center;
 }
@@ -147,13 +153,13 @@ body > div {
 
 #temps ul {
   list-style-type: none;
-  margin: 25px 0px 0px 105px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
 }
 
 #high {
-  margin: 5px;
+  margin: 0px 0px 0px -30px;
   color: firebrick;
 }
 
@@ -176,9 +182,8 @@ body > div {
 
 #wind div img {
   height: 150px;
-  margin: 0px 25% 0px 25%;
-  width: 40%;
 }
+
 #wind ul {
   list-style-type: none;
   margin: -25px 0px 0px 0px;
@@ -191,23 +196,25 @@ body > div {
   text-align: center;
 }
 
-#summary img {
-  height: 200px;
-  margin: 0px 25% 0px 25%;
-  width: 50%;
-}
-
 #summary {
   text-align: center;
 }
 
+#summary img {
+  height: 200px;
+  margin: 0px 25% 0px 25%;
+  width: 50%;
+  height: 45vw;
+}
+
 #hourly {
   text-align: center;
+  margin-bottom: 1%;
 }
 
 #hourly ol {
   list-style-type: none;
-  margin: 0;
+  margin: 5px;
   padding-left: 5px;
   white-space: nowrap;
   overflow-x: scroll;
@@ -234,7 +241,7 @@ body > div {
 footer {
   background-color: #1e90ff;
   overflow: hidden;
-  margin-bottom: 65px;
+  margin-bottom: 60px;
 }
 
 footer span::after {
@@ -291,9 +298,10 @@ footer span::after {
     margin: 30px 0px 10px -1px;
   }
   #summary img {
-    height: 60%;
+    height: unset;
     margin: unset;
     width: 90%;
+    height: 15em;
   }
   #temps h2 {
     font-size: 2em;
