@@ -50,7 +50,7 @@ h6 {
 /* 3.  Mobile First (styles specific to small screens width = 415) */
 header h1 {
   margin: 0px;
-  font-size: 1em;
+  font-size: 6vw;
   text-align: center;
 }
 
@@ -83,18 +83,47 @@ footer {
   bottom: 0;
 }
 
+.small {
+  display: block;
+}
+
+.medium {
+  display: none;
+}
+
+.large {
+  display: none;
+}
+
 /* 4.  Medium Screen Styles (Media Queries begin here width = 1024)  */
-@media screen and (min-width: 415px) {
+@media screen and (min-width: 415px) and (max-width: 1023.9px) {
   .small {
     display: none;
   }
 
   .medium {
-    display: none;
+    display: block;
   }
 
   .large {
     display: none;
+  }
+
+  main h2 {
+    font-size: 4vw;
+  }
+
+  header h1 {
+    font-size: 5vw;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    margin-left: -15px;
+  }
+
+  footer {
+    margin-top: 20px;
   }
 }
 
@@ -109,6 +138,23 @@ footer {
   }
 
   .large {
-    display: none;
+    display: block;
+  }
+
+  main h2 {
+    font-size: 3em;
+  }
+
+  header h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    margin-left: -6px;
+  }
+
+  footer {
+    margin-top: 30px;
   }
 }
