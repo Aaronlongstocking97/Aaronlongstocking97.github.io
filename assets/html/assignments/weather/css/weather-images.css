@@ -77,12 +77,6 @@ ul li {
   margin-bottom: 5px;
 }
 
-footer {
-  margin-top: 10px;
-  font-size: 3vw;
-  bottom: 0;
-}
-
 .small {
   display: block;
 }
@@ -95,8 +89,27 @@ footer {
   display: none;
 }
 
+footer {
+  margin-top: 10px;
+  font-size: 3vw;
+  bottom: 0;
+}
+
 /* 4.  Medium Screen Styles (Media Queries begin here width = 1024)  */
 @media screen and (min-width: 415px) and (max-width: 1023.9px) {
+  header h1 {
+    font-size: 5vw;
+    margin-bottom: 20px;
+  }
+
+  main h2 {
+    font-size: 4vw;
+  }
+
+  ul {
+    margin-left: -15px;
+  }
+
   .small {
     display: none;
   }
@@ -107,19 +120,6 @@ footer {
 
   .large {
     display: none;
-  }
-
-  main h2 {
-    font-size: 4vw;
-  }
-
-  header h1 {
-    font-size: 5vw;
-    margin-bottom: 20px;
-  }
-
-  ul {
-    margin-left: -15px;
   }
 
   footer {
@@ -127,8 +127,21 @@ footer {
   }
 }
 
-/* 5.  Large Screen Styles (Addtional Media Query) */
+/* 5.  Large Screen Styles (Addtional Media Query width = 1200) */
 @media screen and (min-width: 1024px) {
+  header h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+  }
+
+  main h2 {
+    font-size: 3em;
+  }
+
+  ul {
+    margin-left: -6px;
+  }
+
   .small {
     display: none;
   }
@@ -139,19 +152,6 @@ footer {
 
   .large {
     display: block;
-  }
-
-  main h2 {
-    font-size: 3em;
-  }
-
-  header h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-  }
-
-  ul {
-    margin-left: -6px;
   }
 
   footer {
