@@ -1,0 +1,56 @@
+/* ******************************
+*  Stylesheet for Screened Devices
+*  Created by: Aaron Jones
+*  
+*  1.  Includes (fonts and supplementary stylesheets)
+*  1.1 Normalize
+*  1.2 Google fonts
+*
+*  2.  General Styles (for all pages and devices)
+*
+*  3.  Mobile First (styles specific to small screens)
+*
+*  4.  Medium Screen Styles (Media Queries begin here) 
+*
+*  5.  Large Screen Styles (Addtional Media Query)
+*
+* ****************************** */
+
+/* 1.  Includes (fonts and supplementary stylesheets) */
+/* 1.1 Normalize Import */
+@import url("normalize.css");
+/* 1.2 Google Font Import */
+@import url("https://fonts.googleapis.com/css?family=Sansita");
+/*2.   General Styles (for all pages and devices) */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: helvetica, verdana, sans-serif;
+  font-size: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sansita, Eurostyle, sans-serif;
+}
+
+/*3.  Mobile First (styles specific to small screens) */
+img {
+  display: flex;
+  flex-direction: column;
+  height: 150px;
+  width: 50%;
+  margin: 5px;
+}
