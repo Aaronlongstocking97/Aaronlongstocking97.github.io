@@ -21,7 +21,7 @@
 @import url("normalize.css");
 /* 1.2 Google Font Import */
 @import url("https://fonts.googleapis.com/css?family=Sansita");
-/*2.   General Styles (for all pages and devices) */
+/* 2.   General Styles (for all pages and devices) */
 html {
   box-sizing: border-box;
 }
@@ -35,6 +35,7 @@ html {
 body {
   font-family: helvetica, verdana, sans-serif;
   font-size: 20px;
+  margin: 0px 5px;
 }
 
 h1,
@@ -46,11 +47,68 @@ h6 {
   font-family: sansita, Eurostyle, sans-serif;
 }
 
-/*3.  Mobile First (styles specific to small screens) */
+/* 3.  Mobile First (styles specific to small screens width = 415) */
+header h1 {
+  margin: 0px;
+  font-size: 1em;
+  text-align: center;
+}
+
+a {
+  font-size: 3vw;
+}
+
+main h2 {
+  font-size: 1em;
+}
+
 img {
-  display: flex;
-  flex-direction: column;
-  height: 150px;
-  width: 50%;
-  margin: 5 px;
+  height: auto;
+  width: 100%;
+}
+
+ul {
+  margin: 0px;
+  margin-left: -28px;
+  list-style-type: square;
+}
+ul li {
+  font-size: 3vw;
+  margin-bottom: 5px;
+}
+
+footer {
+  margin-top: 10px;
+  font-size: 3vw;
+  bottom: 0;
+}
+
+/* 4.  Medium Screen Styles (Media Queries begin here width = 1024)  */
+@media screen and (min-width: 415px) {
+  .small {
+    display: none;
+  }
+
+  .medium {
+    display: none;
+  }
+
+  .large {
+    display: none;
+  }
+}
+
+/* 5.  Large Screen Styles (Addtional Media Query) */
+@media screen and (min-width: 1024px) {
+  .small {
+    display: none;
+  }
+
+  .medium {
+    display: none;
+  }
+
+  .large {
+    display: none;
+  }
 }
