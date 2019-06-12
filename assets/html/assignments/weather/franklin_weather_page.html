@@ -35,7 +35,7 @@
       </ul>
     </section>
     <!-- curWeather holds temps, wind and summary data -->
-    <div id="curWeather">
+    <div id="curWeather" class="clear">
       <section id="temps" class="tile condition">
         <h2>Temperature</h2>
         <div>40&#176;F</div>
@@ -43,13 +43,13 @@
           <li><span id="high">64&#176;F</span></li>
           <li><span id="low">41&#176;F</span></li>
         </ul>
-        <p>Feels like 40&#176;F</p>
+        <p id="feel">Feels Like <span id="feelTemp">??</span>°F</p>
       </section>
       <section id="wind" class="tile condition">
         <h2>Wind</h2>
-        <div>
-          <img src="weather_site_images/wind-pointer.png" alt="Weather forcast display">
-          <p>5 mph</p>
+        <div id="dial" class="w">
+          <!-- <img src="weather_site_images/wind-pointer.png" alt="Weather forcast display"> -->
+          <!-- <p>5 mph</p> -->
         </div>
         <ul>
           <li><strong>Direction:</strong> SW</li>
@@ -58,7 +58,7 @@
       </section>
       <section id="summary" class="tile condition">
         <h2>Rain</h2>
-        <img src="weather_site_images/rain.jpg" alt="Weather forcast display">
+        <img src="../weather_images/rain_small.jpg" alt="Weather forcast display">
       </section>
     </div>
     <section id="hourly" class="tile">
@@ -99,6 +99,7 @@
   <footer>
     &copy;<span> 2019</span> The Weather Site
   </footer>
+  <script src="js/functions.js"></script>
 </body>
 
 </html>

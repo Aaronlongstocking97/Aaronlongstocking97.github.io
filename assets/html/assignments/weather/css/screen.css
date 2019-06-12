@@ -50,6 +50,48 @@ h6 {
   border: 1px solid;
   border-radius: 15px;
 }
+
+#dial {
+  height: 150px;
+  width: 150px;
+  background: no-repeat center/85%
+    url("../weather_site_images/wind-pointer.png");
+  z-index: 100;
+  margin: -0.6em auto 0;
+}
+
+.n {
+  transform: rotate(0deg);
+}
+
+.ne {
+  transform: rotate(45deg);
+}
+
+.nw {
+  transform: rotate(315deg);
+}
+
+.s {
+  transform: rotate(180deg);
+}
+
+.se {
+  transform: rotate(135deg);
+}
+
+.sw {
+  transform: rotate(225deg);
+}
+
+.e {
+  transform: rotate(90deg);
+}
+
+.w {
+  transform: rotate(270deg);
+}
+
 /*3.  Mobile First (styles specific to small screens) */
 nav ul li {
   float: left;
@@ -129,10 +171,14 @@ body > div {
 }
 
 #curWeather {
-  background-image: url("../weather_site_images/rain.jpg");
-  background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-size: cover;
 }
+
+/* Background pictures for summary */
+.clear {
+  background-image: url("../../weather_images/rain_small.jpg");
+}
+
 /* # Add these elements to div 
    @media screen and (min-width: 760px){
    # #conditions{
@@ -167,22 +213,22 @@ body > div {
   margin: 10px;
   color: darkslateblue;
 }
-#temps p {
+#feel {
   margin: 10px;
 }
 
-#wind div {
+/* #wind div { 
   text-align: center;
   line-height: 0px;
-}
+}*/
 
-#wind div p {
-  margin: -70px 0px 115px;
-}
+/* #wind div p { 
+  margin: -70px 0px 115px; 
+}*/
 
-#wind div img {
+/* #wind div img { 
   height: 150px;
-}
+}*/
 
 #wind ul {
   list-style-type: none;
@@ -200,11 +246,11 @@ body > div {
   text-align: center;
 }
 
-#summary img {
+/* #summary img { 
   height: 200px;
   margin: 0px 25% 0px 25%;
   width: 50%;
-}
+}*/
 
 #hourly {
   text-align: center;
@@ -312,7 +358,7 @@ footer span::after {
     justify-content: center;
     margin: unset;
   }
-  #temps p {
+  #feel {
     margin: 10px 0px 0px -15px;
     font-size: 30px;
   }
