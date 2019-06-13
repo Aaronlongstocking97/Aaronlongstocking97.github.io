@@ -29,13 +29,13 @@
       <h1 id="locName">Franklin, Idaho</h1>
       <ul>
         <li id="zip"><b>Zip:</b> <span>83237</span></li>
-        <li id="elevation"><b>Elevation:</b> <span>1514.246 ft.</span></li>
+        <li><b>Elevation:</b> <span id="elevation">1514.246</span>ft. |</li>
         <li><b>Location:</b> 42.07&#176; N, 111.79&#176; W</li>
         <!-- use a <span> for characters to change</span> -->
       </ul>
     </section>
     <!-- curWeather holds temps, wind and summary data -->
-    <div id="curWeather" class="clear">
+    <div id="curWeather" class="rain">
       <section id="temps" class="tile condition">
         <h2>Temperature</h2>
         <div>40&#176;F</div>
@@ -56,9 +56,9 @@
         </ul>
       </section>
       <section id="summary" class="tile condition">
-        <h2>Rain</h2>
-        <img class="small" src="../weather_images/rain_small.jpg" alt="Weather forcast display">
-        <img class="large" src="../weather_images/rain_large.jpg" alt="Weather forcast display">
+        <h2 id="condition">Rain</h2>
+        <img id="sumImage" src="../weather_images/rain_small.jpg" alt="Its a rainy day">
+        <!-- <img class="large" src="../weather_images/rain_large.jpg" alt="Weather forcast display"> -->
       </section>
     </div>
     <section id="hourly" class="tile">

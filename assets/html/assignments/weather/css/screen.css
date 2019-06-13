@@ -163,16 +163,12 @@ body > div {
   content: " \007C";
 }
 
-#elevation span::after {
-  content: " \007C";
-}
-
 #curWeather {
   background-size: cover;
 }
 
 /* Background pictures for summary */
-.clear {
+.rain {
   background-image: url("../../weather_images/rain_small.jpg");
 }
 
@@ -237,14 +233,34 @@ body > div {
   margin: 0 auto;
 }
 
-.small {
+#sumImage {
   display: block;
   width: 100%;
 }
 
-.large {
+/* .large { 
   display: none;
   width: 100%;
+}*/
+
+.rain {
+  background-image: url("../../weather_images/rain_small.jpg");
+}
+
+.clear {
+  background-image: url("../../weather_images/clear_small.jpg");
+}
+
+.cloud {
+  background-image: url("../../weather_images/clouds_small.jpg");
+}
+
+.fog {
+  background-image: url("../../weather_images/fog_small.jpg");
+}
+
+.snow {
+  background-image: url("../../weather_images/snow_small.jpg");
 }
 
 #hourly {
@@ -296,7 +312,7 @@ footer span::after {
     padding-bottom: 30px;
   }
 
-  .clear {
+  .rain {
     background-image: url("../../weather_images/rain_large.jpg");
   }
 

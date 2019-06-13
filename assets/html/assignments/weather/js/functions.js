@@ -6,11 +6,11 @@ console.log('My javascript is being read.');
 // Variables for Function Use
 const temp = 40;
 const speed = 5;
-
-buildWC(speed, temp);
-
 const direction = "NW"; //Set your own value
-windDial(direction);
+let forcast = "snow";
+let condition = getCondition(forcast);
+let elevation = document.getElementById("elevation");
+let meters = elevation.innerHTML;
 
 // Calculate the Windchill
 function buildWC(speed, temp) {
@@ -77,3 +77,81 @@ function windDial(direction) {
             break;
     }
 }
+
+function getCondition(forcast) {
+    // Get the container
+    // const condition = document.getElementById("condition");
+    console.log(forcast);
+    // Determine the forcast 
+    switch (forcast.toLowerCase()) {
+        case "rain":
+            console.log("rain");
+            return "rain"; //"rain" is the CSS rule selector
+        case "clear":
+            console.log("clear");
+            return "clear";
+        case "cloud":
+            console.log("cloud");
+            return "cloud";
+        case "fog":
+            console.log("fog");
+            return "fog";
+        case "snow":
+            console.log("snow");
+            return "snow";
+    }
+}
+
+// console.log(`Testing the condition ${condition}`);
+
+function changeSummaryImage(condition) {
+    // Get the container
+    const curWeather = document.getElementById("curWeather");
+    const sumImage = document.getElementById("sumImage");
+    console.log(condition);
+    switch (condition) {
+        case "rain":
+            console.log("rain");
+            curWeather.setAttribute("class", "rain");
+            sumImage.setAttribute("src", "../weather_images/rain_small.jpg");
+            sumImage.setAttribute("alt", "Its a rainy day");
+            break;
+        case "clear":
+            console.log("clear");
+            curWeather.setAttribute("class", "clear");
+            sumImage.setAttribute("src", "../weather_images/clear_small.jpg");
+            sumImage.setAttribute("alt", "There are clear skies");
+            break;
+        case "cloud":
+            console.log("cloud");
+            curWeather.setAttribute("class", "cloud");
+            sumImage.setAttribute("src", "../weather_images/clouds_small.jpg");
+            sumImage.setAttribute("alt", "cloudy weather");
+            break;
+        case "fog":
+            console.log("fog");
+            curWeather.setAttribute("class", "fog");
+            sumImage.setAttribute("src", "../weather_images/fog_small.jpg");
+            sumImage.setAttribute("alt", "There is foggy weather");
+            break;
+        case "snow":
+            console.log("snow");
+            curWeather.setAttribute("class", "snow");
+            sumImage.setAttribute("src", "../weather_images/snow_small.jpg");
+            sumImage.setAttribute("alt", "Snow flurries in the forcast");
+            break;
+    }
+}
+
+// console.log(`Original meters: ${elevation.innerHTML}`);
+
+function convertMeters(meters) {
+    let feet = Math.floor(meters * 3.28084)
+    return feet;
+}
+
+buildWC(speed, temp);
+windDial(direction);
+changeSummaryImage(condition);
+elevation.innerHTML = convertMeters(meters);
+// console.log(`new feet: ${elevation.innerHTML}`);
