@@ -113,10 +113,11 @@ nav {
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 2;
 }
 
 #site-brand {
-  font-size: 34px;
+  font-size: 1.6em;
   text-align: left;
   font-weight: 600;
   margin: 0px 0px 40px;
@@ -142,10 +143,6 @@ body > div {
   line-height: 0px;
   height: 10px;
   margin: -10px 0px 0px 5px;
-}
-
-#locInfo {
-  font-size: 11px;
 }
 
 #locInfo ul {
@@ -179,12 +176,6 @@ body > div {
   background-image: url("../../weather_images/rain_small.jpg");
 }
 
-/* # Add these elements to div 
-   @media screen and (min-width: 760px){
-   # #conditions{
-   # display: flex;
-   # }
-   #} */
 #temps {
   text-align: center;
 }
@@ -217,25 +208,19 @@ body > div {
   margin: 10px;
 }
 
-/* #wind div { 
+#speed {
   text-align: center;
-  line-height: 0px;
-}*/
-
-/* #wind div p { 
-  margin: -70px 0px 115px; 
-}*/
-
-/* #wind div img { 
-  height: 150px;
-}*/
+  margin: -80px 0px 0px;
+}
 
 #wind ul {
   list-style-type: none;
-  margin: -25px 0px 0px 0px;
-  padding-left: 25%;
+  text-align: center;
+  margin-right: 8%;
   display: flex;
   flex-direction: column;
+  font-size: 1.1em;
+  margin-top: 75px;
 }
 
 #wind h2 {
@@ -246,11 +231,21 @@ body > div {
   text-align: center;
 }
 
-/* #summary img { 
-  height: 200px;
-  margin: 0px 25% 0px 25%;
-  width: 50%;
-}*/
+#summary img {
+  padding: 0 10%;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.small {
+  display: block;
+  width: 100%;
+}
+
+.large {
+  display: none;
+  width: 100%;
+}
 
 #hourly {
   text-align: center;
@@ -294,14 +289,17 @@ footer span::after {
 }
 
 /*4.  Large Screen Styles (Media Queries begin here) */
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 760px) {
   #curWeather {
     display: flex;
     flex-direction: row;
-  }
-  #curWeather {
     padding-bottom: 30px;
   }
+
+  .clear {
+    background-image: url("../../weather_images/rain_large.jpg");
+  }
+
   .condition {
     width: 33.3%;
     height: 400px;
@@ -339,19 +337,20 @@ footer span::after {
     align-items: center;
   }
   #locInfo ul {
-    font-size: 22px;
+    font-size: 1.2em;
     margin: 30px 0px 10px -1px;
   }
   #summary img {
-    height: unset;
-    margin: unset;
-    width: 90%;
+    padding: 0 20px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
   }
   #temps h2 {
     font-size: 2em;
   }
   #temps div {
-    font-size: 7em;
+    font-size: 5em;
     margin: unset;
   }
   #temps ul {
@@ -377,6 +376,15 @@ footer span::after {
     font-size: 2em;
     margin: 20px;
   }
+
+  .small {
+    display: none;
+  }
+
+  .large {
+    display: block;
+  }
+
   #hourly h2 {
     font-size: 2em;
     margin: 15px;
