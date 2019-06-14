@@ -6,11 +6,13 @@ console.log('My javascript is being read.');
 // Variables for Function Use
 const temp = 40;
 const speed = 5;
-const direction = "NW"; //Set your own value
-let forcast = "snow";
+const direction = "sw"; //Set your own value
+let forcast = "rainy";
 let condition = getCondition(forcast);
 let elevation = document.getElementById("elevation");
 let meters = elevation.innerHTML;
+// let directionEl = document.getElementById("direct");
+const weatherCon = document.getElementById("weatherCon");
 
 // Calculate the Windchill
 function buildWC(speed, temp) {
@@ -38,7 +40,7 @@ function windDial(direction) {
     const dial = document.getElementById("dial");
     console.log(direction);
     // Determine the dial class
-    switch (direction) {
+    switch (direction.toUpperCase()) {
         case "North":
         case "N":
             dial.setAttribute("class", "n"); //"n" is the CSS rule selector
@@ -79,11 +81,32 @@ function windDial(direction) {
 }
 
 function getCondition(forcast) {
-    // Get the container
-    // const condition = document.getElementById("condition");
     console.log(forcast);
+
+    let newForcast = forcast.toLowerCase();
     // Determine the forcast 
-    switch (forcast.toLowerCase()) {
+    if (newForcast.includes("rain") || newForcast.includes("shower") ||
+        newForcast.includes("wet")) {
+        console.log("rain");
+        return "Rain";
+    } else if (newForcast.includes("clear") || newForcast.includes("blue skies")) {
+        console.log("clear");
+        return "Clear";
+    } else if (newForcast.includes("cloud") || newForcast.includes("overcast") ||
+        newForcast.includes("gray")) {
+        console.log("cloud");
+        return "Cloud";
+    } else if (newForcast.includes("fog") || newForcast.includes("mist") ||
+        newForcast.includes("haze") || newForcast.includes("smog")) {
+        console.log("fog");
+        return "Fog";
+    } else if (newForcast.includes("snow") || newForcast.includes("blizzard") ||
+        newForcast.includes("sleet") || newForcast.includes("hail") ||
+        newForcast.includes("flakes") || newForcast.includes("flurries")) {
+        console.log("snow");
+        return "Snow";
+    }
+    /* switch (forcast.toLowerCase()) {
         case "rain":
             console.log("rain");
             return "rain"; //"rain" is the CSS rule selector
@@ -99,7 +122,7 @@ function getCondition(forcast) {
         case "snow":
             console.log("snow");
             return "snow";
-    }
+    }*/
 }
 
 // console.log(`Testing the condition ${condition}`);
@@ -109,7 +132,7 @@ function changeSummaryImage(condition) {
     const curWeather = document.getElementById("curWeather");
     const sumImage = document.getElementById("sumImage");
     console.log(condition);
-    switch (condition) {
+    switch (condition.toLowerCase()) {
         case "rain":
             console.log("rain");
             curWeather.setAttribute("class", "rain");
@@ -150,8 +173,11 @@ function convertMeters(meters) {
     return feet;
 }
 
+
+
 buildWC(speed, temp);
 windDial(direction);
 changeSummaryImage(condition);
 elevation.innerHTML = convertMeters(meters);
 // console.log(`new feet: ${elevation.innerHTML}`);
+weatherCon.innerHTML = condition;
