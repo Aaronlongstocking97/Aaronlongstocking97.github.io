@@ -168,9 +168,6 @@ body > div {
 }
 
 /* Background pictures for summary */
-.rain {
-  background-image: url("../../weather_images/rain_small.jpg");
-}
 
 #temps {
   text-align: center;
@@ -232,6 +229,12 @@ body > div {
   width: 100%;
   margin: 0 auto;
 }*/
+
+#weatherCon {
+  font-size: 1.7em;
+  margin: 20px;
+  font-weight: bold;
+}
 
 #sumImage {
   display: block;
@@ -411,9 +414,10 @@ footer span::after {
     font-size: 2em;
     margin: 20px;
   }
-  #summary h2 {
+  #weatherCon {
     font-size: 2em;
     margin: 20px;
+    font-weight: bold;
   }
 
   .small {
