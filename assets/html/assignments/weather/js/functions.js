@@ -96,20 +96,20 @@ function getCondition(forcast) {
     newForcast.includes("thunderstorms")
   ) {
     console.log("rain");
-    return "Rain";
+    return "rain";
   } else if (
     newForcast.includes("clear") ||
     newForcast.includes("blue skies")
   ) {
     console.log("clear");
-    return "Clear";
+    return "clear";
   } else if (
     newForcast.includes("cloud") ||
     newForcast.includes("overcast") ||
     newForcast.includes("gray")
   ) {
     console.log("cloud");
-    return "Cloud";
+    return "cloud";
   } else if (
     newForcast.includes("fog") ||
     newForcast.includes("mist") ||
@@ -117,7 +117,7 @@ function getCondition(forcast) {
     newForcast.includes("smog")
   ) {
     console.log("fog");
-    return "Fog";
+    return "fog";
   } else if (
     newForcast.includes("snow") ||
     newForcast.includes("blizzard") ||
@@ -127,7 +127,7 @@ function getCondition(forcast) {
     newForcast.includes("flurries")
   ) {
     console.log("snow");
-    return "Snow";
+    return "snow";
   }
 }
 
@@ -136,7 +136,7 @@ function changeSummaryImage(condition) {
   let curWeather = document.getElementById("curWeather");
   let sumImage = document.getElementById("sumImage");
   console.log(condition);
-  switch (condition.toLowerCase()) {
+  switch (condition) {
     case "rain":
       console.log("rain");
       curWeather.setAttribute("class", "rain");
