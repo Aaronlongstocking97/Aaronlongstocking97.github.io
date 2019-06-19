@@ -224,12 +224,6 @@ body > div {
   text-align: center;
 }
 
-/* #summary img {
-  padding: 0 10%;
-  width: 100%;
-  margin: 0 auto;
-}*/
-
 #weatherCon {
   font-size: 1.7em;
   margin: 20px;
@@ -242,11 +236,6 @@ body > div {
   width: 100%;
   margin: 0 auto;
 }
-
-/* .large { 
-  display: none;
-  width: 100%;
-}*/
 
 .rain {
   background-image: url("../../weather_images/rain_small.jpg");
@@ -376,12 +365,7 @@ footer span::after {
     font-size: 1.2em;
     margin: 30px 0px 10px -1px;
   }
-  /* #summary img { 
-    padding: 0 20px;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-  }*/
+
   #sumImage {
     padding: 0 20px;
     width: 100%;
