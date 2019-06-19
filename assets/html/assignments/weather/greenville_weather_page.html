@@ -3,11 +3,12 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Greenville, SC | Weather Site</title>
-  <meta name="description" content="Weather info for Greenville SC.">
+  <title id="page-title"> | The Weather Site</title>
+  <!-- <title>Franklin, ID | Weather Site</title> -->
+  <meta name="description" content="Weather info for Franklin ID.">
   <meta name="viewport" content="width=device-width">
   <meta name="author" content="Aaron Jones">
-  <link rel="stylesheet" type="text/css" href="css/screen2.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen">
 </head>
 
 <body>
@@ -15,82 +16,85 @@
     <div id="logo"><img src="weather_site_images/logo.jpg" alt="Weather forcast logo"></div>
     <p id="site-brand">The Weather Site</p>
   </header>
-  <nav>
+  <nav id="page-nav">
     <ul>
-      <li><a href="franklin_weather_page.html" title="Go to the Weather Site home page">Current</a></li>
-      <li><a href="../../../../index.html">Home</a></li>
+      <li><a title="Go to the Weather Site home page">Current</a></li>
+      <li><a>Search</a></li>
+      <!-- <li><a href="../../../../index.html">Home</a></li> -->
       <li><a href="franklin_weather_page.html" title="Takes you to the Franklin Weather Forcast">Franklin</a></li>
       <li><a href="greenville_weather_page.html" title="Takes you to the Greenville Weather Forcast">Greenville</a></li>
     </ul>
   </nav>
-  <main>
+  <section id="status">Please be patient while I get your weather information.</section>
+  <main id="main-content" class="hide">
     <!-- locInfo holds zip, elevation, longitude and latitude -->
     <section id="locInfo">
-      <h1 id="locName">Greenville, SC</h1>
+      <h1 id="locName">Franklin, Idaho</h1>
       <ul>
-        <li id="zip"><b>Zip:</b> <span>29601</span></li>
-        <li id="elevation"><b>Elevation:</b> <span>294.437 ft.</span></li>
-        <li><b>Location:</b> 34.85&#176; N, -82.4&#176; W</li>
+        <li id="zip"><b>Zip:</b> <span id="zip1">??</span></li>
+        <li><b>Elevation:</b> <span id="elevation">??</span>ft. |</li>
+        <li><b>Location:</b> <span id="locLat">??</span>° N, <span id="locLong">??</span>° W</li>
         <!-- use a <span> for characters to change</span> -->
       </ul>
     </section>
     <!-- curWeather holds temps, wind and summary data -->
-    <div id="curWeather">
+    <div id="curWeather" class="rain">
       <section id="temps" class="tile condition">
         <h2>Temperature</h2>
-        <div>55&#176;F</div>
+        <div>40&#176;F</div>
         <ul>
-          <li><span id="high">72&#176;F</span></li>
-          <li><span id="low">51&#176;F</span></li>
+          <li><span id="high">64°F</span></li>
+          <li><span id="low">41°F</span></li>
         </ul>
-        <p>Feels like 57&#176;F</p>
+        <p id="feel">Feels Like <span id="feelTemp">??</span>°F</p>
       </section>
       <section id="wind" class="tile condition">
         <h2>Wind</h2>
-        <div>
-          <img src="weather_site_images/wind-pointer.png" alt="Weather forcast display">
-          <p>8 mph</p>
+        <div id="dial" class="w">
         </div>
+        <p id="speed"><span id="wspeed">??</span> mph</p>
         <ul>
-          <li><strong>Direction:</strong> SW</li>
-          <li><strong>Gusts:</strong> 15-17 mph</li>
+          <li><strong>Direction: </strong><span id="wDirect">??</span></li>
+          <!-- <span id="direct">SW</span> -->
+          <li><strong>Gusts: </strong><span id="wRange">??</span> mph</li>
         </ul>
       </section>
       <section id="summary" class="tile condition">
-        <h2>Thunderstorms</h2>
-        <img src="weather_site_images/thunderstorm.jpg" alt="Weather forcast display">
+        <p id="weatherCon">??</p>
+        <img id="sumImage" src="../weather_images/rain_small.jpg" alt="Its a rainy day">
+        <!-- <img class="large" src="../weather_images/rain_large.jpg" alt="Weather forcast display"> -->
       </section>
     </div>
     <section id="hourly" class="tile">
       <h2>Hourly Forecast</h2>
       <ol>
         <li>10am:</li>
-        <li><span>55</span></li>
+        <li><span>41</span></li>
         <li>11am:</li>
-        <li><span>55</span></li>
+        <li><span>41</span></li>
         <li>12pm:</li>
-        <li><span>56</span></li>
+        <li><span>41</span></li>
         <li>1pm:</li>
-        <li><span>57</span></li>
+        <li><span>41</span></li>
         <li>2pm:</li>
-        <li><span>57</span></li>
+        <li><span>41</span></li>
         <li>3pm:</li>
-        <li><span>57</span></li>
+        <li><span>41</span></li>
         <li>4pm:</li>
-        <li><span>59</span></li>
+        <li><span>42</span></li>
         <li>5pm:</li>
-        <li><span>59</span></li>
+        <li><span>44</span></li>
         <li>6pm:</li>
-        <li><span>59</span></li>
+        <li><span>44</span></li>
         <li>7pm:</li>
-        <li><span>60</span></li>
+        <li><span>46</span></li>
         <li>8pm:</li>
-        <li><span>61</span></li>
+        <li><span>49</span></li>
         <li>9pm:</li>
-        <li><span>63</span></li>
+        <li><span>51</span></li>
         <li>10pm:</li>
         <li>
-          <div>64</div>
+          <div>55</div>
         </li>
       </ol>
     </section>
@@ -99,28 +103,8 @@
   <footer>
     &copy;<span> 2019</span> The Weather Site
   </footer>
+  <script src="js/functions.js"></script>
+  <script src="js/localdata.js"></script>
 </body>
 
 </html>
-
-<!-- 
-  # 1.  Make the logo larger
-  # 2.  Make "The Weather Site" name larger and bolder. 
-  #     Put it on the same line as the logo. Perhaps give 
-  #     it some space to the left. Hmmm, maybe center it 
-  #     vertically to the logo?
-  # 3.  Remove the bullets from the list of links and
-  #     remove the default padding from the list.
-  # 4.  Make the links flow horizontally, and take up 
-  #     an equal amount of space each. 
-  # 5.  Correct the heght on the navigation bar. 
-  # 6.  Move the navigation bar to the bottom of the page. 
-  # 7.  Add a bit of space on the bottom of the page so 
-  #     that the footer is not hidden by the navigation bar. 
-  # 8.  Make sure that the main blocks that make up our page 
-  #     flow vertically.
-  # 9.  Make sure the main blocks that make up our page are 
-  #     centered horizontal, but not all of the text inside of them.
-  # 10. Hide the bullets for the other data and format the 
-  #     data to match the wireframe.
--->

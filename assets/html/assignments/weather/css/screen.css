@@ -139,6 +139,10 @@ body > div {
   margin: 1px 10px 0px 1px;
 }
 
+.hide {
+  display: none;
+}
+
 #locName {
   line-height: 0px;
   height: 10px;
@@ -346,6 +350,7 @@ footer span::after {
     padding: unset;
     font-size: unset;
   }
+
   #site-brand {
     margin: 0px;
   }
