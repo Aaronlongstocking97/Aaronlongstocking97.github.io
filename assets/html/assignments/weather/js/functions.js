@@ -4,7 +4,7 @@
 console.log("My javascript is being read.");
 
 // Variables for Function Use
-let temp = 40;
+let temp = 55
 let speed = 5;
 let direction = "sw"; //Set your own value
 let forcast = "rain";
