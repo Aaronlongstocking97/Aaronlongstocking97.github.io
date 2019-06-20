@@ -177,6 +177,7 @@ function fetchData(weatherURL) {
         })
 }
 
+
 buildWC(speed, temp);
 windDial(direction);
 changeSummaryImage(condition);

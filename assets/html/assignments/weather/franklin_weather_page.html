@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Franklin, ID | Weather Site</title>
+  <title id="page-title"> | The Weather Site</title>
+  <!-- <title>Franklin, ID | Weather Site</title> -->
   <meta name="description" content="Weather info for Franklin ID.">
   <meta name="viewport" content="width=device-width">
   <meta name="author" content="Aaron Jones">
@@ -15,22 +16,24 @@
     <div id="logo"><img src="weather_site_images/logo.jpg" alt="Weather forcast logo"></div>
     <p id="site-brand">The Weather Site</p>
   </header>
-  <nav>
+  <nav id="page-nav">
     <ul>
-      <li><a href="franklin_weather_page.html" title="Go to the Weather Site home page">Current</a></li>
-      <li><a href="../../../../index.html">Home</a></li>
+      <li><a title="Go to the Weather Site home page">Current</a></li>
+      <li><a>Search</a></li>
+      <!-- <li><a href="../../../../index.html">Home</a></li> -->
       <li><a href="franklin_weather_page.html" title="Takes you to the Franklin Weather Forcast">Franklin</a></li>
       <li><a href="greenville_weather_page.html" title="Takes you to the Greenville Weather Forcast">Greenville</a></li>
     </ul>
   </nav>
-  <main>
+  <section id="status">Please be patient while I get your weather information.</section>
+  <main id="main-content" class="hide">
     <!-- locInfo holds zip, elevation, longitude and latitude -->
     <section id="locInfo">
       <h1 id="locName">Franklin, Idaho</h1>
       <ul>
-        <li id="zip"><b>Zip:</b> <span>83237</span></li>
-        <li><b>Elevation:</b> <span id="elevation">1514.246</span>ft. |</li>
-        <li><b>Location:</b> 42.07&#176; N, 111.79&#176; W</li>
+        <li id="zip"><b>Zip:</b> <span id="zip1">??</span></li>
+        <li><b>Elevation:</b> <span id="elevation">??</span>ft. |</li>
+        <li><b>Location:</b> <span id="locLat">??</span>° N, <span id="locLong">??</span>° W</li>
         <!-- use a <span> for characters to change</span> -->
       </ul>
     </section>
@@ -38,10 +41,10 @@
     <div id="curWeather" class="rain">
       <section id="temps" class="tile condition">
         <h2>Temperature</h2>
-        <div>40&#176;F</div>
+        <div><span id="currTemp">??</span>°F</div>
         <ul>
-          <li><span id="high">64°F</span></li>
-          <li><span id="low">41°F</span></li>
+          <li><span id="high">??</span>°F</li>
+          <li><span id="low">??</span>°F</li>
         </ul>
         <p id="feel">Feels Like <span id="feelTemp">??</span>°F</p>
       </section>
@@ -49,15 +52,15 @@
         <h2>Wind</h2>
         <div id="dial" class="w">
         </div>
-        <p id="speed">5 mph</p>
+        <p id="speed"><span id="wspeed">??</span> mph</p>
         <ul>
-          <li><strong>Direction:</strong>SW</li>
+          <li><strong>Direction: </strong><span id="wDirect">??</span></li>
           <!-- <span id="direct">SW</span> -->
-          <li><strong>Gusts:</strong> 10-12 mph</li>
+          <li><strong>Gusts: </strong><span id="wRange">??</span> mph</li>
         </ul>
       </section>
       <section id="summary" class="tile condition">
-        <p id="weatherCon">Rain</p>
+        <p id="weatherCon">??</p>
         <img id="sumImage" src="../weather_images/rain_small.jpg" alt="Its a rainy day">
         <!-- <img class="large" src="../weather_images/rain_large.jpg" alt="Weather forcast display"> -->
       </section>
@@ -65,34 +68,7 @@
     <section id="hourly" class="tile">
       <h2>Hourly Forecast</h2>
       <ol>
-        <li>10am:</li>
-        <li><span>41</span></li>
-        <li>11am:</li>
-        <li><span>41</span></li>
-        <li>12pm:</li>
-        <li><span>41</span></li>
-        <li>1pm:</li>
-        <li><span>41</span></li>
-        <li>2pm:</li>
-        <li><span>41</span></li>
-        <li>3pm:</li>
-        <li><span>41</span></li>
-        <li>4pm:</li>
-        <li><span>42</span></li>
-        <li>5pm:</li>
-        <li><span>44</span></li>
-        <li>6pm:</li>
-        <li><span>44</span></li>
-        <li>7pm:</li>
-        <li><span>46</span></li>
-        <li>8pm:</li>
-        <li><span>49</span></li>
-        <li>9pm:</li>
-        <li><span>51</span></li>
-        <li>10pm:</li>
-        <li>
-          <div>55</div>
-        </li>
+        <li id="hourlyTemps">??</li>
       </ol>
     </section>
 
@@ -101,6 +77,7 @@
     &copy;<span> 2019</span> The Weather Site
   </footer>
   <script src="js/functions.js"></script>
+  <script src="js/localdata.js"></script>
 </body>
 
 </html>
