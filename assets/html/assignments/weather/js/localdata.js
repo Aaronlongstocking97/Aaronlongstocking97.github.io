@@ -146,8 +146,25 @@ function fetchData(weatherURL) {
             currCon.innerHTML = currSum;
 
             // Set Temperature Conditions
+            // Current Temperature
+            let localTemp = document.getElementById("currTemp");
+            console.log(localTemp);
+            localTemp.innerHTML = temp;
+
+            // Daily High Temperature
+            let localH = document.getElementById("high");
+            console.log(localH);
+            localH.innerHTML = tempH;
+
+            // Daily Low Temperature 
+            let localL = document.getElementById("low");
+            console.log(localL);
+            localL.innerHTML = tempL;
 
             // Set the hourly temperature information
+            let tempHours = document.getElementById("hourlyTemps");
+            console.log(tempHours);
+            tempHours.innerHTML = buildHourlyData(nextHour, hourlyTemps);
 
 
             // Change the status of the containers
