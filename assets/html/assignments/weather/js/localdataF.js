@@ -11,7 +11,7 @@ let contentContainer = document.getElementById('main-content');
 let weatherURL = "js/weather.json";
 
 function fetchData(weatherURL) {
-    let cityName = 'Greenville'; // The data we want from the weather.json file
+    let cityName = 'Franklin'; // The data we want from the weather.json file
     fetch(weatherURL)
         .then(function (response) {
             if (response.ok) {
@@ -174,12 +174,22 @@ function fetchData(weatherURL) {
         .catch(function (error) {
             console.log('There was a fetch problem: ', error.message);
             statusContainer.innerHTML = 'Sorry, the data could not be processed.';
+        }).then(function () {
+
+            let temp = document.getElementById("currTemp");
+            let speed = document.getElementById("wspeed");
+            let direction = document.getElementById("wDirect");
+            let forcast = document.getElementById("weatherCon");
+            let condition = getCondition(forcast.innerHTML);
+            let elevation = document.getElementById("elevation");
+            let meters = elevation.innerHTML;
+            let weatherCon = document.getElementById("weatherCon");
+
+            buildWC(speed.innerHTML, temp.innerHTML);
+            windDial(direction.innerHTML);
+            changeSummaryImage(condition.innerHTML);
+            elevation.innerHTML = convertMeters(meters);
         })
 }
 
-
-buildWC(speed, temp);
-windDial(direction);
-changeSummaryImage(condition);
-elevation.innerHTML = convertMeters(meters);
 fetchData(weatherURL);

@@ -3,20 +3,12 @@
  ************************************* */
 console.log("My javascript is being read.");
 
-// Variables for Function Use
-let temp = 55
-let speed = 5;
-let direction = "sw"; //Set your own value
-let forcast = "rain";
-let condition = getCondition(forcast);
-let elevation = document.getElementById("elevation");
-let meters = elevation.innerHTML;
-// let directionEl = document.getElementById("direct");
-let weatherCon = document.getElementById("weatherCon");
-
 // Calculate the Windchill
 function buildWC(speed, temp) {
     let feelTemp = document.getElementById("feelTemp");
+
+    console.log(temp);
+    console.log(speed);
 
     // Compute the windchill
     let wc =
@@ -214,8 +206,3 @@ function buildHourlyData(nextHour, hourlyTemps) {
 // Get the next hour based on the current time
 let date = new Date();
 let nextHour = date.getHours() + 1;
-
-buildWC(speed, temp);
-windDial(direction);
-changeSummaryImage(condition);
-elevation.innerHTML = convertMeters(meters);
