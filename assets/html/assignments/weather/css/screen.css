@@ -267,33 +267,22 @@ body > div {
   margin-bottom: 1%;
 }
 
-#hourly ol {
-  padding: 5px;
-}
-
 #hourlyTemps {
   list-style-type: none;
   white-space: nowrap;
   overflow-x: scroll;
   display: flex;
   flex-direction: row;
+  padding: 5px;
 }
 
-/*hourly ol li span {
-  margin: 0px 5px;
+#hourlyTemps li:after {
+  content: " \007C";
 }
 
-#hourly ol li span::after {
-  content: "\2109  \007C";
+#hourlyTemps li {
+  margin: 5px;
 }
-
-#hourly ol li div {
-  margin: 0px 5px;
-}
-
-#hourly ol li div::after {
-  content: "\2109";
-}*/
 
 footer {
   background-color: #1e90ff;
