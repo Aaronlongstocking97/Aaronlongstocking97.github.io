@@ -8,10 +8,27 @@ let pageNav = document.getElementById('page-nav');
 let statusContainer = document.getElementById('status');
 let contentContainer = document.getElementById('main-content');
 
-let weatherURL = "js/weather.json";
+pageNav.addEventListener("click", function (evt) {
 
-function fetchData(weatherURL) {
-    let cityName = 'Greenville'; // The data we want from the weather.json file
+    let cityName = evt.target.innerHTML;
+    console.log(cityName);
+
+    // Only check for city names
+    switch (cityName) {
+        case "Franklin":
+        case "Greenville":
+        case "Springfield":
+            evt.preventDefault();
+            break;
+
+        default:
+            break;
+    }
+
+    let weatherURL = "js/weather.json";
+
+    // function fetchData(weatherURL) {
+    //     let cityName = 'Greenville'; // The data we want from the weather.json file
     fetch(weatherURL)
         .then(function (response) {
             if (response.ok) {
@@ -112,7 +129,7 @@ function fetchData(weatherURL) {
             // Elevation Information
             let tempElev = document.getElementById('elevation');
             console.log(tempElev);
-            tempElev.innerHTML = convertMeters(locElev);;
+            tempElev.innerHTML = convertMeters(locElev);
 
             // Latitude Information
             let tempLat = document.getElementById('locLat');
@@ -182,14 +199,15 @@ function fetchData(weatherURL) {
             let forcast = document.getElementById("weatherCon");
             let condition = getCondition(forcast.innerHTML);
             let elevation = document.getElementById("elevation");
-            let meters = elevation.innerHTML;
+            //let meters = elevation.innerHTML;
             let weatherCon = document.getElementById("weatherCon");
 
             buildWC(speed.innerHTML, temp.innerHTML);
             windDial(direction.innerHTML);
             changeSummaryImage(condition.innerHTML);
-            elevation.innerHTML = convertMeters(meters);
+            elevation.innerHTML = convertMeters(locElev);
         })
-}
+    // }
+}) // end the event listener
 
 fetchData(weatherURL);

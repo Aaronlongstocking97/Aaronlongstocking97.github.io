@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title id="page-title"> | The Weather Site</title>
+    <!-- <title>Franklin, ID | Weather Site</title> -->
+    <meta name="description" content="Weather info for Franklin ID.">
+    <meta name="viewport" content="width=device-width">
+    <meta name="author" content="Aaron Jones">
+    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen">
+</head>
+
+<body>
+    <header id="page-header">
+        <div id="logo"><img src="weather_site_images/logo.jpg" alt="Weather forcast logo"></div>
+        <p id="site-brand">The Weather Site</p>
+    </header>
+    <nav id="page-nav">
+        <ul>
+            <li><a href="index.html" title="Go to the Weather Site home page">Current</a></li>
+            <li><a href="../../../../index.html">Home</a></li>
+            <li><a href="franklin_weather_page.html" title="Takes you to the Franklin Weather Forcast">Franklin</a></li>
+            <li><a href="greenville_weather_page.html"
+                    title="Takes you to the Greenville Weather Forcast">Greenville</a></li>
+        </ul>
+    </nav>
+    <p id="status"></p>
+    <!-- <section id="status">Please be patient while I get your weather information.</section> -->
+    <main id="main-content" class="hide">
+        <!-- locInfo holds zip, elevation, longitude and latitude -->
+        <section id="locInfo">
+            <h1 id="locName">Franklin, Idaho</h1>
+            <ul>
+                <li id="zip"><b>Zip:</b> <span id="zip1">??</span></li>
+                <li><b>Elevation:</b> <span id="elevation">??</span>ft. |</li>
+                <li><b>Location:</b> <span id="locLat">??</span>° N, <span id="locLong">??</span>° W</li>
+                <!-- use a <span> for characters to change</span> -->
+            </ul>
+        </section>
+        <!-- curWeather holds temps, wind and summary data -->
+        <div id="curWeather" class="rain">
+            <section id="temps" class="tile condition">
+                <h2>Temperature</h2>
+                <div><span id="currTemp">??</span>°F</div>
+                <ul>
+                    <li><span id="high">??</span>°F</li>
+                    <li><span id="low">??</span>°F</li>
+                </ul>
+                <p id="feel">Feels Like <span id="feelTemp">??</span>°F</p>
+            </section>
+            <section id="wind" class="tile condition">
+                <h2>Wind</h2>
+                <div id="dial" class="w">
+                </div>
+                <p id="speed"><span id="wspeed">??</span> mph</p>
+                <ul>
+                    <li><strong>Direction: </strong><span id="wDirect">??</span></li>
+                    <!-- <span id="direct">SW</span> -->
+                    <li><strong>Gusts: </strong><span id="wRange">??</span></li>
+                </ul>
+            </section>
+            <section id="summary" class="tile condition">
+                <h2 id="weatherCon">??</h2>
+                <!-- <img id="sumImage" src="../weather_images/rain_small.jpg" alt="Its a rainy day"> -->
+                <div id="icon">??</div>
+                <p id="iconSum">??</p>
+                <!-- <img class="large" src="../weather_images/rain_large.jpg" alt="Weather forcast display"> -->
+            </section>
+        </div>
+        <section id="hourly" class="tile">
+            <h2>Hourly Forecast</h2>
+            <ol id="hourlyTemps">
+                <li>??</li>
+            </ol>
+        </section>
+
+    </main>
+    <footer>
+        &copy;<span> 2019</span> The Weather Site
+    </footer>
+    <script src="js/functions.js"></script>
+    <script src="js/geo_loc.js"></script>
+</body>
+
+</html>
