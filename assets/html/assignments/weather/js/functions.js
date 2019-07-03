@@ -9,13 +9,10 @@ var idHeader = {
     }
 };
 
-
 // Calculate the Windchill
 function buildWC(speed, temp) {
-    //let feelTemp = document.getElementById.innerHTML("feelTemp");
-
-    console.log(temp);
-    console.log(speed);
+    console.log("This is the current temp in celcius: " + temp);
+    console.log("This is the current speed: " + speed + "mph");
 
     // Compute the windchill
     let wc =
@@ -23,7 +20,6 @@ function buildWC(speed, temp) {
         0.6215 * temp -
         35.75 * Math.pow(speed, 0.16) +
         0.4275 * temp * Math.pow(speed, 0.16);
-    console.log(wc);
 
     // Round the answer down to integer
     wc = Math.floor(wc);
@@ -32,8 +28,6 @@ function buildWC(speed, temp) {
     wc = wc > temp ? temp : wc;
 
     // Display the windchill
-    console.log(wc);
-    // wc = 'Feels like '+wc+'°F';
     storage.setItem('feelTemp', wc);
     let feelTemp = storage.getItem('feelTemp');
     document.getElementById('feelTemp').innerHTML = Number(feelTemp).toFixed();
@@ -43,7 +37,6 @@ function buildWC(speed, temp) {
 function windDial(direction) {
     // Get the container
     let dial = document.getElementById("dial");
-    console.log(direction);
     // Determine the dial class
     switch (direction.toUpperCase()) {
         case "North":
@@ -86,7 +79,6 @@ function windDial(direction) {
 }
 
 function getCondition(forcast) {
-    console.log(forcast);
 
     let newForcast = forcast.toLowerCase();
     // Determine the forcast
@@ -96,21 +88,21 @@ function getCondition(forcast) {
         newForcast.includes("wet") ||
         newForcast.includes("thunderstorms")
     ) {
-        console.log("rain");
+        console.log("Checking the current condition status: " + "rain");
         return "rain";
     } else if (
         newForcast.includes("clear") ||
         newForcast.includes("blue skies") ||
         newForcast.includes("sunny")
     ) {
-        console.log("clear");
+        console.log("Checking the current condition status: " + "clear");
         return "clear";
     } else if (
         newForcast.includes("cloud") ||
         newForcast.includes("overcast") ||
         newForcast.includes("gray")
     ) {
-        console.log("cloud");
+        console.log("Checking the current condition status: " + "cloud");
         return "cloud";
     } else if (
         newForcast.includes("fog") ||
@@ -118,7 +110,7 @@ function getCondition(forcast) {
         newForcast.includes("haze") ||
         newForcast.includes("smog")
     ) {
-        console.log("fog");
+        console.log("Checking the current condition status: " + "fog");
         return "fog";
     } else if (
         newForcast.includes("snow") ||
@@ -128,48 +120,29 @@ function getCondition(forcast) {
         newForcast.includes("flakes") ||
         newForcast.includes("flurries")
     ) {
-        console.log("snow");
+        console.log("Checking the current condition status: " + "snow");
         return "snow";
     }
 }
 
-// let condition = getCondition(forcast);
-
 function changeSummaryImage(condition) {
     // Get the container
     let curWeather = document.getElementById("curWeather");
-    //let sumImage = document.getElementById("sumImage");
-    console.log(condition);
     switch (condition) {
         case "rain":
-            console.log("rain");
             curWeather.setAttribute("class", "rain");
-            //sumImage.setAttribute("src", "../weather_images/rain_small.jpg");
-            //sumImage.setAttribute("alt", "Its a rainy day");
             break;
         case "clear":
-            console.log("clear");
             curWeather.setAttribute("class", "clear");
-            //sumImage.setAttribute("src", "../weather_images/clear_small.jpg");
-            //sumImage.setAttribute("alt", "There are clear skies");
             break;
         case "cloud":
-            console.log("cloud");
             curWeather.setAttribute("class", "cloud");
-            //sumImage.setAttribute("src", "../weather_images/clouds_small.jpg");
-            //sumImage.setAttribute("alt", "cloudy weather");
             break;
         case "fog":
-            console.log("fog");
             curWeather.setAttribute("class", "fog");
-            //sumImage.setAttribute("src", "../weather_images/fog_small.jpg");
-            //sumImage.setAttribute("alt", "There is foggy weather");
             break;
         case "snow":
-            console.log("snow");
             curWeather.setAttribute("class", "snow");
-            //sumImage.setAttribute("src", "../weather_images/snow_small.jpg");
-            //sumImage.setAttribute("alt", "Snow flurries in the forcast");
             break;
     }
 }
@@ -201,14 +174,11 @@ function buildHourlyData(nextHour, hourlyTemps) {
     // The hourlyTemps variable holds an array of temperatures
     // Line 8 builds a list item showing the time for the next hour 
     // and then the first element (value in index 0) from the hourly temps array
-    console.log(hourlyTemps);
     let hourlyListItems = '<li>' + format_time(nextHour) + ': ' + hourlyTemps[0] + '&deg;F </li>';
-    console.log(hourlyListItems);
     // Build the remaining list items using a for loop
     for (let i = 1, x = hourlyTemps.length; i < x; i++) {
         hourlyListItems += '<li>' + format_time(nextHour + i) + ': ' + hourlyTemps[i] + '&deg;F </li>';
     }
-    console.log('HourlyList is: ' + hourlyListItems);
     return hourlyListItems;
 }
 
@@ -230,14 +200,10 @@ function getLocation(locale) {
             // Store data to localstorage 
             storage.setItem("locName", data.properties.relativeLocation.properties.city);
             storage.setItem("locState", data.properties.relativeLocation.properties.state);
-
-
             getHourly(data.properties.forecastHourly);
-
             // Next, get the weather station ID before requesting current conditions 
             // URL for station list is in the data object
             let forecastURL = data.properties.forecast;
-            console.log(forecastURL);
             let stationsURL = data.properties.observationStations;
             // Call the function to get the list of weather stations
             getForcast(forecastURL);
@@ -249,7 +215,6 @@ function getLocation(locale) {
 // Gets weather station list and the nearest weather station ID from the NWS API
 function getForcast(local) {
     const URL = local;
-    // NWS User-Agent header (built above) will be the second parameter
     fetch(URL, idHeader)
         .then(function (response) {
             if (response.ok) {
@@ -262,14 +227,12 @@ function getForcast(local) {
             console.log("From getForcast function:");
             console.log(data);
 
-            // Store station ID and elevation (in meters - will need to be converted to feet)
             let high = data.properties.periods[0].temperature;
             let low = data.properties.periods[1].temperature;
             let sumData = data.properties.periods[0].icon;;
             let iconForecast = data.properties.periods[0].detailedForecast;
             let gustData = data.properties.periods[0].windSpeed;
 
-            console.log(sumData);
             console.log("high temp and low temp are: " + high + ", " + low);
 
             // Store data to localstorage
@@ -278,7 +241,6 @@ function getForcast(local) {
             storage.setItem('sumImage', sumData);
             storage.setItem('highTemp', high);
             storage.setItem('lowTemp', low);
-            // Request the Current Weather for this station
         })
         .catch(error => console.log("There was a getForecast error: ", error));
 } // end getStationId function
@@ -331,23 +293,18 @@ function getWeather(stationId) {
             console.log('From getWeather function:');
             console.log(data);
 
-
             let temperature = data.properties.temperature.value;
             let temperatureF = convertToFahrenheit(temperature);
             let direct = data.properties.windDirection.value;
-            console.log(direct);
             let wDirection = convertWindDirection(direct);
-            console.log(wDirection);
+            console.log("This is the wind direction angle: " + wDirection);
 
             // Store weather information to localStorage 
             storage.setItem('temp', temperatureF);
-            storage.setItem('precip', data.properties.precipitationLastHour.value);
             storage.setItem('wind', data.properties.windSpeed.value);
             storage.setItem('direction', wDirection);
-            //storage.setItem('gusts', data.properties.windGust.value);
             storage.setItem('summary', data.properties.textDescription);
 
-            console.log(storage.getItem("wind"))
         })
         .catch(error => console.log('There was a getWeather error: ', error))
         .then(function () {
@@ -375,7 +332,6 @@ function getHourly(hourlyURL) {
             for (let i = 0; i < 13; i++) {
                 hourlyTemps[i] = data.properties.periods[i].temperature;
             }
-            console.log(hourlyTemps);
             let hours = buildHourlyData(nextHour, hourlyTemps);
             storage.setItem('hourTemps', hours);
 
@@ -383,11 +339,8 @@ function getHourly(hourlyURL) {
         .catch(error => console.log('There was a getHourly error: ', error))
 } // end getHourly function
 
-// Populate the current location weather page
 function buildPage() {
 
-    // Let's see what we got back
-    console.log('From buildPage function:');
     // Task 1 - Feed data to WC, Dial, Image, Meters to feet and hourly temps functions
     // Get weather information from localStorage
     let image = storage.getItem("sumImage");
@@ -400,14 +353,11 @@ function buildPage() {
     let forcast = storage.getItem('summary');
     let iconSum = storage.getItem('iconForecast');
     let meters = storage.getItem("stationElevation");
-    console.log(meters);
     let tempHours = storage.getItem('hourTemps');
     let city = storage.getItem('locName');
     let state = storage.getItem('locState');
     let latitude = storage.getItem('lat');
     let longitude = storage.getItem('long');
-
-    console.log(storage.getItem('wind'));
 
     // Task 2 - Populate location information
     // Task 3 - Populate weather information
@@ -423,13 +373,11 @@ function buildPage() {
     document.getElementById('elevation').innerHTML = Number(meters).toFixed();
     document.getElementById('hourlyTemps').innerHTML = tempHours;
     document.getElementById('locName').innerHTML = city + ', ' + state;
+    document.getElementById('page-title').innerHTML = city + ', ' + state + ' | The Weather Site';
     document.getElementById('locLat').innerHTML = Number(latitude).toFixed(2);
     document.getElementById('locLong').innerHTML = Number(longitude).toFixed(2);
 
-
-    console.log(meters);
-
-
+    console.log("This is the elevation in ft: " + meters);
 
     // Task 4 - Hide status and show main
     let statusContainer = document.getElementById('status');
@@ -441,10 +389,7 @@ function buildPage() {
     windDial(direction);
     let condition = getCondition(forcast);
     changeSummaryImage(condition);
-
     convertToFahrenheit(temp, tempHours);
-
-
 } // end buildPage function
 
 function convertToFahrenheit(temperature) {
@@ -453,7 +398,7 @@ function convertToFahrenheit(temperature) {
 }
 
 function convertWindDirection(direction) {
-    console.log(direction);
+    console.log("This is the wind direction angle in degrees: " + direction);
     if (direction >= 350 || direction <= 10) {
         direction = 'n';
     } else if (direction > 10 && direction <= 80) {
@@ -471,9 +416,7 @@ function convertWindDirection(direction) {
     } else if (direction > 280 && direction <= 350) {
         direction = 'nw';
     }
-
     return direction;
-
 }
 
 // Setup localStorage
