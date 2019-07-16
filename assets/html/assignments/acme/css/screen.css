@@ -1,0 +1,434 @@
+/* ******************************
+*  Stylesheet for Screened Devices
+*  Created by: Aaron Jones
+*  
+*  1.  Includes (fonts and supplementary stylesheets)
+*  1.1 Normalize
+*  1.2 Google fonts
+*
+*  2.  General Styles (for all pages and devices)
+*
+*  3.  Mobile First (styles specific to small screens)
+*
+*  4.  Large Screen Styles (Media Queries begin here)
+*
+* ****************************** */
+
+/* 1.  Includes (fonts and supplementary stylesheets) */
+/* 1.1 Normalize Import */
+@import url("../../weather/css/normalize.css");
+/* 1.2 Google Font Import */
+@import url("https://fonts.googleapis.com/css?family=Sansita");
+/*2.   General Styles (for all pages and devices) */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: helvetica, verdana, sans-serif;
+  font-size: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sansita, Eurostyle, sans-serif;
+}
+
+.tile {
+  background-color: #ffffff;
+  padding-bottom: 10px;
+  margin: 0px 10%;
+}
+
+/*3.  Mobile First (styles specific to small screens) */
+#logo img {
+  width: 70%;
+  margin-left: 2%;
+}
+
+#content-image {
+  width: 100%;
+}
+
+nav ul li {
+  float: left;
+  display: block;
+  list-style: none;
+  text-align: center;
+  padding: 8px 6px 8px 7px;
+  font-size: 3vw;
+}
+
+#pages {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+#pages li:hover {
+  color: #de2226;
+  background-color: #ffffff;
+}
+
+nav {
+  overflow: hidden;
+  background-color: #de2226;
+}
+
+#main-content {
+  position: relative;
+}
+
+.hide {
+  display: none;
+}
+
+#content-title {
+  font-size: 8vw;
+  margin: 0px 3px 3px;
+}
+
+#heroInfo {
+  color: #971937;
+  position: absolute;
+  top: 4%;
+  right: 4%;
+  left: auto;
+}
+
+#heroInfo ul {
+  margin-top: 0px;
+  padding-left: 0px;
+}
+
+#heroInfo ul li {
+  font-size: 2.3vw;
+  list-style: none;
+  font-weight: bold;
+}
+
+#rocket {
+  font-size: 6vw;
+  margin-bottom: 0px;
+}
+
+#actionbtn {
+  height: auto;
+  width: 100%;
+  position: absolute;
+}
+
+#heroReview h2 {
+  font-size: 8vw;
+  margin: 0px 5px;
+}
+
+#heroReview ul {
+  padding-left: 20px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+#heroReview ul li {
+  font-size: 2.9vw;
+  font-weight: bold;
+}
+
+#heroRecipe h2 {
+  font-size: 8vw;
+  margin: 0px 0px -10px 5px;
+}
+
+#heroRecipe ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  text-align: center;
+  padding-left: 0px;
+}
+
+#heroRecipe ul li {
+  font-size: 2vw;
+  font-weight: bold;
+  width: 50%;
+  line-height: 12px;
+}
+
+#heroRecipe img {
+  background-color: #cdcbcd;
+}
+
+#bbqsand {
+  padding: 0px 25% 3% 27%;
+  height: 93%;
+  width: 83%;
+  float: left;
+  margin-left: 5px;
+}
+
+#potpie {
+  padding: 0px 25% 3% 25%;
+  height: 93%;
+  width: 83%;
+  margin-left: -37%;
+}
+
+#soup {
+  padding: 0px 25% 3% 27%;
+  height: 93%;
+  width: 83%;
+  float: left;
+  margin-left: 5px;
+}
+
+#taco {
+  padding: 0px 25% 3% 25%;
+  height: 93%;
+  width: 83%;
+  margin-left: -37%;
+}
+
+#heroRecipe div {
+  color: #0000ee;
+  text-decoration: underline;
+  line-height: normal;
+  font-size: 2vw;
+}
+
+#bbq {
+  margin-bottom: 5%;
+}
+
+#pie {
+  float: left;
+}
+
+#rTaco {
+  float: left;
+  margin-bottom: 5%;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  margin: 0%;
+  width: 100%;
+  margin-bottom: 15%;
+}
+
+#title {
+  font-size: 7vw;
+  margin: 0px 2%;
+}
+
+#imgPath {
+  width: 80%;
+  padding: 5px 10px;
+}
+
+#align {
+  margin-right: 3%;
+  margin: -5% 5%;
+  font-size: 4vw;
+}
+
+#info {
+  margin-bottom: 5%;
+}
+
+#manufacturerTag {
+  margin: 0px;
+}
+
+#reviewTag {
+  margin: 0px;
+}
+
+#priceTag {
+  font-size: 7vw;
+  font-weight: bold;
+  color: #971937;
+  margin-bottom: 3%;
+}
+
+#line-break {
+  border-top: 2px solid black;
+  margin: -15px 5px 10px;
+}
+
+footer {
+  font-size: 2.9vw;
+  margin-top: -10px;
+  text-align: center;
+}
+
+footer p {
+  margin: unset;
+}
+
+body {
+  background-image: url("../images/site/background.jpg");
+}
+
+/*4.  Large Screen Styles (Media Queries begin here) */
+@media screen and (min-width: 500px) {
+  nav ul li {
+    padding: 8px 4px 8px 7px;
+  }
+
+  #logo img {
+    max-width: 40%;
+  }
+
+  #heroInfo {
+    left: 54%;
+  }
+
+  #rocket {
+    font-size: 5.5vw;
+  }
+
+  #heroInfo ul li {
+    font-size: 2vw;
+  }
+
+  #heroInfo ul {
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-top: 0px;
+  }
+
+  #actionbtn {
+    width: 75%;
+  }
+
+  #split {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  #heroRecipe h2 {
+    font-size: 4vw;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 5px;
+  }
+
+  #heroRecipe ul li {
+    font-size: 2.5vw;
+    width: 40%;
+    line-height: 20px;
+  }
+
+  #bbqsand {
+    padding: 0px 20% 3% 20%;
+    height: 85%;
+    width: 90%;
+  }
+
+  #potpie {
+    padding: 0px 20% 3% 20%;
+    height: 85%;
+    width: 95%;
+    margin-left: -10%;
+  }
+
+  #soup {
+    padding: 0px 20% 3% 20%;
+    height: 85%;
+    width: 90%;
+  }
+
+  #taco {
+    padding: 0px 20% 3% 20%;
+    height: 85%;
+    width: 95%;
+    margin-left: -10%;
+  }
+
+  #bbq {
+    font-size: 2.4vw;
+    margin-left: 5px;
+  }
+
+  #heroRecipe {
+    width: 50%;
+  }
+
+  #heroReview {
+    width: 70%;
+  }
+
+  #heroReview h2 {
+    font-size: 4vw;
+  }
+
+  #heroReview ul li {
+    font-size: 2vw;
+  }
+
+  footer {
+    font-size: 1.4vw;
+  }
+
+  #content-title {
+    font-size: 5.5vw;
+    margin-left: 1%;
+  }
+
+  nav ul li {
+    font-size: 2.4vw;
+  }
+
+  #container {
+    display: flex;
+    flex-direction: row;
+    margin: 0%;
+  }
+
+  #aligned {
+    width: 50%;
+    text-align: left;
+    margin-left: 2%;
+  }
+
+  #title {
+    font-size: 3.5vw;
+    margin: 0px;
+  }
+
+  #imgPath {
+    padding: 10px 10px 110px;
+  }
+
+  #align {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-top: 4%;
+    margin-right: 3%;
+    font-size: 2vw;
+  }
+
+  #info {
+    margin-bottom: 10%;
+  }
+
+  #priceTag {
+    font-size: 4vw;
+    font-weight: bold;
+    color: #971937;
+    margin-bottom: 15%;
+  }
+}
