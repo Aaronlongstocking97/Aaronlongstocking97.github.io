@@ -99,6 +99,13 @@ nav {
   margin: 0px 3px 3px;
 }
 
+#content {
+  font-size: 7vw;
+  font-style: normal;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
 #heroInfo {
   color: #971937;
   position: absolute;
