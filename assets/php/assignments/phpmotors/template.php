@@ -31,10 +31,11 @@
 
         </main>
         <footer>
-            &copy; 2019 ACME Inc., All rights reserved.
+            &copy; PHP Motors, All rights reserved.
             <p>All images used are believed to be in "Fair Use". Please
                 notify the author if any are not and they will be
                 removed.</P>
+            <p>Last Updated: 30 March , 2018</p>
         </footer>
     </div>
 </body>
