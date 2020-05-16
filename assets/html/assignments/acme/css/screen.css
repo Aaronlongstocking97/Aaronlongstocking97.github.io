@@ -16,7 +16,7 @@
 
 /* 1.  Includes (fonts and supplementary stylesheets) */
 /* 1.1 Normalize Import */
-@import url("../../weather/css/normalize.css");
+@import url("normalize.css");
 /* 1.2 Google Font Import */
 @import url("https://fonts.googleapis.com/css?family=Sansita");
 /*2.   General Styles (for all pages and devices) */
@@ -46,15 +46,9 @@ h6 {
 
 .tile {
   background-color: #ffffff;
-  padding-bottom: 10px;
-  margin: 0px 10%;
 }
 
 /*3.  Mobile First (styles specific to small screens) */
-#logo img {
-  width: 70%;
-  margin-left: 2%;
-}
 
 #content-image {
   width: 100%;
@@ -77,13 +71,13 @@ nav ul li {
 }
 
 #pages li:hover {
-  color: #de2226;
+  color: #4c96d7;
   background-color: #ffffff;
 }
 
 nav {
   overflow: hidden;
-  background-color: #de2226;
+  background-color: #3a3a3a;
 }
 
 #main-content {
@@ -284,12 +278,11 @@ footer p {
   margin: unset;
 }
 
-body {
-  background-image: url("../images/site/background.jpg");
-}
-
 /*4.  Large Screen Styles (Media Queries begin here) */
 @media screen and (min-width: 500px) {
+  .tile {
+    background-image: url("../images/site/small_check.jpg");
+  }
   nav ul li {
     padding: 8px 4px 8px 7px;
   }
