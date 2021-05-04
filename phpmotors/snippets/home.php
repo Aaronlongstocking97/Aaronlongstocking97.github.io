@@ -8,7 +8,7 @@
     <meta name="author" content="Aaron Jones">
     <title>Home | PHP Motors</title>
     <link href="../css/home.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Quantico&display=swap" rel="stylesheet">
+    <!--<link href="https://fonts.googleapis.com/css2?family=Quantico&display=swap" rel="stylesheet">-->
 </head>
 <body>
 <header>
