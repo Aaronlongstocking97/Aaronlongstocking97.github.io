@@ -76,6 +76,7 @@ nav a:hover {
   float: left;
   color: #4c96d7;
   margin-left: 30px;
+  position: absolute;
 }
 
 .topdiv p,

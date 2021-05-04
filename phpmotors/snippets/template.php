@@ -7,7 +7,7 @@
     <meta name="description" content="PHP Motors template page">
     <meta name="viewport" content="width=device-width">
     <meta name="author" content="Aaron Jones">
-    <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../css/screen.css" media="screen">
 </head>
 
 <body>
