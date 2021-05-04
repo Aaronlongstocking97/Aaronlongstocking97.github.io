@@ -1,0 +1,146 @@
+/* ******************************
+*  Stylesheet for Screened Devices
+*  Created by: Aaron Jones
+*  
+*  1.  Includes (fonts and supplementary stylesheets)
+*  1.1 Normalize
+*  1.2 Google fonts
+*
+*  2.  General Styles (for all pages and devices)
+*
+*  3.  Mobile First (styles specific to small screens)
+*
+*  4.  Large Screen Styles (Media Queries begin here)
+*
+* ****************************** */
+
+/* 1.  Includes (fonts and supplementary stylesheets) */
+/* 1.1 Normalize Import */
+@import url("normalize.css");
+/* 1.2 Google Font Import */
+@import url("https://fonts.googleapis.com/css?family=Sansita");
+/*2.   General Styles (for all pages and devices) */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: helvetica, verdana, sans-serif;
+  font-size: 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sansita, Eurostyle, sans-serif;
+}
+
+.tile {
+  background-color: #ffffff;
+}
+
+/*3.  Mobile First (styles specific to small screens) */
+
+#page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+  margin-bottom: 3%;
+}
+
+#user {
+  font-size: 4.5vw;
+  word-spacing: 4px;
+  margin: 0% 5% 2% 0;
+  color: #3a3a3a;
+}
+
+#logo img {
+  margin-left: -3%;
+  width: 100%;
+}
+
+nav ul li {
+  float: left;
+  display: block;
+  list-style: none;
+  text-align: center;
+  padding: 8px 6px 8px 10px;
+  font-size: 4vw;
+}
+
+#pages {
+  padding: 0;
+  margin: unset;
+  margin-left: 1%;
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+#pages li:hover {
+  color: black;
+  background-color: #4c96d7;
+}
+
+nav {
+  overflow: hidden;
+  padding: 1% 0% 1% 0%;
+  background-color: #3a3a3a;
+}
+
+#main-content {
+  position: relative;
+}
+
+#content {
+  font-size: 5vw;
+  word-spacing: 4px;
+  font-weight: normal;
+  margin: 4%;
+  margin-left: 3%;
+}
+
+#line-break {
+  border-top: 3px solid black;
+}
+
+footer {
+  font-size: 12px;
+  text-align: center;
+  color: #3a3a3a;
+  word-spacing: 5px;
+  margin: 0% 11% 0% 11%;
+}
+
+footer p {
+  margin: unset;
+}
+
+/*4.  Large Screen Styles (Media Queries begin here) */
+@media screen and (min-width: 760px) {
+  html {
+    background: url("../images/site/small_check.jpg") no-repeat center center
+      fixed;
+    background-size: cover;
+  }
+  body {
+    background-color: #ffffff;
+    border: solid #4c96d7;
+    border-radius: 15px;
+    margin: 5px 50px 0px 50px;
+  }
+  .tile {
+    background: transparent;
+    overflow: hidden;
+  }
+}
