@@ -18,7 +18,7 @@
         </header>
         <nav id="page-nav">
             <ul id="pages">
-                <li><a>Home</a></li>
+                <li><a href="../htdocs/phpmotors/snippets/home.php">Home</a></li>
                 <li><a>Classic</a></li>
                 <li><a>Sports</a></li>
                 <li><a>SUV</a></li>
