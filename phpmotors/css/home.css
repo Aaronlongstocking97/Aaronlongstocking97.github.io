@@ -1,0 +1,113 @@
+/* ******************************
+*  Stylesheet for Screened Devices
+*  Created by: Aaron Jones
+*  
+*  1.  Includes (fonts and supplementary stylesheets)
+*
+*  2.  General Styles (for all pages and devices)
+*
+*  3.  Mobile First (styles specific to small screens)
+*
+*  4.  Large Screen Styles (Media Queries begin here)
+*
+* ****************************** */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Quantico", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+header img {
+  padding: 5px;
+}
+
+header p {
+  float: right;
+  padding-right: 20px;
+}
+
+header p a {
+  text-decoration: none;
+  color: #3a3a3a;
+}
+
+header {
+  background-color: white;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+  background-color: #3a3a3a;
+  padding: 0;
+  margin: 0;
+}
+
+header ul li {
+  color: white;
+  flex: 1 1 100%;
+  text-decoration: none;
+  padding: 10px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  background-color: #4c96d7;
+  color: #3a3a3a;
+}
+
+.topdiv {
+  float: left;
+  color: #4c96d7;
+  margin-left: 30px;
+}
+
+.topdiv p,
+.topdiv h2 {
+  padding: 0;
+  margin: 0;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+
+img.delorean {
+  width: 100%;
+}
+
+.button2 {
+  color: #4c96d7;
+  margin-left: 20%;
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    background-image: url(../images/site/small_check.jpg);
+    position: relative;
+    max-width: 760px;
+    border: 5px solid #a6cbeb;
+    margin: auto;
+    border-radius: 15px;
+  }
+}

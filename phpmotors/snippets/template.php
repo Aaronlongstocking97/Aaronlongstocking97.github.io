@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title id="page-title">Content Title | PHP Motors</title>
-    <meta name="description" content="ACME template page.">
+    <meta name="description" content="PHP Motors template page">
     <meta name="viewport" content="width=device-width">
     <meta name="author" content="Aaron Jones">
     <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen">
@@ -13,7 +13,7 @@
 <body>
     <div class="tile">
         <header id="page-header">
-            <div id="logo"><img src="images/site/logo.png" alt="PHP Motors logo"></div>
+            <div id="logo"><img src="../images/site/logo.png" alt="PHP Motors logo"></div>
             <div id="user">My Account</div>
         </header>
         <nav id="page-nav">
