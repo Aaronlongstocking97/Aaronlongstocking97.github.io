@@ -22,7 +22,7 @@ html {
   box-sizing: inherit;
 } */
 
-.button1.hidden {
+.button1 {
   display: none;
 }
 
