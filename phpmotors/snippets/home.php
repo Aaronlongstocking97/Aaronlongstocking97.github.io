@@ -67,8 +67,7 @@
         </div>
     </div>
 </main>
-<footer>
-<?php require $_SERVER['DOCUMENT_ROOT'].'/phpmotors/snippets/footer.php'; ?>    
+<footer>    
 </footer>
 </body>
 
