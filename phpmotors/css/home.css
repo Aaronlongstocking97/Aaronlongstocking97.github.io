@@ -32,6 +32,10 @@ body {
   margin: 0;
 }
 
+.title {
+  font-size: 25px;
+}
+
 header img {
   padding: 5px;
 }
