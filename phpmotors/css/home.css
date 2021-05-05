@@ -102,8 +102,12 @@ img.delorean {
 }
 
 .button2 {
-  color: #4c96d7;
-  margin-left: 20%;
+  background: #4c96d7;
+  border-bottom-style: none;
+  position: relative;
+  width: 150px;
+  height: 60px;
+  font-size: 20px;
 }
 
 @media only screen and (min-width: 600px) {

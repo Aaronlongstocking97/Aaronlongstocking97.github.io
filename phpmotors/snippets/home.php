@@ -48,7 +48,6 @@
     </div>
     <h2>Delorean Upgrades</h2>
     <div id="upgrades">
-
         <div class="col">
             <img src="../images/upgrades/flux-cap.png" alt=" Image of Flux Capacitor">
             <p><a href="#" title="Link to Flux Capacitor Page">Flux Capacitor</a></p>
@@ -68,7 +67,7 @@
     </div>
 </main>
 <footer>  
-<?php require $_SERVER['DOCUMENT_ROOT'].'/phpmotors/snippets/footer.php'; ?>  
+<?php require $_SERVER['DOCUMENT_ROOT'].'footer.php'; ?>  
 </footer>
 </body>
 
