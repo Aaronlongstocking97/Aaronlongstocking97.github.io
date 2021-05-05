@@ -105,10 +105,11 @@ img.delorean {
   background: #4c96d7;
   border-bottom-style: none;
   position: relative;
-  width: 150px;
+  width: 200px;
   height: 60px;
-  font-size: 20px;
+  font-size: 25px;
   left: 25%;
+  margin-top: 35px;
 }
 
 @media only screen and (min-width: 600px) {
