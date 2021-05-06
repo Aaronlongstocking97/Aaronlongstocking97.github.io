@@ -11,7 +11,7 @@
 *  4.  Large Screen Styles (Media Queries begin here)
 *
 * ****************************** */
-/*
+
 html {
   box-sizing: border-box;
 }
@@ -20,7 +20,7 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
-} */
+}
 
 .button1 {
   display: none;
@@ -119,6 +119,10 @@ img.delorean {
 
 .reviews ul {
   line-height: 2.6;
+}
+
+#upgrades {
+  display: block;
 }
 
 @media only screen and (min-width: 600px) {
