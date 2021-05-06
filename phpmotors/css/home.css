@@ -103,6 +103,7 @@ p {
 
 img.delorean {
   width: 100%;
+  padding-top: 2%;
 }
 
 .button2 {
@@ -114,6 +115,10 @@ img.delorean {
   font-size: 25px;
   left: 25%;
   margin-top: 35px;
+}
+
+.reviews ul {
+  line-height: 1.6;
 }
 
 @media only screen and (min-width: 600px) {
