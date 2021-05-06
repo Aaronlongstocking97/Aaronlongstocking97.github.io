@@ -117,8 +117,8 @@ img.delorean {
   margin-top: 35px;
 }
 
-.reviews {
-  line-height: 1.6;
+.reviews ul {
+  line-height: 2.6;
 }
 
 @media only screen and (min-width: 600px) {
