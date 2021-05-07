@@ -40,6 +40,8 @@ body {
   margin: 0;
 }
 
+/*3.  Mobile First (styles specific to small screens) */
+
 .title {
   font-size: 25px;
 }
@@ -129,7 +131,7 @@ img.delorean {
   line-height: 2.6;
 }
 
-#upgrades {
+#upgrades ul {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
