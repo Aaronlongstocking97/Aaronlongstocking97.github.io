@@ -150,6 +150,36 @@ img.delorean {
   background-color: #4c96d7;
 }
 
+#fluxCap {
+  padding: 0px 25% 3% 27%;
+  height: 93%;
+  width: 83%;
+  float: left;
+  margin-left: 5px;
+}
+
+#flames {
+  padding: 0px 25% 3% 25%;
+  height: 93%;
+  width: 83%;
+  margin-left: -37%;
+}
+
+#sticker {
+  padding: 0px 25% 3% 27%;
+  height: 93%;
+  width: 83%;
+  float: left;
+  margin-left: 5px;
+}
+
+#hubCap {
+  padding: 0px 25% 3% 25%;
+  height: 93%;
+  width: 83%;
+  margin-left: -37%;
+}
+
 @media only screen and (min-width: 500px) {
   body {
     background-image: url(../images/site/small_check.jpg);
