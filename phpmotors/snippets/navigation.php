@@ -1,10 +1,9 @@
 <nav>
     <ul>
-        <li><a href="#" title="Link to the PHP Motors Home Page">Home</a></li>
-        <li><a href="#" title="Link to the PHP Motors Classic Cars">Classic</a></li>
-        <li><a href="#" title="Link to the PHP Motors Sports Cars">Sports</a></li>
-        <li><a href="#" title="Link to the PHP Motors SUVs">SUV</a></li>
-        <li><a href="#" title="Link to the PHP Motors Trucks">Trucks</a></li>
-        <li><a href="#" title="Link to the PHP Motors Used Cars">Used</a></li>
+        <li><a href="/phpmotors/" title="PHP Motors home page">Home</a></li>
+        <li><a href="#" title="classic cars page">Classic</a></li>
+        <li><a href="#" title="sports cars">Sports</a></li>
+        <li><a href="#" title="SUV">SUV</a></li>
+        <li><a href="#" title="Trucks">Trucks</a></li>
+        <li><a href="#" title="used cars">Used</a></li>
     </ul>
-</nav>

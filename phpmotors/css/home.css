@@ -42,7 +42,7 @@ body {
 
 /*3.  Mobile First (styles specific to small screens) */
 
-.title {
+#wrapper {
   font-size: 25px;
 }
 
