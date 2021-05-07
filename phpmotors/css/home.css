@@ -135,52 +135,44 @@ img.delorean {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  text-align: center;
+  padding-left: 0px;
+  background-color: #4c96d7;
 }
 
 #upgrades ul li {
   width: 50%;
-  line-height: 12px;
 }
 
 #upgrades img {
-  background-color: #4c96d7;
 }
 
 #fluxCap {
   padding: 0px 25% 3% 27%;
   height: 93%;
-  width: 83%;
-  float: left;
   margin-left: 5px;
 }
 
 #flames {
   padding: 0px 25% 3% 25%;
-  height: 93%;
   width: 83%;
-  margin-left: -37%;
 }
 
 #sticker {
   padding: 0px 25% 3% 27%;
   height: 93%;
-  width: 83%;
-  float: left;
   margin-left: 5px;
 }
 
 #hubCap {
   padding: 0px 25% 3% 25%;
-  height: 93%;
   width: 83%;
-  margin-left: -37%;
 }
 
 #upgrades div {
   text-decoration: underline;
   line-height: normal;
   font-size: 2vw;
+  background-color: white;
 }
 
 #flux {
