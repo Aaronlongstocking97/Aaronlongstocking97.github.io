@@ -185,11 +185,11 @@ img.delorean {
 }
 
 #flux {
-  float: left;
+  margin-bottom: 5%;
 }
 
 #fire {
-  margin-bottom: 5%;
+  float: left;
 }
 
 #hub {
