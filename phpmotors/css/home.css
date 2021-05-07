@@ -136,6 +136,7 @@ img.delorean {
   flex-wrap: wrap;
   list-style: none;
   padding-left: 0px;
+  text-align: center;
   background-color: #4c96d7;
 }
 
@@ -146,18 +147,17 @@ img.delorean {
 #fluxCap {
   padding: 0px 25% 3% 27%;
   height: 93%;
-  margin-left: 5px;
 }
 
 #flames {
   padding: 0px 25% 3% 25%;
+  height: 93%;
   width: 83%;
 }
 
 #sticker {
   padding: 0px 25% 3% 27%;
   height: 93%;
-  margin-left: 5px;
 }
 
 #hubCap {
@@ -175,15 +175,14 @@ img.delorean {
 #flux {
   margin-bottom: 5%;
 }
-
+/*
 #fire {
-  float: left;
-}
-
+  
+}*/
+/*
 #hub {
-  float: left;
-  margin-bottom: 5%;
-}
+  
+}*/
 
 @media only screen and (min-width: 500px) {
   body {
