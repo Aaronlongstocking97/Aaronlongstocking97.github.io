@@ -146,6 +146,10 @@ img.delorean {
   line-height: 12px;
 }
 
+#upgrades img {
+  background-color: #4c96d7;
+}
+
 @media only screen and (min-width: 500px) {
   body {
     background-image: url(../images/site/small_check.jpg);
