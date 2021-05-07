@@ -14,20 +14,10 @@
 <body>
     <div id="wrapper">
         <header>
-            <div id="top-header">
-                <img src="../images/site/logo.png" alt="PHP Motors Logo" id="logo">
-                <a href="#" title="Login or Register with PHP Motors" id="acc">My Account</a>
-            </div>
+            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
         </header>
-        <nav>
-            <ul>
-                <li><a href="/phpmotors/" title="PHP Motors home page">Home</a></li>
-                <li><a href="#" title="classic cars page">Classic</a></li>
-                <li><a href="#" title="sports cars">Sports</a></li>
-                <li><a href="#" title="SUV">SUV</a></li>
-                <li><a href="#" title="Trucks">Trucks</a></li>
-                <li><a href="#" title="used cars">Used</a></li>
-            </ul>
+        <nav id="page_nav">
+            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/navigation.php'; ?>
         </nav>
         <main>
             <h1 class="title">Welcome to PHP Motors!</h1>
@@ -80,10 +70,7 @@
             </div>
         </main>
         <footer>
-            <p>&copy; PHP Motors, All rights reserved.</p>
-            <p>All images used are believed to be in "Fair Use". Please
-                notify the author if any are not and they will be
-                removed.</P>
+            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>
         </footer>
     </div>
 </body>
