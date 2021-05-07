@@ -53,17 +53,29 @@
                 <section id="upgrades">
                     <h2>Delorean Upgrades</h2>
                     <ul>
-                        <li><a href="#" title="Link to Flux Capacitor Page">Flux Capacitor<img id="fluxCap"
+                        <li><a href="#" title="Link to Flux Capacitor Page"><img id="fluxCap"
                                     alt=" Image of Flux Capacitor" src="../images/upgrades/flux-cap.png"></a>
                         </li>
-                        <li><a href="#" title="Link to Flame Decals Page">Flame Decals<img id="flames"
-                                    alt=" Image of Flames" src="../images/upgrades/flame.jpg"></a>
+                        <li><a href="#" title="Link to Flame Decals Page"><img id="flames" alt=" Image of Flames"
+                                    src="../images/upgrades/flame.jpg"></a>
                         </li>
-                        <li><a href="#" title="Link to Bumper Stickers Page">Bumper Stickers<img id="sticker"
+                        <li>
+                            <div id="flux">Flux Capacitor</div>
+                        </li>
+                        <li>
+                            <div id="fire">Flame Decals</div>
+                        </li>
+                        <li><a href="#" title="Link to Bumper Stickers Page"><img id="sticker"
                                     alt=" Image of Bumper Sticker" src="../images/upgrades/bumper_sticker.jpg"></a>
                         </li>
-                        <li><a href="#" title="Link to Hub Caps Page">Hub Caps<img id="hubCap" alt=" Image of Hub Cap"
+                        <li><a href="#" title="Link to Hub Caps Page"><img id="hubCap" alt=" Image of Hub Cap"
                                     src="../images/upgrades/hub-cap.jpg"></a>
+                        </li>
+                        <li>
+                            <div>Bumper Stickers</div>
+                        </li>
+                        <li>
+                            <div id="hub">Hub Caps</div>
                         </li>
                     </ul>
                 </section>

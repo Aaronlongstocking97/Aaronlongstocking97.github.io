@@ -140,8 +140,6 @@ img.delorean {
 }
 
 #upgrades ul li {
-  font-size: 2vw;
-  font-weight: bold;
   width: 50%;
   line-height: 12px;
 }
@@ -178,6 +176,25 @@ img.delorean {
   height: 93%;
   width: 83%;
   margin-left: -37%;
+}
+
+#upgrades div {
+  text-decoration: underline;
+  line-height: normal;
+  font-size: 2vw;
+}
+
+#fire {
+  margin-bottom: 5%;
+}
+
+#flux {
+  float: left;
+}
+
+#hub {
+  float: left;
+  margin-bottom: 5%;
 }
 
 @media only screen and (min-width: 500px) {
