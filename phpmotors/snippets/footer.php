@@ -1,1 +1,3 @@
-<!--<?php require $_SERVER['DOCUMENT_ROOT'].'/phpmotors/snippets/footer.php'; ?-->
+<?php
+phpinfo();
+?>
