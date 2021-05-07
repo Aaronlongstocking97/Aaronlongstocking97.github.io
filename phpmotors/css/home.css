@@ -139,6 +139,13 @@ img.delorean {
   padding-left: 0px;
 }
 
+#upgrades ul li {
+  font-size: 2vw;
+  font-weight: bold;
+  width: 50%;
+  line-height: 12px;
+}
+
 @media only screen and (min-width: 500px) {
   body {
     background-image: url(../images/site/small_check.jpg);
