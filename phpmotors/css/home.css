@@ -121,7 +121,7 @@ img.delorean {
   line-height: 2.6;
 }
 
-#upgrades div {
+#upgrades {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
