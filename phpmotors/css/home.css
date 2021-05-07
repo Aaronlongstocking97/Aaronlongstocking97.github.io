@@ -184,12 +184,12 @@ img.delorean {
   font-size: 2vw;
 }
 
-#fire {
-  margin-bottom: 5%;
-}
-
 #flux {
   float: left;
+}
+
+#fire {
+  margin-bottom: 5%;
 }
 
 #hub {
