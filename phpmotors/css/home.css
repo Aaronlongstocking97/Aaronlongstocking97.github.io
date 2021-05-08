@@ -198,13 +198,11 @@ img.delorean {
 }
 
 footer {
-  font-size: 2.9vw;
   text-align: center;
 }
 
-footer p {
-  margin-top: 0px;
-  margin-bottom: 0px;
+footer {
+  margin: 0px 15px 0px 15px;
 }
 
 #update {
