@@ -79,10 +79,9 @@ nav {
   background-color: #3a3a3a;
 }
 
-#pages {
+#pages { 
   padding: 0;
   margin: 0;
-  text-decoration: none;
 }
 
 nav ul li {
@@ -94,11 +93,9 @@ nav ul li {
   font-size: 14px;
 }
 
-#pages li {
-  color: #3a3a3a;
-}
 #pages li a {
   color: #ffffff;
+  text-decoration: none;
 }
 
 /* mouse over link */
