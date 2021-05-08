@@ -74,30 +74,28 @@ header {
   background-color: white;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
+nav {
+  background-color: #3a3a3a;
 }
 
 #pages {
   display: flex;
-  list-style: none;
-  background-color: #3a3a3a;
   padding: 0;
   margin: 0;
+  text-decoration: none;
+  color: #ffffff;
 }
 
 nav ul li {
-  color: white;
   flex: 1 1 100%;
-  text-decoration: none;
+  list-style: none;
   padding: 10px;
   font-size: 14px;
 }
 
-nav a:hover {
-  background-color: #4c96d7;
+#pages li:hover {
   color: #3a3a3a;
+  background-color: #ffffff;
 }
 
 .topdiv {
