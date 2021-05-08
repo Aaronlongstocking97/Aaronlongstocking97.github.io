@@ -98,6 +98,14 @@ nav ul li {
   text-decoration: none;
 }
 
+#pages li a:link {
+  color: #3a3a3a;
+}
+
+#pages li a:visited {
+  color: #3a3a3a;
+}
+
 /* mouse over link */
 #pages li:hover {
   background-color: #ffffff;
