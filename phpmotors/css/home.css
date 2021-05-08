@@ -168,19 +168,19 @@ img.delorean {
 }
 
 #fluxCap {
-  padding: 10px 72px 17px 72px;
+  padding: 3% 30% 8% 30%;
 }
 
 #flames {
-  padding: 10px 72px 0px 72px;
+  padding: 3% 30% 0% 30%;
 }
 
 #sticker {
-  padding: 10px 72px 28px 72px;
+  padding: 3% 30% 14% 30%;
 }
 
 #hubCap {
-  padding: 10px 72px 20px 72px;
+  padding: 3% 30% 10% 30%;
 }
 
 #upgrades div {
@@ -200,7 +200,6 @@ img.delorean {
 footer {
   text-align: center;
 }
-
 
 footer p {
   margin: 0px 15px 0px 15px;
