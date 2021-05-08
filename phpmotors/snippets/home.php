@@ -69,6 +69,7 @@
                 </section>
             </div>
         </main>
+        <hr id="line-break">
         <footer>
             <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>
         </footer>
