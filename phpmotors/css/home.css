@@ -93,6 +93,9 @@ nav ul li {
   padding: 10px;
   font-size: 14px;
 }
+#pages li a {
+  color: #ffffff;
+}
 
 /* mouse over link */
 #pages li a:hover {
