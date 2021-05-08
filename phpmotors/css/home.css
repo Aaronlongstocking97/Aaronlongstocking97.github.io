@@ -95,8 +95,27 @@ nav ul li {
   font-size: 14px;
 }
 
+/* unvisited link */
+#pages li:link {
+  color: #ffffff;
+  background-color: #ffffff;
+}
+
+/* visited link */
+#pages li:visited {
+  color: #3a3a3a;
+  background-color: #ffffff;
+}
+
+/* mouse over link */
 #pages li:hover {
   color: #3a3a3a;
+  background-color: #ffffff;
+}
+
+/* selected link */
+#pages li:active {
+  color: #4c96d7;
   background-color: #ffffff;
 }
 
