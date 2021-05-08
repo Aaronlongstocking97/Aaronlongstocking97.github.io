@@ -74,16 +74,12 @@ header {
   background-color: white;
 }
 
-nav ul li {
-  float: left;
-  display: block;
-  list-style: none;
-  text-align: center;
-  padding: 8px 6px 8px 7px;
-  font-size: 3vw;
+nav a {
+  color: white;
+  text-decoration: none;
 }
 
-header ul {
+#page_nav ul {
   display: flex;
   list-style: none;
   background-color: #3a3a3a;
@@ -91,7 +87,7 @@ header ul {
   margin: 0;
 }
 
-header ul li {
+#page_nav ul li {
   color: white;
   flex: 1 1 100%;
   text-decoration: none;
