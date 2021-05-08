@@ -219,8 +219,24 @@ footer p {
     border-radius: 15px;
   }
 
+  .button1 {
+    background: #4c96d7;
+    border-bottom-style: none;
+    position: relative;
+    width: 200px;
+    height: 60px;
+    font-size: 25px;
+    left: 25%;
+    margin-top: 35px;
+  }
+
+  .button2 {
+    display: none;
+  }
+
   #split {
     display: flex;
     flex-direction: row-reverse;
   }
+  
 }
