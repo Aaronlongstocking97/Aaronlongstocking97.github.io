@@ -93,7 +93,7 @@ nav ul li {
   padding: 10px;
   font-size: 14px;
 }
-#pages li {
+#pages li a {
   color: #ffffff;
 }
 /* unvisited link */
