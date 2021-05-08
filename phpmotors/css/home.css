@@ -99,7 +99,7 @@ nav ul li {
 
 /* mouse over link */
 #pages li, 
-#pages li a:hover {
+a:hover {
   color: black;
   background-color: #ffffff;
 }
