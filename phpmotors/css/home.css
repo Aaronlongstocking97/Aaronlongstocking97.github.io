@@ -99,10 +99,12 @@ nav ul li {
 
 /* mouse over link */
 #pages li:hover {
-  color: black;
   background-color: #ffffff;
 }
 
+#pages li a:active {
+  color: #3a3a3a;
+}
 
 .topdiv {
   float: left;
