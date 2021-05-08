@@ -79,7 +79,7 @@ nav {
   background-color: #3a3a3a;
 }
 
-#pages {
+#pages li {
   padding: 0;
   margin: 0;
   text-decoration: none;
@@ -93,12 +93,9 @@ nav ul li {
   padding: 10px;
   font-size: 14px;
 }
-#pages li a {
-  color: #ffffff;
-}
 
 /* mouse over link */
-#pages li:hover {
+#pages li a:hover {
   color: #3a3a3a;
   background-color: #ffffff;
 }
