@@ -38,7 +38,7 @@
                         <li>"Coolest ride on the road." (4/5)</li>
                         <li>"I'm feeling like Marty McFly!" (5/5)</li>
                         <li>"The most futuristic ride of our day." (4.5/5)</li>
-                        <li>"80'slivin and I love it!" (5/5)</li>
+                        <li>"80's livin and I love it!" (5/5)</li>
                     </ul>
                 </section>
 
