@@ -83,7 +83,6 @@ nav {
   padding: 0;
   margin: 0;
   text-decoration: none;
-  color: #ffffff;
 }
 
 nav ul li {
@@ -95,7 +94,7 @@ nav ul li {
   font-size: 14px;
 }
 #pages li {
-  background-color: #ffffff;
+  color: #ffffff;
 }
 /* unvisited link */
 #pages li a:link {
@@ -108,7 +107,7 @@ nav ul li {
 }
 
 /* mouse over link */
-#pages li:hover {
+#pages li a:hover {
   color: #3a3a3a;
   background-color: #ffffff;
 }
