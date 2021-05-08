@@ -86,6 +86,10 @@ nav {
   color: #ffffff;
 }
 
+#pages li {
+  background-color: #ffffff;
+}
+
 nav ul li {
   float: left;
   display: block;
@@ -96,27 +100,23 @@ nav ul li {
 }
 
 /* unvisited link */
-#pages li:link {
+a:link {
   color: #ffffff;
-  background-color: #ffffff;
 }
 
 /* visited link */
-#pages li:visited {
+a:visited {
   color: #3a3a3a;
-  background-color: #ffffff;
 }
 
 /* mouse over link */
-#pages li:hover {
+a:hover {
   color: #3a3a3a;
-  background-color: #ffffff;
 }
 
 /* selected link */
-#pages li:active {
+a:active {
   color: #4c96d7;
-  background-color: #ffffff;
 }
 
 .topdiv {
