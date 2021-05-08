@@ -2,4 +2,4 @@
 <p>All images used are believed to be in "Fair Use". Please
     notify the author if any are not and they will be
     removed.</P>
-<p>Last Updated: 8 May, 2021</p>
+<p id="update">Last Updated: 8 May, 2021</p>
