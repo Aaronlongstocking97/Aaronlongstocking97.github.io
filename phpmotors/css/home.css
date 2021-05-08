@@ -209,7 +209,7 @@ footer p {
   margin-bottom: 10px;
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 700px) {
   body {
     background-image: url(../images/site/small_check.jpg);
     position: relative;
