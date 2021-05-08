@@ -86,10 +86,6 @@ nav {
   color: #ffffff;
 }
 
-#pages li {
-  background-color: #ffffff;
-}
-
 nav ul li {
   float: left;
   display: block;
@@ -100,22 +96,22 @@ nav ul li {
 }
 
 /* unvisited link */
-a:link {
+#pages a:link {
   color: #ffffff;
 }
 
 /* visited link */
-a:visited {
+#pages a:visited {
   color: #3a3a3a;
 }
 
 /* mouse over link */
-a:hover {
+#pages a:hover {
   color: #3a3a3a;
 }
 
 /* selected link */
-a:active {
+#pages a:active {
   color: #4c96d7;
 }
 
