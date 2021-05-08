@@ -96,23 +96,23 @@ nav ul li {
 }
 
 /* unvisited link */
-#pages a:link {
+#pages li a:link {
   color: #ffffff;
 }
 
 /* visited link */
-#pages a:visited {
+#pages li a:visited {
   color: #3a3a3a;
 }
 
 /* mouse over link */
-#pages a:hover {
+#pages li:hover {
   color: #3a3a3a;
   background-color: #ffffff;
 }
 
 /* selected link */
-#pages a:active {
+#pages li a:active {
   color: #4c96d7;
   
 }
