@@ -98,21 +98,25 @@ nav ul li {
 /* unvisited link */
 #pages a:link {
   color: #ffffff;
+  background-color: #ffffff;
 }
 
 /* visited link */
 #pages a:visited {
   color: #3a3a3a;
+  background-color: #ffffff;
 }
 
 /* mouse over link */
 #pages a:hover {
   color: #3a3a3a;
+  background-color: #ffffff;
 }
 
 /* selected link */
 #pages a:active {
   color: #4c96d7;
+  background-color: #ffffff;
 }
 
 .topdiv {
