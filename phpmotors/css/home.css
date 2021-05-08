@@ -98,7 +98,7 @@ nav ul li {
 }
 
 /* mouse over link */
-#pages li a:hover {
+#pages li:hover {
   color: #3a3a3a;
   background-color: #ffffff;
 }
