@@ -1,4 +1,4 @@
-    <ul id="page">
+    <ul id="pages">
         <li><a href="/phpmotors/" title="PHP Motors home page">Home</a></li>
         <li><a href="#" title="classic cars page">Classic</a></li>
         <li><a href="#" title="sports cars">Sports</a></li>
