@@ -96,15 +96,6 @@ nav ul li {
 #pages li a {
   color: #ffffff;
 }
-/* unvisited link */
-#pages li a:link {
-  color: #ffffff;
-}
-
-/* visited link */
-#pages li a:visited {
-  color: #3a3a3a;
-}
 
 /* mouse over link */
 #pages li a:hover {
@@ -112,11 +103,6 @@ nav ul li {
   background-color: #ffffff;
 }
 
-/* selected link */
-#pages li a:active {
-  color: #4c96d7;
-  
-}
 
 .topdiv {
   float: left;
