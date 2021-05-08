@@ -167,12 +167,13 @@ img.delorean {
 #fluxCap {
   padding: 0px 25% 3% 27%;
   height: 93%;
+  width: 90%;
 }
 
 #flames {
-  padding: 0px 25% 3% 25%;
+  padding: 10px 25% 0% 30%;
   height: 93%;
-  width: 83%;
+  width: 90%;
 }
 
 #sticker {
