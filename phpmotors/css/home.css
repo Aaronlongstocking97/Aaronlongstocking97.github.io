@@ -156,14 +156,10 @@ img.delorean {
   text-align: center;
 }
 
-#upgrades img {
-  background-color: #4c96d7;
-}
-
 #upgrades ul li {
   width: 50%;
 }
-
+/*
 #fluxCap {
   padding: 0px 25% 3% 27%;
   height: 93%;
@@ -183,14 +179,11 @@ img.delorean {
 
 #hubCap {
   padding: 0px 25% 3% 25%;
-  width: 83%;
+  width: 90%;
 }
-
+*/
 #upgrades div {
   text-decoration: underline;
-  line-height: normal;
-  font-size: 2vw;
-  background-color: white;
 }
 
 #flux {
