@@ -74,9 +74,13 @@ header {
   background-color: white;
 }
 
-nav a {
-  color: white;
-  text-decoration: none;
+nav ul li {
+  float: left;
+  display: block;
+  list-style: none;
+  text-align: center;
+  padding: 8px 6px 8px 7px;
+  font-size: 3vw;
 }
 
 header ul {
