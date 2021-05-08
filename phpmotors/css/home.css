@@ -43,11 +43,21 @@ body {
 /*3.  Mobile First (styles specific to small screens) */
 
 #wrapper {
-  font-size: 25px;
+  background-color: white;
 }
 
-header img {
+#acc {
+  color: #3a3a3a;
+  text-decoration: auto;
+  font-size: 20px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+#logo {
   padding: 5px;
+  height: 90px;
 }
 
 header p {
