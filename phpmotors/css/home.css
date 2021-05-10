@@ -230,6 +230,10 @@ footer p {
     margin-top: 30px;
   }
 
+  img.delorean {
+    padding-bottom: 7%;
+  }
+
   .button2 {
     display: none;
   }
@@ -241,32 +245,53 @@ footer p {
   
   #reviews {
     width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+  }
+
+  #reviews h2 {
+    margin-right: 30%;
   }
 
   #reviews ul {
     line-height: 3vw;
+    font-size: 20px;
   }
 
   #upgrades {
     width: 50%;
   }
 
+  #upgrades ul {
+    align-items: baseline;
+  }
+
   #fluxCap {
-    padding: 5% 20% 13% 20%;
-    height: 100%;
-    width: 75%;
+    padding: 5% 33% 6% 33%;
+    height: 50%;
+    width: 90%;
+    float: right;
   }
   
   #flames {
-    padding: 5% 20% 0% 20%;
+    padding: 5% 33% 0% 33%;
+    height: 50%;
+    width: 90%;
   }
   
   #sticker {
-    padding: 5% 20% 21% 20%;
+    padding: 5% 33% 10% 33%;
+    height: 50%;
+    width: 90%;
+    float: right;
   }
   
   #hubCap {
-    padding: 5% 20% 15% 20%;
+    padding: 5% 33% 7% 33%;
+    height: 50%;
+    width: 90%;
   }  
 
 }
