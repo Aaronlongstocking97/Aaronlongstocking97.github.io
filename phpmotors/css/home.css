@@ -244,11 +244,29 @@ footer p {
   }
 
   #reviews ul {
-    line-height: 2;
+    line-height: 3vw;
   }
 
   #upgrades {
     width: 50%;
   }
+
+  #fluxCap {
+    padding: 5% 20% 13% 20%;
+    height: 100%;
+    width: 75%;
+  }
+  
+  #flames {
+    padding: 5% 20% 0% 20%;
+  }
+  
+  #sticker {
+    padding: 5% 20% 21% 20%;
+  }
+  
+  #hubCap {
+    padding: 5% 20% 15% 20%;
+  }  
 
 }
