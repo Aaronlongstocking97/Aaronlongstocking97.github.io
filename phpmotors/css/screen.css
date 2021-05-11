@@ -31,43 +31,53 @@ html {
 }
 
 body {
-  font-family: helvetica, verdana, sans-serif;
-  font-size: 20px;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: sansita, Eurostyle, sans-serif;
-}
-
-.tile {
-  background-color: #ffffff;
+  font-family: "Quantico", sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
 /*3.  Mobile First (styles specific to small screens) */
 
-#page-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 4px;
-  margin-bottom: 3%;
+#wrapper {
+  background-color: white;
 }
 
-#user {
-  font-size: 3.5vw;
-  word-spacing: 4px;
-  margin: 0% 5% 2% 0;
+#acc {
+  color: #3a3a3a;
+  text-decoration: auto;
+  font-size: 20px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+#logo {
+  padding: 5px;
+  height: 90px;
+}
+
+header p {
+  float: right;
+  padding-right: 20px;
+}
+
+header p a {
+  text-decoration: none;
   color: #3a3a3a;
 }
 
-#logo img {
-  margin-left: -3%;
-  width: 100%;
+header {
+  background-color: white;
+}
+
+nav {
+  overflow: hidden;
+  background-color: #3a3a3a;
+}
+
+#pages { 
+  padding: 0;
+  margin: 0;
 }
 
 nav ul li {
@@ -75,81 +85,74 @@ nav ul li {
   display: block;
   list-style: none;
   text-align: center;
-  padding: 8px 6px 8px 10px;
-  font-size: 4vw;
+  padding: 10px;
+  font-size: 14px;
 }
 
-#pages {
-  padding: 0;
-  margin: unset;
-  margin-left: 1%;
+#pages li a {
+  color: #ffffff;
   text-decoration: none;
-  color: whitesmoke;
 }
 
+/* mouse over link */
 #pages li:hover {
-  color: black;
-  background-color: #4c96d7;
+  background-color: #ffffff;
 }
 
-nav {
-  overflow: hidden;
-  padding: 1% 0% 1% 0%;
-  background-color: #3a3a3a;
+#pages li a:active {
+  color: #3a3a3a;
 }
 
-#main-content {
-  position: relative;
-}
-
-#content {
-  font-size: 5vw;
-  word-spacing: 4px;
-  font-weight: normal;
-  margin: 4%;
-  margin-left: 3%;
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 #line-break {
   border-top: 3px solid black;
+  margin-top: 35px;
 }
 
 footer {
-  font-size: 12px;
   text-align: center;
-  color: #3a3a3a;
-  word-spacing: 5px;
-  margin: 0% 11% 0% 11%;
 }
 
 footer p {
-  margin: unset;
+  margin: 0px 15px 0px 15px;
 }
 
+#update {
+  margin-bottom: 10px;
+}
+
+
 /*4.  Large Screen Styles (Media Queries begin here) */
-@media screen and (min-width: 700px) {
-  html {
-    background: url("../images/site/small_check.jpg") no-repeat center center
-      fixed;
-    background-size: cover;
-  }
-  body {
-    background-color: #ffffff;
-    border: solid #4c96d7;
-    border-radius: 15px;
-    margin: 5px 50px 0px 50px;
-  }
-  .tile {
-    background: transparent;
-    overflow: hidden;
-  }
-  #content {
-    font-size: revert;
-  }
-  #user {
-    font-size: 2.5vw;
-    word-spacing: 4px;
-    margin: 0% 5% 2% 0;
-    color: #3a3a3a;
-  }
+  @media only screen and (min-width: 700px) {
+    body {
+      background-image: url(../images/site/small_check.jpg);
+      position: relative;
+      border: 5px solid #4c96d7;
+      margin-left: auto;
+      margin-right: auto;
+      width: 75%;
+      border-radius: 5px;
+      margin-top: 2%;
+    }
+  
+    nav ul li {
+      font-size: 20px;
+    }
+
+    footer p {
+      font-size: 15px;
+    }
+  
+    #update {
+      margin-bottom: 0px;
+      padding-bottom: 2%;
+    }
+  
 }
