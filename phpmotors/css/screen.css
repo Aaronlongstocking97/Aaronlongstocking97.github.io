@@ -19,6 +19,7 @@
 @import url("normalize.css");
 /* 1.2 Google Font Import */
 @import url("https://fonts.googleapis.com/css?family=Sansita");
+
 /*2.   General Styles (for all pages and devices) */
 html {
   box-sizing: border-box;
@@ -75,7 +76,7 @@ nav {
   background-color: #3a3a3a;
 }
 
-#pages { 
+#pages {
   padding: 0;
   margin: 0;
 }
@@ -130,29 +131,29 @@ footer p {
 
 
 /*4.  Large Screen Styles (Media Queries begin here) */
-  @media only screen and (min-width: 700px) {
-    body {
-      background-image: url(../images/site/small_check.jpg);
-      position: relative;
-      border: 5px solid #4c96d7;
-      margin-left: auto;
-      margin-right: auto;
-      width: 75%;
-      border-radius: 5px;
-      margin-top: 2%;
-    }
-  
-    nav ul li {
-      font-size: 20px;
-    }
+@media only screen and (min-width: 700px) {
+  body {
+    background-image: url(../images/site/small_check.jpg);
+    position: relative;
+    border: 5px solid #4c96d7;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    border-radius: 5px;
+    margin-top: 2%;
+  }
 
-    footer p {
-      font-size: 15px;
-    }
-  
-    #update {
-      margin-bottom: 0px;
-      padding-bottom: 2%;
-    }
-  
+  nav ul li {
+    font-size: 20px;
+  }
+
+  footer p {
+    font-size: 15px;
+  }
+
+  #update {
+    margin-bottom: 0px;
+    padding-bottom: 2%;
+  }
+
 }
