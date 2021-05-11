@@ -115,6 +115,10 @@ nav ul li {
   position: absolute;
 }
 
+.topdiv p {
+  font-weight: 600;
+}
+
 .topdiv p,
 .topdiv h2 {
   padding: 0;
