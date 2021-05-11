@@ -20,7 +20,7 @@
             <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/navigation.php'; ?>
         </nav>
         <main id="main-content">
-            <h1 id="content">Content Title Here</h1>
+            <h1 id="content">Content Title Heree</h1>
             <hr id="line-break">
         </main>
         <footer>
