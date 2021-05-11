@@ -220,6 +220,24 @@ footer p {
     border-radius: 5px;
   }
 
+  nav ul li {
+    font-size: 20px;
+  }
+
+  h1.title {
+    margin-left: 1%;
+    margin-bottom: 0%;
+  }
+
+  .topdiv {
+    margin-left: 55px;
+    padding-top: 4%;
+  }
+
+  .topdiv p {
+    font-size: 20px;
+  }
+
   .button1 {
     display: block;
     background: #4c96d7;
@@ -232,6 +250,7 @@ footer p {
 
   img.delorean {
     padding-bottom: 7%;
+    padding-top: 0%;
   }
 
   .button2 {
@@ -245,23 +264,31 @@ footer p {
   
   #reviews {
     width: 50%;
-    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     align-content: flex-start;
   }
 
   #reviews h2 {
-    margin-right: 30%;
+    margin-bottom: 5%;
+    margin-left: 13%;
+    margin-top: 0px;
   }
 
   #reviews ul {
-    line-height: 3vw;
+    line-height: 3.3vw;
     font-size: 20px;
+    margin-top: 0%;
+    padding-left: 20%;
   }
 
   #upgrades {
     width: 50%;
+  }
+
+  #upgrades h2 {
+    margin-top: 0px;
+    margin-bottom: 7%;
+    margin-left: 5%;
   }
 
   #upgrades ul {
@@ -293,5 +320,14 @@ footer p {
     height: 50%;
     width: 90%;
   }  
+
+  footer p {
+    font-size: 15px;
+  }
+
+  #update {
+    margin-bottom: 0px;
+    padding-bottom: 2%;
+  }
 
 }
