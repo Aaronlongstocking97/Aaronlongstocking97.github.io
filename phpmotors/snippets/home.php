@@ -22,11 +22,13 @@
         <main>
             <h1 class="title">Welcome to PHP Motors!</h1>
             <div class="topdiv">
-                <h2>DMC Delorean</h2>
-                <p>3 Cup holders</p>
-                <p>Superman doors</p>
-                <p>Fuzzy dice!</p>
-                <button class="button1">Own Today</button>
+                <div class="backer">
+                    <h2>DMC Delorean</h2>
+                    <p>3 Cup holders</p>
+                    <p>Superman doors</p>
+                    <p>Fuzzy dice!</p>
+                    <button class="button1">Own Today</button>
+                </div>
             </div>
             <img class="delorean" src="../images/delorean.jpg" alt="image of a delorean car">
             <button class="button2">Own Today</button>
