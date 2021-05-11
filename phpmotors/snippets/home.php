@@ -21,8 +21,8 @@
         </nav>
         <main>
             <h1 class="title">Welcome to PHP Motors!</h1>
-            <div class="topdiv">
-                <div class="backer">
+            <div class="backer">
+                <div class="topdiv">
                     <h2>DMC Delorean</h2>
                     <p>3 Cup holders</p>
                     <p>Superman doors</p>
