@@ -104,14 +104,6 @@ nav ul li {
   color: #3a3a3a;
 }
 
-p {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-}
-
 #line-break {
   border-top: 3px solid black;
   margin-top: 35px;
