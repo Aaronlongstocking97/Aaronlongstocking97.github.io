@@ -19,6 +19,7 @@
 @import url("normalize.css");
 /* 1.2 Google Font Import */
 @import url("https://fonts.googleapis.com/css?family=Sansita");
+
 /*2.   General Styles (for all pages and devices) */
 html {
   box-sizing: border-box;
@@ -48,7 +49,7 @@ body {
 
 #acc {
   color: #3a3a3a;
-  text-decoration: auto;
+  text-decoration: none;
   font-size: 20px;
   position: absolute;
   top: 30px;
@@ -79,7 +80,7 @@ nav {
   background-color: #3a3a3a;
 }
 
-#pages { 
+#pages {
   padding: 0;
   margin: 0;
 }
@@ -270,7 +271,7 @@ footer p {
     display: flex;
     flex-direction: row-reverse;
   }
-  
+
   #reviews {
     width: 50%;
     flex-wrap: wrap;
@@ -310,25 +311,25 @@ footer p {
     width: 90%;
     float: right;
   }
-  
+
   #flames {
     padding: 5% 33% 0% 33%;
     height: 50%;
     width: 90%;
   }
-  
+
   #sticker {
     padding: 5% 33% 10% 33%;
     height: 50%;
     width: 90%;
     float: right;
   }
-  
+
   #hubCap {
     padding: 5% 33% 7% 33%;
     height: 50%;
     width: 90%;
-  }  
+  }
 
   footer p {
     font-size: 15px;
