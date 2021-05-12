@@ -15,9 +15,13 @@ function phpmotorsConnect()
     // Create the actual connection object and assign it to a variable
     try {
         $link = new PDO($dsn, $username, $password, $options);
-        return $link;
+        if (is_object($link)) {
+            echo 'It worked!';
+        }
+        //  return $link;
     } catch (PDOException $e) {
-        header('Location: /phpmotors/view/500.php');
+        //  header('Location: /phpmotors/view/500.php');
+        echo "It didn't work, error: " . $e->getMessage();
         exit;
     }
 }

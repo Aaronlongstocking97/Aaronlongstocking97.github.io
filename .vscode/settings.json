@@ -1,3 +1,18 @@
 {
-    "php.validate.executablePath": "D:\\Xampp\\php"
+    "php.validate.executablePath": "D:\\Xampp\\php",
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MariaDB",
+            "name": "Localhost",
+            "database": "phpmotors",
+            "username": "iClient",
+            "password": "2U2vKiB9t93tFj4O"
+        }
+    ]
 }
