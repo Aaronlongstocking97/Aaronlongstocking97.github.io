@@ -25,3 +25,4 @@ function phpmotorsConnect()
         exit;
     }
 }
+phpmotorsConnect();
