@@ -17,3 +17,6 @@ Values (
         1,
         'I am the real Ironman'
     );
+UPDATE clients
+SET clientLevel = '3'
+WHERE clientFirstname = 'Tony';
