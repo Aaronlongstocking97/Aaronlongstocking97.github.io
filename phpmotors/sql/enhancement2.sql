@@ -20,3 +20,6 @@ Values (
 UPDATE clients
 SET clientLevel = '3'
 WHERE clientFirstname = 'Tony';
+UPDATE inventory
+SET invDescription = REPLACE(invDescription, 'small', 'spacious')
+WHERE invId = 12;
