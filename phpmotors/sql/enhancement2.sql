@@ -41,3 +41,8 @@ SELECT inventory.invModel,
 FROM inventory
     INNER JOIN carclassification ON inventory.classificationId = carclassification.classificationId
 WHERE classificationName = 'SUV';
+/*
+ Deleting the Jeep Wrangler from the database.
+ */
+DELETE FROM inventory
+WHERE invMake = 'Jeep';
