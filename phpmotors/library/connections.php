@@ -24,6 +24,5 @@ function phpmotorsConnect()
         header('Location: /phpmotors/view/500.php');
         exit;
     }
-    
 }
 phpmotorsConnect();
