@@ -1,3 +1,2 @@
 <?php
-echo "it didn't work";
-header('Location: /phpmotors/snippets/template.php');
+require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/template.php';
