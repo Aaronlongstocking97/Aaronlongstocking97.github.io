@@ -16,7 +16,7 @@ function phpmotorsConnect()
     try {
         $link = new PDO($dsn, $username, $password, $options);
         if (is_object($link)) {
-            echo 'It worked!';
+            echo "It worked!";
         }
         return $link;
     } catch (PDOException $e) {
