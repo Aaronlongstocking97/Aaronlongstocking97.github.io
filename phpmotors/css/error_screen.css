@@ -104,6 +104,10 @@ nav ul li {
     color: #3a3a3a;
 }
 
+#errorM {
+    font-size: 10px;
+}
+
 #line-break {
     border-top: 3px solid black;
     margin-top: 35px;
