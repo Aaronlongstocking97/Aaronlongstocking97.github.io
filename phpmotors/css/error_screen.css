@@ -104,6 +104,10 @@ nav ul li {
     color: #3a3a3a;
 }
 
+#content {
+    margin-left: 10px;
+}
+
 #errorM {
     font-size: 10px;
 }
