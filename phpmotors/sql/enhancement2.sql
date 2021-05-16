@@ -17,9 +17,27 @@ Values (
         1,
         'I am the real Ironman'
     );
+/*
+ Modify the Tony Stark record to change the clientLevel to 3
+ */
 UPDATE clients
 SET clientLevel = '3'
 WHERE clientFirstname = 'Tony';
+/*
+ Modify the "GM Hummer" record to read "spacious interior" 
+ rather than "small interior"
+ */
 UPDATE inventory
 SET invDescription = REPLACE(invDescription, 'small', 'spacious')
 WHERE invId = 12;
+/*
+ inner join the invModel column from the inventory table 
+ and the classificationName column from the carclassification 
+ table for inventory items that belong to the "SUV" category. 
+ The result will display four records as a result of the query.
+ */
+SELECT inventory.invModel,
+    carclassification.classificationName
+FROM inventory
+    INNER JOIN carclassification ON inventory.classificationId = carclassification.classificationId
+WHERE classificationName = 'SUV';
