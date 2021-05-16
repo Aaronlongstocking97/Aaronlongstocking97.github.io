@@ -46,3 +46,11 @@ WHERE classificationName = 'SUV';
  */
 DELETE FROM inventory
 WHERE invMake = 'Jeep';
+/*
+ Updating all records in the Inventory table to add "/phpmotors" 
+ to the beginning of the file path in the invImage and invThumbnail 
+ columns using a single query
+ */
+UPDATE inventory
+SET invImage = CONCAT('/phpmotors', invImage),
+    invThumbnail = CONCAT('/phpmotors', invThumbnail);
