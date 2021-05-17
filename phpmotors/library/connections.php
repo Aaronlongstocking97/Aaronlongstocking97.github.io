@@ -5,7 +5,7 @@
 
 function phpmotorsConnect()
 {
-    $server = 'localhos';
+    $server = 'localhost';
     $dbname = 'phpmotors';
     $username = 'iClient';
     $password = '2U2vKiB9t93tFj4O';
@@ -25,4 +25,4 @@ function phpmotorsConnect()
         exit;
     }
 }
-phpmotorsConnect();
+//phpmotorsConnect();
