@@ -20,8 +20,8 @@ foreach ($classifications as $classification) {
 }
 $navList .= '</ul>';
 
-echo $navList;
-exit;
+//echo $navList;
+//exit;
 
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
