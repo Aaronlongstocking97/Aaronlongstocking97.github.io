@@ -1,5 +1,5 @@
 <?php
-// This is the accounts controller
+// This is the main controller
 
 require_once './library/connections.php';
 // Get the main model for use as needed
