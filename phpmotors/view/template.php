@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title id="page-title">Content Title | PHP Motors</title>
+    <title id="page-title">Template Page | PHP Motors</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PHP Motors template page">
@@ -14,17 +14,17 @@
 <body>
     <div id="wrapper">
         <header>
-            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
+            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php'; ?>
         </header>
         <nav id="page_nav">
-            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/navigation.php'; ?>
+            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/navigation.php'; ?>
         </nav>
         <main id="main-content">
             <h1 id="content">Content Title Here</h1>
             <hr id="line-break">
         </main>
         <footer>
-            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>
+            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>
         </footer>
     </div>
 </body>

@@ -14,10 +14,10 @@
 <body>
     <div id="wrapper">
         <header>
-            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
+            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php'; ?>
         </header>
         <nav id="page_nav">
-            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/navigation.php'; ?>
+            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/navigation.php'; ?>
         </nav>
         <main id="main-content">
             <h1 id="content">Server Error</h1>
@@ -25,7 +25,7 @@
             <hr id="line-break">
         </main>
         <footer>
-            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>
+            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>
         </footer>
     </div>
 </body>
