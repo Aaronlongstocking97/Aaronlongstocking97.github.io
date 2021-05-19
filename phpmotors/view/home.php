@@ -14,11 +14,11 @@
 <body>
     <div id="wrapper">
         <header>
-            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
+            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php'; ?>
         </header>
         <nav id="page_nav">
-            <?php //include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/navigation.php'; 
-            ?>
+            <?php //include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/navigation.php'; 
+            echo $navList; ?>
         </nav>
         <main>
             <h1 class="title">Welcome to PHP Motors!</h1>
@@ -73,7 +73,7 @@
         </main>
         <hr id="line-break">
         <footer>
-            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>
+            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>
         </footer>
     </div>
 </body>
