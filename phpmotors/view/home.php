@@ -17,7 +17,8 @@
             <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
         </header>
         <nav id="page_nav">
-            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/navigation.php'; ?>
+            <?php //include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/navigation.php'; 
+            ?>
         </nav>
         <main>
             <h1 class="title">Welcome to PHP Motors!</h1>
