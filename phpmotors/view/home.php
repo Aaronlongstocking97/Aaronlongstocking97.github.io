@@ -14,7 +14,7 @@
 <body>
     <div id="wrapper">
         <header>
-            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php'; ?>
+            <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php'; ?>
         </header>
         <nav id="page_nav">
             <?php //include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/navigation.php'; 
@@ -73,7 +73,7 @@
         </main>
         <hr id="line-break">
         <footer>
-            <?php require_once $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>
+            <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>
         </footer>
     </div>
 </body>
