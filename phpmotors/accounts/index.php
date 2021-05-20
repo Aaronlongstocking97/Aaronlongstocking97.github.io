@@ -27,6 +27,7 @@ $action = filter_input(INPUT_GET, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_POST, 'action');
 }
+$clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
 
 switch ($action) {
     case '':
