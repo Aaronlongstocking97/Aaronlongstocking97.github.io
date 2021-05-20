@@ -21,7 +21,7 @@
             echo $navList; ?>
         </nav>
         <main id="main-content">
-            <h1 id="content">Content Title Here</h1>
+            <h1 id="content">Sign in</h1>
             <hr id="line-break">
         </main>
         <footer>
