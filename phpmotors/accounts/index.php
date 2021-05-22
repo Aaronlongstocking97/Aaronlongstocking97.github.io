@@ -31,11 +31,11 @@ if ($action == NULL) {
 
 switch ($action) {
     case 'login':
-        include './view/login.php';
+        include '../view/login.php';
         break;
     case 'registration':
-        include './view/registration.php';
+        include '../view/registration.php';
         break;
     default:
-        include './view/home.php';
+        include '../view/home.php';
 }
