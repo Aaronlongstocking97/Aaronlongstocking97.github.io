@@ -30,10 +30,14 @@ if ($action == NULL) {
 $clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
 
 switch ($action) {
-    case '':
-
+    case 'login':
+        include './view/login.php';
+        break;
+    case 'registration':
+        include './view/registration.php';
         break;
     default:
+        include './view/home.php';
 
         break;
 }
