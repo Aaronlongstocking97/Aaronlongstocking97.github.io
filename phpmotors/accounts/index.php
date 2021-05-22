@@ -28,7 +28,7 @@ if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
 //$clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
-
+// action is going to be turned into 'email' $email and 'password' $password
 switch ($action) {
     case 'login':
         include '../view/login.php';
