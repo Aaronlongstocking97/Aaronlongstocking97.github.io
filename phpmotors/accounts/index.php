@@ -23,19 +23,42 @@ $navList .= '</ul>';
 //echo $navList;
 //exit;
 
+$email = filter_input(INPUT_POST, 'email');
+$password = filter_input(INPUT_POST, 'password');
+
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
+
+switch ($action) {
+    case 'template':
+        include './view/template.php';
+        break;
+    default:
+        include './view/home.php';
+}
+
 //$clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
 // action is going to be turned into 'email' $email and 'password' $password
 switch ($action) {
-    case 'login':
+    case 'email':
         include '../view/login.php';
         break;
-    case 'registration':
+    case 'email':
         include '../view/registration.php';
         break;
     default:
-        include '../view/home.php';
+        include '../view/login.php';
+}
+
+switch ($password) {
+    case 'password':
+        include '../view/login.php';
+        break;
+    case 'password':
+        include '../view/registration.php';
+        break;
+    default:
+        include '../view/login.php';
 }
