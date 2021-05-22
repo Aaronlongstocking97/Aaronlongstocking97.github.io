@@ -1,9 +1,9 @@
 <?php
 // This is the accounts controller
 
-require_once '/phpmotors/library/connections.php';
+require_once 'phpmotors/library/connections.php';
 // Get the main model for use as needed
-require_once '/phpmotors/model/main-model.php';
+require_once 'phpmotors/model/main-model.php';
 
 // Get the array of classifications from DB using model
 $classifications = getClassifications();
