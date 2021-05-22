@@ -37,23 +37,12 @@ if ($password == NULL) {
 
 //$clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
 switch ($action) {
-    case 'email':
+    case 'email';
+    case 'password';
         include '../view/login.php';
-        break;
-    case 'email':
-        include '../view/registration.php';
         break;
     default:
         include '../view/login.php';
 }
 
-switch ($password) {
-    case 'password':
-        include '../view/login.php';
-        break;
-    case 'password':
-        include '../view/registration.php';
-        break;
-    default:
-        include '../view/login.php';
-}
+// Registration.php will be a case statment inside of action
