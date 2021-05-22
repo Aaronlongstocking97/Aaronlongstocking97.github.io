@@ -38,6 +38,4 @@ switch ($action) {
         break;
     default:
         include './view/home.php';
-
-        break;
 }
