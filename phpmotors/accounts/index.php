@@ -22,25 +22,20 @@ $navList .= '</ul>';
 
 //echo $navList;
 //exit;
-
-$email = filter_input(INPUT_POST, 'email');
-$password = filter_input(INPUT_POST, 'password');
-
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
-
-switch ($action) {
-    case 'template':
-        include './view/template.php';
-        break;
-    default:
-        include './view/home.php';
+$email = filter_input(INPUT_POST, 'email');
+if ($email == NULL) {
+    $email = filter_input(INPUT_GET, 'email');
+}
+$password = filter_input(INPUT_POST, 'password');
+if ($password == NULL) {
+    $password = filter_input(INPUT_GET, 'password');
 }
 
 //$clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
-// action is going to be turned into 'email' $email and 'password' $password
 switch ($action) {
     case 'email':
         include '../view/login.php';

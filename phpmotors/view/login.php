@@ -24,9 +24,9 @@
             <h1 id="content">Sign in</h1>
             <form action="../accounts/index.php" method="post">
                 <label for="email">Email</label>
-                <input type="email" name="email">
+                <input name="email" id="email" type="email">
                 <label for="password">Password</label>
-                <input type="password" name="password">
+                <input name="password" id="password" type="password">
                 <button type="submit">Sign-in</button>
             </form>
             <hr id="line-break">
