@@ -22,6 +22,13 @@
         </nav>
         <main id="main-content">
             <h1 id="content">Sign in</h1>
+            <form action="./accounts/index.php" method="post">
+                <label for="email">Email</label>
+                <input type="email">
+                <label for="password">Password</label>
+                <input type="password">
+                <button type="submit">Sign-in</button>
+            </form>
             <hr id="line-break">
         </main>
         <footer>
