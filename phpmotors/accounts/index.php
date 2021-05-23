@@ -37,8 +37,8 @@ $password = filter_input(INPUT_POST, 'password');
 
 //$clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
 switch ($action) {
-    case 'email';
-    case 'password';
+    case 'email':
+    case 'password':
         include '../view/login.php';
         break;
     default:
