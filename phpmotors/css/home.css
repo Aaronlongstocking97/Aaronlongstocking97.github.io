@@ -83,11 +83,11 @@ header {
   background-color: #3a3a3a;
 }
 
-#page_nav ul li {
+#page_nav li {
   float: left;
 }
 
-#page_nav ul li a {
+#page_nav li a {
   display: block;
   color: white;
   text-align: center;
@@ -96,7 +96,7 @@ header {
 }
 
 /* mouse over link */
-#pages ul li a:hover {
+#pages li a:hover {
   background-color: white;
   color: black;
 }
