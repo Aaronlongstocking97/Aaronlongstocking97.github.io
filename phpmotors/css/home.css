@@ -89,7 +89,10 @@ header {
 
 #page_nav ul li a {
   display: block;
+  color: white;
+  text-align: center;
   padding: 8px;
+  text-decoration: none;
 }
 
 #pages li a {
