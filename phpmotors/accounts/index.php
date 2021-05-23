@@ -22,10 +22,10 @@ $navList .= '</ul>';
 
 //echo $navList;
 //exit;
-//$action = filter_input(INPUT_POST, 'action');
-//if ($action == NULL) {
-//    $action = filter_input(INPUT_GET, 'action');
-//}
+$action = filter_input(INPUT_GET, 'action');
+if ($action == NULL) {
+    $action = filter_input(INPUT_POST, 'action');
+}
 //$email = filter_input(INPUT_POST, 'email');
 //if ($email == NULL) {
 //    $email = filter_input(INPUT_GET, 'email');
@@ -45,12 +45,12 @@ $navList .= '</ul>';
 //        include '../view/login.php';
 //}
 
-//switch ($action) {
-//    case 'template':
-//        include '../view/template.php';
-//        break;
-//    default:
-//        include '../view/home.php';
-//}
+switch ($action) {
+    case 'template':
+        include '../view/template.php';
+        break;
+    default:
+        include '../view/home.php';
+}
 
 // Registration.php will be a case statment inside of action
