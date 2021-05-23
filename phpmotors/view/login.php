@@ -22,7 +22,7 @@
         </nav>
         <main id="main-content">
             <h1 id="content">Sign in</h1>
-            <form action="../accounts/index.php" method="post">
+            <form action="../accounts/index.php" id="align" method="post">
                 <label for="email">Email</label>
                 <input name="email" id="email" type="email">
                 <label for="password">Password</label>

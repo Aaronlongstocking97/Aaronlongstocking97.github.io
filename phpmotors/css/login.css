@@ -97,6 +97,11 @@ header {
     color: #3a3a3a;
 }
 
+
+#align {
+    list-style-type: none;
+}
+
 #line-break {
     border-top: 3px solid black;
     margin-top: 35px;
