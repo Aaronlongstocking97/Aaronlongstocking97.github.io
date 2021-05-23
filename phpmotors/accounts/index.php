@@ -26,14 +26,14 @@ $action = filter_input(INPUT_GET, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_POST, 'action');
 }
-//$email = filter_input(INPUT_POST, 'email');
-//if ($email == NULL) {
-//    $email = filter_input(INPUT_GET, 'email');
-//}
-//$password = filter_input(INPUT_POST, 'password');
-//if ($password == NULL) {
-//    $password = filter_input(INPUT_GET, 'password');
-//}
+$email = filter_input(INPUT_POST, 'email');
+if ($email == NULL) {
+    $email = filter_input(INPUT_GET, 'email');
+}
+$password = filter_input(INPUT_POST, 'password');
+if ($password == NULL) {
+    $password = filter_input(INPUT_GET, 'password');
+}
 
 //$clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
 switch ($action) {
