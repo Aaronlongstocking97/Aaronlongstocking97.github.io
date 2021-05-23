@@ -36,13 +36,21 @@ $password = filter_input(INPUT_POST, 'password');
 //}
 
 //$clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
+//switch ($action) {
+//    case 'email':
+//    case 'password':
+//        include '../view/login.php';
+//        break;
+//    default:
+//        include '../view/login.php';
+//}
+
 switch ($action) {
-    case 'email':
-    case 'password':
-        include '../view/login.php';
+    case 'template':
+        include '../view/template.php';
         break;
     default:
-        include '../view/login.php';
+        include '../view/home.php';
 }
 
 // Registration.php will be a case statment inside of action
