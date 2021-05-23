@@ -27,13 +27,13 @@ if ($action == NULL) {
     $action = filter_input(INPUT_GET, 'action');
 }
 $email = filter_input(INPUT_POST, 'email');
-if ($email == NULL) {
-    $email = filter_input(INPUT_GET, 'email');
-}
+//if ($email == NULL) {
+//    $email = filter_input(INPUT_GET, 'email');
+//}
 $password = filter_input(INPUT_POST, 'password');
-if ($password == NULL) {
-    $password = filter_input(INPUT_GET, 'password');
-}
+//if ($password == NULL) {
+//    $password = filter_input(INPUT_GET, 'password');
+//}
 
 //$clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
 switch ($action) {
