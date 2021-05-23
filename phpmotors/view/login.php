@@ -27,8 +27,11 @@
                 <input name="email" id="email" type="email">
                 <label for="password">Password</label>
                 <input name="password" id="password" type="password">
-                <button type="submit">Sign-in</button>
+                <input type="submit" value="Sign-in">
             </form>
+            <div>
+                <a href="/phpmotors/view/registration.php" id="rgstr">Not a member yet?</a>
+            </div>
             <hr id="line-break">
         </main>
         <footer>
