@@ -76,22 +76,23 @@ header {
 }
 
 nav {
-  overflow: hidden;
   background-color: #3a3a3a;
 }
 
-#pages {
-  padding: 0;
+#page_nav ul {
+  list-style-type: none;
   margin: 0;
+  padding-left: 20px;
+  overflow: hidden;
 }
 
-nav ul li {
+#page_nav ul li {
   float: left;
+}
+
+#page_nav ul li a {
   display: block;
-  list-style: none;
-  text-align: center;
-  padding: 10px;
-  font-size: 14px;
+  padding: 8px;
 }
 
 #pages li a {
