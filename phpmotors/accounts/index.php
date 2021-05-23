@@ -1,7 +1,7 @@
 <?php
 // This is the accounts controller
 
-require_once '../library/connections.php';
+require_once './phpmotors/library/connections.php';
 // Get the main model for use as needed
 require_once '../model/main-model.php';
 
