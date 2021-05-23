@@ -41,6 +41,12 @@ switch ($action) {
     case 'password':
         include '../view/login.php';
         break;
+    case 'clientFirstname':
+    case 'clientLastname':
+    case 'email':
+    case 'password':
+        include '..view/registration.php';
+        break;
     default:
         include '../view/login.php';
 }
