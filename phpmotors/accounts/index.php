@@ -39,10 +39,7 @@ switch ($action) {
     case 'password':
         include '../view/login.php';
         break;
-    case 'clientFirstname':
-    case 'clientLastname':
-    case 'email':
-    case 'password':
+    case 'rgstr':
         include '..view/registration.php';
         break;
     default:

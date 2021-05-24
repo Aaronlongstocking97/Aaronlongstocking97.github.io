@@ -30,7 +30,7 @@
                 <input type="submit" value="Sign-in">
             </form>
             <div>
-                <a href="/phpmotors/view/registration.php" id="rgstr">Not a member yet?</a>
+                <a href="phpmotors/accounts/index.php?action=rgstr" id="rgstr">Not a member yet?</a>
             </div>
             <hr id="line-break">
         </main>
