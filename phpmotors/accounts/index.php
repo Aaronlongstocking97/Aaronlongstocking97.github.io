@@ -35,8 +35,7 @@ if ($password == NULL) {
 
 //$clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
 switch ($action) {
-    case 'email':
-    case 'password':
+    case 'login':
         include '../view/login.php';
         break;
     case 'rgstr':
