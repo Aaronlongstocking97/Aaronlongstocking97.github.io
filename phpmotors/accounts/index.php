@@ -39,7 +39,7 @@ switch ($action) {
         include '../view/login.php';
         break;
     case 'rgstr':
-        include '..view/registration.php';
+        include '../view/registration.php';
         break;
     default:
         include '../view/login.php';
