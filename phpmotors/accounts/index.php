@@ -24,16 +24,7 @@ $action = filter_input(INPUT_GET, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_POST, 'action');
 }
-$email = filter_input(INPUT_POST, 'email');
-if ($email == NULL) {
-    $email = filter_input(INPUT_GET, 'email');
-}
-$password = filter_input(INPUT_POST, 'password');
-if ($password == NULL) {
-    $password = filter_input(INPUT_GET, 'password');
-}
 
-//$clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
 switch ($action) {
     case 'login':
         include '../view/login.php';
@@ -41,6 +32,8 @@ switch ($action) {
     case 'rgstr':
         include '../view/registration.php';
         break;
-    default:
-        include '../view/login.php';
+    case 'home':
+        include '../view/home.php';
+    case '':
+        break;
 }
