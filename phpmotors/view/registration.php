@@ -21,13 +21,17 @@
             echo $navList; ?>
         </nav>
         <main id="main-content">
-            <h1 id="content">Registration</h1>
+            <h1 id="content">Register</h1>
             <form action="../accounts/index.php" id="align" method="post">
+                <label for="fName">First Name</label>
+                <input name="clientFirstname" id="fName" type="text">
+                <label for="lName">Last Name</label>
+                <input name="clientLastname" id="lName" type="text">
                 <label for="email">Email</label>
-                <input name="email" id="email" type="email">
+                <input name="email" id="email" type="clientEmail">
                 <label for="password">Password</label>
-                <input name="password" id="password" type="password">
-                <input type="submit" value="Sign-in">
+                <input name="password" id="password" type="clientpassword">
+                <input type="submit" name="submit" id="regbtn" value="Sign-in">
             </form>
             <hr id="line-break">
         </main>
