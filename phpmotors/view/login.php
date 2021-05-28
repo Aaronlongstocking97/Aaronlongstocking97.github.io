@@ -21,12 +21,12 @@
         </nav>
         <main id="main-content">
             <h1 id="content">Sign in</h1>
-            <form action="../accounts/index.php" id="align" method="post">
+            <form action="/phpmotors/accounts/index.php" id="align" method="post">
                 <label for="email">Email</label>
-                <input name="email" id="email" type="email">
+                <input name="email" id="email" type="clientEmail">
                 <label for="password">Password</label>
-                <input name="password" id="password" type="password">
-                <input type="submit" value="Sign-in">
+                <input name="password" id="password" type="clientPassword">
+                <input type="submit" name="submit" id="regbtn" value="Sign-in">
             </form>
             <div>
                 <a href="/phpmotors/accounts/index.php?action=rgstr" id="rgstr">Not a member yet?</a>
