@@ -20,20 +20,23 @@ foreach ($classifications as $classification) {
 }
 $navList .= '</ul>';
 
-$action = filter_input(INPUT_GET, 'action');
+$action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
-    $action = filter_input(INPUT_POST, 'action');
+    $action = filter_input(INPUT_GET, 'action');
 }
 
 switch ($action) {
     case 'login':
         include '../view/login.php';
         break;
-    case 'rgstr':
+    case 'register':
+        $clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
+        $clientLastname = filter_input(INPUT_POST, 'clientLastname');
+        $clientEmail = filter_input(INPUT_POST, 'clientEmail');
+        $clientPassword = filter_input(INPUT_POST, 'clientPassword');
         include '../view/registration.php';
         break;
     case 'home':
         include '../view/home.php';
-    case '':
         break;
 }
