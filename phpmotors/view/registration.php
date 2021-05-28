@@ -21,7 +21,7 @@
         </nav>
         <main id="main-content">
             <h1 id="content">Register</h1>
-            <form action="../accounts/index.php" id="align" method="post">
+            <form action="/phpmotors/accounts/index.php" id="align" method="post">
                 <label for="fName">First Name</label>
                 <input name="clientFirstname" id="fName" type="text">
                 <label for="lName">Last Name</label>
