@@ -40,3 +40,14 @@ switch ($action) {
         include '../view/home.php';
         break;
 }
+
+function myFunction()
+{
+    $x = document . getElementById("password");
+    if ($x . type === "password") {
+        $x . type = "text";
+    } else {
+        $x . type = "password";
+    }
+    return $var;
+}
