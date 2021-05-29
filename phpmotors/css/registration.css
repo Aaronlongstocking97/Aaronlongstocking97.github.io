@@ -155,6 +155,10 @@ footer p {
         margin-top: 2%;
     }
 
+    #wrapper {
+        padding: 10px;
+    }
+
     #page_nav li {
         font-size: 20px;
     }
