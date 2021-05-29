@@ -32,6 +32,7 @@
                     contain at least 1 number, 1 capital letter and 1 special character</div>
                 <label for="password">Password</label>
                 <input name="password" id="password" type="clientPassword">
+                <input name="showPass" type="button" value="Show Password">
                 <input type="submit" name="submit" id="regbtn" value="Register">
                 <input type="hidden" name="action" value="register">
             </form>
