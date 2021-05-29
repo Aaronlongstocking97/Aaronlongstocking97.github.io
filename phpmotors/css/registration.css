@@ -104,6 +104,14 @@ header {
     align-items: flex-start;
 }
 
+#showPass {
+    font-size: 20px;
+}
+
+#regbtn {
+    font-size: 20px;
+}
+
 #line-break {
     border-top: 3px solid black;
     margin-top: 35px;
