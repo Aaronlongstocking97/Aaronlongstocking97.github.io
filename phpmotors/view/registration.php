@@ -30,7 +30,7 @@
                 <input name="email" id="email" type="clientEmail">
                 <label for="password">Password</label>
                 <input name="password" id="password" type="clientPassword">
-                <input type="submit" name="submit" id="regbtn" value="Sign-in">
+                <input type="submit" name="submit" id="regbtn" value="Register">
                 <input type="hidden" name="action" value="register">
             </form>
             <hr id="line-break">
