@@ -241,14 +241,14 @@ ADD PRIMARY KEY (`invId`),
 -- AUTO_INCREMENT for table `inventory`
 --
 ALTER TABLE `inventory`
-MODIFY `invId` int NOT NULL AUTO_INCREMENT,
+MODIFY `invId` int(10) NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 16;
 --
 -- Table structure for table `carclassification`
 --
 DROP TABLE IF EXISTS `carclassification`;
 CREATE TABLE `carclassification` (
-  `classificationId` int NOT NULL,
+  `classificationId` int(10) NOT NULL,
   `classificationName` varchar(30) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
 --
@@ -269,7 +269,7 @@ ADD PRIMARY KEY (`classificationId`);
 -- AUTO_INCREMENT for table `carclassification`
 --
 ALTER TABLE `carclassification`
-MODIFY `classificationId` int NOT NULL AUTO_INCREMENT,
+MODIFY `classificationId` int(10) NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 7;
 --
 -- Constraints for table `inventory`
@@ -282,7 +282,7 @@ COMMIT;
 --
 DROP TABLE IF EXISTS `clients`;
 CREATE TABLE `clients` (
-  `clientId` int UNSIGNED NOT NULL,
+  `clientId` int(10) UNSIGNED NOT NULL,
   `clientFirstname` varchar(15) NOT NULL,
   `clientLastname` varchar(25) NOT NULL,
   `clientEmail` varchar(40) NOT NULL,
@@ -299,8 +299,8 @@ ADD PRIMARY KEY (`clientId`);
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-MODIFY `clientId` int UNSIGNED NOT NULL AUTO_INCREMENT,
-  AUTO_INCREMENT = 1;
+MODIFY `clientId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  AUTO_INCREMENT = 2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */
 ;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */
