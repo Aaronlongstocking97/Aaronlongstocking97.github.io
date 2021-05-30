@@ -73,7 +73,6 @@ header {
 #page_nav ul {
     list-style-type: none;
     margin: 0;
-    padding-left: 15px;
     overflow: hidden;
     background-color: #3a3a3a;
 }
@@ -86,7 +85,7 @@ header {
     display: block;
     color: white;
     text-align: center;
-    padding: 8px;
+    padding: 8px 8px 8px 5px;
     text-decoration: none;
 }
 
@@ -159,6 +158,10 @@ footer p {
 
     #page_nav li {
         font-size: 20px;
+    }
+
+    #page_nav a {
+        padding: 8px 8px 8px 20px;
     }
 
     #content {
