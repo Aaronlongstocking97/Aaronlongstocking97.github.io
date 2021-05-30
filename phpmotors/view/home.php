@@ -17,8 +17,7 @@
             <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php'; ?>
         </header>
         <nav id="page_nav">
-            <?php //include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/navigation.php'; 
-            echo $navList; ?>
+            <?php echo $navList; ?>
         </nav>
         <main>
             <h1 class="title">Welcome to PHP Motors!</h1>

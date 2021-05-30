@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PHP Motors error page">
     <meta name="author" content="Aaron Jones">
-    <link rel="stylesheet" type="text/css" href="../css/error_screen.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/phpmotors/css/error_screen.css" media="screen">
 </head>
 
 <body>
@@ -17,7 +17,7 @@
             <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php'; ?>
         </header>
         <nav id="page_nav">
-            <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/navigation.php'; ?>
+            <?php echo $navList; ?>
         </nav>
         <main id="main-content">
             <h1 id="content">Server Error</h1>
