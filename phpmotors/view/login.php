@@ -23,9 +23,9 @@
             <h1 id="content">Sign in</h1>
             <form action="/phpmotors/accounts/index.php" id="align" method="post">
                 <label for="email">Email</label>
-                <input name="email" id="email" type="clientEmail">
+                <input type="email" id="email" name="clientEmail">
                 <label for="password">Password</label>
-                <input name="password" id="password" type="clientPassword">
+                <input type="password" id="password" name="clientPassword">
                 <input type="submit" name="submit" id="regbtn" value="Sign-in">
             </form>
             <div id="signUp">
