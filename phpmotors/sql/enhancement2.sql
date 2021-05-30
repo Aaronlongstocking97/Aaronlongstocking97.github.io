@@ -13,7 +13,7 @@ Values (
         'Tony',
         'Stark',
         'tony@starkent.com',
-        'Iam1ronm@n',
+        'Iam1ronM@n',
         1,
         'I am the real Ironman'
     );
