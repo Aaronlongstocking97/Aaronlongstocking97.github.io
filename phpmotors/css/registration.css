@@ -73,6 +73,7 @@ header {
 #page_nav ul {
     list-style-type: none;
     margin: 0;
+    padding-left: 0px;
     overflow: hidden;
     background-color: #3a3a3a;
 }
