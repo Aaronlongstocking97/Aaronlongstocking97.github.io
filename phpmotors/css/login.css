@@ -103,6 +103,13 @@ header {
     align-items: flex-start;
 }
 
+#regbtn {
+    font-size: 20px;
+    background-color: #4c96d7;
+    border-width: 1px;
+    margin-top: 10px;
+}
+
 #line-break {
     border-top: 3px solid black;
     margin-top: 15px;
