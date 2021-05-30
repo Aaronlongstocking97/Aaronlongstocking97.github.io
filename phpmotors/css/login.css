@@ -96,6 +96,10 @@ header {
     color: #3a3a3a;
 }
 
+#content {
+    font-size: 20px;
+    font-weight: lighter;
+}
 
 #align {
     display: flex;
@@ -111,7 +115,7 @@ header {
 }
 
 #signUp {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 #line-break {
