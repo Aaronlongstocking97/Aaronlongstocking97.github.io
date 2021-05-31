@@ -33,8 +33,6 @@
                 <input type="text" id="lName" name="clientLastname">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="clientEmail">
-                <div id="passLimits">Passwords must be at least 8 characters and
-                    contain at least 1 number, 1 capital letter and 1 special character</div>
                 <label for="password">Password</label>
                 <input type="password" id="password" name="clientPassword">
                 <input type="submit" name="submit" id="regbtn" value="Register">
