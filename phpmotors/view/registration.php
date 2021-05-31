@@ -21,6 +21,11 @@
         </nav>
         <main id="main-content">
             <h1 id="content">Register</h1>
+            <?php
+            if (isset($message)) {
+                echo $message;
+            }
+            ?>
             <form action="/phpmotors/accounts/index.php" id="align" method="post">
                 <label for="fName">First Name</label>
                 <input type="text" id="fName" name="clientFirstname">
@@ -32,8 +37,8 @@
                     contain at least 1 number, 1 capital letter and 1 special character</div>
                 <label for="password">Password</label>
                 <input type="password" id="password" name="clientPassword">
-                <input type="button" name="showPass" id="showPass" value="Show Password">
                 <input type="submit" name="submit" id="regbtn" value="Register">
+                <input type="hidden" name="action" value="register">
             </form>
             <hr id="line-break">
         </main>

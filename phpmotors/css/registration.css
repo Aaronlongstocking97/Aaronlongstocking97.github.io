@@ -107,15 +107,6 @@ header {
     align-items: flex-start;
 }
 
-#showPass {
-    background-color: #3a3a3a;
-    color: white;
-    border-radius: 5px;
-    margin-top: 10px;
-    padding-top: 15px;
-    padding-bottom: 10px;
-}
-
 #regbtn {
     font-size: 20px;
     background-color: #4c96d7;
