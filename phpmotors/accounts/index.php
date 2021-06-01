@@ -62,6 +62,9 @@ switch ($action) {
     case 'register':
         include '../view/registration.php';
         break;
+    case 'login':
+        include '../view/login.php';
+        break;
     case 'home':
         include '../view/home.php';
         break;
