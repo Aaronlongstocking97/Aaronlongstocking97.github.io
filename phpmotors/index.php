@@ -30,7 +30,7 @@ switch ($action) {
         include './view/template.php';
         break;
     case 'login':
-        include '../view/login.php';
+        include './view/login.php';
         break;
     default:
         include './view/home.php';
