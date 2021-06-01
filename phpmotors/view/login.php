@@ -21,7 +21,12 @@
         </nav>
         <main id="main-content">
             <h1 id="content">Sign in</h1>
-            <form action="/phpmotors/accounts/index.php" id="align" method="post">
+            <?php
+            if (isset($message)) {
+                echo $message;
+            }
+            ?>
+            <form action="/phpmotors/accounts/index.php" id="align" method="get">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="clientEmail">
                 <label for="password">Password</label>
