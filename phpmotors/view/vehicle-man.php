@@ -26,10 +26,10 @@
                 echo $message;
             }
             ?>
-            <div id="signUp">
-                <a href="#" id="">Add Classsification</a>
-                <a href="#" id="">Add Vehicle</a>
-            </div>
+            <ul id="signUp">
+                <li><a href="#" id="">Add Classsification</a></li>
+                <li><a href="#" id="">Add Vehicle</a></li>
+            </ul>
             <hr id="line-break">
         </main>
         <footer>
