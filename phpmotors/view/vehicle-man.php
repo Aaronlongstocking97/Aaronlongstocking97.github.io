@@ -3,12 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title id="page-title">Account Login | PHP Motors</title>
+    <title id="page-title">Vehicle Management | PHP Motors</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PHP Motors login page">
     <meta name="author" content="Aaron Jones">
-    <link rel="stylesheet" type="text/css" href="/phpmotors/css/login.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/phpmotors/css/vehicle-man.css" media="screen">
 </head>
 
 <body>
@@ -21,11 +21,6 @@
         </nav>
         <main id="main-content">
             <h1 id="content">Vehicle Management</h1>
-            <?php
-            if (isset($message)) {
-                echo $message;
-            }
-            ?>
             <ul id="signUp">
                 <li><a href="#" id="">Add Classsification</a></li>
                 <li><a href="#" id="">Add Vehicle</a></li>
