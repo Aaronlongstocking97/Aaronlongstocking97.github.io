@@ -72,15 +72,3 @@ switch ($action) {
     default:
         include '../view/login.php';
 }
-
-// switch ($action) {
-//     case 'login':
-//         include '../view/login.php';
-//         break;
-//     case 'register':
-//         include '../view/registration.php';
-//         break;
-//     case 'home':
-//         include '../view/home.php';
-//         break;
-// }
