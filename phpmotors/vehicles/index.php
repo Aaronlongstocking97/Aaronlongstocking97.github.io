@@ -34,37 +34,37 @@ if ($action == NULL) {
 switch ($action) {
         // Code to deliver the views will be here
 
-    case 'register':
+        // case 'register':
         // Filter and store the data
-        $clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
-        $clientLastname = filter_input(INPUT_POST, 'clientLastname');
-        $clientEmail = filter_input(INPUT_POST, 'clientEmail');
-        $clientPassword = filter_input(INPUT_POST, 'clientPassword');
+        //     $clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
+        //     $clientLastname = filter_input(INPUT_POST, 'clientLastname');
+        //     $clientEmail = filter_input(INPUT_POST, 'clientEmail');
+        //     $clientPassword = filter_input(INPUT_POST, 'clientPassword');
 
         // Check for missing data
-        if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($clientPassword)) {
-            $message = '<p>Please provide information for all empty form fields.</p>';
-            include '../view/registration.php';
-            exit;
-        }
+        //     if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($clientPassword)) {
+        //         $message = '<p>Please provide information for all empty form fields.</p>';
+        //         include '../view/registration.php';
+        //         exit;
+        //     }
 
         // Send the data to the model
-        $regOutcome = regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassword);
+        //     $regOutcome = regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassword);
 
         // Check and report the result
-        if ($regOutcome === 1) {
-            $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
-            include '../view/login.php';
-            exit;
-        } else {
-            $message = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
-            include '../view/registration.php';
-            exit;
-        }
-        break;
+        //     if ($regOutcome === 1) {
+        //         $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
+        //         include '../view/login.php';
+        //         exit;
+        //     } else {
+        //         $message = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
+        //         include '../view/registration.php';
+        //         exit;
+        //     }
+        //     break;
 
-    case 'login':
-        include '../view/login.php';
+    case 'vehiclesMan':
+        include '../view/vehicle-man.php';
         break;
     case 'home':
         include '../view/home.php';
