@@ -27,7 +27,8 @@
             }
             ?>
             <div id="signUp">
-                <a href="#" id="">Not a member yet?</a>
+                <a href="#" id="">Add Classsification</a>
+                <a href="#" id="">Add Vehicle</a>
             </div>
             <hr id="line-break">
         </main>
