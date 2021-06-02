@@ -72,6 +72,8 @@ switch ($action) {
     case 'home':
         include '../view/home.php';
         break;
+    default:
+        include '../view/login.php';
 }
 
 // switch ($action) {
