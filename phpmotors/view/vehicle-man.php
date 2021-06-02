@@ -20,7 +20,7 @@
             <?php echo $navList; ?>
         </nav>
         <main id="main-content">
-            <h1 id="content">Sign in</h1>
+            <h1 id="content">Vehicle Management</h1>
             <?php
             if (isset($message)) {
                 echo $message;
