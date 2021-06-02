@@ -69,4 +69,6 @@ switch ($action) {
     case 'home':
         include '../view/home.php';
         break;
+    default:
+        include '../view/vehicle-man.php';
 }
