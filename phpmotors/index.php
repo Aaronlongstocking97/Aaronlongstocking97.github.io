@@ -29,9 +29,6 @@ switch ($action) {
     case 'template':
         include './view/template.php';
         break;
-    case 'login':
-        include './view/login.php';
-        break;
     default:
         include './view/home.php';
 }
