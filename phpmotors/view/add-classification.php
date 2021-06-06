@@ -23,7 +23,7 @@
             <h1 id="content">Add Car Classsification</h1>
             <form action="/phpmotors/vehicles/index.php" id="align" method="post">
                 <label for="cName">Classification Name</label>
-                <input type="text" id="cName" name="classificationName">
+                <input type="text" id="cName" name="classificationName" size="13">
                 <input type="submit" name="submit" id="addClassBtn" value="Add Classification">
                 <!-- <input type="hidden" name="action" value="register"> -->
             </form>
