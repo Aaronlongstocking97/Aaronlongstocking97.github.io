@@ -31,7 +31,8 @@
                 <input type="text" id="make" name="vehicleMake">
                 <label for="model">Model</label>
                 <input type="text" id="model" name="vehicleModel">
-                <textarea name="vehicleDescription" id="specify" cols="20" rows="2">Description</textarea>
+                <label for="specify">Description</label>
+                <textarea name="vehicleDescription" id="specify" cols="20" rows="2"></textarea>
                 <label for="imgPath">Image Path</label>
                 <input type="text" id="imgPath" name="vehicleImagePath">
                 <label for="thumbPath">Thumbnail Path</label>
