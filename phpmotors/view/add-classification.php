@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PHP Motors add car classsification page">
     <meta name="author" content="Aaron Jones">
-    <link rel="stylesheet" type="text/css" href="/phpmotors/css/vehicle-man.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/phpmotors/css/add-classification.css" media="screen">
 </head>
 
 <body>
@@ -21,10 +21,12 @@
         </nav>
         <main id="main-content">
             <h1 id="content">Add Car Classsification</h1>
-            <ul id="addOn">
-                <li><a href="/phpmotors/vehicles/index.php?action=addClass" id="addClass">Add Classsification</a></li>
-                <li><a href="/phpmotors/vehicles/index.php?action=addVehicle" id="addVehicle">Add Vehicle</a></li>
-            </ul>
+            <form action="/phpmotors/vehicles/index.php" id="align" method="post">
+                <label for="cName">Classification Name</label>
+                <input type="text" id="cName" name="classificationName">
+                <input type="submit" name="submit" id="addClassBtn" value="Add Classification">
+                <!-- <input type="hidden" name="action" value="register"> -->
+            </form>
             <hr id="line-break">
         </main>
         <footer>

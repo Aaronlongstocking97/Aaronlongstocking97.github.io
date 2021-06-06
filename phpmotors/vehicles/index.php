@@ -63,6 +63,7 @@ switch ($action) {
         //     }
         //     break;
     case 'addClass':
+        $classificationName = filter_input(INPUT_POST, 'classificationName');
         include '../view/add-classification.php';
         break;
     case 'addVehicle':
