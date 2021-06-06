@@ -107,6 +107,10 @@ header {
     align-items: flex-start;
 }
 
+label {
+    margin-top: 10px;
+}
+
 #addClassBtn {
     margin: 25px 0px 10px 0px;
     background-color: white;
