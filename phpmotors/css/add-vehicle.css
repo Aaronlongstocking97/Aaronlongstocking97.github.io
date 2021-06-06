@@ -101,6 +101,10 @@ header {
     font-weight: lighter;
 }
 
+#warning {
+    font-size: 20px;
+}
+
 #align {
     display: flex;
     flex-direction: column;
