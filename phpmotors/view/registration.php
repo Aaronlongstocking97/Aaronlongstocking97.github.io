@@ -6,7 +6,7 @@
     <title id="page-title">Account Registration | PHP Motors</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PHP Motors template page">
+    <meta name="description" content="PHP Motors registration page">
     <meta name="author" content="Aaron Jones">
     <link rel="stylesheet" type="text/css" href="/phpmotors/css/registration.css" media="screen">
 </head>

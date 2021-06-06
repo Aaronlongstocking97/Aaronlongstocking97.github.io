@@ -6,7 +6,7 @@
     <title id="page-title">Add Classsification | PHP Motors</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PHP Motors Vehicle Management page">
+    <meta name="description" content="PHP Motors add car classsification page">
     <meta name="author" content="Aaron Jones">
     <link rel="stylesheet" type="text/css" href="/phpmotors/css/vehicle-man.css" media="screen">
 </head>
