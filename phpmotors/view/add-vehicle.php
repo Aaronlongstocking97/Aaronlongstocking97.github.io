@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PHP Motors add vehicle page">
     <meta name="author" content="Aaron Jones">
-    <link rel="stylesheet" type="text/css" href="/phpmotors/css/vehicle-man.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/phpmotors/css/add-vehicle.css" media="screen">
 </head>
 
 <body>
@@ -21,10 +21,32 @@
         </nav>
         <main id="main-content">
             <h1 id="content">Add Vehicle</h1>
-            <ul id="addOn">
-                <li><a href="/phpmotors/vehicles/index.php?action=addClass" id="addClass">Add Classsification</a></li>
-                <li><a href="/phpmotors/vehicles/index.php?action=addVehicle" id="addVehicle">Add Vehicle</a></li>
-            </ul>
+            <h2 id="warning">*Note all Fields are Required</h2>
+            <form action="/phpmotors/vehicles/index.php" id="align" method="post">
+                <label for="chooseCClass"></label>
+                <select name="carClassifications" id="chooseCClass">
+                    <option value="Choose Car Classification"></option>
+                </select>
+                <label for="make">Make</label>
+                <input type="text" id="make" name="vehicleMake">
+                <label for="model">Model</label>
+                <input type="text" id="model" name="vehicleModel">
+                <textarea name="vehicleDescription" id="specify" cols="20" rows="2"></textarea>
+                <label for="imgPath">Image Path</label>
+                <input type="text" id="imgPath" name="vehicleImagePath">
+                <label for="thumbPath">Thumbnail Path</label>
+                <input type="text" id="thumbPath" name="vehicleThumbnailPath">
+                <label for="price">Price</label>
+                <input type="number" step="any" id="price" name="vehiclePrice">
+                <label for="quantity"># In Stock</label>
+                <input type="number" id="quantity" name="vehiclesInStock">
+                <label for="color">Color</label>
+                <input type="text" id="color" name="vehicleColor">
+                <input type="submit" name="submit" id="addVehicleBtn" value="Add Vehicle">
+                <!-- <input type="hidden" name="action" value="register"> -->
+            </form>
+
+
             <hr id="line-break">
         </main>
         <footer>
