@@ -62,7 +62,12 @@ switch ($action) {
         //         exit;
         //     }
         //     break;
-
+    case 'addClass':
+        include '../view/add-classification.php';
+        break;
+    case 'addVehicle':
+        include '../view/add-vehicle.php';
+        break;
     case 'vehiclesMan':
         include '../view/vehicle-man.php';
         break;

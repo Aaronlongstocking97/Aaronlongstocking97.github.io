@@ -21,9 +21,9 @@
         </nav>
         <main id="main-content">
             <h1 id="content">Vehicle Management</h1>
-            <ul id="signUp">
-                <li><a href="#" id="">Add Classsification</a></li>
-                <li><a href="#" id="">Add Vehicle</a></li>
+            <ul id="addOn">
+                <li><a href="/phpmotors/vehicles/index.php?action=addClass" id="addClass">Add Classsification</a></li>
+                <li><a href="/phpmotors/vehicles/index.php?action=addVehicle" id="addVehicle">Add Vehicle</a></li>
             </ul>
             <hr id="line-break">
         </main>
