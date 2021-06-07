@@ -1,6 +1,6 @@
 <?php
 /*
-* Accounts Controller
+* Vehicles Controller
 */
 
 // Get the database connection file
@@ -34,40 +34,50 @@ if ($action == NULL) {
 switch ($action) {
         // Code to deliver the views will be here
 
-        // case 'register':
-        // Filter and store the data
-        //     $clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
-        //     $clientLastname = filter_input(INPUT_POST, 'clientLastname');
-        //     $clientEmail = filter_input(INPUT_POST, 'clientEmail');
-        //     $clientPassword = filter_input(INPUT_POST, 'clientPassword');
-
-        // Check for missing data
-        //     if (empty($clientFirstname) || empty($clientLastname) || empty($clientEmail) || empty($clientPassword)) {
-        //         $message = '<p>Please provide information for all empty form fields.</p>';
-        //         include '../view/registration.php';
-        //         exit;
-        //     }
-
-        // Send the data to the model
-        //     $regOutcome = regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassword);
-
-        // Check and report the result
-        //     if ($regOutcome === 1) {
-        //         $message = "<p>Thanks for registering $clientFirstname. Please use your email and password to login.</p>";
-        //         include '../view/login.php';
-        //         exit;
-        //     } else {
-        //         $message = "<p>Sorry $clientFirstname, but the registration failed. Please try again.</p>";
-        //         include '../view/registration.php';
-        //         exit;
-        //     }
-        //     break;
     case 'addClass':
         $classificationName = filter_input(INPUT_POST, 'classificationName');
-        include '../view/add-classification.php';
+        // Check for missing data
+        if (empty($classificationName)) {
+            $message = '<p>Please provide information for all empty form fields.</p>';
+            include '../view/add-classification.php';
+            exit;
+        }
+
+        // Send the data to the model
+        $addClassOutcome = addClassification($classificationName);
+
         break;
     case 'addVehicle':
-        include '../view/add-vehicle.php';
+        // Filter and store the data
+        $invMake = filter_input(INPUT_POST, 'invMake');
+        $invModel = filter_input(INPUT_POST, 'invModel');
+        $invDescription = filter_input(INPUT_POST, 'invDescription');
+        $invImage = filter_input(INPUT_POST, 'invImage');
+        $invThumbnail = filter_input(INPUT_POST, 'invThumbnail');
+        $invPrice = filter_input(INPUT_POST, 'invPrice');
+        $invStock = filter_input(INPUT_POST, 'invStock');
+        $invColor = filter_input(INPUT_POST, 'invColor');
+
+        // Check for missing data
+        if (empty($invMake) || empty($invModel) || empty($invDescription) || empty($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invColor)) {
+            $message = '<p>Please provide information for all empty form fields.</p>';
+            include '../view/add-vehicle.php';
+            exit;
+        }
+
+        // Send the data to the model
+        $addVehicleOutcome = addVehicle($invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor);
+
+        // Check and report the result
+        if ($addVehicleOutcome === 1) {
+            $message = "<p>The $invMake $invModel was added successfully!</p>";
+            include '../view/add-vehicle.php';
+            exit;
+        } else {
+            $message = "<p>Please provide information for all empty form fields.</p>";
+            include '../view/add-vehicle.php';
+            exit;
+        }
         break;
     case 'vehiclesMan':
         include '../view/vehicle-man.php';

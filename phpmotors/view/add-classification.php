@@ -21,11 +21,16 @@
         </nav>
         <main id="main-content">
             <h1 id="content">Add Car Classsification</h1>
+            <?php
+            if (isset($message)) {
+                echo $message;
+            }
+            ?>
             <form action="/phpmotors/vehicles/index.php" id="align" method="post">
                 <label for="cName">Classification Name</label>
                 <input type="text" id="cName" name="classificationName" size="13">
                 <input type="submit" name="submit" id="addClassBtn" value="Add Classification">
-                <!-- <input type="hidden" name="action" value="register"> -->
+                <input type="hidden" name="action" value="addClass">
             </form>
             <hr id="line-break">
         </main>
