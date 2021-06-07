@@ -9,6 +9,8 @@ require_once '../library/connections.php';
 require_once '../model/main-model.php';
 // Get the accounts model
 require_once '../model/accounts-model.php';
+// Get the vehicles model
+require_once '../model/vehicles-model.php';
 
 // Get the array of classifications
 $classifications = getClassifications();
@@ -45,7 +47,16 @@ switch ($action) {
 
         // Send the data to the model
         $addClassOutcome = addClassification($classificationName);
-
+        // Check and report the result
+        if ($addClassOutcome === 1) {
+            $message = "<p>The $classificationName was added successfully!</p>";
+            include '../view/add-classification.php';
+            exit;
+        } else {
+            $message = "<p>Please provide information for all empty form fields.</p>";
+            include '../view/add-classification.php';
+            exit;
+        }
         break;
     case 'addVehicle':
         // Filter and store the data
