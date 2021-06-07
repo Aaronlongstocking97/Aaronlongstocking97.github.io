@@ -112,12 +112,12 @@ header {
 }
 
 #specify {
-    margin-top: 25px;
-    font-size: 20px;
+    margin-top: 10px;
 }
 
 label {
-    margin-top: 10px;
+    margin-top: 25px;
+    font-size: 20px;
 }
 
 #addClassBtn {
