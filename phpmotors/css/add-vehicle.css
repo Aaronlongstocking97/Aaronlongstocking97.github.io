@@ -120,6 +120,10 @@ label {
     font-size: 20px;
 }
 
+input {
+    width: 150px;
+}
+
 #addClassBtn {
     margin: 25px 0px 10px 0px;
     background-color: white;
