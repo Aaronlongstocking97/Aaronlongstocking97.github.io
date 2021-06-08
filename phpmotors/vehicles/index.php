@@ -47,7 +47,7 @@ switch ($action) {
 
         // Check and report the result
         if ($addClassOutcome === 1) {
-            header('Location: /phpmotors/view/vehicle-man.php');
+            header('Location: /phpmotors/model/main-model.php');
             include '../view/vehicle-man.php.php';
             exit;
         } else {
