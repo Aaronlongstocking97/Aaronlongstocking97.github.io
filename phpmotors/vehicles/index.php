@@ -47,7 +47,8 @@ switch ($action) {
         $classificationName = filter_input(INPUT_POST, 'classificationName');
         // Check for missing data
         if (empty($classificationName)) {
-            $message = '<p>Please provide information for all empty form fields.</p>';
+            $message = '<p>Please provide information for all empty 
+            form fields.</p>';
             include '../view/add-classification.php';
             exit;
         }
@@ -59,7 +60,8 @@ switch ($action) {
             header('Location: /phpmotors/vehicles/index.php');
             exit;
         } else {
-            $message = "<p>Please provide information for all empty form fields.</p>";
+            $message = "<p>Please provide information for all empty 
+            form fields.</p>";
             include '../view/add-classification.php';
             exit;
         }
@@ -77,14 +79,28 @@ switch ($action) {
         $invColor = filter_input(INPUT_POST, 'invColor');
 
         // Check for missing data
-        if (empty($invMake) || empty($invModel) || empty($invDescription) || empty($invImage) || empty($invThumbnail) || empty($invPrice) || empty($invStock) || empty($invColor)) {
-            $message = '<p>Please provide information for all empty form fields.</p>';
+        if (
+            empty($invMake) || empty($invModel) || empty($invDescription)
+            || empty($invImage) || empty($invThumbnail) || empty($invPrice)
+            || empty($invStock) || empty($invColor)
+        ) {
+            $message = '<p>Please provide information for all empty 
+            form fields.</p>';
             include '../view/add-vehicle.php';
             exit;
         }
 
         // Send the data to the model
-        $addVehicleOutcome = addVehicle($invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor);
+        $addVehicleOutcome = addVehicle(
+            $invMake,
+            $invModel,
+            $invDescription,
+            $invImage,
+            $invThumbnail,
+            $invPrice,
+            $invStock,
+            $invColor
+        );
 
         // Check and report the result
         if ($addVehicleOutcome === 1) {
@@ -92,7 +108,8 @@ switch ($action) {
             include '../view/add-vehicle.php';
             exit;
         } else {
-            $message = "<p>Please provide information for all empty form fields.</p>";
+            $message = "<p>Please provide information for all empty 
+            form fields.</p>";
             include '../view/add-vehicle.php';
             exit;
         }
