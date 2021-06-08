@@ -40,9 +40,9 @@
                 <label for="specify">Description</label>
                 <textarea name="invDescription" id="specify" cols="20" rows="2"></textarea>
                 <label for="imgPath">Image Path</label>
-                <input type="text" id="imgPath" name="invImage" size="5">
+                <input type="text" id="imgPath" name="invImage" value="/phpmotors/images/no-image.png" size="5">
                 <label for="thumbPath">Thumbnail Path</label>
-                <input type="text" id="thumbPath" name="invThumbnail" size="5">
+                <input type="text" id="thumbPath" name="invThumbnail" value="/phpmotors/images/no-image.png" size="5">
                 <label for="price">Price</label>
                 <input type="number" step="any" id="price" name="invPrice" size="5">
                 <label for="quantity"># In Stock</label>
