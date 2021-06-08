@@ -96,10 +96,7 @@ switch ($action) {
             include '../view/add-vehicle.php';
             exit;
         }
-        break;
-    case 'vehiclesMan':
-        include '../view/vehicle-man.php';
-        break;
+
     case 'home':
         include '../view/home.php';
         break;
