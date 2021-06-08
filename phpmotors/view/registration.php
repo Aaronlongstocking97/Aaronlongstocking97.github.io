@@ -27,14 +27,14 @@
             }
             ?>
             <form action="/phpmotors/accounts/index.php" id="align" method="post">
-                <label for="fName">First Name</label>
-                <input type="text" id="fName" name="clientFirstname">
-                <label for="lName">Last Name</label>
-                <input type="text" id="lName" name="clientLastname">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="clientEmail">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="clientPassword">
+                <label for="clientFirstname">First Name</label>
+                <input type="text" id="clientFirstname" name="clientFirstname">
+                <label for="clientLastname">Last Name</label>
+                <input type="text" id="clientLastname" name="clientLastname">
+                <label for="clientEmail">Email</label>
+                <input type="email" id="clientEmail" name="clientEmail">
+                <label for="clientPassword">Password</label>
+                <input type="password" id="clientPassword" name="clientPassword">
                 <input type="submit" name="submit" id="regbtn" value="Register">
                 <input type="hidden" name="action" value="register">
             </form>
