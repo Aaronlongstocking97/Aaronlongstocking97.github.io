@@ -25,6 +25,14 @@ foreach ($classifications as $classification) {
 }
 $navList .= '</ul>';
 
+$carClassifications = '<select>';
+$carClassifications .= '<option>Choose Car Classification</option>';
+foreach ($classifications as $classification) {
+    $carClassifications .= "<option value=" . $carClassifications['classificationId']
+        . ">" . $carClassifications['classificationName'] . "</option>";
+}
+$carClassifications .= '</select>';
+
 // Get the value from the action name - value pair
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
@@ -37,11 +45,11 @@ switch ($action) {
     case 'addClass':
         $classificationName = filter_input(INPUT_POST, 'classificationName');
         // Check for missing data
-        // if (empty($classificationName)) {
-        //     $message = '<p>Please provide information for all empty form fields.</p>';
-        //     include '../view/add-classification.php';
-        //     exit;
-        // }
+        if (empty($classificationName)) {
+            $message = '<p>Please provide information for all empty form fields.</p>';
+            include '../view/add-classification.php';
+            exit;
+        }
 
         $addClassOutcome = addClassification($classificationName);
 
