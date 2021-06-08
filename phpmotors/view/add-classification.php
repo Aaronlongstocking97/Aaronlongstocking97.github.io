@@ -22,7 +22,7 @@
         <main id="main-content">
             <h1 id="content">Add Car Classsification</h1>
             <?php
-            if (isset($message)) {
+            if (!isset($message)) {
                 echo $message;
             }
             ?>
