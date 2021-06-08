@@ -37,11 +37,11 @@ switch ($action) {
     case 'addClass':
         $classificationName = filter_input(INPUT_POST, 'classificationName');
         // Check for missing data
-        if (empty($classificationName)) {
-            $message = '<p>Please provide information for all empty form fields.</p>';
-            include '../view/add-classification.php';
-            exit;
-        }
+        // if (empty($classificationName)) {
+        //     $message = '<p>Please provide information for all empty form fields.</p>';
+        //     include '../view/add-classification.php';
+        //     exit;
+        // }
 
         $addClassOutcome = addClassification($classificationName);
 
