@@ -47,9 +47,7 @@ switch ($action) {
 
         // Check and report the result
         if ($addClassOutcome === 1) {
-            // redirect to a new location
             header('Location: /phpmotors/vehicles/index.php');
-            // include '../view/add-classification.php';
             exit;
         } else {
             $message = "<p>Please provide information for all empty form fields.</p>";
