@@ -3,9 +3,6 @@
 * Accounts Controller
 */
 
-echo 'in the controller';
-exit;
-
 // Get the database connection file
 require_once '../library/connections.php';
 // Get the phpmotors model for use as needed
@@ -38,8 +35,6 @@ switch ($action) {
         // Code to deliver the views will be here
 
     case 'register':
-        echo 'in the register case';
-        exit;
         // Filter and store the data
         $clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
         $clientLastname = filter_input(INPUT_POST, 'clientLastname');
