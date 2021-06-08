@@ -49,7 +49,12 @@ switch ($action) {
         }
 
         // Send the data to the model
-        $regOutcome = regClient($clientFirstname, $clientLastname, $clientEmail, $clientPassword);
+        $regOutcome = regClient(
+            $clientFirstname,
+            $clientLastname,
+            $clientEmail,
+            $clientPassword
+        );
 
         // Check and report the result
         if ($regOutcome === 1) {
