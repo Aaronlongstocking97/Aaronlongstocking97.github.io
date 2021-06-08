@@ -43,18 +43,10 @@ switch ($action) {
             $message = '<p>Please provide information for all empty form fields.</p>';
             include '../view/add-classification.php';
             exit;
-        }
-
-        // Send the data to the model
-        $addClassOutcome = addClassification($classificationName);
-        // Check and report the result
-        if ($addClassOutcome === 1) {
-            $message = "<p>The $classificationName was added successfully!</p>";
-            include '../view/add-classification.php';
-            exit;
         } else {
-            $message = "<p>Please provide information for all empty form fields.</p>";
-            include '../view/add-classification.php';
+            // Send the data to the model
+            $addClassOutcome = addClassification($classificationName);
+            include '../view/vehicle-man.php';
             exit;
         }
         break;
