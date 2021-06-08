@@ -117,7 +117,9 @@ switch ($action) {
     case 'classification':
         include '../view/add-classification.php';
         break;
-
+    case 'vehicle':
+        include '../view/add-vehicle.php';
+        break;
     case 'home':
         include '../view/home.php';
         break;
