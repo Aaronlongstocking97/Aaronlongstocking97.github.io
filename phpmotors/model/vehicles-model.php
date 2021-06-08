@@ -12,7 +12,7 @@ function addClassification($classificationName)
 
     // The SQL statement
     $sql = 'INSERT INTO carclassification (classificationName)
-    VALUES (:classificationName,)';
+    VALUES (:classificationName)';
 
     // Create the prepared statement using the phpmotors connection
     $stmt = $db->prepare($sql);
