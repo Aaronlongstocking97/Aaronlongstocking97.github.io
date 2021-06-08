@@ -262,14 +262,14 @@ ADD PRIMARY KEY (`invId`),
 -- AUTO_INCREMENT for table `inventory`
 --
 ALTER TABLE `inventory`
-MODIFY `invId` int(10) NOT NULL AUTO_INCREMENT,
+MODIFY `invId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 16;
 --
 -- Table structure for table `carclassification`
 --
 DROP TABLE IF EXISTS `carclassification`;
 CREATE TABLE `carclassification` (
-  `classificationId` int(10) NOT NULL,
+  `classificationId` int(10) UNSIGNED NOT NULL,
   `classificationName` varchar(30) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET = latin1;
 --
@@ -290,7 +290,7 @@ ADD PRIMARY KEY (`classificationId`);
 -- AUTO_INCREMENT for table `carclassification`
 --
 ALTER TABLE `carclassification`
-MODIFY `classificationId` int(10) NOT NULL AUTO_INCREMENT,
+MODIFY `classificationId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   AUTO_INCREMENT = 7;
 --
 -- Constraints for table `inventory`
