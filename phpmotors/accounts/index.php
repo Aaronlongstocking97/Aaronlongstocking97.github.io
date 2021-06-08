@@ -3,6 +3,9 @@
 * Accounts Controller
 */
 
+echo 'in the controller';
+exit;
+
 // Get the database connection file
 require_once '../library/connections.php';
 // Get the phpmotors model for use as needed
