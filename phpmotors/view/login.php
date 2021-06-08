@@ -34,7 +34,7 @@
                 <input type="submit" name="submit" id="regbtn" value="Sign-in">
             </form>
             <div id="signUp">
-                <a href="/phpmotors/accounts/index.php?action=register" id="register">Not a member yet?</a>
+                <a href="/phpmotors/accounts/index.php?action=registration" id="registration">Not a member yet?</a>
             </div>
             <hr id="line-break">
         </main>
