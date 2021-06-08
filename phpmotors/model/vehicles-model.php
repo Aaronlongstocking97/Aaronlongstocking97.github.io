@@ -42,7 +42,7 @@ function addVehicle($invMake, $invModel, $invDescription, $invImage, $invThumbna
     $db = phpmotorsConnect();
 
     // The SQL statement
-    $sql = 'INSERT INTO inventory (invMake, invModel, invDescription, invImage, invThumbnal, invPrice, invStock, invColor)
+    $sql = 'INSERT INTO inventory (invMake, invModel, invDescription, invImage, invThumbnail, invPrice, invStock, invColor)
     VALUES (:invMake, :invModel, :invDescription, :invImage, :invThumbnail, :invPrice, :invStock, :invColor)';
 
     // Create the prepared statement using the phpmotors connection
