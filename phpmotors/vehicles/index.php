@@ -32,7 +32,7 @@ foreach ($classifications as $classification) {
         . $classification['classificationId'] . ">"
         . $classification['classificationName'] . "</option>";
 }
-$carClassifications .= '</select>';
+@$carClassifications .= '</select>';
 
 // Get the value from the action name - value pair
 $action = filter_input(INPUT_POST, 'action');
