@@ -21,11 +21,7 @@
         </nav>
         <main id="main-content">
             <h1 id="content">Add Car Classsification</h1>
-            <?php
-            if (!isset($message)) {
-                echo $message;
-            }
-            ?>
+            <?php echo $message; ?>
             <form action="/phpmotors/vehicles/index.php" id="align" method="post">
                 <label for="classificationName">Classification Name</label>
                 <input type="text" id="classificationName" name="classificationName" size="13">
