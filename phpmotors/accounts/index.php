@@ -42,6 +42,7 @@ switch ($action) {
         $clientPassword = filter_input(INPUT_POST, 'clientPassword');
         echo "$clientFirstname, $clientLastname, $clientEmail,
         $clientPassword";
+        exit;
         // Check for missing data
         if (
             empty($clientFirstname) || empty($clientLastname) ||
