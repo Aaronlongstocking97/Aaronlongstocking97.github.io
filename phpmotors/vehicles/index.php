@@ -28,8 +28,8 @@ $navList .= '</ul>';
 $carClassifications = '<select>';
 $carClassifications .= '<option>Choose Car Classification</option>';
 foreach ($classifications as $classification) {
-    $carClassifications .= "<option value=" . $carClassifications['classificationId']
-        . ">" . $carClassifications['classificationName'] . "</option>";
+    $carClassifications .= "<option value=" . $classification['classificationId']
+        . ">" . $classification['classificationName'] . "</option>";
 }
 $carClassifications .= '</select>';
 
