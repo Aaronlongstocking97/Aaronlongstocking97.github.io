@@ -49,8 +49,8 @@ switch ($action) {
         if (empty($classificationName)) {
             $message = '<p>Please provide information for all empty 
             form fields.</p>';
-            echo "there is no data inputed yet.";
-            exit;
+            // echo "there is no data inputed yet.";
+            // exit;
             include '../view/add-classification.php';
             exit;
         }
