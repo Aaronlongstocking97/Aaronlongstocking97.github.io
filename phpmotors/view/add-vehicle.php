@@ -28,32 +28,27 @@
             ?>
             <h2 id="warning">*Note all Fields are Required</h2>
             <form action="/phpmotors/vehicles/index.php" id="align" method="post">
-                <label for="chooseCClass"></label>
-                <!-- <select name="carClassifications" id="chooseCClass">
-                    <option value="Choose Car Classification"></option>
-                </select> -->
+                <label for="carClassifications"></label>
                 <?php echo $carClassifications; ?>
-                <label for="make">Make</label>
-                <input type="text" id="make" name="invMake" size="5">
-                <label for="model">Model</label>
-                <input type="text" id="model" name="invModel" size="5">
-                <label for="specify">Description</label>
-                <textarea name="invDescription" id="specify" cols="20" rows="2"></textarea>
-                <label for="imgPath">Image Path</label>
-                <input type="text" id="imgPath" name="invImage" value="/phpmotors/images/no-image.png" size="5">
-                <label for="thumbPath">Thumbnail Path</label>
-                <input type="text" id="thumbPath" name="invThumbnail" value="/phpmotors/images/no-image.png" size="5">
-                <label for="price">Price</label>
-                <input type="number" step="any" id="price" name="invPrice" size="5">
-                <label for="quantity"># In Stock</label>
-                <input type="number" id="quantity" name="invStock" size="5">
-                <label for="color">Color</label>
-                <input type="text" id="color" name="invColor" size="5">
+                <label for="invMake">Make</label>
+                <input type="text" id="invMake" name="invMake" size="5">
+                <label for="invModel">Model</label>
+                <input type="text" id="invModel" name="invModel" size="5">
+                <label for="invDescription">Description</label>
+                <textarea name="invDescription" id="invDescription" cols="20" rows="2"></textarea>
+                <label for="invImage">Image Path</label>
+                <input type="text" id="invImage" name="invImage" value="/phpmotors/images/no-image.png" size="5">
+                <label for="invThumbnail">Thumbnail Path</label>
+                <input type="text" id="invThumbnail" name="invThumbnail" value="/phpmotors/images/no-image.png" size="5">
+                <label for="invPrice">Price</label>
+                <input type="number" step="any" id="invPrice" name="invPrice" size="5">
+                <label for="invStock"># In Stock</label>
+                <input type="number" id="invStock" name="invStock" size="5">
+                <label for="invColor">Color</label>
+                <input type="text" id="invColor" name="invColor" size="5">
                 <input type="submit" name="submit" id="addVehicleBtn" value="Add Vehicle">
                 <input type="hidden" name="action" value="addVehicle">
             </form>
-
-
             <hr id="line-break">
         </main>
         <footer>
