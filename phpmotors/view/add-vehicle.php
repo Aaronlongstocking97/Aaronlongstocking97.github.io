@@ -32,10 +32,7 @@
                 <!-- <select name="carClassifications" id="chooseCClass">
                     <option value="Choose Car Classification"></option>
                 </select> -->
-                <?php if (isset($carClassifications)) {
-                    echo $carClassifications;
-                }
-                ?>
+                <?php echo $carClassifications; ?>
                 <label for="make">Make</label>
                 <input type="text" id="make" name="invMake" size="5">
                 <label for="model">Model</label>
