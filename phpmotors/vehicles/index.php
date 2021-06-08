@@ -7,8 +7,6 @@
 require_once '../library/connections.php';
 // Get the phpmotors model for use as needed
 require_once '../model/main-model.php';
-// Get the accounts model
-require_once '../model/accounts-model.php';
 // Get the vehicles model
 require_once '../model/vehicles-model.php';
 
@@ -43,12 +41,20 @@ switch ($action) {
             $message = '<p>Please provide information for all empty form fields.</p>';
             include '../view/add-classification.php';
             exit;
+        }
+
+        $addClassOutcome = addClassification($classificationName);
+
+        // Check and report the result
+        if ($addVehicleOutcome === 1) {
+            header('Location: /phpmotors/view/vehicle-man.php');
+            exit;
         } else {
-            // Send the data to the model
-            $addClassOutcome = addClassification($classificationName);
-            include '../view/vehicle-man.php';
+            $message = "<p>Please provide information for all empty form fields.</p>";
+            include '../view/add-classification.php';
             exit;
         }
+
         break;
     case 'addVehicle':
         // Filter and store the data
