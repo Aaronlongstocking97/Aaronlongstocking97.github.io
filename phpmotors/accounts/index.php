@@ -38,6 +38,8 @@ switch ($action) {
         // Code to deliver the views will be here
 
     case 'register':
+        echo 'in the register case';
+        exit;
         // Filter and store the data
         $clientFirstname = filter_input(INPUT_POST, 'clientFirstname');
         $clientLastname = filter_input(INPUT_POST, 'clientLastname');
