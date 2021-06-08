@@ -47,11 +47,11 @@ switch ($action) {
         $classificationName = filter_input(INPUT_POST, 'classificationName');
         // Check for missing data
         if (empty($classificationName)) {
+            include '../view/add-classification.php';
             $message = '<p>Please provide information for all empty 
             form fields.</p>';
             // echo "there is no data inputed yet.";
             // exit;
-            include '../view/add-classification.php';
             exit;
         }
 
