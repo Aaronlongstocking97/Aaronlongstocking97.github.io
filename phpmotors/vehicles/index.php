@@ -46,7 +46,7 @@ switch ($action) {
         $addClassOutcome = addClassification($classificationName);
 
         // Check and report the result
-        if ($addVehicleOutcome === 1) {
+        if ($addClassOutcome === 1) {
             header('Location: /phpmotors/view/vehicle-man.php');
             exit;
         } else {
