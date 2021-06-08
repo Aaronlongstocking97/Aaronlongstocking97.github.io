@@ -29,9 +29,10 @@
             <h2 id="warning">*Note all Fields are Required</h2>
             <form action="/phpmotors/vehicles/index.php" id="align" method="post">
                 <label for="chooseCClass"></label>
-                <select name="carClassifications" id="chooseCClass">
+                <!-- <select name="carClassifications" id="chooseCClass">
                     <option value="Choose Car Classification"></option>
-                </select>
+                </select> -->
+                <?php echo $carClassifications; ?>
                 <label for="make">Make</label>
                 <input type="text" id="make" name="invMake" size="5">
                 <label for="model">Model</label>
