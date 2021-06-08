@@ -48,6 +48,7 @@ switch ($action) {
         // Check and report the result
         if ($addClassOutcome === 1) {
             header('Location: /phpmotors/view/vehicle-man.php');
+            include '../view/vehicle-man.php.php';
             exit;
         } else {
             $message = "<p>Please provide information for all empty form fields.</p>";
