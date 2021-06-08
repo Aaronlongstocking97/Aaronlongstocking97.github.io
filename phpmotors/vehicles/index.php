@@ -50,12 +50,6 @@ switch ($action) {
             $message = '<p>Please provide information for all empty 
             form fields.</p>';
             include '../view/add-classification.php';
-            // echo "there is no data inputed yet.";
-            // exit;
-            exit;
-        } else {
-            $message = "IT WORKEDDDDDD WOOWOWOWOW";
-            include '../view/vehicle-man.php';
             exit;
         }
 
@@ -119,6 +113,10 @@ switch ($action) {
             include '../view/add-vehicle.php';
             exit;
         }
+
+    case 'classification':
+        include '../view/add-classification.php';
+        break;
 
     case 'home':
         include '../view/home.php';
