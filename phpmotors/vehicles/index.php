@@ -100,7 +100,8 @@ switch ($action) {
             $invThumbnail,
             $invPrice,
             $invStock,
-            $invColor
+            $invColor,
+            $classificationId
         );
 
         // Check and report the result
