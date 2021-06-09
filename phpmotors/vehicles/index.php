@@ -29,7 +29,7 @@ $carClassifications = "<select id='carClassifications'>";
 $carClassifications .= '<option>Choose Car Classification</option>';
 foreach ($classifications as $classification) {
     $carClassifications .= "<option value="
-        . $classification['classificationName'] . ">"
+        . $classification['classificationId'] . ">"
         . $classification['classificationName'] . "</option>";
 }
 $carClassifications .= '</select>';
