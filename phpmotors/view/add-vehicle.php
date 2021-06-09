@@ -29,7 +29,7 @@
             <h2 id="warning">*Note all Fields are Required</h2>
             <form action="/phpmotors/vehicles/index.php" method="post">
                 <fieldset id="align">
-                    <label for="carClassifications"></label>
+                    <!-- <label for="carClassifications"></label> -->
                     <?php echo $carClassifications; ?>
                     <label for="invMake">Make</label>
                     <input type="text" id="invMake" name="invMake">
