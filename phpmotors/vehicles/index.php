@@ -25,7 +25,7 @@ foreach ($classifications as $classification) {
 }
 $navList .= '</ul>';
 
-$carClassifications = "<select id='carClassifications'>";
+$carClassifications = "<select name='classificationId' id='carClassifications'>";
 $carClassifications .= '<option>Choose Car Classification</option>';
 foreach ($classifications as $classification) {
     $carClassifications .= "<option value="
