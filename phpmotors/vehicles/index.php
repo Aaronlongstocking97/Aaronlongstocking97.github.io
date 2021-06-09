@@ -13,11 +13,6 @@ require_once '../model/vehicles-model.php';
 // Get the array of classifications
 $classifications = getClassifications();
 
-$addClassOutcome = addClassification(
-    $classificationId,
-    $classificationName
-);
-
 // Build a navigation bar using the $classifications array
 $navList = '<ul>';
 $navList .= "<li><a href='/phpmotors/index.php' title='View 
@@ -34,7 +29,7 @@ $carClassifications = "<select id='carClassifications'>";
 $carClassifications .= '<option>Choose Car Classification</option>';
 foreach ($classifications as $classification) {
     $carClassifications .= "<option value="
-        . $classification['classificationId'] . ">"
+        . $classification['classificationName'] . ">"
         . $classification['classificationName'] . "</option>";
 }
 $carClassifications .= '</select>';
@@ -58,10 +53,7 @@ switch ($action) {
             exit;
         }
 
-        $addClassOutcome = addClassification(
-            $classificationId,
-            $classificationName
-        );
+        $addClassOutcome = addClassification($classificationName);
 
         // Check and report the result
         if ($addClassOutcome === 1) {
