@@ -13,6 +13,11 @@ require_once '../model/vehicles-model.php';
 // Get the array of classifications
 $classifications = getClassifications();
 
+$addClassOutcome = addClassification(
+    $classificationId,
+    $classificationName
+);
+
 // Build a navigation bar using the $classifications array
 $navList = '<ul>';
 $navList .= "<li><a href='/phpmotors/index.php' title='View 
