@@ -27,26 +27,26 @@
             }
             ?>
             <h2 id="warning">*Note all Fields are Required</h2>
-            <form action="/phpmotors/vehicles/index.php" id="align" method="post">
-                <fieldset>
+            <form action="/phpmotors/vehicles/index.php" method="post">
+                <fieldset id="align">
                     <label for="carClassifications"></label>
                     <?php echo $carClassifications; ?>
                     <label for="invMake">Make</label>
-                    <input type="text" id="invMake" name="invMake" size="5">
+                    <input type="text" id="invMake" name="invMake">
                     <label for="invModel">Model</label>
-                    <input type="text" id="invModel" name="invModel" size="5">
+                    <input type="text" id="invModel" name="invModel">
                     <label for="invDescription">Description</label>
                     <textarea name="invDescription" id="invDescription" cols="20" rows="2"></textarea>
                     <label for="invImage">Image Path</label>
-                    <input type="text" id="invImage" name="invImage" value="/phpmotors/images/no-image.png" size="5">
+                    <input type="text" id="invImage" name="invImage" value="/phpmotors/images/no-image.png">
                     <label for="invThumbnail">Thumbnail Path</label>
-                    <input type="text" id="invThumbnail" name="invThumbnail" value="/phpmotors/images/no-image.png" size="5">
+                    <input type="text" id="invThumbnail" name="invThumbnail" value="/phpmotors/images/no-image.png">
                     <label for="invPrice">Price</label>
-                    <input type="number" step="any" id="invPrice" name="invPrice" size="5">
+                    <input type="number" step="any" id="invPrice" name="invPrice">
                     <label for="invStock"># In Stock</label>
-                    <input type="number" id="invStock" name="invStock" size="5">
+                    <input type="number" id="invStock" name="invStock">
                     <label for="invColor">Color</label>
-                    <input type="text" id="invColor" name="invColor" size="5">
+                    <input type="text" id="invColor" name="invColor">
                     <input type="submit" name="submit" id="addVehicleBtn" value="Add Vehicle">
                     <input type="hidden" name="action" value="addVehicle">
                 </fieldset>
