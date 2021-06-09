@@ -83,7 +83,7 @@ switch ($action) {
         if (
             empty($invMake) || empty($invModel) || empty($invDescription)
             || empty($invImage) || empty($invThumbnail) || empty($invPrice)
-            || empty($invStock) || empty($invColor)
+            || empty($invStock) || empty($invColor) || empty($classificationId)
         ) {
             $message = '<p>Please provide information for all empty 
             form fields.</p>';
