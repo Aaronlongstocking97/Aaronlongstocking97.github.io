@@ -48,16 +48,18 @@ function addVehicle(
     $invThumbnail,
     $invPrice,
     $invStock,
-    $invColor
+    $invColor,
+    $classificationId
 ) {
     // Create a connection object using the phpmotors connection function
     $db = phpmotorsConnect();
 
     // The SQL statement
     $sql = 'INSERT INTO inventory (invMake, invModel, 
-    invDescription, invImage, invThumbnail, invPrice, invStock, invColor)
+    invDescription, invImage, invThumbnail, invPrice, 
+    invStock, invColor, classificationId)
     VALUES (:invMake, :invModel, :invDescription, :invImage, 
-    :invThumbnail, :invPrice, :invStock, :invColor)';
+    :invThumbnail, :invPrice, :invStock, :invColor, :classificationId)';
 
     // Create the prepared statement using the phpmotors connection
     $stmt = $db->prepare($sql);
@@ -70,9 +72,10 @@ function addVehicle(
     $stmt->bindValue(':invDescription', $invDescription, PDO::PARAM_STR);
     $stmt->bindValue(':invImage', $invImage, PDO::PARAM_STR);
     $stmt->bindValue(':invThumbnail', $invThumbnail, PDO::PARAM_STR);
-    $stmt->bindValue(':invPrice', $invPrice, PDO::PARAM_STR);
-    $stmt->bindValue(':invStock', $invStock, PDO::PARAM_STR);
+    $stmt->bindValue(':invPrice', $invPrice, PDO::PARAM_INT);
+    $stmt->bindValue(':invStock', $invStock, PDO::PARAM_INT);
     $stmt->bindValue(':invColor', $invColor, PDO::PARAM_STR);
+    $stmt->bindValue(':classificationId', $classificationId, PDO::PARAM_INT);
 
     // Insert the data
     $stmt->execute();
