@@ -5,15 +5,14 @@
 */
 
 // Register a new car classification
-function addClassification($classificationId, $classificationName)
+function addClassification($classificationName)
 {
     // Create a connection object using the phpmotors connection function
     $db = phpmotorsConnect();
 
     // The SQL statement
-    $sql = 'INSERT INTO carclassification (classificationId, 
-    classificationName)
-    VALUES (:classificationId, :classificationName)';
+    $sql = 'INSERT INTO carclassification (classificationName)
+    VALUES (:classificationName)';
 
     // Create the prepared statement using the phpmotors connection
     $stmt = $db->prepare($sql);
@@ -21,11 +20,6 @@ function addClassification($classificationId, $classificationName)
     // The next four lines replace the placeholders in the SQL
     // statement with the actual values in the variables
     // and tells the database the type of data it is
-    $stmt->bindValue(
-        ':classificationId',
-        $classificationId,
-        PDO::PARAM_STR
-    );
     $stmt->bindValue(
         ':classificationName',
         $classificationName,
