@@ -77,6 +77,7 @@ switch ($action) {
         $invPrice = filter_input(INPUT_POST, 'invPrice');
         $invStock = filter_input(INPUT_POST, 'invStock');
         $invColor = filter_input(INPUT_POST, 'invColor');
+        $classificationId = filter_input(INPUT_POST, 'classificationId');
 
         // Check for missing data
         if (
