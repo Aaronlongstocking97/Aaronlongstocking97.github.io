@@ -53,7 +53,10 @@ switch ($action) {
             exit;
         }
 
-        $addClassOutcome = addClassification($classificationName);
+        $addClassOutcome = addClassification(
+            $classificationId,
+            $classificationName
+        );
 
         // Check and report the result
         if ($addClassOutcome === 1) {
