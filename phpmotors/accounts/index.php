@@ -9,6 +9,8 @@ require_once '../library/connections.php';
 require_once '../model/main-model.php';
 // Get the accounts model
 require_once '../model/accounts-model.php';
+// Get the functions library
+require_once '../library/functions.php';
 
 // Get the array of classifications
 $classifications = getClassifications();
@@ -56,6 +58,8 @@ switch ($action) {
             'clientPassword',
             FILTER_SANITIZE_STRING
         ));
+
+        $clientEmail = checkEmail($clientEmail);
 
         // Check for missing data
         if (
