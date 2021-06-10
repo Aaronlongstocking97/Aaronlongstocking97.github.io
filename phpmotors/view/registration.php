@@ -48,10 +48,6 @@
                         number, 1 capital letter and 1 special character</span>
                     <input type="password" id="clientPassword" name="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])
                     (?=.*[A-Z])(?=.*[a-z]).*$">
-                    <?php if (isset($clientPassword)) {
-                        echo "value='$clientPassword'";
-                    }
-                    ?> required>
                     <label>&nbsp;</label>
                     <input type="submit" name="submit" id="regbtn" value="Register">
                     <input type="hidden" name="action" value="register">
