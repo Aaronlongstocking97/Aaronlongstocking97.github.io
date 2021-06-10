@@ -94,6 +94,10 @@ switch ($action) {
         }
         break;
 
+    case 'Login':
+
+        break;
+
     case 'registration':
         include '../view/registration.php';
         break;
