@@ -29,9 +29,16 @@
             <form action="/phpmotors/accounts/index.php" method="get">
                 <fieldset id="align">
                     <label for="clientEmail">Email</label>
-                    <input type="email" id="clientEmail" name="clientEmail">
+                    <input type="email" id="clientEmail" name="clientEmail" required placeholder="Enter a valid email address" <?php if (isset($clientEmail)) {
+                                                                                                                                    echo "value='$clientEmail'";
+                                                                                                                                }
+                                                                                                                                ?> required>
                     <label for="clientPassword">Password</label>
-                    <input type="password" id="clientPassword" name="clientPassword">
+                    <span>Passwords must be at least 8 characters and contain at least 1
+                        number, 1 capital letter and 1 special character</span>
+                    <input type="password" id="clientPassword" name="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])
+                    (?=.*[A-Z])(?=.*[a-z]).*$">
+                    <label>&nbsp;</label>
                     <input type="submit" name="submit" id="regbtn" value="Sign-in">
                 </fieldset>
             </form>
