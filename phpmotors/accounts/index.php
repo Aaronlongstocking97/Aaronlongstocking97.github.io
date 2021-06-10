@@ -73,12 +73,15 @@ switch ($action) {
             exit;
         }
 
+        // Hash the checked password
+        $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
+
         // Send the data to the model
         $regOutcome = regClient(
             $clientFirstname,
             $clientLastname,
             $clientEmail,
-            $clientPassword
+            $hashedPassword
         );
 
         // Check and report the result
