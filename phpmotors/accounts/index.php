@@ -60,6 +60,7 @@ switch ($action) {
         ));
 
         $clientEmail = checkEmail($clientEmail);
+        $checkPassword = checkPassword($clientPassword);
 
         // Check for missing data
         if (
