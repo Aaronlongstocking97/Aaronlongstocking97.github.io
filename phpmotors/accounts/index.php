@@ -63,9 +63,10 @@ switch ($action) {
         $checkPassword = checkPassword($clientPassword);
 
         // Check for missing data
+        // Check for missing data
         if (
-            empty($clientFirstname) || empty($clientLastname) ||
-            empty($clientEmail) || empty($clientPassword)
+            empty($clientFirstname) || empty($clientLastname)
+            || empty($clientEmail) || empty($checkPassword)
         ) {
             $message = '<p>Please provide information for all 
             empty form fields.</p>';
