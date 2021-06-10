@@ -63,7 +63,6 @@ switch ($action) {
         $checkPassword = checkPassword($clientPassword);
 
         // Check for missing data
-        // Check for missing data
         if (
             empty($clientFirstname) || empty($clientLastname)
             || empty($clientEmail) || empty($checkPassword)
@@ -95,7 +94,28 @@ switch ($action) {
         break;
 
     case 'Sign-in':
+        // Filter and store the data
+        $clientEmail = trim(filter_input(
+            INPUT_POST,
+            'clientEmail',
+            FILTER_SANITIZE_EMAIL
+        ));
+        $clientPassword = trim(filter_input(
+            INPUT_POST,
+            'clientPassword',
+            FILTER_SANITIZE_STRING
+        ));
 
+        $clientEmail = checkEmail($clientEmail);
+        $checkPassword = checkPassword($clientPassword);
+
+        // Check for missing data
+        if (empty($clientEmail) || empty($checkPassword)) {
+            $message = '<p>Please provide information for all 
+            empty form fields.</p>';
+            include '../view/login.php';
+            exit;
+        }
         break;
 
     case 'registration':
