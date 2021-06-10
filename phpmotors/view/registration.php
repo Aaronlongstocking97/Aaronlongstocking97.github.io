@@ -26,8 +26,8 @@
                 echo $message;
             }
             ?>
-            <form action="/phpmotors/accounts/index.php" id="align" method="post">
-                <fieldset>
+            <form action="/phpmotors/accounts/index.php" method="post">
+                <fieldset id="align">
                     <label for="clientFirstname">First Name</label>
                     <input type="text" id="clientFirstname" name="clientFirstname" <?php if (isset($clientFirstname)) {
                                                                                         echo "value='$clientFirstname'";
