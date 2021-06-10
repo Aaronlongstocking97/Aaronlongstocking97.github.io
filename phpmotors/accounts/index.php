@@ -118,6 +118,9 @@ switch ($action) {
         }
         break;
 
+    case 'login':
+        include '../view/login.php';
+        break;
     case 'registration':
         include '../view/registration.php';
         break;
