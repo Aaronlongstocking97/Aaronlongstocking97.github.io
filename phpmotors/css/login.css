@@ -116,13 +116,14 @@ label {
 
 input {
     width: 150px;
+    margin-bottom: 10px;
 }
 
 #regbtn {
     font-size: 20px;
     background-color: #4c96d7;
     border-width: 1px;
-    margin-top: 10px;
+    margin: unset;
 }
 
 #signUp {
