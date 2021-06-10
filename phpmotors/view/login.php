@@ -26,12 +26,14 @@
                 echo $message;
             }
             ?>
-            <form action="/phpmotors/accounts/index.php" id="align" method="get">
-                <label for="clientEmail">Email</label>
-                <input type="email" id="clientEmail" name="clientEmail">
-                <label for="clientPassword">Password</label>
-                <input type="password" id="clientPassword" name="clientPassword">
-                <input type="submit" name="submit" id="regbtn" value="Sign-in">
+            <form action="/phpmotors/accounts/index.php" method="get">
+                <fieldset id="align">
+                    <label for="clientEmail">Email</label>
+                    <input type="email" id="clientEmail" name="clientEmail">
+                    <label for="clientPassword">Password</label>
+                    <input type="password" id="clientPassword" name="clientPassword">
+                    <input type="submit" name="submit" id="regbtn" value="Sign-in">
+                </fieldset>
             </form>
             <div id="signUp">
                 <a href="/phpmotors/accounts/index.php?action=registration" id="registration">Not a member yet?</a>
