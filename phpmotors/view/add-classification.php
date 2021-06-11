@@ -28,6 +28,7 @@
             ?>
             <form action="/phpmotors/vehicles/index.php" id="align" method="post">
                 <label for="classificationName">Classification Name</label>
+                <span>Classification Names are limited to 30 characters per entry.</span>
                 <input type="text" id="classificationName" name="classificationName" size="13" <?php if (isset($classificationName)) {
                                                                                                     echo "value='$classificationName'";
                                                                                                 }
