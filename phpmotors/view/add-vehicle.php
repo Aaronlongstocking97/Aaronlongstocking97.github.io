@@ -1,3 +1,14 @@
+<?php
+// Build the select list
+$classifList = '<select name="classificationId">';
+foreach ($classifications as $classification) {
+    $classifList .= "<option value='
+        '$classification[classificationId]'>
+        $classification[classificationName]</option>";
+}
+$classifList .= '</select>';
+
+?>
 <!DOCTYPE html>
 <html lang="en-us">
 
