@@ -16,7 +16,7 @@ function buildNavigation($classifications)
             product line'>$classification[classificationName]</a></li>";
     }
     $navList .= '</ul>';
-    return $classifications;
+    return $navList;
 }
 
 function checkEmail($clientEmail)
