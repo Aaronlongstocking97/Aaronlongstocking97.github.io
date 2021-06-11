@@ -114,6 +114,10 @@ label {
     font-size: 20px;
 }
 
+span {
+    font-size: 14px;
+}
+
 input {
     width: 150px;
 }
@@ -169,6 +173,10 @@ footer p {
 
     #content {
         font-size: 30px;
+    }
+
+    label {
+        font-size: 22px;
     }
 
     footer p {
