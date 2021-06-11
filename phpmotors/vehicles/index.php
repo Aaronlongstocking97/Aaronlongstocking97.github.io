@@ -9,30 +9,33 @@ require_once '../library/connections.php';
 require_once '../model/main-model.php';
 // Get the vehicles model
 require_once '../model/vehicles-model.php';
+// Get the functions library
+require_once '../library/functions.php';
 
 // Get the array of classifications
 $classifications = getClassifications();
-
 // Build a navigation bar using the $classifications array
-$navList = '<ul>';
-$navList .= "<li><a href='/phpmotors/index.php' title='View 
-the PHP Motors home page'>Home</a></li>";
-foreach ($classifications as $classification) {
-    $navList .= "<li><a href='/phpmotors/index.php?action="
-        . urlencode($classification['classificationName'])
-        . "' title='View our $classification[classificationName] 
-    product line'>$classification[classificationName]</a></li>";
-}
-$navList .= '</ul>';
+$navList = buildNavigation($classifications);
 
-$carClassifications = "<select name='classificationId' id='carClassifications'>";
-$carClassifications .= '<option>Choose Car Classification</option>';
+// Build the select list
+$classifList = '<select name="classificationId">';
 foreach ($classifications as $classification) {
-    $carClassifications .= "<option value="
-        . $classification['classificationId'] . ">"
-        . $classification['classificationName'] . "</option>";
+    $classifList .= "<option value='
+        '$classification[classificationId]'>
+        $classification[classificationName]</option>";
 }
-$carClassifications .= '</select>';
+$classifList .= '</select>';
+
+
+
+// $carClassifications = "<select name='classificationId' id='carClassifications'>";
+// $carClassifications .= '<option>Choose Car Classification</option>';
+// foreach ($classifications as $classification) {
+//     $carClassifications .= "<option value="
+//         . $classification['classificationId'] . ">"
+//         . $classification['classificationName'] . "</option>";
+// }
+// $carClassifications .= '</select>';
 
 // Get the value from the action name - value pair
 $action = filter_input(INPUT_POST, 'action');
