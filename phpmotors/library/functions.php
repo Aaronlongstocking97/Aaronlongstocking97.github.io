@@ -3,6 +3,7 @@
 * Usable funtions for multiple files
 */
 
+// Add a comment here
 function buildNavigation($classifications)
 {
     $navList = '<ul>';
