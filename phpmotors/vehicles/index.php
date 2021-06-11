@@ -109,7 +109,7 @@ switch ($action) {
         $classificationId = trim(filter_input(
             INPUT_POST,
             'classificationId',
-            FILTER_SANITIZE_NUMBER_INT
+            FILTER_SANITIZE_STRING
         ));
 
         // Check for missing data
