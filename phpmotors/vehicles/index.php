@@ -118,7 +118,9 @@ switch ($action) {
             include '../view/add-vehicle.php';
             exit;
         }
-
+    case 'vehicle-man':
+        include '../view/vehicle-man.php';
+        break;
     case 'classification':
         include '../view/add-classification.php';
         break;
