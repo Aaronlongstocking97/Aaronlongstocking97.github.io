@@ -26,17 +26,6 @@ $navList = buildNavigation($classifications);
 // }
 // $classifList .= '</select>';
 
-
-
-// $carClassifications = "<select name='classificationId' id='carClassifications'>";
-// $carClassifications .= '<option>Choose Car Classification</option>';
-// foreach ($classifications as $classification) {
-//     $carClassifications .= "<option value="
-//         . $classification['classificationId'] . ">"
-//         . $classification['classificationName'] . "</option>";
-// }
-// $carClassifications .= '</select>';
-
 // Get the value from the action name - value pair
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
