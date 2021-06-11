@@ -56,7 +56,7 @@ $classifList .= '</select>';
                                                                         ?> required>
                     <label for="invDescription">Description</label>
                     <textarea name="invDescription" id="invDescription" cols="20" rows="2" required><?php if (isset($invDescription)) {
-                                                                                                        echo "value='$invDescription'";
+                                                                                                        echo "$invDescription";
                                                                                                     }
                                                                                                     ?></textarea>
                     <label for="invImage">Image Path</label>
