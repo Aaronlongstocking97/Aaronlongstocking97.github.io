@@ -45,21 +45,39 @@ $classifList .= '</select>';
                 <fieldset id="align">
                     <?php echo $classifList; ?>
                     <label for="invMake">Make</label>
-                    <input type="text" id="invMake" name="invMake">
+                    <input type="text" id="invMake" name="invMake" <?php if (isset($invMake)) {
+                                                                        echo "value='$invMake'";
+                                                                    }
+                                                                    ?> required>
                     <label for="invModel">Model</label>
-                    <input type="text" id="invModel" name="invModel">
+                    <input type="text" id="invModel" name="invModel" <?php if (isset($invModel)) {
+                                                                            echo "value='$invModel'";
+                                                                        }
+                                                                        ?> required>
                     <label for="invDescription">Description</label>
-                    <textarea name="invDescription" id="invDescription" cols="20" rows="2"></textarea>
+                    <textarea name="invDescription" id="invDescription" cols="20" rows="2"></textarea <?php if (isset($invDescription)) {
+                                                                                                            echo "value='$invDescription'";
+                                                                                                        }
+                                                                                                        ?> required>
                     <label for="invImage">Image Path</label>
-                    <input type="text" id="invImage" name="invImage" value="/phpmotors/images/no-image.png">
+                    <input type="text" id="invImage" name="invImage" value="/phpmotors/images/no-image.png" <?php if (isset($invImage)) {
+                                                                                                                echo "value='$invImage'";
+                                                                                                            }
+                                                                                                            ?> required>
                     <label for="invThumbnail">Thumbnail Path</label>
-                    <input type="text" id="invThumbnail" name="invThumbnail" value="/phpmotors/images/no-image.png">
+                    <input type="text" id="invThumbnail" name="invThumbnail" value="/phpmotors/images/no-image.png" <?php if (isset($invThumbnail)) {
+                                                                                                                        echo "value='$invThumbnail'";
+                                                                                                                    }
+                                                                                                                    ?> required>
                     <label for="invPrice">Price</label>
                     <input type="number" step="any" id="invPrice" name="invPrice">
                     <label for="invStock"># In Stock</label>
                     <input type="number" id="invStock" name="invStock">
                     <label for="invColor">Color</label>
-                    <input type="text" id="invColor" name="invColor">
+                    <input type="text" id="invColor" name="invColor" <?php if (isset($invColor)) {
+                                                                            echo "value='$invColor'";
+                                                                        }
+                                                                        ?> required>
                     <input type="submit" name="submit" id="addVehicleBtn" value="Add Vehicle">
                     <input type="hidden" name="action" value="addVehicle">
                 </fieldset>
