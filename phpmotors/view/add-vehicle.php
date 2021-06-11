@@ -74,7 +74,7 @@ $classifList .= '</select>';
                     <label for="invStock"># In Stock</label>
                     <input type="number" id="invStock" name="invStock">
                     <label for="invColor">Color</label>
-                    <input type="text" id="invColor" name="invColor" <?php if (isset($invColor)) {
+                    <input type="color" id="invColor" name="invColor" <?php if (isset($invColor)) {
                                                                             echo "value='$invColor'";
                                                                         }
                                                                         ?> required>
