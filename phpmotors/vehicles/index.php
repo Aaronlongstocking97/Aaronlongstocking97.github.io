@@ -94,7 +94,8 @@ switch ($action) {
         $invPrice = trim(filter_input(
             INPUT_POST,
             'invPrice',
-            FILTER_SANITIZE_NUMBER_FLOAT
+            FILTER_SANITIZE_NUMBER_FLOAT,
+            FILTER_FLAG_ALLOW_FRACTION
         ));
         $invStock = trim(filter_input(
             INPUT_POST,
@@ -109,7 +110,7 @@ switch ($action) {
         $classificationId = trim(filter_input(
             INPUT_POST,
             'classificationId',
-            FILTER_SANITIZE_STRING
+            FILTER_SANITIZE_NUMBER_INT
         ));
 
         // Check for missing data
