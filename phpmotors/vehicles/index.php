@@ -42,14 +42,17 @@ switch ($action) {
             FILTER_SANITIZE_STRING
         ));
 
+        $classCount = checkClassificationName($classificationName);
+
         // Check for missing data
-        if (empty($classificationName)) {
+        if (empty($classCount)) {
             $message = '<p>Please provide information for all empty 
             form fields.</p>';
             include '../view/add-classification.php';
             exit;
         }
 
+        // Send the data to the model
         $addClassOutcome = addClassification($classificationName);
 
         // Check and report the result

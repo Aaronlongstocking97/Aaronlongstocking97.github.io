@@ -33,3 +33,10 @@ function checkPassword($clientPassword)
     $pattern = '/^(?=.*[[:digit:]])(?=.*[[:punct:]\s])(?=.*[A-Z])(?=.*[a-z])(?:.{8,})$/';
     return preg_match($pattern, $clientPassword);
 }
+
+function checkClassificationName($classificationName)
+{
+    if (strlen($classificationName) > 30)
+        $classCount = substr($classificationName, 0, 30);
+    return $classCount;
+}
