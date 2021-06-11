@@ -7,7 +7,6 @@ foreach ($classifications as $classification) {
         $classification[classificationName]</option>";
 }
 $classifList .= '</select>';
-
 ?>
 <!DOCTYPE html>
 <html lang="en-us">
