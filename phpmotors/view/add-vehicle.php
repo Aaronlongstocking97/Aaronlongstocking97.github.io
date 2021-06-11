@@ -2,9 +2,13 @@
 // Build the select list
 $classifList = '<select name="classificationId">';
 foreach ($classifications as $classification) {
-    $classifList .= "<option value='
-        '$classification[classificationId]'>
-        $classification[classificationName]</option>";
+    $classifList .= "<option value='$classification[classificationId]'";
+    if (isset($classificationId)) {
+        if ($classification['classificationId'] === $classificationId) {
+            $classifList .= ' selected ';
+        }
+    }
+    $classifList .= ">$classification[classificationName]</option>";
 }
 $classifList .= '</select>';
 ?>
