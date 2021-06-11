@@ -70,9 +70,15 @@ $classifList .= '</select>';
                                                                                                                     }
                                                                                                                     ?> required>
                     <label for="invPrice">Price</label>
-                    <input type="number" step="any" id="invPrice" name="invPrice">
+                    <input type="number" step="any" id="invPrice" name="invPrice" <?php if (isset($invPrice)) {
+                                                                                        echo "value='$invPrice'";
+                                                                                    }
+                                                                                    ?> required>
                     <label for="invStock"># In Stock</label>
-                    <input type="number" id="invStock" name="invStock">
+                    <input type="number" id="invStock" name="invStock" <?php if (isset($invStock)) {
+                                                                            echo "value='$invStock'";
+                                                                        }
+                                                                        ?> required>
                     <label for="invColor">Color</label>
                     <input type="color" id="invColor" name="invColor" <?php if (isset($invColor)) {
                                                                             echo "value='$invColor'";
