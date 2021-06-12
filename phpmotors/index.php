@@ -4,7 +4,7 @@
 // Create or access a Session
 session_start();
 
-require_once '../initialize.php';
+require_once 'initialize.php';
 
 // Get the array of classifications from DB using model
 $classifications = getClassifications();
