@@ -34,8 +34,7 @@
                                                                                     }
                                                                                     ?>>
                     <label for="clientPassword">Password</label>
-                    <input type="password" id="clientPassword" name="clientPassword" required pattern="
-                    (?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                    <input type="password" id="clientPassword" name="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                     <label>&nbsp;</label>
                     <input type="submit" name="submit" id="regbtn" value="Sign-in">
                     <input type="hidden" name="action" value="Sign-in">
