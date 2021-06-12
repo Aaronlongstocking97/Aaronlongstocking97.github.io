@@ -133,9 +133,9 @@ input:focus:invalid {
     background-color: #ffdddd;
 } */
 
-input:not(:focus):not(:placeholder-shown):invalid {
+/* input:not(:focus):not(:placeholder-shown):invalid {
     background-color: #ffdddd;
-}
+} */
 
 #addVehicleBtn {
     width: unset;
