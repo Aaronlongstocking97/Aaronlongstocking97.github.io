@@ -132,7 +132,7 @@ input:focus {
     background-color: white;
 }
 
-input:not(:focus):not(:required):invalid {
+input:not(:focus):required:invalid {
     background-color: #ffdddd;
 }
 
