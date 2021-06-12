@@ -27,7 +27,7 @@ if (!$_SESSION['loggedin'] === 1) {
         </nav>
         <main id="main-content">
             <?php
-            echo $clientFirstname;
+            echo $clientEmail;
 
 
             ?>
