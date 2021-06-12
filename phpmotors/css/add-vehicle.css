@@ -127,6 +127,14 @@ input {
     width: 150px;
 }
 
+/* styles for invalid form input */
+input:required:invalid,
+input:focus:invalid {
+    background-image: url(/images/invalid.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+}
+
 #addVehicleBtn {
     width: unset;
     margin: 25px 0px 10px 0px;
