@@ -163,5 +163,5 @@ switch ($action) {
         include '../view/home.php';
         break;
     default:
-        include '../view/login.php';
+        include '../view/admin.php';
 }

@@ -20,28 +20,8 @@
             <?php echo $navList; ?>
         </nav>
         <main id="main-content">
-            <h1 id="content">Sign in</h1>
-            <?php
-            if (isset($_SESSION['message'])) {
-                echo $_SESSION['message'];
-            }
-            ?>
-            <form action="/phpmotors/accounts/" method="post">
-                <fieldset id="align">
-                    <label for="clientEmail">Email</label>
-                    <input type="email" id="clientEmail" name="clientEmail" required<?php if (isset($clientEmail)) {
-                                                                                        echo "value='$clientEmail'";
-                                                                                    }
-                                                                                    ?>>
-                    <label for="clientPassword">Password</label>
-                    <input type="password" id="clientPassword" name="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
-                    <label>&nbsp;</label>
-                    <input type="submit" name="submit" id="regbtn" value="Sign-in">
-                    <input type="hidden" name="action" value="Sign-in">
-                    <a href="/phpmotors/accounts/?action=registration" id="
-                    registration">Not a member yet?</a>
-                </fieldset>
-            </form>
+            <h1 id="content">Sally Jones</h1>
+
             <hr id="line-break">
         </main>
         <footer>
