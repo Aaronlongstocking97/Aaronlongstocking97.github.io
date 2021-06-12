@@ -5,10 +5,6 @@
 session_start();
 
 require_once '../initialize.php';
-// Get the main model for use as needed
-require_once './model/main-model.php';
-// Get the functions library
-require_once './library/functions.php';
 
 // Get the array of classifications from DB using model
 $classifications = getClassifications();
