@@ -40,7 +40,7 @@
                     <input type="submit" name="submit" id="regbtn" value="Sign-in">
                     <input type="hidden" name="action" value="Sign-in">
                     <a href="/phpmotors/accounts/?action=registration" id="
-                    signUp">Not a member yet?</a>
+                    registration">Not a member yet?</a>
                 </fieldset>
             </form>
             <hr id="line-break">
