@@ -128,11 +128,8 @@ input {
 }
 
 /* styles for invalid form input */
-input:required:invalid,
-input:focus:invalid {
-    background-image: url(/images/invalid.png);
-    background-position: right top;
-    background-repeat: no-repeat;
+input:required:invalid {
+    background-color: #ffdddd;
 }
 
 #addVehicleBtn {
