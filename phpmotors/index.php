@@ -1,6 +1,9 @@
 <?php
 // This is the main controller
 
+// Create or access a Session
+session_start();
+
 require_once './library/connections.php';
 // Get the main model for use as needed
 require_once './model/main-model.php';
@@ -12,14 +15,14 @@ $classifications = getClassifications();
 // Build a navigation bar using the $classifications array
 $navList = buildNavigation($classifications);
 
-$action = filter_input(INPUT_GET, 'action');
-if ($action == NULL) {
-    $action = filter_input(INPUT_POST, 'action');
-}
-
 // Check if the firstname cookie exists, get its value
 if (isset($_COOKIE['firstname'])) {
     $cookieFirstname = filter_input(INPUT_COOKIE, 'firstname', FILTER_SANITIZE_STRING);
+}
+
+$action = filter_input(INPUT_GET, 'action');
+if ($action == NULL) {
+    $action = filter_input(INPUT_POST, 'action');
 }
 
 switch ($action) {
