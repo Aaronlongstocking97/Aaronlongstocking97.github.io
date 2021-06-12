@@ -105,22 +105,21 @@ switch ($action) {
 
     case 'Sign-in':
         // Filter and store the data
-        $clientEmail = trim(filter_input(
+        $clientEmail = filter_input(
             INPUT_POST,
             'clientEmail',
             FILTER_SANITIZE_EMAIL
-        ));
-        $clientPassword = trim(filter_input(
+        );
+        $clientPassword = filter_input(
             INPUT_POST,
             'clientPassword',
             FILTER_SANITIZE_STRING
-        ));
+        );
 
         $clientEmail = checkEmail($clientEmail);
-        $checkPassword = checkPassword($clientPassword);
 
         // Check for missing data
-        if (empty($clientEmail) || empty($checkPassword)) {
+        if (empty($clientEmail) || empty($clientPassword)) {
             $message = '<p>Please provide information for all 
             empty form fields.</p>';
             include '../view/login.php';
