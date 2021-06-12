@@ -26,7 +26,11 @@ if (!$_SESSION['loggedin']) {
             <?php echo $navList; ?>
         </nav>
         <main id="main-content">
-            <h1 id="content">Sally Jones</h1>
+            <?php
+            echo $clientFirstname;
+
+
+            ?>
 
             <hr id="line-break">
         </main>
