@@ -26,24 +26,23 @@
                 echo $message;
             }
             ?>
-            <form action="/phpmotors/accounts/index.php" method="get">
+            <form action="/phpmotors/accounts/index.php" method="post">
                 <fieldset id="align">
                     <label for="clientEmail">Email</label>
-                    <input type="email" id="clientEmail" name="clientEmail" required placeholder="Enter a valid email address" <?php if (isset($clientEmail)) {
-                                                                                                                                    echo "value='$clientEmail'";
-                                                                                                                                }
-                                                                                                                                ?> required>
+                    <input type="email" id="clientEmail" name="clientEmail" required<?php if (isset($clientEmail)) {
+                                                                                        echo "value='$clientEmail'";
+                                                                                    }
+                                                                                    ?>>
                     <label for="clientPassword">Password</label>
-                    <span>Passwords must be at least 8 characters and contain at least 1
-                        number, 1 capital letter and 1 special character</span>
-                    <input type="password" id="clientPassword" name="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                    <input type="password" id="clientPassword" name="clientPassword" required pattern="
+                    (?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                     <label>&nbsp;</label>
                     <input type="submit" name="submit" id="regbtn" value="Sign-in">
+                    <input type="hidden" name="action" value="Sign-in">
+                    <a href="/phpmotors/accounts/?action=registration" id="
+                    signUp">Not a member yet?</a>
                 </fieldset>
             </form>
-            <div id="signUp">
-                <a href="/phpmotors/accounts/index.php?action=registration" id="registration">Not a member yet?</a>
-            </div>
             <hr id="line-break">
         </main>
         <footer>
