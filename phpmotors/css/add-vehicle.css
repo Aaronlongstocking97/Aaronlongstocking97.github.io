@@ -128,7 +128,8 @@ input {
 }
 
 /* styles for invalid form input */
-input:required:invalid {
+input:required:invalid,
+input:focus:invalid {
     background-color: #ffdddd;
 }
 
