@@ -127,19 +127,6 @@ input {
     width: 150px;
 }
 
-/* styles for invalid form input */
-input:focus {
-    background-color: white;
-}
-
-input:not(:focus):required:invalid {
-    background-color: #ffdddd;
-}
-
-input:not(:focus):not(:placeholder-shown):valid {
-    background-color: cornflowerblue;
-}
-
 #addVehicleBtn {
     width: unset;
     margin: 25px 0px 10px 0px;

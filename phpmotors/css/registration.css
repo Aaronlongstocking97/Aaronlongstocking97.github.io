@@ -122,6 +122,19 @@ input {
     width: 150px;
 }
 
+/* styles for invalid form input
+input:focus {
+    background-color: white;
+}
+
+input:not(:focus):required:invalid {
+    background-color: #ffdddd;
+}
+
+input:not(:focus):not(:placeholder-shown):valid {
+    background-color: cornflowerblue;
+} */
+
 #regbtn {
     font-size: 20px;
     background-color: #4c96d7;
