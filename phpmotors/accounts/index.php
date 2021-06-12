@@ -149,7 +149,7 @@ switch ($action) {
         // Store the array into the session
         $_SESSION['clientData'] = $clientData;
         // Send them to the admin view
-        include '../view/home.php';
+        include '../view/admin.php';
         exit;
         break;
 
