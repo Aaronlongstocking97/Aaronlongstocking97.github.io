@@ -45,6 +45,6 @@ function checkPassword($clientPassword)
 function checkClassificationName($classificationName)
 {
     if (strlen($classificationName) > 30)
-        $classCount = substr($classificationName, 0, 30);
-    return $classCount;
+        $classificationName = substr($classificationName, 0, 30);
+    return $classificationName;
 }
