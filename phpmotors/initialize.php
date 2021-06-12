@@ -10,5 +10,5 @@ define('VIEWROOT', $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/view/');
 require_once ROOT . '/library/connections.php';
 require_once ROOT . '/model/main-model.php';
 require_once ROOT . '/model/accounts-model.php';
-require_once ROOT . '/model/vehicle-model.php';
+require_once ROOT . '/model/vehicles-model.php';
 require_once ROOT . '/library/functions.php';
