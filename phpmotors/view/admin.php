@@ -1,3 +1,13 @@
+<?php
+if (!$_SESSION['loggedin']) {
+    header("location: /phpmotors/");
+    exit;
+    // do something here if the value is FALSE
+    // The exclamation mark is a "negation" operator
+    // By adding it the resulting test is reversed
+    // This test is now "If Session loggedin value is NOT true"
+}
+?>
 <!DOCTYPE html>
 <html lang="en-us">
 
