@@ -3,7 +3,9 @@
 * Usable funtions for multiple files
 */
 
-// Add a comment here
+// Receives the $carclassifications array as a parameter 
+// and builds the navigation list HTML around the values 
+// found in the $carclassifications array.
 function buildNavigation($classifications)
 {
     $navList = '<ul>';
@@ -16,9 +18,13 @@ function buildNavigation($classifications)
             product line'>$classification[classificationName]</a></li>";
     }
     $navList .= '</ul>';
+    // Returns a string variable holding 
+    // the HTML navigation list
     return $navList;
 }
 
+// Check the value of the $clientEmail variable, after having been
+// sanitized, to see if it "looks" like a valid email address.
 function checkEmail($clientEmail)
 {
     $valEmail = filter_var($clientEmail, FILTER_VALIDATE_EMAIL);
@@ -34,6 +40,8 @@ function checkPassword($clientPassword)
     return preg_match($pattern, $clientPassword);
 }
 
+// Limits the users input to no more than 30 characters
+// and returns a string within that limitation.
 function checkClassificationName($classificationName)
 {
     if (strlen($classificationName) > 30)
