@@ -22,8 +22,8 @@
         <main id="main-content">
             <h1 id="content">Sign in</h1>
             <?php
-            if (isset($message)) {
-                echo $message;
+            if (isset($_SESSION['message'])) {
+                echo $_SESSION['message'];
             }
             ?>
             <form action="/phpmotors/accounts/" method="post">
