@@ -130,7 +130,7 @@ input {
 /* styles for invalid form input */
 input:required:invalid,
 input:focus:invalid {
-    background-color: #ffdddd;
+    background-color: #d67d7d;
 }
 
 /* input:not(:focus):not(:placeholder-shown):invalid {
