@@ -12,8 +12,8 @@ $classifications = getClassifications();
 $navList = buildNavigation($classifications);
 
 // Check if the firstname cookie exists, get its value
-if (isset($_COOKIE['firstname'])) {
-    $cookieFirstname = filter_input(INPUT_COOKIE, 'firstname', FILTER_SANITIZE_STRING);
+if (isset($_SESSION['clientfirstname'])) {
+    $sessionFirstname = filter_input(INPUT_SERVER, 'clientfirstname', FILTER_SANITIZE_STRING);
 }
 
 $action = filter_input(INPUT_GET, 'action');
