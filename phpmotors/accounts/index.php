@@ -108,10 +108,10 @@ switch ($action) {
         $clientEmail = trim(filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL));
         $clientEmail = checkEmail($clientEmail);
         $clientPassword = trim(filter_input(INPUT_POST, 'clientPassword', FILTER_SANITIZE_STRING));
-        $passwordCheck = checkPassword($clientPassword);
+        $checkPassword = checkPassword($clientPassword);
 
         // Run basic checks, return if errors
-        if (empty($clientEmail) || empty($passwordCheck)) {
+        if (empty($clientEmail) || empty($checkPassword)) {
             $message = '<p class="notice">Please provide a valid email address and password.</p>';
             include '../view/login.php';
             exit;
