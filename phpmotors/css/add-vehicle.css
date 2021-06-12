@@ -128,8 +128,8 @@ input {
 }
 
 /* styles for invalid form input */
-input:invalid {
-    background-color: #d67d7d;
+input:focus {
+    background-color: white;
 }
 
 /* input:not(:focus):not(:placeholder-shown):invalid {
@@ -137,7 +137,7 @@ input:invalid {
 } */
 
 input:not(:focus):not(:placeholder-shown):valid {
-    background-color: white;
+    background-color: cornflowerblue;
 }
 
 #addVehicleBtn {
