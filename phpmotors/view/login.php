@@ -26,7 +26,7 @@
                 echo $_SESSION['message'];
             }
             ?>
-            <form action="/phpmotors/accounts/" method="post">
+            <form action="/phpmotors/accounts/index.php" method="post">
                 <fieldset id="align">
                     <label for="clientEmail">Email</label>
                     <input type="email" id="clientEmail" name="clientEmail" required<?php if (isset($clientEmail)) {
