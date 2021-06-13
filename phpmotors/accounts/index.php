@@ -85,7 +85,7 @@ switch ($action) {
         if ($regOutcome === 1) {
             $_SESSION['message'] = "Thanks for registering $clientFirstname. 
             Please use your email and password to login.";
-            header('Location: /phpmotors/accounts/?action=Sign-in');
+            header('Location: /phpmotors/accounts/?action=login');
             exit;
         } else {
             $message = "<p>Sorry $clientFirstname, but the registration 
