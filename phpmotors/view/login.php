@@ -39,7 +39,7 @@
                     (?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
                     <label>&nbsp;</label>
                     <input type="submit" name="submit" id="regbtn" value="Sign-in">
-                    <input type="hidden" name="action" value="login">
+                    <input type="hidden" name="action" value="Sign-in">
                     <a href="/phpmotors/accounts/?action=registration" id="
                     registration">Not a member yet?</a>
                 </fieldset>

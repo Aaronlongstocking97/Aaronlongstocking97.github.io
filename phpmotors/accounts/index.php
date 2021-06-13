@@ -85,7 +85,7 @@ switch ($action) {
         if ($regOutcome === 1) {
             $_SESSION['message'] = "Thanks for registering $clientFirstname. 
             Please use your email and password to login.";
-            header('Location: /phpmotors/accounts/?action=login');
+            header('Location: /phpmotors/accounts/?action=Sign-in');
             exit;
         } else {
             $message = "<p>Sorry $clientFirstname, but the registration 
@@ -95,7 +95,7 @@ switch ($action) {
         }
         break;
 
-    case 'Login':
+    case 'Sign-in':
         // Filter and store the data
         $clientEmail = trim(filter_input(
             INPUT_POST,
@@ -145,7 +145,7 @@ switch ($action) {
         exit;
         break;
 
-    case 'log-in':
+    case 'login':
         include '../view/login.php';
         break;
     case 'registration':
