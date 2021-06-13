@@ -1,7 +1,7 @@
     <div id="top-header">
         <img src="/phpmotors/images/site/logo.png" alt="PHP Motors Logo" id="logo">
-        <?php if (isset($_SESSION['user'])) {
-            echo $_SESSION['user'];
+        <?php if (isset($_SESSION['clientData'])) {
+            echo $_SESSION['clientData']['clientFirstname'];
         }
         ?>
         <a href="/phpmotors/accounts/index.php?action=login" title="Login or 
