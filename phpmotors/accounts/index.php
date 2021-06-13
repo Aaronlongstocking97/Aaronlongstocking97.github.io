@@ -95,7 +95,7 @@ switch ($action) {
         }
         break;
 
-    case 'Sign-in':
+    case 'Login':
         // Filter and store the data
         $clientEmail = trim(filter_input(
             INPUT_POST,
@@ -145,7 +145,7 @@ switch ($action) {
         exit;
         break;
 
-    case 'login':
+    case 'log-in':
         include '../view/login.php';
         break;
     case 'registration':
