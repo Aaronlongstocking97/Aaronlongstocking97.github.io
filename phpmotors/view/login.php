@@ -29,10 +29,10 @@
             <form action="/phpmotors/accounts/" method="get">
                 <fieldset id="align">
                     <label for="clientEmail">Email</label>
-                    <input type="email" id="clientEmail" name="clientEmail" required<?php if (isset($clientEmail)) {
-                                                                                        echo "value='$clientEmail'";
-                                                                                    }
-                                                                                    ?>>
+                    <input type="email" id="clientEmail" name="clientEmail" <?php if (isset($clientEmail)) {
+                                                                                echo "value='$clientEmail'";
+                                                                            }
+                                                                            ?>required>
                     <label for="clientPassword">Password</label>
                     <input type="password" id="clientPassword" name="
                     clientPassword" required pattern="
