@@ -4,6 +4,5 @@
             echo $_SESSION['clientData']['clientFirstname'];
         }
         ?>
-        <a href="/phpmotors/accounts/index.php?action=login" title="Login or 
-        Register with PHP Motors" id="login">My Account</a>
+        <a href="/phpmotors/accounts/index.php?action=login" title="Login or Register with PHP Motors" id="login">My Account</a>
     </div>
