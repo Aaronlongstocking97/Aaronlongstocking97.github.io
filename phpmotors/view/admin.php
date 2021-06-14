@@ -1,5 +1,9 @@
+<!-- if (!$_SESSION['loggedin'] === 1) {
+    header("location: /phpmotors/");
+    exit;
+} -->
 <?php
-if (!$_SESSION['loggedin'] === 1) {
+if ($_SESSION['loggedin']) {
     header("location: /phpmotors/");
     exit;
 }
@@ -27,11 +31,16 @@ if (!$_SESSION['loggedin'] === 1) {
         </nav>
         <main id="main-content">
             <?php
-            echo $clientEmail;
-
-
+            echo "<h1>" . $clientFirstname . $clientLastname . "</h1>";
+            echo "<section>";
+            echo "<ul>";
+            echo "<h2>You are logged in</h2>";
+            echo "<li>First name:" . $clientFirstname . "</li>";
+            echo "<li>Last name:" . $clientLastname . "</li>";
+            echo "<li>Email:" . $clientEmail . "</li>";
+            echo "</ul>";
+            echo "</section>";
             ?>
-
             <hr id="line-break">
         </main>
         <footer>
