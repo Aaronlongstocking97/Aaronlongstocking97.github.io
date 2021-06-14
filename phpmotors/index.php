@@ -16,9 +16,9 @@ $navList = buildNavigation($classifications);
 //     $user = filter_input(INPUT_GET, 'firstname', FILTER_SANITIZE_STRING);
 // }
 
-$action = filter_input(INPUT_GET, 'action');
+$action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
-    $action = filter_input(INPUT_POST, 'action');
+    $action = filter_input(INPUT_GET, 'action');
 }
 
 switch ($action) {
