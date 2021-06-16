@@ -3,7 +3,7 @@
     exit;
 } -->
 <?php
-if ($_SESSION['loggedin']) {
+if (!$_SESSION['loggedin'] === 1) {
     header("location: /phpmotors/");
     exit;
 }
