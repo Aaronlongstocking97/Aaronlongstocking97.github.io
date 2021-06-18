@@ -1,6 +1,6 @@
 <?php
 // This is a redirect statment
-if (!$_SESSION['loggedin'] === 1) {
+if (!isset($_SESSION['loggedin'])) {
     header("location: /phpmotors/");
     exit;
 }
