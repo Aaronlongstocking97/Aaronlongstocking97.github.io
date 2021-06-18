@@ -3,6 +3,7 @@
     exit;
 } -->
 <?php
+// This is a redirect statment
 if (!$_SESSION['loggedin'] === 1) {
     header("location: /phpmotors/");
     exit;
@@ -31,13 +32,13 @@ if (!$_SESSION['loggedin'] === 1) {
         </nav>
         <main id="main-content">
             <?php
-            echo "<h1>" . $clientFirstname . $clientLastname . "</h1>";
+            echo "<h1>" . $_SESSION['clientData']['clientFirstname'] . $_SESSION['clientData']['clientLastname'] . "</h1>";
             echo "<section>";
             echo "<ul>";
             echo "<h2>You are logged in</h2>";
-            echo "<li>First name:" . $clientFirstname . "</li>";
-            echo "<li>Last name:" . $clientLastname . "</li>";
-            echo "<li>Email:" . $clientEmail . "</li>";
+            echo "<li>First name:" . $_SESSION['clientData']['clientFirstname'] . "</li>";
+            echo "<li>Last name:" . $_SESSION['clientData']['clientLastname'] . "</li>";
+            echo "<li>Email:" . $_SESSION['clientData']['clientEmail'] . "</li>";
             echo "</ul>";
             echo "</section>";
             ?>
