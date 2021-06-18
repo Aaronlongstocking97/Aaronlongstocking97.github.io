@@ -155,13 +155,8 @@ switch ($action) {
         include '../view/home.php';
         break;
     case 'Logout':
-        if (isset($_SESSION['loggedin'])) {
-            if ($_SESSION['loggedin'] === TRUE) {
-                session_unset();
-                session_destroy();
-                $_SESSION = array();
-            }
-        }
+        session_unset();
+        session_destroy();
         header('Location: /phpmotors/');
         break;
     default:
