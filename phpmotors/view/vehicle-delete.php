@@ -27,10 +27,8 @@ $classifList .= '</select>';
 
 <head>
     <meta charset="UTF-8">
-    <title id="page-title"><?php if (isset($invInfo['invMake']) && isset($invInfo['invModel'])) {
-                                echo "Modify $invInfo[invMake] $invInfo[invModel]";
-                            } elseif (isset($invMake) && isset($invModel)) {
-                                echo "Modify $invMake $invModel";
+    <title id="page-title"><?php if (isset($invInfo['invMake'])) {
+                                echo "Delete $invInfo[invMake] $invInfo[invModel]";
                             } ?> | PHP Motors</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
