@@ -1,10 +1,15 @@
 <?php
-// Build the select list
-$classifList = '<select name="classificationId">';
-foreach ($classifications as $classification) {
+// Build the classifications option list
+$classifList = '<select name="classificationId" id="classificationId">';
+$classifList .= "<option>Choose a Car Classification</option>";
+foreach ($carClassifications as $classification) {
     $classifList .= "<option value='$classification[classificationId]'";
     if (isset($classificationId)) {
         if ($classification['classificationId'] === $classificationId) {
+            $classifList .= ' selected ';
+        }
+    } elseif (isset($invInfo['classificationId'])) {
+        if ($classification['classificationId'] === $invInfo['classificationId']) {
             $classifList .= ' selected ';
         }
     }
