@@ -39,6 +39,9 @@ if (!isset($_SESSION['loggedin'])) {
                     . "<li>Email:   " . $_SESSION['clientData']['clientEmail'] . "</li>"
                     . "</ul>"
                     . "</section>";
+                if ($level == 1) {
+                    header("location: /phpmotors/accounts");
+                }
             } elseif ($level > 1) {
                 echo "<h2 id='adminInvManage'>Inventory Management</h2>"
                     . "<span>Use this link to manage the inventory.</span>"
