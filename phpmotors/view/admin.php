@@ -28,15 +28,15 @@ if (!isset($_SESSION['loggedin'])) {
         </nav>
         <main id="main-content">
             <?php
-            echo "<h1>" . $_SESSION['clientData']['clientFirstname'] . $_SESSION['clientData']['clientLastname'] . "</h1>";
-            echo "<section>";
-            echo "<ul>";
-            echo "<h2>You are logged in</h2>";
-            echo "<li>First name:" . $_SESSION['clientData']['clientFirstname'] . "</li>";
-            echo "<li>Last name:" . $_SESSION['clientData']['clientLastname'] . "</li>";
-            echo "<li>Email:" . $_SESSION['clientData']['clientEmail'] . "</li>";
-            echo "</ul>";
-            echo "</section>";
+            echo "<h1>" . $_SESSION['clientData']['clientFirstname'] . $_SESSION['clientData']['clientLastname'] . "</h1>"
+                . "<section>"
+                . "<ul>"
+                . "<h2>You are logged in</h2>"
+                . "<li>First name:" . $_SESSION['clientData']['clientFirstname'] . "</li>"
+                . "<li>Last name:" . $_SESSION['clientData']['clientLastname'] . "</li>"
+                . "<li>Email:" . $_SESSION['clientData']['clientEmail'] . "</li>"
+                . "</ul>"
+                . "</section>";
             ?>
             <hr id="line-break">
         </main>
