@@ -152,7 +152,13 @@ switch ($action) {
         include '../view/registration.php';
         break;
     case 'client-update':
+        $clientId = filter_input(INPUT_GET, 'invId', FILTER_VALIDATE_INT);
+        $clientInfo = getClientInfo($clientId);
+        if (count($clientInfo) < 1) {
+            $message = 'Sorry, no vehicle information could be found.';
+        }
         include '../view/client-update.php';
+        exit;
         break;
     case 'home':
         include '../view/home.php';

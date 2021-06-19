@@ -71,3 +71,16 @@ function getClient($clientEmail)
     $stmt->closeCursor();
     return $clientData;
 }
+
+// Get client information by invId
+function getClientInfo($clientId)
+{
+    $db = phpmotorsConnect();
+    $sql = 'SELECT * FROM clients WHERE clientId = :clientId';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT);
+    $stmt->execute();
+    $clientInfo = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $clientInfo;
+}
