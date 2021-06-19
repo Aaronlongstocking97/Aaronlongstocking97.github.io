@@ -31,24 +31,20 @@ if (!isset($_SESSION['loggedin'])) {
             $level = $_SESSION['clientData']['clientLevel'];
             if ($level == 1) {
                 echo "<h1 id='displayName'>" . $_SESSION['clientData']['clientFirstname'] . "    " . $_SESSION['clientData']['clientLastname'] . "</h1>"
-                    . "<section>"
                     . "<span>You are logged in.</span>"
                     . "<ul>"
                     . "<li>First name:  " . $_SESSION['clientData']['clientFirstname'] . "</li>"
                     . "<li>Last name:   " . $_SESSION['clientData']['clientLastname'] . "</li>"
                     . "<li>Email:   " . $_SESSION['clientData']['clientEmail'] . "</li>"
-                    . "</ul>"
-                    . "</section>";
+                    . "</ul>";
             } elseif ($level > 1) {
                 echo "<h1 id='displayName'>" . $_SESSION['clientData']['clientFirstname'] . "    " . $_SESSION['clientData']['clientLastname'] . "</h1>"
-                    . "<section>"
                     . "<span>You are logged in.</span>"
                     . "<ul>"
                     . "<li>First name:  " . $_SESSION['clientData']['clientFirstname'] . "</li>"
                     . "<li>Last name:   " . $_SESSION['clientData']['clientLastname'] . "</li>"
                     . "<li>Email:   " . $_SESSION['clientData']['clientEmail'] . "</li>"
                     . "</ul>"
-                    . "</section>"
                     . "<h2 id='adminInvManage'>Inventory Management</h2>"
                     . "<span>Use this link to manage the inventory.</span>"
                     . "<br>"
