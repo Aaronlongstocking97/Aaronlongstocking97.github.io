@@ -45,6 +45,7 @@ if ($_SESSION['clientData']['clientLevel'] < 2) {
                 <p><strong>JavaScript Must Be Enabled to Use this Page.</strong></p>
             </noscript>
             <table id="inventoryDisplay"></table>
+            <label>&nbsp;</label>
             <hr id="line-break">
         </main>
         <footer>
