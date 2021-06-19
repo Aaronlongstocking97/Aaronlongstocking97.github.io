@@ -41,6 +41,7 @@ if (!isset($_SESSION['loggedin'])) {
             if ($level > 1) {
                 echo "<h2 id='InvManage'>Inventory Management</h2>"
                     . "<span>Use this link to manage the inventory.</span>"
+                    . "<br>"
                     . '<a href="/phpmotors/vehicles/" id="adminVManage">Vehicle Management</a>';
             }
             ?>
