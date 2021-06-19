@@ -30,11 +30,11 @@ if (!isset($_SESSION['loggedin'])) {
             <?php
             echo "<h1>" . $_SESSION['clientData']['clientFirstname'] . $_SESSION['clientData']['clientLastname'] . "</h1>"
                 . "<section>"
+                . "<span>You are logged in.</span>"
                 . "<ul>"
-                . "<h2>You are logged in</h2>"
-                . "<li>First name:" . $_SESSION['clientData']['clientFirstname'] . "</li>"
-                . "<li>Last name:" . $_SESSION['clientData']['clientLastname'] . "</li>"
-                . "<li>Email:" . $_SESSION['clientData']['clientEmail'] . "</li>"
+                . "<li>First name:  " . $_SESSION['clientData']['clientFirstname'] . "</li>"
+                . "<li>Last name:   " . $_SESSION['clientData']['clientLastname'] . "</li>"
+                . "<li>Email:   " . $_SESSION['clientData']['clientEmail'] . "</li>"
                 . "</ul>"
                 . "</section>";
             ?>
