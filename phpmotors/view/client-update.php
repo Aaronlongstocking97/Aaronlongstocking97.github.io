@@ -27,6 +27,8 @@ if (!isset($_SESSION['loggedin'])) {
             <?php echo $navList; ?>
         </nav>
         <main id="main-content">
+            <h1>Manage Account</h1>
+            <h2>Update Account</h2>
             <form action="/phpmotors/accounts/index.php" method="post">
                 <fieldset id="align">
                     <label for="clientFirstname">First Name</label>
@@ -51,6 +53,7 @@ if (!isset($_SESSION['loggedin'])) {
                     <input type="hidden" name="action" value="register">
                 </fieldset>
             </form>
+            <h2>Update Password</h2>
             <form action="/phpmotors/accounts/index.php" method="post">
                 <fieldset id="align">
                     <label for="clientPassword">Password</label>
