@@ -42,6 +42,7 @@ if (!isset($_SESSION['loggedin'])) {
                 echo "<h2 id='adminInvManage'>Inventory Management</h2>"
                     . "<span>Use this link to manage the inventory.</span>"
                     . "<br>"
+                    . "<div>&nbsp;</div>"
                     . '<a href="/phpmotors/vehicles/" id="adminVehicleManage">Vehicle Management</a>';
             }
             ?>
