@@ -215,7 +215,7 @@ switch ($action) {
         }
         break;
     case 'del':
-        $invId = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+        $invId = filter_input(INPUT_GET, 'invId', FILTER_VALIDATE_INT);
         $invInfo = getInvItemInfo($invId);
         if (count($invInfo) < 1) {
             $message = 'Sorry, no vehicle information could be found.';
