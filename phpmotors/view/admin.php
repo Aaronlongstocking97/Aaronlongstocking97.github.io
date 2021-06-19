@@ -38,6 +38,14 @@ if (!isset($_SESSION['loggedin'])) {
                 . "</ul>"
                 . "</section>";
             ?>
+            <?php
+            foreach ($_SESSION['clientData']['clientLevel'] as $number) {
+                $value = 0;
+                if ($number > $value) {
+                    echo "<span>It worked</span>";
+                }
+            }
+            ?>
             <hr id="line-break">
         </main>
         <footer>
