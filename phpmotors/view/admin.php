@@ -43,7 +43,8 @@ if (!isset($_SESSION['loggedin'])) {
                     . "<span>Use this link to manage the inventory.</span>"
                     . "<br>"
                     . "<div>&nbsp;</div>"
-                    . '<a href="/phpmotors/vehicles/" id="adminVehicleManage">Vehicle Management</a>';
+                    . '<a href="/phpmotors/vehicles/" id="adminVehicleManage">Vehicle Management</a>'
+                    . "<div>&nbsp;</div>";
             }
             ?>
             <hr id="line-break">
