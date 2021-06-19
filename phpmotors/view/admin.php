@@ -39,7 +39,7 @@ if (!isset($_SESSION['loggedin'])) {
                 . "</section>";
             ?>
             <?php
-            if (in_array('3', $_SESSION['clientData'], TRUE)) {
+            if (in_array('>1', $_SESSION['clientData'], TRUE)) {
                 echo "<span>Use this link to manage the inventory.</span>";
             }
             ?>
