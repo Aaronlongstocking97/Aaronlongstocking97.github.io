@@ -45,9 +45,12 @@ if (!isset($_SESSION['loggedin'])) {
                     . "<div>&nbsp;</div>"
                     . '<a href="/phpmotors/vehicles/" id="adminVehicleManage">Vehicle Management</a>'
                     . "<div>&nbsp;</div>";
-                if (!$level > 1) {
+                if (!$_SESSION['loggedin']) {
+                    // do something here if the value is FALSE
+                    // The exclamation mark is a "negation" operator
+                    // By adding it the resulting test is reversed
+                    // This test is now "If Session loggedin value is NOT true"
                     header("location: /phpmotors/vehicles");
-                    exit;
                 }
             }
             ?>
