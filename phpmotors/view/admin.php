@@ -45,8 +45,10 @@ if (!isset($_SESSION['loggedin'])) {
                         header("location: /phpmotors/");
                         break;
                     case 'href="/phpmotors/accounts/';
+                        header("location: /phpmotors/accounts/");
                         break;
                     case 'href="/phpmotors/';
+                        header("location: /phpmotors/");
                         break;
                 }
             } elseif ($level > 1) {
