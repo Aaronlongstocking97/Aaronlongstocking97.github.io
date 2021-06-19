@@ -39,8 +39,7 @@ if (!isset($_SESSION['loggedin'])) {
                     . "<li>Email:   " . $_SESSION['clientData']['clientEmail'] . "</li>"
                     . "</ul>"
                     . "</section>";
-                $offLimits = 'href="/phpmotors/vehicles/';
-                switch ($offLimits) {
+                switch ($level == 1) {
                     case 'href="/phpmotors/vehicles/';
                         header("location: /phpmotors/");
                         break;
