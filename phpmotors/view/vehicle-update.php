@@ -71,30 +71,35 @@ $classifList .= '</select>';
                                                                                                         echo $invInfo['invDescription'];
                                                                                                     } ?></textarea>
                     <label for="invImage">Image Path</label>
-                    <input type="text" id="invImage" name="invImage" value="/phpmotors/images/no-image.png" <?php if (isset($invImage)) {
-                                                                                                                echo "value='$invImage'";
-                                                                                                            }
-                                                                                                            ?> required>
+                    <input type="text" id="invImage" name="invImage" required <?php if (isset($invImage)) {
+                                                                                    echo "value='$invImage'";
+                                                                                } elseif (isset($invInfo['invImage'])) {
+                                                                                    echo "value='$invInfo[invImage]'";
+                                                                                } ?>>
                     <label for="invThumbnail">Thumbnail Path</label>
-                    <input type="text" id="invThumbnail" name="invThumbnail" value="/phpmotors/images/no-image.png" <?php if (isset($invThumbnail)) {
-                                                                                                                        echo "value='$invThumbnail'";
-                                                                                                                    }
-                                                                                                                    ?> required>
+                    <input type="text" id="invThumbnail" name="invThumbnail" required <?php if (isset($invThumbnail)) {
+                                                                                            echo "value='$invThumbnail'";
+                                                                                        } elseif (isset($invInfo['invThumbnail'])) {
+                                                                                            echo "value='$invInfo[invThumbnail]'";
+                                                                                        } ?>>
                     <label for="invPrice">Price</label>
-                    <input type="number" step="any" id="invPrice" name="invPrice" <?php if (isset($invPrice)) {
-                                                                                        echo "value='$invPrice'";
-                                                                                    }
-                                                                                    ?> required>
+                    <input type="number" step="any" id="invPrice" name="invPrice" required <?php if (isset($invPrice)) {
+                                                                                                echo "value='$invPrice'";
+                                                                                            } elseif (isset($invInfo['invPrice'])) {
+                                                                                                echo "value='$invInfo[invPrice]'";
+                                                                                            } ?>>
                     <label for="invStock"># In Stock</label>
-                    <input type="number" id="invStock" name="invStock" <?php if (isset($invStock)) {
-                                                                            echo "value='$invStock'";
-                                                                        }
-                                                                        ?> required>
+                    <input type="number" id="invStock" name="invStock" required <?php if (isset($invStock)) {
+                                                                                    echo "value='$invStock'";
+                                                                                } elseif (isset($invInfo['invStock'])) {
+                                                                                    echo "value='$invInfo[invStock]'";
+                                                                                } ?>>
                     <label for="invColor">Color</label>
-                    <input type="text" id="invColor" name="invColor" <?php if (isset($invColor)) {
-                                                                            echo "value='$invColor'";
-                                                                        }
-                                                                        ?> required>
+                    <input type="text" id="invColor" name="invColor" required <?php if (isset($invColor)) {
+                                                                                    echo "value='$invColor'";
+                                                                                } elseif (isset($invInfo['invColor'])) {
+                                                                                    echo "value='$invInfo[invColor]'";
+                                                                                } ?>>
                     <input type="submit" name="submit" id="addVehicleBtn" value="Update Vehicle">
                     <input type="hidden" name="action" value="updateVehicle">
                 </fieldset>
