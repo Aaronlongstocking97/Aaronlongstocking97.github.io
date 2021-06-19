@@ -39,10 +39,15 @@ if (!isset($_SESSION['loggedin'])) {
                     . "<li>Email:   " . $_SESSION['clientData']['clientEmail'] . "</li>"
                     . "</ul>"
                     . "</section>";
-                if ('href="/phpmotors/vehicles/' == TRUE) {
-                    header("location: /phpmotors/accounts/");
-                } else {
-                    exit;
+                $offLimits = 'href="/phpmotors/vehicles/';
+                switch ($offLimits) {
+                    case 'href="/phpmotors/vehicles/';
+                        header("location: /phpmotors/");
+                        break;
+                    case 'href="/phpmotors/accounts/';
+                        break;
+                    case 'href="/phpmotors/';
+                        break;
                 }
             } elseif ($level > 1) {
                 echo "<h2 id='adminInvManage'>Inventory Management</h2>"
