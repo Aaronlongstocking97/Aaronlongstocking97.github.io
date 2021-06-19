@@ -39,17 +39,6 @@ if (!isset($_SESSION['loggedin'])) {
                     . "<li>Email:   " . $_SESSION['clientData']['clientEmail'] . "</li>"
                     . "</ul>"
                     . "</section>";
-                switch ($level == 1) {
-                    case 'href="/phpmotors/vehicles/';
-                        header("location: /phpmotors/");
-                        break;
-                    case 'href="/phpmotors/accounts/';
-                        header("location: /phpmotors/accounts/");
-                        break;
-                    case 'href="/phpmotors/';
-                        header("location: /phpmotors/");
-                        break;
-                }
             } elseif ($level > 1) {
                 echo "<h2 id='adminInvManage'>Inventory Management</h2>"
                     . "<span>Use this link to manage the inventory.</span>"
