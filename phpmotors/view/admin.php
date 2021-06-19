@@ -41,7 +41,7 @@ if (!isset($_SESSION['loggedin'])) {
                     . "<span>Use this link to update account information.</span>"
                     . "<br>"
                     . "<div>&nbsp;</div>"
-                    . '<a href="/phpmotors/accounts/?action=client-update&clientId=' . $_SESSION['$clientData']['$clientId'] . 'id="client-update">Account Management</a>'
+                    . '<a href="/phpmotors/accounts/?action=client-update&clientId=' . $_SESSION['clientData']['clientId'] . 'id="client-update">Account Management</a>'
                     . "<div>&nbsp;</div>";
             } elseif ($level > 1) {
                 echo "<h1 id='displayName'>" . $_SESSION['clientData']['clientFirstname'] . "    " . $_SESSION['clientData']['clientLastname'] . "</h1>"
@@ -55,7 +55,7 @@ if (!isset($_SESSION['loggedin'])) {
                     . "<span>Use this link to update account information.</span>"
                     . "<br>"
                     . "<div>&nbsp;</div>"
-                    . '<a href="/phpmotors/accounts/?action=client-update&clientId=' . $_SESSION['$clientData']['$clientId'] . 'id="client-update">Account Management</a>'
+                    . '<a href="/phpmotors/accounts/?action=client-update&clientId=' . $_SESSION['clientData']['clientId'] . 'id="client-update">Account Management</a>'
                     . "<div>&nbsp;</div>"
                     . "<h2 id='adminInvManage'>Inventory Management</h2>"
                     . "<span>Use this link to manage the inventory.</span>"
