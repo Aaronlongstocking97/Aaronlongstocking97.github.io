@@ -39,7 +39,7 @@ if (!isset($_SESSION['loggedin'])) {
                     . "<li>Email:   " . $_SESSION['clientData']['clientEmail'] . "</li>"
                     . "</ul>"
                     . "</section>";
-                if (isset('<a href="/phpmotors/vehicles/></a>') == TRUE) {
+                if (!isset('<a href="/phpmotors/vehicles/></a>') == TRUE) {
                     header("location: /phpmotors/");
                 } else {
                     exit;
