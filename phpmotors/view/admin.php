@@ -38,11 +38,6 @@ if (!isset($_SESSION['loggedin'])) {
                 . "</ul>"
                 . "</section>";
             ?>
-            <?php
-            if (count($_SESSION['clientData']['clientLevel']) > 1) {
-                echo "<span>Use this link to manage the inventory.</span>";
-            }
-            ?>
             <hr id="line-break">
         </main>
         <footer>
