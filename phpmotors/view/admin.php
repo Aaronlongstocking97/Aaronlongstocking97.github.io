@@ -39,7 +39,7 @@ if (!isset($_SESSION['loggedin'])) {
                     . "<li>Email:   " . $_SESSION['clientData']['clientEmail'] . "</li>"
                     . "</ul>"
                     . "</section>";
-                if ($level == 1) {
+                if ('<a href="/phpmotors/vehicles/></a>' == TRUE) {
                     header("location: /phpmotors/accounts");
                 }
             } elseif ($level > 1) {
