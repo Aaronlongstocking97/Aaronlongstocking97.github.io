@@ -7,7 +7,7 @@ if ($_SESSION['loggedin'] != TRUE || $_SESSION['clientData']['clientLevel'] < 2)
 // Build the classifications option list
 $classifList = '<select name="classificationId" id="classificationId">';
 $classifList .= "<option>Choose a Car Classification</option>";
-foreach ($carClassifications as $classification) {
+foreach ($classifications as $classification) {
     $classifList .= "<option value='$classification[classificationId]'";
     if (isset($classificationId)) {
         if ($classification['classificationId'] === $classificationId) {
