@@ -142,6 +142,14 @@ input {
     font-weight: unset;
 }
 
+#adminInvManage {
+    font-weight: unset;
+}
+
+#adminVehicleManage {
+    margin-top: 20px;
+}
+
 #regbtn {
     font-size: 20px;
     background-color: #4c96d7;
