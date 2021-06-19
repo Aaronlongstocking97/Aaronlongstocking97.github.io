@@ -28,7 +28,7 @@ if (!isset($_SESSION['loggedin'])) {
         </nav>
         <main id="main-content">
             <?php
-            echo "<h1>" . $_SESSION['clientData']['clientFirstname'] . "    " . $_SESSION['clientData']['clientLastname'] . "</h1>"
+            echo "<h1 id='displayName'>" . $_SESSION['clientData']['clientFirstname'] . "    " . $_SESSION['clientData']['clientLastname'] . "</h1>"
                 . "<section>"
                 . "<span>You are logged in.</span>"
                 . "<ul>"

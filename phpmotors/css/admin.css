@@ -114,34 +114,9 @@ header {
     color: #3a3a3a;
 }
 
-#content {
-    font-size: 20px;
-    font-weight: lighter;
-}
-
-#align {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border: unset;
-    padding: unset;
-    margin: unset;
-}
-
-label {
-    font-size: 20px;
-}
-
-input {
-    width: 150px;
-    margin-bottom: 10px;
-}
-
-#regbtn {
-    font-size: 20px;
-    background-color: #4c96d7;
-    border-width: 1px;
-    margin: unset;
+#displayName {
+    font-size: 40px;
+    font-weight: unset;
 }
 
 #line-break {
