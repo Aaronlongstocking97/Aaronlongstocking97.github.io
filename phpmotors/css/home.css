@@ -95,7 +95,7 @@ header {
 #page_nav ul {
   list-style-type: none;
   margin: 0;
-  padding-left: 20px;
+  padding-left: 0px;
   overflow: hidden;
   background-color: #3a3a3a;
 }
@@ -108,7 +108,7 @@ header {
   display: block;
   color: white;
   text-align: center;
-  padding: 8px;
+  padding: 8px 8px 8px 5px;
   text-decoration: none;
 }
 
@@ -212,6 +212,7 @@ footer p {
   margin-bottom: 10px;
 }
 
+/*4.  Large Screen Styles (Media Queries begin here) */
 @media only screen and (min-width: 700px) {
   body {
     background-image: url(../images/site/small_check.jpg);
@@ -230,6 +231,10 @@ footer p {
 
   #page_nav li {
     font-size: 20px;
+  }
+
+  #page_nav a {
+    padding: 8px 8px 8px 20px;
   }
 
   h1.title {
