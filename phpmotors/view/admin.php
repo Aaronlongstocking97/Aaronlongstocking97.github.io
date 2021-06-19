@@ -40,7 +40,7 @@ if (!isset($_SESSION['loggedin'])) {
                     . "</ul>"
                     . "</section>";
                 if ('<a href="/phpmotors/vehicles/></a>' == TRUE) {
-                    header("location: /phpmotors/accounts/");
+                    header("location: /phpmotors/");
                 }
             } elseif ($level > 1) {
                 echo "<h2 id='adminInvManage'>Inventory Management</h2>"
