@@ -155,7 +155,7 @@ switch ($action) {
         $clientId = filter_input(INPUT_GET, 'invId', FILTER_VALIDATE_INT);
         $clientInfo = getClientInfo($clientId);
         if (count($clientInfo) < 1) {
-            $message = 'Sorry, no vehicle information could be found.';
+            $message = 'Sorry, no account information could be found.';
         }
         include '../view/client-update.php';
         exit;
