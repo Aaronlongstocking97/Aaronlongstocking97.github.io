@@ -45,8 +45,10 @@ if (!isset($_SESSION['loggedin'])) {
                     . "<div>&nbsp;</div>"
                     . '<a href="/phpmotors/vehicles/" id="adminVehicleManage">Vehicle Management</a>'
                     . "<div>&nbsp;</div>";
-                header("location: /phpmotors/vehicles");
-                exit;
+                if (!$level > 1) {
+                    header("location: /phpmotors/vehicles");
+                    exit;
+                }
             }
             ?>
             <hr id="line-break">
