@@ -137,6 +137,11 @@ input {
     margin-bottom: 10px;
 }
 
+#displayName {
+    font-size: 40px;
+    font-weight: unset;
+}
+
 #regbtn {
     font-size: 20px;
     background-color: #4c96d7;
