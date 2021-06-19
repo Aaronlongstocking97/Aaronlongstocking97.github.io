@@ -40,11 +40,20 @@ if (!isset($_SESSION['loggedin'])) {
                     . "</ul>"
                     . "</section>";
             } elseif ($level > 1) {
-                echo "<h2 id='adminInvManage'>Inventory Management</h2>"
+                echo "<h1 id='displayName'>" . $_SESSION['clientData']['clientFirstname'] . "    " . $_SESSION['clientData']['clientLastname'] . "</h1>"
+                    . "<section>"
+                    . "<span>You are logged in.</span>"
+                    . "<ul>"
+                    . "<li>First name:  " . $_SESSION['clientData']['clientFirstname'] . "</li>"
+                    . "<li>Last name:   " . $_SESSION['clientData']['clientLastname'] . "</li>"
+                    . "<li>Email:   " . $_SESSION['clientData']['clientEmail'] . "</li>"
+                    . "</ul>"
+                    . "</section>"
+                    . "<h2 id='adminInvManage'>Inventory Management</h2>"
                     . "<span>Use this link to manage the inventory.</span>"
                     . "<br>"
                     . "<div>&nbsp;</div>"
-                    . '<a href="/phpmotors/vehicles/" id="adminVehicleManage">Vehicle Management</a>'
+                    . '<a href="/phpmotors/vehicles/?action=vehicle-man" id="vehicle-man">Vehicle Management</a>'
                     . "<div>&nbsp;</div>";
             } else {
                 header("location: /phpmotors/");
