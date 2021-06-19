@@ -40,7 +40,7 @@ if (!isset($_SESSION['loggedin'])) {
                     . "</ul>"
                     . "</section>";
                 if ('href="/phpmotors/vehicles/' == TRUE) {
-                    header("location: /phpmotors/");
+                    header("location: /phpmotors/accounts/");
                 } else {
                     exit;
                 }
