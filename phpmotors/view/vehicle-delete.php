@@ -1,6 +1,6 @@
 <?php
-if ($_SESSION['loggedin'] != TRUE || $_SESSION['clientData']['clientLevel'] < 2) {
-    header("location: ../");
+if ($_SESSION['clientData']['clientLevel'] < 2) {
+    header('location: /phpmotors/');
     exit;
 }
 
