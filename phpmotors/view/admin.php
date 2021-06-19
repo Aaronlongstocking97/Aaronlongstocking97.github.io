@@ -54,9 +54,9 @@ if (!isset($_SESSION['loggedin'])) {
             } else {
                 header("location: /phpmotors/");
             }
-            if (isset($_SESSION['message'])) {
-                echo $_SESSION['message'];
-            }
+            // if (isset($_SESSION['message'])) {
+            //     echo $_SESSION['message'];
+            // }
             ?>
             <hr id="line-break">
         </main>
@@ -67,6 +67,4 @@ if (!isset($_SESSION['loggedin'])) {
 </body>
 
 </html>
-<?php
-unset($_SESSION['message']);
-?>
+<!-- unset($_SESSION['message']); -->
