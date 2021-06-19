@@ -37,9 +37,6 @@ if (!isset($_SESSION['loggedin'])) {
                     . "<li>Last name:   " . $_SESSION['clientData']['clientLastname'] . "</li>"
                     . "<li>Email:   " . $_SESSION['clientData']['clientEmail'] . "</li>"
                     . "</ul>";
-                if (isset($_SESSION['message'])) {
-                    echo $_SESSION['message'];
-                }
             } elseif ($level > 1) {
                 echo "<h1 id='displayName'>" . $_SESSION['clientData']['clientFirstname'] . "    " . $_SESSION['clientData']['clientLastname'] . "</h1>"
                     . "<span>You are logged in.</span>"
@@ -54,11 +51,11 @@ if (!isset($_SESSION['loggedin'])) {
                     . "<div>&nbsp;</div>"
                     . '<a href="/phpmotors/vehicles/?action=vehicle-man" id="vehicle-man">Vehicle Management</a>'
                     . "<div>&nbsp;</div>";
-                if (isset($_SESSION['message'])) {
-                    echo $_SESSION['message'];
-                }
             } else {
                 header("location: /phpmotors/");
+            }
+            if (isset($_SESSION['message'])) {
+                echo $_SESSION['message'];
             }
             ?>
             <hr id="line-break">
