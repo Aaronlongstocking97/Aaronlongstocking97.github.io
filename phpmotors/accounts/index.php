@@ -152,7 +152,7 @@ switch ($action) {
         include '../view/registration.php';
         break;
     case 'client-update':
-        $clientId = filter_input(INPUT_GET, 'invId', FILTER_VALIDATE_INT);
+        $clientId = filter_input(INPUT_GET, 'clientId', FILTER_VALIDATE_INT);
         $clientInfo = getClientInfo($clientId);
         if (count($clientInfo) < 1) {
             $message = 'Sorry, no account information could be found.';
