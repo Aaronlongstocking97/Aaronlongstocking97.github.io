@@ -45,6 +45,8 @@ if (!isset($_SESSION['loggedin'])) {
                     . "<div>&nbsp;</div>"
                     . '<a href="/phpmotors/vehicles/" id="adminVehicleManage">Vehicle Management</a>'
                     . "<div>&nbsp;</div>";
+            } elseif ($level == 1) {
+                header("location: /phpmotors/accounts/");
             } else {
                 header("location: /phpmotors/");
             }
