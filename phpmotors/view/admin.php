@@ -37,11 +37,11 @@ if (!isset($_SESSION['loggedin'])) {
                 . "<li>Email:   " . $_SESSION['clientData']['clientEmail'] . "</li>"
                 . "</ul>"
                 . "</section>";
-            ?>
-            <?php
             $level = $_SESSION['clientData']['clientLevel'];
             if ($level > 1) {
-                echo "<span>It worked</span>";
+                echo "<h2 id='InvManage'>Inventory Management</h2>"
+                    . "<span>Use this link to manage the inventory.</span>"
+                    . '<a href="/phpmotors/vehicles/" id="adminVManage">Vehicle Management</a>';
             }
             ?>
             <hr id="line-break">
