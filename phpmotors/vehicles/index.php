@@ -230,7 +230,7 @@ switch ($action) {
 
         $deleteResult = deleteVehicle($invId);
         if ($deleteResult) {
-            $message = "<p class='notice'>Congratulations the, $invMake $invModel was	successfully deleted.</p>";
+            $message = "<p class='notice'>The $invMake $invModel was successfully deleted.</p>";
             $_SESSION['message'] = $message;
             header('location: /phpmotors/vehicles/');
             exit;
