@@ -37,7 +37,7 @@ body {
 
 /*3.  Mobile First (styles specific to small screens) */
 
-#wrapper {
+/* #wrapper {
     background-color: white;
     padding: 5px;
 }
@@ -106,7 +106,7 @@ header {
     text-align: center;
     padding: 8px 8px 8px 5px;
     text-decoration: none;
-}
+} */
 
 /* mouse over link */
 #page_nav a:hover {
