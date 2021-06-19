@@ -1,4 +1,9 @@
 <?php
+if ($_SESSION['loggedin'] != TRUE || $_SESSION['clientData']['clientLevel'] < 2) {
+    header("location: ../");
+    exit;
+}
+
 // Build the classifications option list
 $classifList = '<select name="classificationId" id="classificationId">';
 $classifList .= "<option>Choose a Car Classification</option>";
