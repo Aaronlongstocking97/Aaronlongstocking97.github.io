@@ -160,6 +160,6 @@ switch ($action) {
     case 'home':
         include '../view/home.php';
         break;
-    default:
-        include '../view/admin.php';
+        // default:
+        //     include '../view/admin.php';
 }
