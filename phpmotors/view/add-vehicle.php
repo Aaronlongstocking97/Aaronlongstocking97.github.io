@@ -85,7 +85,7 @@ $classifList .= '</select>';
                                                                         }
                                                                         ?> required>
                     <input type="submit" name="submit" id="addVehicleBtn" value="Add Vehicle">
-                    <input type="hidden" name="action" value="addVehicle">
+                    <input type="hidden" name="action" value="add-Vehicle">
                 </fieldset>
             </form>
             <hr id="line-break">

@@ -31,7 +31,8 @@ if ($action == NULL) {
 switch ($action) {
         // Code to deliver the views will be here
 
-    case 'addClass':
+    case 'class-page':
+    case 'add-Class':
         $classificationName = trim(filter_input(
             INPUT_POST,
             'classificationName',
@@ -63,7 +64,7 @@ switch ($action) {
         }
 
         break;
-    case 'addVehicle':
+    case 'add-Vehicle':
         // Filter and store the data
         $invMake = trim(filter_input(
             INPUT_POST,
@@ -148,24 +149,21 @@ switch ($action) {
             include '../view/add-vehicle.php';
             exit;
         }
-    case 'vehicle-man':
-        include '../view/vehicle-man.php';
-        break;
-    case 'classification':
+
         include '../view/add-classification.php';
         break;
-    case 'vehicle':
+    case 'vehicle-page':
         include '../view/add-vehicle.php';
         break;
     case 'home':
         include '../view/home.php';
         break;
-
+    case 'getInventoryItems':
         /* * ********************************** 
         * Get vehicles by classificationId 
         * Used for starting Update & Delete process 
         * ********************************** */
-    case 'getInventoryItems':
+
         // Get the classificationId 
         $classificationId = filter_input(INPUT_GET, 'classificationId', FILTER_SANITIZE_NUMBER_INT);
         // Fetch the vehicles by classificationId from the DB 

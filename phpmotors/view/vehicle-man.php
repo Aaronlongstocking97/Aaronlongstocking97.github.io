@@ -28,8 +28,8 @@ if ($_SESSION['clientData']['clientLevel'] < 2) {
         <main id="main-content">
             <h1 id="content">Vehicle Management</h1>
             <ul id="addOn">
-                <li><a href="/phpmotors/vehicles/index.php?action=classification" id="classification">Add Classsification</a></li>
-                <li><a href="/phpmotors/vehicles/index.php?action=vehicle" id="vehicle">Add Vehicle</a></li>
+                <li><a href="/phpmotors/vehicles/index.php?action=class-page" id="class-page">Add Classsification</a></li>
+                <li><a href="/phpmotors/vehicles/index.php?action=vehicle-page" id="vehicle-page">Add Vehicle</a></li>
             </ul>
             <?php
             if (isset($message)) {

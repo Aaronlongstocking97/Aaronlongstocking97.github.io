@@ -34,7 +34,7 @@
                                                                                                 }
                                                                                                 ?> required>
                 <input type="submit" name="submit" id="addClassBtn" value="Add Classification">
-                <input type="hidden" name="action" value="addClass">
+                <input type="hidden" name="action" value="add-Class">
             </form>
             <hr id="line-break">
         </main>
