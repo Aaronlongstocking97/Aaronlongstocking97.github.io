@@ -119,6 +119,14 @@ header {
     font-weight: unset;
 }
 
+#adminInvManage {
+    font-weight: unset;
+}
+
+#adminVehicleManage {
+    margin-top: 20px;
+}
+
 #line-break {
     border-top: 3px solid black;
     margin-top: 0px;

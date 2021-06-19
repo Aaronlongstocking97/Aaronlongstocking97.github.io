@@ -39,10 +39,10 @@ if (!isset($_SESSION['loggedin'])) {
                 . "</section>";
             $level = $_SESSION['clientData']['clientLevel'];
             if ($level > 1) {
-                echo "<h2 id='InvManage'>Inventory Management</h2>"
+                echo "<h2 id='adminInvManage'>Inventory Management</h2>"
                     . "<span>Use this link to manage the inventory.</span>"
                     . "<br>"
-                    . '<a href="/phpmotors/vehicles/" id="adminVManage">Vehicle Management</a>';
+                    . '<a href="/phpmotors/vehicles/" id="adminVehicleManage">Vehicle Management</a>';
             }
             ?>
             <hr id="line-break">
