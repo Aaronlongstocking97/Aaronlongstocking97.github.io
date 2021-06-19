@@ -39,11 +39,9 @@ if (!isset($_SESSION['loggedin'])) {
                 . "</section>";
             ?>
             <?php
-            foreach ($_SESSION['clientData']['clientLevel'] as $number) {
-                $value = 0;
-                if ($number > $value) {
-                    echo "<span>It worked</span>";
-                }
+            $level = $_SESSION['clientData']['clientLevel'];
+            if ($level > 1) {
+                echo "<span>It worked</span>";
             }
             ?>
             <hr id="line-break">
