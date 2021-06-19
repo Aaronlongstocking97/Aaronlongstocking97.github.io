@@ -37,14 +37,13 @@ html {
 
 body {
   font-family: "Quantico", sans-serif;
-  padding: 0;
-  margin: 0;
 }
 
 /*3.  Mobile First (styles specific to small screens) */
 
 #wrapper {
   background-color: white;
+  padding: 5px;
 }
 
 #login {
@@ -223,6 +222,10 @@ footer p {
     width: 75%;
     border-radius: 5px;
     margin-top: 2%;
+  }
+
+  #wrapper {
+    padding: 10px;
   }
 
   #page_nav li {
