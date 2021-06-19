@@ -66,9 +66,10 @@ $classifList .= '</select>';
                                                                                 } ?>>
                     <label for="invDescription">Description</label>
                     <textarea name="invDescription" id="invDescription" cols="20" rows="2" required><?php if (isset($invDescription)) {
-                                                                                                        echo "$invDescription";
-                                                                                                    }
-                                                                                                    ?></textarea>
+                                                                                                        echo $invDescription;
+                                                                                                    } elseif (isset($invInfo['invDescription'])) {
+                                                                                                        echo $invInfo['invDescription'];
+                                                                                                    } ?></textarea>
                     <label for="invImage">Image Path</label>
                     <input type="text" id="invImage" name="invImage" value="/phpmotors/images/no-image.png" <?php if (isset($invImage)) {
                                                                                                                 echo "value='$invImage'";
