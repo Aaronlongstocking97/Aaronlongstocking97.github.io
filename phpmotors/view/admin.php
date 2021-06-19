@@ -36,7 +36,13 @@ if (!isset($_SESSION['loggedin'])) {
                     . "<li>First name:  " . $_SESSION['clientData']['clientFirstname'] . "</li>"
                     . "<li>Last name:   " . $_SESSION['clientData']['clientLastname'] . "</li>"
                     . "<li>Email:   " . $_SESSION['clientData']['clientEmail'] . "</li>"
-                    . "</ul>";
+                    . "</ul>"
+                    . "<h2 id='accountManage'>Account Management</h2>"
+                    . "<span>Use this link to update account information.</span>"
+                    . "<br>"
+                    . "<div>&nbsp;</div>"
+                    . '<a href="/phpmotors/vehicles/?action=client-update" id="client-update">Account Management</a>'
+                    . "<div>&nbsp;</div>";
             } elseif ($level > 1) {
                 echo "<h1 id='displayName'>" . $_SESSION['clientData']['clientFirstname'] . "    " . $_SESSION['clientData']['clientLastname'] . "</h1>"
                     . "<span>You are logged in.</span>"
@@ -45,6 +51,12 @@ if (!isset($_SESSION['loggedin'])) {
                     . "<li>Last name:   " . $_SESSION['clientData']['clientLastname'] . "</li>"
                     . "<li>Email:   " . $_SESSION['clientData']['clientEmail'] . "</li>"
                     . "</ul>"
+                    . "<h2 id='accountManage'>Account Management</h2>"
+                    . "<span>Use this link to update account information.</span>"
+                    . "<br>"
+                    . "<div>&nbsp;</div>"
+                    . '<a href="/phpmotors/vehicles/?action=client-update" id="client-update">Account Management</a>'
+                    . "<div>&nbsp;</div>"
                     . "<h2 id='adminInvManage'>Inventory Management</h2>"
                     . "<span>Use this link to manage the inventory.</span>"
                     . "<br>"

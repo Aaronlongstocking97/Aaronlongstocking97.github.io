@@ -151,6 +151,9 @@ switch ($action) {
     case 'registration':
         include '../view/registration.php';
         break;
+    case 'client-update':
+        include '../view/client-update.php';
+        break;
     case 'home':
         include '../view/home.php';
         break;
