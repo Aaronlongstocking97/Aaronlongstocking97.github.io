@@ -135,9 +135,9 @@ input {
     margin: unset;
 }
 
-a {
+/* a {
     margin-top: 20px;
-}
+} */
 
 #line-break {
     border-top: 3px solid black;
