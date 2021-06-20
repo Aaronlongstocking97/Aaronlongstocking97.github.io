@@ -170,7 +170,7 @@ switch ($action) {
             empty($clientFirstname) || empty($clientLastname) || empty($clientEmail)
             || empty($clientId)
         ) {
-            $message = '<p>Please complete all information for the item! Double check the classification of the item.</p>';
+            $message = '<p>Please provide information for all empty form fields.</p>';
             include '../view/client-update.php';
             exit;
         }
@@ -180,7 +180,7 @@ switch ($action) {
         array_pop($clientData);
         $_SESSION['clientData'] = $clientData;
         if ($updateClientResult) {
-            $message = "<p class='notice'>Congratulations your account was successfully updated.</p>";
+            $message = "<p class='notice'>Administrator, your information has been updated.</p>";
             $_SESSION['message'] = $message;
             header('location: /phpmotors/accounts/');
             exit;
