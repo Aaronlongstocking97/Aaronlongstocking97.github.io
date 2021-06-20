@@ -40,7 +40,7 @@ if (!isset($_SESSION['loggedin'])) {
                 . "<span>Use this link to update account information.</span>"
                 . "<br>"
                 . "<div>&nbsp;</div>"
-                . '<a href="/phpmotors/accounts/?action=client-update&clientId=' . $_SESSION['clientData']['clientId'] . ">Account Management</a>"
+                // . '<a href="/phpmotors/accounts/?action=client-update&clientId=' . $_SESSION['clientData']['clientId'] . ">Account Management</a>"
                 . "<div>&nbsp;</div>";
             if ($level > 1) {
                 echo "<h2 id='adminInvManage'>Inventory Management</h2>"
@@ -51,6 +51,7 @@ if (!isset($_SESSION['loggedin'])) {
                     . "<div>&nbsp;</div>";
             }
             ?>
+            <a href="/phpmotors/accounts/?action=client-update&clientId=  <?php echo $_SESSION['clientData']['clientId'] ?>">Account Management</a>
             <hr id="line-break">
         </main>
         <footer>
