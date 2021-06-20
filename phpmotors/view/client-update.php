@@ -74,7 +74,6 @@ if (!isset($_SESSION['loggedin'])) {
                     <label for="clientPassword">Password</label>
                     <label>&nbsp;</label>
                     <input type="password" id="clientPassword" name="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n]?=.*[A-Z])(?=.*[a-z]).*$">
-                    )(
                 </fieldset>
             </form>
             <hr id="line-break">
