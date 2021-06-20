@@ -160,6 +160,33 @@ switch ($action) {
         include '../view/client-update.php';
         exit;
         break;
+    case 'updateClient':
+        $clientFirstname = filter_input(INPUT_POST, 'clientFirstname', FILTER_SANITIZE_STRING);
+        $clientLastname = filter_input(INPUT_POST, 'clientLastname', FILTER_SANITIZE_STRING);
+        $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
+        $clientId = filter_input(INPUT_POST, 'clientId', FILTER_SANITIZE_NUMBER_INT);
+
+        if (
+            empty($clientFirstname) || empty($clientLastname) || empty($clientEmail)
+            || empty($clientId)
+        ) {
+            $message = '<p>Please complete all information for the item! Double check the classification of the item.</p>';
+            include '../view/client-update.php';
+            exit;
+        }
+
+        $updateClientResult = updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId);
+        if ($updateResult) {
+            $message = "<p class='notice'>Congratulations, the $invMake $invModel was successfully updated.</p>";
+            $_SESSION['message'] = $message;
+            header('location: /phpmotors/vehicles/');
+            exit;
+        } else {
+            $message = "<p class='notice'>Error. the $invMake $invModel was not updated.</p>";
+            include '../view/vehicle-update.php';
+            exit;
+        }
+        break;
     case 'home':
         include '../view/home.php';
         break;
