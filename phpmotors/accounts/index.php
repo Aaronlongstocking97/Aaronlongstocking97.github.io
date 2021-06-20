@@ -176,14 +176,14 @@ switch ($action) {
         }
 
         $updateClientResult = updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId);
-        if ($updateResult) {
-            $message = "<p class='notice'>Congratulations, the $invMake $invModel was successfully updated.</p>";
+        if ($updateClientResult) {
+            $message = "<p class='notice'>Congratulations your account was successfully updated.</p>";
             $_SESSION['message'] = $message;
-            header('location: /phpmotors/vehicles/');
+            header('location: /phpmotors/accounts/');
             exit;
         } else {
-            $message = "<p class='notice'>Error. the $invMake $invModel was not updated.</p>";
-            include '../view/vehicle-update.php';
+            $message = "<p class='notice'>Error. You're account was not updated.</p>";
+            include '../view/client-update.php';
             exit;
         }
         break;
