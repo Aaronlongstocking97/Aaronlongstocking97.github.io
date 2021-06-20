@@ -72,6 +72,19 @@ function getClient($clientEmail)
     return $clientData;
 }
 
+// // Get vehicles by classificationId 
+// function getClientByClientId($clientId)
+// {
+//     $db = phpmotorsConnect();
+//     $sql = ' SELECT * FROM inventory WHERE classificationId = :classificationId';
+//     $stmt = $db->prepare($sql);
+//     $stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT);
+//     $stmt->execute();
+//     $inventory = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//     $stmt->closeCursor();
+//     return $inventory;
+// }
+
 // Get client information by invId
 function getClientInfo($clientId)
 {
