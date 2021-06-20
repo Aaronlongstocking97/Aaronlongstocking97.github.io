@@ -176,6 +176,9 @@ switch ($action) {
         }
 
         $updateClientResult = updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId);
+        $clientData = getClientInfo($clientId);
+        array_pop($clientData);
+        $_SESSION['clientData'] = $clientData;
         if ($updateClientResult) {
             $message = "<p class='notice'>Congratulations your account was successfully updated.</p>";
             $_SESSION['message'] = $message;
