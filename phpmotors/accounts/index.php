@@ -175,7 +175,7 @@ switch ($action) {
         if ($existingEmail) {
             $message = '<p class="notice">That email address 
             already exists. Do you want to login instead?</p>';
-            include '../view/login.php';
+            include '../view/client-update.php';
             exit;
         }
 
