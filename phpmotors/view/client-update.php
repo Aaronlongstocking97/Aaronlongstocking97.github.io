@@ -85,4 +85,6 @@ if (!isset($_SESSION['loggedin'])) {
 </body>
 
 </html>
-<!-- unset($_SESSION['message']); -->
+<?php
+unset($_SESSION['message']);
+?>
