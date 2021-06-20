@@ -31,7 +31,7 @@ if (!isset($_SESSION['loggedin'])) {
             <h2>Update Account</h2>
             <?php
             if (isset($_SESSION['message'])) {
-                echo $_SESSION['message'];
+                $message = $_SESSION['message'];
             }
             // if (isset($message)) {
             //     echo $message;
