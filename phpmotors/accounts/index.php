@@ -178,6 +178,7 @@ switch ($action) {
         // Check for existing email
         $existingEmail = checkExistingEmail($clientEmail);
 
+        $updateClientResult = updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId);
         // deal with existing email during registration
         if ($existingEmail === 1) {
             $message = '<p class="notice">That email address 
@@ -185,8 +186,6 @@ switch ($action) {
             include '../view/client-update.php';
             exit;
         }
-
-        $updateClientResult = updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId);
         $clientData = getClientInfo($clientId);
         array_pop($clientData);
         $_SESSION['clientData'] = $clientData;
