@@ -168,13 +168,8 @@ switch ($action) {
 
         $clientEmail = checkEmail($clientEmail);
 
-        // Check for existing email
-        $existingEmail = checkExistingEmail($clientEmail);
-
-
-
         if (
-            empty($clientFirstname) || empty($clientLastname) || empty($existingEmail)
+            empty($clientFirstname) || empty($clientLastname) || empty($clientEmail)
             || empty($clientId)
         ) {
             $message = '<p>Please provide information for all empty form fields.</p>';
@@ -182,10 +177,13 @@ switch ($action) {
             exit;
         }
 
+        // Check for existing email
+        $existingEmail = checkExistingEmail($clientEmail);
+
         // deal with existing email during registration
         if ($existingEmail) {
             $message = '<p class="notice">That email address 
-            already exists. Do you want to login instead?</p>';
+                already exists. Do you want to login instead?</p>';
             include '../view/client-update.php';
             exit;
         }
