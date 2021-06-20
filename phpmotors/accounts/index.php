@@ -154,8 +154,6 @@ switch ($action) {
     case 'client-update':
         $clientId = filter_input(INPUT_GET, 'clientId', FILTER_VALIDATE_INT);
         $clientInfo = getClientInfo($clientId);
-        echo $clientFirstname;
-        exit;
         if (count($clientInfo) < 1) {
             $message = 'Sorry, no account information could be found.';
         }
