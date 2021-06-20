@@ -176,7 +176,16 @@ switch ($action) {
         }
 
         // Check for existing email
-        $clientEmail = checkExistingEmail($clientEmail);
+        $existingEmail = checkExistingEmail($clientEmail);
+        // deal with existing email during registration
+        if ($existingEmail) {
+            $message = '<p class="notice">That email address 
+                already exists. Do you want to login instead?</p>';
+            include '../view/client-update.php';
+            exit;
+        } else {
+            exit;
+        }
 
         $updateClientResult = updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId);
         $clientData = getClientInfo($clientId);
