@@ -30,9 +30,12 @@ if (!isset($_SESSION['loggedin'])) {
             <h1>Manage Account</h1>
             <h2>Update Account</h2>
             <?php
-            if (isset($_SESSION['message'])) {
-                $message = $_SESSION['message'];
+            if (isset($message)) {
+                echo $message;
             }
+            // if (isset($_SESSION['message'])) {
+            //     $message = $_SESSION['message'];
+            // }
             ?>
             <form action="/phpmotors/accounts/index.php" method="post">
                 <fieldset id="align">
