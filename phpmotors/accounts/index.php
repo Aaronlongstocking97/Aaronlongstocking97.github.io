@@ -175,30 +175,29 @@ switch ($action) {
             exit;
         }
 
-        // Check for existing email
-        $existingEmail = checkExistingEmail($clientEmail);
-        // deal with existing email during registration
-        if ($existingEmail) {
-            $message = '<p class="notice">That email address 
-                already exists. Do you want to login instead?</p>';
-            include '../view/client-update.php';
+        // // Check for existing email
+        // $existingEmail = checkExistingEmail($clientEmail);
+        // // deal with existing email during registration
+        // if ($existingEmail) {
+        //     $message = '<p class="notice">That email address 
+        //         already exists. Do you want to login instead?</p>';
+        //     include '../view/client-update.php';
+        //     exit;
+        // } else {
+
+        $updateClientResult = updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId);
+        $clientData = getClientInfo($clientId);
+        array_pop($clientData);
+        $_SESSION['clientData'] = $clientData;
+        if ($updateClientResult) {
+            $message = "<p class='notice'>Administrator, your information has been updated.</p>";
+            $_SESSION['message'] = $message;
+            header('location: /phpmotors/accounts/');
             exit;
         } else {
-
-            $updateClientResult = updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId);
-            $clientData = getClientInfo($clientId);
-            array_pop($clientData);
-            $_SESSION['clientData'] = $clientData;
-            if ($updateClientResult) {
-                $message = "<p class='notice'>Administrator, your information has been updated.</p>";
-                $_SESSION['message'] = $message;
-                header('location: /phpmotors/accounts/');
-                exit;
-            } else {
-                $message = "<p class='notice'>Sorry Administrator, we could not update your account information. Please try agin.</p>";
-                include '../view/client-update.php';
-                exit;
-            }
+            $message = "<p class='notice'>Sorry Administrator, we could not update your account information. Please try agin.</p>";
+            include '../view/client-update.php';
+            exit;
         }
         break;
     case 'home':
