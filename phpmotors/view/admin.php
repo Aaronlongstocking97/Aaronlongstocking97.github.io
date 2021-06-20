@@ -49,9 +49,10 @@ if (!isset($_SESSION['loggedin'])) {
                     . "<div>&nbsp;</div>"
                     . '<a href="/phpmotors/vehicles/?action=vehicle-man" id="vehicle-man">Vehicle Management</a>'
                     . "<div>&nbsp;</div>";
-            } else {
-                header("location: /phpmotors/");
             }
+            // } else {
+            //     header("location: /phpmotors/");
+            // }
             // if (isset($_SESSION['message'])) {
             //     echo $_SESSION['message'];
             // }
