@@ -50,12 +50,6 @@ if (!isset($_SESSION['loggedin'])) {
                     . '<a href="/phpmotors/vehicles/?action=vehicle-man" id="vehicle-man">Vehicle Management</a>'
                     . "<div>&nbsp;</div>";
             }
-            // } else {
-            //     header("location: /phpmotors/");
-            // }
-            // if (isset($_SESSION['message'])) {
-            //     echo $_SESSION['message'];
-            // }
             ?>
             <hr id="line-break">
         </main>
