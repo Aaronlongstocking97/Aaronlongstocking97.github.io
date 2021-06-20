@@ -32,6 +32,7 @@ if (!isset($_SESSION['loggedin'])) {
             <?php
             if (isset($_SESSION['message'])) {
                 $message = $_SESSION['message'];
+                echo $message;
             }
             // if (isset($message)) {
             //     echo $message;
