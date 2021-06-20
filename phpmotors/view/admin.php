@@ -48,7 +48,7 @@ if (isset($_SESSION['message'])) {
             <span>Use this link to update account information.</span>
             <br>
             <div>&nbsp;</div>
-            <a href="/phpmotors/accounts/?action=client-update&clientId=  <?php echo $_SESSION['clientData']['clientId'] ?>">Account Management</a>
+            <a href="/phpmotors/accounts/?action=client-update&clientId=  <?php echo $_SESSION['clientData']['clientId'] ?>">Update Account Information</a>
             <div>&nbsp;</div>
             <?php
             $level = $_SESSION['clientData']['clientLevel'];
