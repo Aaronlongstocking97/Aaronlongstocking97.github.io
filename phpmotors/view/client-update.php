@@ -55,7 +55,7 @@ if (!isset($_SESSION['loggedin'])) {
 
                     <label>&nbsp;</label>
                     <input type="submit" name="submit" id="regbtn" value="Update Info">
-                    <input type="hidden" name="action" value="">
+                    <input type="hidden" name="action" value="updateClient">
                     <input type="hidden" name="clientId" value="<?php if (isset($clientInfo['clientId'])) {
                                                                     echo $clientInfo['clientId'];
                                                                 } elseif (isset($clientId)) {
