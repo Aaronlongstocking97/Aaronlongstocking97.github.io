@@ -31,20 +31,27 @@ if (isset($_SESSION['message'])) {
         </nav>
         <main id="main-content">
             <?php
-            $level = $_SESSION['clientData']['clientLevel'];
-            echo "<h1 id='displayName'>" . $_SESSION['clientData']['clientFirstname'] . "    " . $_SESSION['clientData']['clientLastname'] . "</h1>"
-                . "<span>You are logged in.</span>"
-                . "<ul>"
+            echo "<h1 id='displayName'>" . $_SESSION['clientData']['clientFirstname'] . "    " . $_SESSION['clientData']['clientLastname'] . "</h1>" ?>
+            <?php
+            if (isset($message)) {
+                echo $message;
+            }
+            ?>
+            <span>You are logged in.</span>
+            <?php
+            echo "<ul>"
                 . "<li>First name:  " . $_SESSION['clientData']['clientFirstname'] . "</li>"
                 . "<li>Last name:   " . $_SESSION['clientData']['clientLastname'] . "</li>"
                 . "<li>Email:   " . $_SESSION['clientData']['clientEmail'] . "</li>"
-                . "</ul>"
-                . "<h2 id='accountManage'>Account Management</h2>"
-                . "<span>Use this link to update account information.</span>"
-                . "<br>"
-                . "<div>&nbsp;</div>"
-                // . '<a href="/phpmotors/accounts/?action=client-update&clientId=' . $_SESSION['clientData']['clientId'] . ">Account Management</a>"
-                . "<div>&nbsp;</div>";
+                . "</ul>" ?>
+            <h2 id='accountManage'>Account Management</h2>
+            <span>Use this link to update account information.</span>
+            <br>
+            <div>&nbsp;</div>
+            <a href="/phpmotors/accounts/?action=client-update&clientId=  <?php echo $_SESSION['clientData']['clientId'] ?>">Account Management</a>
+            <div>&nbsp;</div>
+            <?php
+            $level = $_SESSION['clientData']['clientLevel'];
             if ($level > 1) {
                 echo "<h2 id='adminInvManage'>Inventory Management</h2>"
                     . "<span>Use this link to manage the inventory.</span>"
@@ -54,13 +61,6 @@ if (isset($_SESSION['message'])) {
                     . "<div>&nbsp;</div>";
             }
             ?>
-            <?php
-            if (isset($message)) {
-                echo $message;
-            }
-            ?>
-            <a href="/phpmotors/accounts/?action=client-update&clientId=  <?php echo $_SESSION['clientData']['clientId'] ?>">Account Management</a>
-
             <hr id="line-break">
         </main>
         <footer>
