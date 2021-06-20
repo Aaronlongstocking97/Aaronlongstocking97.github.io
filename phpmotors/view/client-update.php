@@ -35,22 +35,22 @@ if (!isset($_SESSION['loggedin'])) {
                     <label>&nbsp;</label>
                     <input type="text" id="clientFirstname" name="clientFirstname" required <?php if (isset($clientFirstname)) {
                                                                                                 echo "value='$clientFirstname'";
-                                                                                            } elseif (isset($invInfo['clientFirstname'])) {
-                                                                                                echo "value='$invInfo[clientFirstname]'";
+                                                                                            } elseif (isset($clientInfo['clientFirstname'])) {
+                                                                                                echo "value='$clientInfo[clientFirstname]'";
                                                                                             } ?>>
                     <label for="clientLastname">Last Name</label>
                     <label>&nbsp;</label>
                     <input type="text" id="clientLastname" name="clientLastname" required <?php if (isset($clientLastname)) {
                                                                                                 echo "value='$clientLastname'";
-                                                                                            } elseif (isset($invInfo['clientLastname'])) {
-                                                                                                echo "value='$invInfo[clientLastname]'";
+                                                                                            } elseif (isset($clientInfo['clientLastname'])) {
+                                                                                                echo "value='$clientInfo[clientLastname]'";
                                                                                             } ?>>
                     <label for="clientEmail">Email</label>
                     <label>&nbsp;</label>
                     <input type="email" id="clientEmail" name="clientEmail" required <?php if (isset($clientEmail)) {
                                                                                             echo "value='$clientEmail'";
-                                                                                        } elseif (isset($invInfo['clientEmail'])) {
-                                                                                            echo "value='$invInfo[clientEmail]'";
+                                                                                        } elseif (isset($clientInfo['clientEmail'])) {
+                                                                                            echo "value='$clientInfo[clientEmail]'";
                                                                                         } ?>>
 
                     <label>&nbsp;</label>
@@ -73,7 +73,8 @@ if (!isset($_SESSION['loggedin'])) {
                     <label>&nbsp;</label>
                     <label for="clientPassword">Password</label>
                     <label>&nbsp;</label>
-                    <input type="password" id="clientPassword" name="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$">
+                    <input type="password" id="clientPassword" name="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n]?=.*[A-Z])(?=.*[a-z]).*$">
+                    )(
                 </fieldset>
             </form>
             <hr id="line-break">
