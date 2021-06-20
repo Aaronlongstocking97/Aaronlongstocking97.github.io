@@ -52,12 +52,12 @@ if (!isset($_SESSION['loggedin'])) {
             }
             ?>
             <?php
+            if (isset($_SESSION['message'])) {
+                echo $_SESSION['message'];
+            }
             if (isset($message)) {
                 echo $message;
             }
-            // if (isset($_SESSION['message'])) {
-            //     $message = $_SESSION['message'];
-            // }
             ?>
             <a href="/phpmotors/accounts/?action=client-update&clientId=  <?php echo $_SESSION['clientData']['clientId'] ?>">Account Management</a>
 
