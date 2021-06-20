@@ -84,9 +84,6 @@ function getClient($clientEmail)
 //     $stmt->closeCursor();
 //     return $inventory;
 // }
-
-updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId);
-
 // Get client information by invId
 function getClientInfo($clientId)
 {
