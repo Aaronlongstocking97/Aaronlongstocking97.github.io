@@ -85,6 +85,8 @@ function getClient($clientEmail)
 //     return $inventory;
 // }
 
+updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId);
+
 // Get client information by invId
 function getClientInfo($clientId)
 {
@@ -96,4 +98,21 @@ function getClientInfo($clientId)
     $clientInfo = $stmt->fetch(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
     return $clientInfo;
+}
+
+// Update a vehicle
+function updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId)
+
+{
+    $db = phpmotorsConnect();
+    $sql = 'UPDATE clients SET clientFirstname = :clientFirstname, clientLastname = :clientLastname, clientEmail = :clientEmail WHERE clientId = :clientId';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':clientFirstname', $clientFirstname, PDO::PARAM_STR);
+    $stmt->bindValue(':clientLastname', $clientLastname, PDO::PARAM_STR);
+    $stmt->bindValue(':clientEmail', $clientEmail, PDO::PARAM_STR);
+    $stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT);
+    $stmt->execute();
+    $rowsChanged = $stmt->rowCount();
+    $stmt->closeCursor();
+    return $rowsChanged;
 }
