@@ -28,6 +28,12 @@ if (!isset($_SESSION['loggedin'])) {
         </nav>
         <main id="main-content">
             <h1>Manage Account</h1>
+            <?php
+            if (isset($_SESSION['message'])) {
+                $message = $_SESSION['message'];
+            }
+            ?>
+
             <h2>Update Account</h2>
             <form action="/phpmotors/accounts/index.php" method="post">
                 <fieldset id="align">

@@ -50,8 +50,12 @@ if (!isset($_SESSION['loggedin'])) {
                     . '<a href="/phpmotors/vehicles/?action=vehicle-man" id="vehicle-man">Vehicle Management</a>'
                     . "<div>&nbsp;</div>";
             }
+            if (isset($_SESSION['message'])) {
+                $message = $_SESSION['message'];
+            }
             ?>
             <a href="/phpmotors/accounts/?action=client-update&clientId=  <?php echo $_SESSION['clientData']['clientId'] ?>">Account Management</a>
+
             <hr id="line-break">
         </main>
         <footer>
@@ -61,4 +65,6 @@ if (!isset($_SESSION['loggedin'])) {
 </body>
 
 </html>
-<!-- unset($_SESSION['message']); -->
+<?php
+unset($_SESSION['message']);
+?>
