@@ -167,7 +167,8 @@ switch ($action) {
         $clientId = filter_input(INPUT_POST, 'clientId', FILTER_SANITIZE_NUMBER_INT);
 
         $clientEmail = checkEmail($clientEmail);
-
+        // Check for existing email
+        $clientEmail = checkExistingEmail($clientEmail);
         if (
             empty($clientFirstname) || empty($clientLastname) || empty($clientEmail)
             || empty($clientId)
@@ -177,11 +178,10 @@ switch ($action) {
             exit;
         }
 
-        // Check for existing email
-        $existingEmail = checkExistingEmail($clientEmail);
+
 
         // deal with existing email during registration
-        if ($existingEmail) {
+        if ($clientEmail) {
             $message = '<p class="notice">That email address 
                 already exists. Do you want to login instead?</p>';
             include '../view/client-update.php';
