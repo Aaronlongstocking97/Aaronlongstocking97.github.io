@@ -4,6 +4,9 @@ if (!isset($_SESSION['loggedin'])) {
     header("location: /phpmotors/");
     exit;
 }
+if (isset($_SESSION['message'])) {
+    $message = $_SESSION['message'];
+}
 ?>
 <!DOCTYPE html>
 <html lang="en-us">
@@ -30,13 +33,9 @@ if (!isset($_SESSION['loggedin'])) {
             <h1>Manage Account</h1>
             <h2>Update Account</h2>
             <?php
-            if (isset($_SESSION['message'])) {
-                $message = $_SESSION['message'];
+            if (isset($message)) {
                 echo $message;
             }
-            // if (isset($message)) {
-            //     echo $message;
-            // }
             ?>
             <form action="/phpmotors/accounts/index.php" method="post">
                 <fieldset id="align">
