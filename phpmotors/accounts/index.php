@@ -185,7 +185,7 @@ switch ($action) {
             header('location: /phpmotors/accounts/');
             exit;
         } else {
-            $message = "<p class='notice'>Error. You're account was not updated.</p>";
+            $message = "<p class='notice'>Sorry Administrator, we could not update your account information. Please try agin.</p>";
             include '../view/client-update.php';
             exit;
         }
