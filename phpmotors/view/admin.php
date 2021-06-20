@@ -29,7 +29,7 @@ if (!isset($_SESSION['loggedin'])) {
         <main id="main-content">
             <?php
             $level = $_SESSION['clientData']['clientLevel'];
-            if ($level == 1 || $level > 1) {
+            if ($level == 1 && $level > 1) {
                 echo "<h1 id='displayName'>" . $_SESSION['clientData']['clientFirstname'] . "    " . $_SESSION['clientData']['clientLastname'] . "</h1>"
                     . "<span>You are logged in.</span>"
                     . "<ul>"
