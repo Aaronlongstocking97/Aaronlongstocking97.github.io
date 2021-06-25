@@ -18,7 +18,7 @@ if (isset($_SESSION['message'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="PHP Motors client update page">
     <meta name="author" content="Aaron Jones">
-    <link rel="stylesheet" type="text/css" href="/phpmotors/css/login.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/phpmotors/css/client-update.css" media="screen">
 </head>
 
 <body>
@@ -62,7 +62,7 @@ if (isset($_SESSION['message'])) {
                                                                                         } ?>>
 
                     <label>&nbsp;</label>
-                    <input type="submit" name="submit" id="regbtn" value="Update Info">
+                    <input type="submit" name="submit" id="updateInfobtn" value="Update Info">
                     <input type="hidden" name="action" value="updateEmail">
                     <input type="hidden" name="clientId" value="<?php if (isset($clientInfo['clientId'])) {
                                                                     echo $clientInfo['clientId'];
@@ -87,7 +87,7 @@ if (isset($_SESSION['message'])) {
                     <label for="clientPassword">Password</label>
                     <label>&nbsp;</label>
                     <input type="password" id="clientPassword" name="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n]?=.*[A-Z])(?=.*[a-z]).*$">
-                    <input type="submit" name="submit" id="regbtn" value="Update Password">
+                    <input type="submit" name="submit" id="updatePassbtn" value="Update Password">
                     <input type="hidden" name="action" value="updatePassword">
                     <input type="hidden" name="clientId" value="<?php if (isset($clientInfo['clientId'])) {
                                                                     echo $clientInfo['clientId'];
