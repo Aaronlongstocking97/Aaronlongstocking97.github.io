@@ -73,8 +73,8 @@ if (isset($_SESSION['message'])) {
             </form>
             <h2>Update Password</h2>
             <?php
-            if (isset($note)) {
-                echo $note;
+            if (isset($message)) {
+                echo $message;
             }
             ?>
             <form action="/phpmotors/accounts/index.php" method="post">

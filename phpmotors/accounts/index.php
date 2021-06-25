@@ -244,7 +244,7 @@ switch ($action) {
         // If the hashes don't match create an error
         // and return to the login view
         if (!$hashCheck) {
-            $note = '<p>Please make sure your password matches the desired pattern</p>';
+            $message = '<p>Please make sure your password matches the desired pattern</p>';
             include '../view/client-update.php';
             exit;
         }
