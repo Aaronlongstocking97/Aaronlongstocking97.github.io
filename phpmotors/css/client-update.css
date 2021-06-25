@@ -147,6 +147,10 @@ input {
     margin-bottom: 20px;
 }
 
+span {
+    margin-bottom: 20px;
+}
+
 #displayName {
     font-size: 40px;
     font-weight: unset;
@@ -168,7 +172,7 @@ input {
     font-size: 20px;
     background-color: #4c96d7;
     border-width: 1px;
-    margin: unset;
+    margin-top: 0px;
     width: unset;
 }
 
