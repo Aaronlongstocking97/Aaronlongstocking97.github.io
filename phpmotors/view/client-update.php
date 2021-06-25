@@ -72,6 +72,11 @@ if (isset($_SESSION['message'])) {
                 </fieldset>
             </form>
             <h2>Update Password</h2>
+            <?php
+            if (isset($message)) {
+                echo $message;
+            }
+            ?>
             <form action="/phpmotors/accounts/index.php" method="post">
                 <fieldset id="align">
                     <span>Passwords must be at least 8 characters and contain at least 1
