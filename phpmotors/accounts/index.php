@@ -160,7 +160,7 @@ switch ($action) {
         include '../view/client-update.php';
         exit;
         break;
-    case 'updateClient':
+    case 'updateEmail':
         $clientFirstname = filter_input(INPUT_POST, 'clientFirstname', FILTER_SANITIZE_STRING);
         $clientLastname = filter_input(INPUT_POST, 'clientLastname', FILTER_SANITIZE_STRING);
         $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
@@ -185,7 +185,7 @@ switch ($action) {
         //     exit;
         // } else {
 
-        $updateClientResult = updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId);
+        $updateClientResult = updateEmail($clientFirstname, $clientLastname, $clientEmail, $clientId);
         $clientData = getClientInfo($clientId);
         array_pop($clientData);
         $_SESSION['clientData'] = $clientData;

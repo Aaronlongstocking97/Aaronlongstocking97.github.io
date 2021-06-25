@@ -86,7 +86,7 @@ function getClientInfo($clientId)
 }
 
 // Update a vehicle
-function updateClient($clientFirstname, $clientLastname, $clientEmail, $clientId)
+function updateEmail($clientFirstname, $clientLastname, $clientEmail, $clientId)
 
 {
     $db = phpmotorsConnect();

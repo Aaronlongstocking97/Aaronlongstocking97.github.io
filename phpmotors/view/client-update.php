@@ -63,7 +63,7 @@ if (isset($_SESSION['message'])) {
 
                     <label>&nbsp;</label>
                     <input type="submit" name="submit" id="regbtn" value="Update Info">
-                    <input type="hidden" name="action" value="updateClient">
+                    <input type="hidden" name="action" value="updateEmail">
                     <input type="hidden" name="clientId" value="<?php if (isset($clientInfo['clientId'])) {
                                                                     echo $clientInfo['clientId'];
                                                                 } elseif (isset($clientId)) {
@@ -82,6 +82,13 @@ if (isset($_SESSION['message'])) {
                     <label for="clientPassword">Password</label>
                     <label>&nbsp;</label>
                     <input type="password" id="clientPassword" name="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n]?=.*[A-Z])(?=.*[a-z]).*$">
+                    <input type="submit" name="submit" id="regbtn" value="Update Info">
+                    <input type="hidden" name="action" value="updatePassword">
+                    <input type="hidden" name="clientId" value="<?php if (isset($clientInfo['clientId'])) {
+                                                                    echo $clientInfo['clientId'];
+                                                                } elseif (isset($clientId)) {
+                                                                    echo $clientId;
+                                                                } ?>">
                 </fieldset>
             </form>
             <hr id="line-break">
