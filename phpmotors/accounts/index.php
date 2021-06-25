@@ -243,13 +243,16 @@ switch ($action) {
         $hashCheck = password_verify($clientPassword, $clientData['clientPassword']);
         // If the hashes don't match create an error
         // and return to the login view
-        if (!$hashCheck) {
+        if ($hashCheck === TRUE) {
             $note = '<p>Please make sure your password matches the desired pattern</p>';
             include '../view/client-update.php';
             exit;
+        } else {
+            $updateClientPass = updatePassword($clientPassword, $clientId);
+            exit;
         }
 
-        $updateClientPass = updatePassword($clientPassword, $clientId);
+
 
         // Remove the password from the array
         // the array_pop function removes the last
