@@ -76,9 +76,7 @@ if (isset($_SESSION['message'])) {
                 <fieldset id="passAlignment">
                     <span>Passwords must be at least 8 characters and contain at least 1
                         number, 1 capital letter and 1 special character</span>
-                    <!-- <label>&nbsp;</label> -->
                     <span>*note your original password will be changed.</span>
-                    <!-- <label>&nbsp;</label> -->
                     <label for="clientPassword">Password</label>
                     <input type="password" id="clientPassword" name="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n]?=.*[A-Z])(?=.*[a-z]).*$">
                     <input type="submit" name="submit" id="updatePassbtn" value="Update Password">
@@ -90,7 +88,6 @@ if (isset($_SESSION['message'])) {
                                                                 } ?>">
                 </fieldset>
             </form>
-            <!-- <label>&nbsp;</label> -->
             <hr id="line-break">
         </main>
         <footer>
