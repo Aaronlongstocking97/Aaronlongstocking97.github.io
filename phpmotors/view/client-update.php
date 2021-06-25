@@ -38,7 +38,7 @@ if (isset($_SESSION['message'])) {
             }
             ?>
             <form action="/phpmotors/accounts/index.php" method="post">
-                <fieldset id="align">
+                <fieldset id="infoAlignment">
                     <label for="clientFirstname">First Name</label>
                     <input type="text" id="clientFirstname" name="clientFirstname" required <?php if (isset($clientFirstname)) {
                                                                                                 echo "value='$clientFirstname'";
@@ -73,7 +73,7 @@ if (isset($_SESSION['message'])) {
             }
             ?>
             <form action="/phpmotors/accounts/index.php" method="post">
-                <fieldset id="align">
+                <fieldset id="passAlignment">
                     <span>Passwords must be at least 8 characters and contain at least 1
                         number, 1 capital letter and 1 special character</span>
                     <label>&nbsp;</label>
