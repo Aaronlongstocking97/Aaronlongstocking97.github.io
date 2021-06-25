@@ -247,9 +247,6 @@ switch ($action) {
             $note = '<p>Please make sure your password matches the desired pattern</p>';
             include '../view/client-update.php';
             exit;
-        } else {
-            echo 'It worked!';
-            exit;
         }
 
         $updateClientPass = updatePassword($clientPassword, $clientId);
