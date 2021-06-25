@@ -228,36 +228,17 @@ switch ($action) {
             'clientId',
             FILTER_SANITIZE_NUMBER_INT
         ));
-
-        $checkPassword = checkPassword($clientPassword);
-        if ($_SESSION['clientData']['clientPassword'] !== $clientPassword) {
-            $hashCheck = password_verify($clientPassword, $clientData['clientPassword']);
-            if ($hashCheck) {
-                $note = '<p>Please make sure your password matches the desired pattern.</p>';
-                $_SESSION['message'] = $message;
-                include '../view/client-update.php';
-                exit;
-            }
-        }
         // Run basic checks, return if errors
         if (empty($checkPassword) || empty($clientId)) {
             $note = '<p>Please make sure your password matches the desired pattern.</p>';
             include '../view/client-update.php';
             exit;
         }
-
-        // // Compare the password just submitted against
-        // // the hashed password for the matching client
-        // $hashCheck = password_verify($clientPassword, $clientData['clientPassword']);
-        // // If the hashes don't match create an error
-        // // and return to the login view
-        // if ($hashCheck === TRUE) {
-        //     $note = '<p>Please make sure your password matches the desired pattern.</p>';
-        //     include '../view/client-update.php';
-        //     exit;
-        // }
-        $updateClientPass = updatePassword($clientPassword, $clientId);
         $clientData = getClientInfo($clientId);
+
+        $hashedPassword = password_hash($clientPassword, PASSWORD_DEFAULT);
+
+        $updateClientPass = updatePassword($hashedPassword, $clientId);
         // Remove the password from the array
         // the array_pop function removes the last
         // element from an array
