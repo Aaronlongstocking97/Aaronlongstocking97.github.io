@@ -40,28 +40,23 @@ if (isset($_SESSION['message'])) {
             <form action="/phpmotors/accounts/index.php" method="post">
                 <fieldset id="align">
                     <label for="clientFirstname">First Name</label>
-                    <label>&nbsp;</label>
                     <input type="text" id="clientFirstname" name="clientFirstname" required <?php if (isset($clientFirstname)) {
                                                                                                 echo "value='$clientFirstname'";
                                                                                             } elseif (isset($clientInfo['clientFirstname'])) {
                                                                                                 echo "value='$clientInfo[clientFirstname]'";
                                                                                             } ?>>
                     <label for="clientLastname">Last Name</label>
-                    <label>&nbsp;</label>
                     <input type="text" id="clientLastname" name="clientLastname" required <?php if (isset($clientLastname)) {
                                                                                                 echo "value='$clientLastname'";
                                                                                             } elseif (isset($clientInfo['clientLastname'])) {
                                                                                                 echo "value='$clientInfo[clientLastname]'";
                                                                                             } ?>>
                     <label for="clientEmail">Email</label>
-                    <label>&nbsp;</label>
                     <input type="email" id="clientEmail" name="clientEmail" required <?php if (isset($clientEmail)) {
                                                                                             echo "value='$clientEmail'";
                                                                                         } elseif (isset($clientInfo['clientEmail'])) {
                                                                                             echo "value='$clientInfo[clientEmail]'";
                                                                                         } ?>>
-
-                    <label>&nbsp;</label>
                     <input type="submit" name="submit" id="updateInfobtn" value="Update Info">
                     <input type="hidden" name="action" value="updateEmail">
                     <input type="hidden" name="clientId" value="<?php if (isset($clientInfo['clientId'])) {
