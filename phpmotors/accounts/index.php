@@ -232,7 +232,7 @@ switch ($action) {
 
         // Run basic checks, return if errors
         if (empty($checkPassword) || empty($clientId)) {
-            $message = '<p>Please provide information for all empty form fields.</p>';
+            $note = '<p>Please make sure your password matches the desired pattern.</p>';
             include '../view/client-update.php';
             exit;
         }
@@ -244,13 +244,11 @@ switch ($action) {
         // If the hashes don't match create an error
         // and return to the login view
         if ($hashCheck === TRUE) {
-            $note = '<p>Please make sure your password matches the desired pattern</p>';
+            $note = '<p>Please make sure your password matches the desired pattern.</p>';
             include '../view/client-update.php';
             exit;
-        } else {
-            $updateClientPass = updatePassword($clientPassword, $clientId);
-            exit;
         }
+        $updateClientPass = updatePassword($clientPassword, $clientId);
 
 
 
