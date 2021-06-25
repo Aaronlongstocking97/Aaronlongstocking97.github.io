@@ -176,12 +176,22 @@ switch ($action) {
             'clientEmail',
             FILTER_SANITIZE_EMAIL
         ));
+
         $clientId = trim(filter_input(
             INPUT_POST,
             'clientId',
             FILTER_SANITIZE_NUMBER_INT
         ));
-
+        $checkEmail = checkEmail($clientEmail);
+        if ($_SESSION['clientData']['clientEmail'] !== $clientEmail) {
+            $existingEmail = checkExistingEmail($checkEmail);
+            if ($existingEmail) {
+                $message = '<p class=notice">That email address already exists.</p>';
+                $_SESSION['message'] = $message;
+                include '../view/client-update.php';
+                exit;
+            }
+        }
         if (
             empty($clientFirstname) || empty($clientLastname) || empty($clientEmail)
             || empty($clientId)
@@ -190,17 +200,6 @@ switch ($action) {
             include '../view/client-update.php';
             exit;
         }
-
-        // // Check for existing email
-        // $existingEmail = checkExistingEmail($clientEmail);
-        // // deal with existing email during registration
-        // if ($existingEmail) {
-        //     $message = '<p class="notice">That email address 
-        //         already exists. Do you want to login instead?</p>';
-        //     include '../view/client-update.php';
-        //     exit;
-        // } else {
-
         $updateClientEmail = updateEmail($clientFirstname, $clientLastname, $clientEmail, $clientId);
         $clientData = getClientInfo($clientId);
         array_pop($clientData);
@@ -229,14 +228,12 @@ switch ($action) {
             'clientId',
             FILTER_SANITIZE_NUMBER_INT
         ));
-
         // Run basic checks, return if errors
         if (empty($checkPassword) || empty($clientId)) {
             $note = '<p>Please make sure your password matches the desired pattern.</p>';
             include '../view/client-update.php';
             exit;
         }
-
         $clientData = getClientInfo($clientId);
         // Compare the password just submitted against
         // the hashed password for the matching client
@@ -249,9 +246,6 @@ switch ($action) {
             exit;
         }
         $updateClientPass = updatePassword($clientPassword, $clientId);
-
-
-
         // Remove the password from the array
         // the array_pop function removes the last
         // element from an array
