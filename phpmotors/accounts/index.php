@@ -237,7 +237,7 @@ switch ($action) {
             exit;
         }
 
-
+        $clientData = getClientInfo($clientId);
         // Compare the password just submitted against
         // the hashed password for the matching client
         $hashCheck = password_verify($clientPassword, $clientData['clientPassword']);
@@ -250,7 +250,7 @@ switch ($action) {
         }
 
         $updateClientPass = updatePassword($clientPassword, $clientId);
-        $clientData = getClientInfo($clientId);
+
         // Remove the password from the array
         // the array_pop function removes the last
         // element from an array
@@ -258,7 +258,7 @@ switch ($action) {
         // Store the array into the session
         $_SESSION['clientData'] = $clientData;
         if ($updateClientPass) {
-            $message = "<p class='notice'>Administrator, your information has been updated.</p>";
+            $message = "<p class='notice'>Administrator, your password has been updated.</p>";
             $_SESSION['message'] = $message;
             header('location: /phpmotors/accounts/');
             exit;
