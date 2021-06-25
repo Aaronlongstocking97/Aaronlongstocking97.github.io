@@ -134,7 +134,8 @@ label {
 
 input {
     width: 150px;
-    margin-bottom: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #displayName {
