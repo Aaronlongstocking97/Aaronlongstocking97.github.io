@@ -80,7 +80,6 @@ if (isset($_SESSION['message'])) {
                     <span>*note your original password will be changed.</span>
                     <label>&nbsp;</label>
                     <label for="clientPassword">Password</label>
-                    <label>&nbsp;</label>
                     <input type="password" id="clientPassword" name="clientPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n]?=.*[A-Z])(?=.*[a-z]).*$">
                     <input type="submit" name="submit" id="updatePassbtn" value="Update Password">
                     <input type="hidden" name="action" value="updatePassword">
