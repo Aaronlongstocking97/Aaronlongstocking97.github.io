@@ -91,6 +91,7 @@ if (isset($_SESSION['message'])) {
                                                                 } ?>">
                 </fieldset>
             </form>
+            <label>&nbsp;</label>
             <hr id="line-break">
         </main>
         <footer>
