@@ -161,10 +161,26 @@ switch ($action) {
         exit;
         break;
     case 'updateEmail':
-        $clientFirstname = filter_input(INPUT_POST, 'clientFirstname', FILTER_SANITIZE_STRING);
-        $clientLastname = filter_input(INPUT_POST, 'clientLastname', FILTER_SANITIZE_STRING);
-        $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
-        $clientId = filter_input(INPUT_POST, 'clientId', FILTER_SANITIZE_NUMBER_INT);
+        $clientFirstname = trim(filter_input(
+            INPUT_POST,
+            'clientFirstname',
+            FILTER_SANITIZE_STRING
+        ));
+        $clientLastname = trim(filter_input(
+            INPUT_POST,
+            'clientLastname',
+            FILTER_SANITIZE_STRING
+        ));
+        $clientEmail = trim(filter_input(
+            INPUT_POST,
+            'clientEmail',
+            FILTER_SANITIZE_EMAIL
+        ));
+        $clientId = trim(filter_input(
+            INPUT_POST,
+            'clientId',
+            FILTER_SANITIZE_NUMBER_INT
+        ));
 
         if (
             empty($clientFirstname) || empty($clientLastname) || empty($clientEmail)
@@ -185,11 +201,63 @@ switch ($action) {
         //     exit;
         // } else {
 
-        $updateClientResult = updateEmail($clientFirstname, $clientLastname, $clientEmail, $clientId);
+        $updateClientEmail = updateEmail($clientFirstname, $clientLastname, $clientEmail, $clientId);
         $clientData = getClientInfo($clientId);
         array_pop($clientData);
         $_SESSION['clientData'] = $clientData;
-        if ($updateClientResult) {
+        if ($updateClientEmail) {
+            $message = "<p class='notice'>Administrator, your information has been updated.</p>";
+            $_SESSION['message'] = $message;
+            header('location: /phpmotors/accounts/');
+            exit;
+        } else {
+            $message = "<p class='notice'>Sorry Administrator, we could not update your account information. Please try agin.</p>";
+            include '../view/client-update.php';
+            exit;
+        }
+        break;
+    case 'updatePassword':
+        // Filter and store the data
+        $clientPassword = trim(filter_input(
+            INPUT_POST,
+            'clientPassword',
+            FILTER_SANITIZE_STRING
+        ));
+        $checkPassword = checkPassword($clientPassword);
+        $clientId = trim(filter_input(
+            INPUT_POST,
+            'clientId',
+            FILTER_SANITIZE_NUMBER_INT
+        ));
+
+        // Run basic checks, return if errors
+        if (empty($clientEmail) || empty($checkPassword) || empty($clientId)) {
+            $message = '<p>Please provide information for all empty form fields.</p>';
+            include '../view/client-update.php';
+            exit;
+        }
+
+
+        // Compare the password just submitted against
+        // the hashed password for the matching client
+        $hashCheck = password_verify($clientPassword, $clientData['clientPassword']);
+        // If the hashes don't match create an error
+        // and return to the login view
+        if (!$hashCheck) {
+            $message = '<p>Please make sure your password matches the desired pattern</p>';
+            include '../view/client-update.php';
+            exit;
+        }
+
+        $updateClientPass = updatePassword($clientPassword, $clientId);
+        $clientData = getClientInfo($clientId);
+        // Remove the password from the array
+        // the array_pop function removes the last
+        // element from an array
+        array_pop($clientData);
+        // Store the array into the session
+        $_SESSION['clientData'] = $clientData;
+        if ($updateClientPass) {
             $message = "<p class='notice'>Administrator, your information has been updated.</p>";
             $_SESSION['message'] = $message;
             header('location: /phpmotors/accounts/');

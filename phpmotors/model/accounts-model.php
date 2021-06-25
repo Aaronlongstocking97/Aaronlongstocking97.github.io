@@ -72,7 +72,7 @@ function getClient($clientEmail)
     return $clientData;
 }
 
-// Get client information by invId
+// Get client information by UserId
 function getClientInfo($clientId)
 {
     $db = phpmotorsConnect();
@@ -85,7 +85,7 @@ function getClientInfo($clientId)
     return $clientInfo;
 }
 
-// Update a vehicle
+// Update a Client Email
 function updateEmail($clientFirstname, $clientLastname, $clientEmail, $clientId)
 
 {
@@ -95,6 +95,21 @@ function updateEmail($clientFirstname, $clientLastname, $clientEmail, $clientId)
     $stmt->bindValue(':clientFirstname', $clientFirstname, PDO::PARAM_STR);
     $stmt->bindValue(':clientLastname', $clientLastname, PDO::PARAM_STR);
     $stmt->bindValue(':clientEmail', $clientEmail, PDO::PARAM_STR);
+    $stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT);
+    $stmt->execute();
+    $rowsChanged = $stmt->rowCount();
+    $stmt->closeCursor();
+    return $rowsChanged;
+}
+
+// Update a Client Password
+function updatePassword($clientPassword, $clientId)
+
+{
+    $db = phpmotorsConnect();
+    $sql = 'UPDATE clients SET clientPassword = :clientPassword WHERE clientId = :clientId';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':clientPassword', $clientPassword, PDO::PARAM_STR);
     $stmt->bindValue(':clientId', $clientId, PDO::PARAM_INT);
     $stmt->execute();
     $rowsChanged = $stmt->rowCount();
