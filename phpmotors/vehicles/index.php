@@ -32,6 +32,8 @@ switch ($action) {
         // Code to deliver the views will be here
 
     case 'class-page':
+        include '../view/add-classification.php';
+        break;
     case 'add-Class':
         $classificationName = trim(filter_input(
             INPUT_POST,
