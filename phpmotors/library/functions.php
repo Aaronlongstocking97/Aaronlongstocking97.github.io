@@ -9,18 +9,38 @@
 function buildNavigation($classifications)
 {
     $navList = '<ul>';
-    $navList .= "<li><a href='/phpmotors/index.php' title='View 
+    $navList .= "<li><a href='/phpmotors/' title='View 
                 the PHP Motors home page'>Home</a></li>";
     foreach ($classifications as $classification) {
-        $navList .= "<li><a href='/phpmotors/index.php?action="
+        $navList .= "<li><a href='/phpmotors/vehicles?
+        action=classification&classificationName="
             . urlencode($classification['classificationName'])
-            . "' title='View our $classification[classificationName] 
-            product line'>$classification[classificationName]</a></li>";
+            . "' title='View our $classification[classificationName] lineup
+            of vehicles'>$classification[classificationName]</a></li>";
     }
     $navList .= '</ul>';
     // Returns a string variable holding 
     // the HTML navigation list
     return $navList;
+}
+
+function buildVehiclesDisplay($vehicles)
+{
+    $dv = '<ul id="inv-display">';
+    foreach ($vehicles as $vehicle) {
+        $dv .= '<li>';
+        $dv .= "<img src='$vehicle[invThumbnail]' 
+        alt='Image of $vehicle[invMake] $vehicle[invModel] 
+        on phpmotors.com'>";
+        $dv .= '<div class="namePrice">';
+        $dv .= '<hr>';
+        $dv .= "<h2>$vehicle[invMake] $vehicle[invModel]</h2>";
+        $dv .= "<span>$vehicle[invPrice]</span>";
+        $dv .= '</div>';
+        $dv .= '</li>';
+    }
+    $dv .= '</ul>';
+    return $dv;
 }
 
 // Check the value of the $clientEmail variable, after having been

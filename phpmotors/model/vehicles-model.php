@@ -148,6 +148,7 @@ function updateVehicle(
     return $rowsChanged;
 }
 
+// Delete a vehicle form inventory
 function deleteVehicle($invId)
 {
     $db = phpmotorsConnect();
@@ -158,4 +159,17 @@ function deleteVehicle($invId)
     $rowsChanged = $stmt->rowCount();
     $stmt->closeCursor();
     return $rowsChanged;
+}
+
+// Get the list of vehicles by classification name
+function getVehiclesByClassification($classificationName)
+{
+    $db = phpmotorsConnect();
+    $sql = 'SELECT * FROM inventory WHERE classificationId IN (SELECT classificationId FROM carclassification WHERE classificationName = :classificationName)';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':classificationName', $classificationName, PDO::PARAM_STR);
+    $stmt->execute();
+    $vehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $vehicles;
 }
