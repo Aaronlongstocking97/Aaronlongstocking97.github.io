@@ -19,7 +19,7 @@
         <nav id="page_nav">
             <?php echo $navList; ?>
         </nav>
-        <main id="main-content">
+        <main>
             <h1 id="content"><?php echo $classificationName; ?> vehicles</h1>
             <?php
             if (isset($message)) {
