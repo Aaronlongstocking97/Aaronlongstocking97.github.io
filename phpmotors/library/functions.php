@@ -29,9 +29,7 @@ function buildVehiclesDisplay($vehicles)
     $dv = '<ul id="inv-display">';
     foreach ($vehicles as $vehicle) {
         $dv .= '<li>';
-        $dv .= "<img src='$vehicle[invThumbnail]' 
-        alt='Image of $vehicle[invMake] $vehicle[invModel] 
-        on phpmotors.com'>";
+        $dv .= "<img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
         $dv .= '<div class="namePrice">';
         $dv .= '<hr>';
         $dv .= "<h2>$vehicle[invMake] $vehicle[invModel]</h2>";
