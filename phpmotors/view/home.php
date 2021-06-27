@@ -29,7 +29,7 @@
                 <p>Fuzzy dice!</p>
                 <button class="button1">Own Today</button>
             </div>
-            <img class="delorean" src="./images/delorean.jpg" alt="image of a delorean car">
+            <img class="delorean" src="./images/vehicles/delorean.jpg" alt="image of a delorean car">
             <button class="button2">Own Today</button>
             <div id="split">
                 <section id="reviews">
