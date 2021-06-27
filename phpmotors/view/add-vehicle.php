@@ -60,15 +60,15 @@ $classifList .= '</select>';
                                                                                                     }
                                                                                                     ?></textarea>
                     <label for="invImage">Image Path</label>
-                    <input type="text" id="invImage" name="invImage" value="/phpmotors/images/no-image.png" <?php if (isset($invImage)) {
-                                                                                                                echo "value='$invImage'";
-                                                                                                            }
-                                                                                                            ?> required>
+                    <input type="text" id="invImage" name="invImage" value="/phpmotors/images/vehicles/no-image.png" <?php if (isset($invImage)) {
+                                                                                                                            echo "value='$invImage'";
+                                                                                                                        }
+                                                                                                                        ?> required>
                     <label for="invThumbnail">Thumbnail Path</label>
-                    <input type="text" id="invThumbnail" name="invThumbnail" value="/phpmotors/images/no-image.png" <?php if (isset($invThumbnail)) {
-                                                                                                                        echo "value='$invThumbnail'";
-                                                                                                                    }
-                                                                                                                    ?> required>
+                    <input type="text" id="invThumbnail" name="invThumbnail" value="/phpmotors/images/vehicles/no-image.png" <?php if (isset($invThumbnail)) {
+                                                                                                                                    echo "value='$invThumbnail'";
+                                                                                                                                }
+                                                                                                                                ?> required>
                     <label for="invPrice">Price</label>
                     <input type="number" step="any" id="invPrice" name="invPrice" <?php if (isset($invPrice)) {
                                                                                         echo "value='$invPrice'";
