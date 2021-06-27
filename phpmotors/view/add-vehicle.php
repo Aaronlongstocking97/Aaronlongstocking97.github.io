@@ -65,7 +65,7 @@ $classifList .= '</select>';
                                                                                                                         }
                                                                                                                         ?> required>
                     <label for="invThumbnail">Thumbnail Path</label>
-                    <input type="text" id="invThumbnail" name="invThumbnail" value="/phpmotors/images/vehicles/no-image.png" <?php if (isset($invThumbnail)) {
+                    <input type="text" id="invThumbnail" name="invThumbnail" value="/phpmotors/images/vehicles/no-image-tn.png" <?php if (isset($invThumbnail)) {
                                                                                                                                     echo "value='$invThumbnail'";
                                                                                                                                 }
                                                                                                                                 ?> required>
