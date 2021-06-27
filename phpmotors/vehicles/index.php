@@ -255,8 +255,8 @@ switch ($action) {
         } else {
             $vehicleDisplay = buildVehiclesDisplay($vehicles);
         }
-        echo $vehicleDisplay;
-        exit;
+        // echo $vehicleDisplay;
+        // exit;
         include '../view/classification.php';
         break;
     default:
