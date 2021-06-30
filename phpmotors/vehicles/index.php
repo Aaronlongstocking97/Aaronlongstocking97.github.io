@@ -263,15 +263,20 @@ switch ($action) {
         break;
     case 'detailVehicle':
         include '../view/vehicle-detail.php';
-        $classificationName = filter_input(
+        $invMake = filter_input(
             INPUT_GET,
-            'classificationName',
+            'invMake',
             FILTER_SANITIZE_STRING
         );
-        $vehiclesDetail = getVehiclesByClassification($classificationName);
+        $invModel = filter_input(
+            INPUT_GET,
+            'invModel',
+            FILTER_SANITIZE_STRING
+        );
+        $vehiclesDetail = getVehiclesByClassification($invMake, $invModel);
         if (!count($vehiclesDetail)) {
             $message = "<p class='notice'>Sorry, 
-            no $classificationName could be found.</p>";
+            no vehicle information could be found.</p>";
         } else {
             $detailedVehicleDisplay = buildVehiclesDisplay($vehiclesDetail);
         }

@@ -94,7 +94,7 @@ function addVehicle(
 function getInventoryByClassification($classificationId)
 {
     $db = phpmotorsConnect();
-    $sql = ' SELECT * FROM inventory WHERE classificationId = :classificationId';
+    $sql = ' SELECT * FROM inventory WHERE invMake = :classificationId';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':classificationId', $classificationId, PDO::PARAM_INT);
     $stmt->execute();
@@ -172,4 +172,18 @@ function getVehiclesByClassification($classificationName)
     $vehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
     return $vehicles;
+}
+
+// Get the list of vehicles by classification name
+function getVehiclesByMakeModel($invMake, $invModel)
+{
+    $db = phpmotorsConnect();
+    $sql = 'SELECT * FROM inventory WHERE invmake AND invmodel = :invMake, :invModel';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':invMake', $invMake, PDO::PARAM_STR);
+    $stmt->bindValue(':invModel', $invModel, PDO::PARAM_STR);
+    $stmt->execute();
+    $vehiclesDetail = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $vehiclesDetail;
 }
