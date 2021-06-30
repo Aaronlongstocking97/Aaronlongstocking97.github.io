@@ -277,8 +277,6 @@ switch ($action) {
         if (!count($vehiclesDetail)) {
             $message = "<p class='notice'>Sorry, 
             no vehicle information could be found.</p>";
-        } else {
-            $detailedVehicleDisplay = buildVehiclesDisplay($vehiclesDetail);
         }
         include '../view/vehicle-detail.php';
         break;
