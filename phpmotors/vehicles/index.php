@@ -280,6 +280,7 @@ switch ($action) {
         } else {
             $detailedVehicleDisplay = buildVehiclesDisplay($vehiclesDetail);
         }
+        include '../view/vehicle-detail.php';
         break;
     default:
         $classificationList = buildClassificationList($classifications);
