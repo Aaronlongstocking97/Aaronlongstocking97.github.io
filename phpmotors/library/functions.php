@@ -33,7 +33,7 @@ function buildVehiclesDisplay($vehicles)
         $dv .= '<div class="namePrice">';
         $dv .= '<hr>';
         $dv .= "<h2>$vehicle[invMake] $vehicle[invModel]</h2>";
-        $dv .= "<a href='/phpmotors/vehicles/index.php?action=detailVehicle' id='detailVehicle'>";
+        $dv .= "<a href='/phpmotors/vehicles/index.php?action=detailVehicle&classificationName=' id='detailVehicle'>";
         $dv . "$vehicle[invMake] $vehicle[invModel]";
         $dv .= "<span>$vehicle[invPrice]</span>";
         $dv .= '</div>';
@@ -42,7 +42,7 @@ function buildVehiclesDisplay($vehicles)
     $dv .= '</ul>';
     return $dv;
 }
-
+// <a href="/phpmotors/accounts/?action=client-update&clientId= 
 // Check the value of the $clientEmail variable, after having been
 // sanitized, to see if it "looks" like a valid email address.
 function checkEmail($clientEmail)
