@@ -277,8 +277,10 @@ switch ($action) {
         if (!count($vehiclesDetail)) {
             $message = "<p class='notice'>Sorry, 
             no vehicle information could be found.</p>";
+        } else {
+            header('location: /phpmotors/vehicles/vehicle-detail.php');
         }
-        //include '../view/vehicle-detail.php';
+        // '../view/vehicle-detail.php';
         break;
     default:
         $classificationList = buildClassificationList($classifications);
