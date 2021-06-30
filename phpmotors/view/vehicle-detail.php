@@ -27,8 +27,8 @@
             }
             ?>
             <?php
-            if (isset($vehicleDisplay)) {
-                echo $vehicleDisplay;
+            if (isset($detailedVehicleDisplay)) {
+                echo $detailedVehicleDisplayy;
             }
             ?>
             <hr id="line-break">

@@ -268,12 +268,12 @@ switch ($action) {
             'classificationName',
             FILTER_SANITIZE_STRING
         );
-        $vehicles = getVehiclesByClassification($classificationName);
-        if (!count($vehicles)) {
+        $vehiclesDetail = getVehiclesByClassification($classificationName);
+        if (!count($vehiclesDetail)) {
             $message = "<p class='notice'>Sorry, 
             no $classificationName could be found.</p>";
         } else {
-            $vehicleDisplay = buildVehiclesDisplay($vehicles);
+            $detailedVehicleDisplay = buildVehiclesDisplay($vehiclesDetail);
         }
         break;
     default:

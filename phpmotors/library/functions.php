@@ -42,10 +42,6 @@ function buildVehiclesDisplay($vehicles)
     $dv .= '</ul>';
     return $dv;
 }
-// <ul id="addOn">
-//  <li><a href="/phpmotors/vehicles/index.php?action=class-page" id="class-page">Add Classsification</a></li>
-//  <li><a href="/phpmotors/vehicles/index.php?action=vehicle-page" id="vehicle-page">Add Vehicle</a></li>
-//</ul>
 
 // Check the value of the $clientEmail variable, after having been
 // sanitized, to see if it "looks" like a valid email address.
@@ -83,4 +79,23 @@ function buildClassificationList($classifications)
     }
     $classificationList .= '</select>';
     return $classificationList;
+}
+
+function buildVehiclesDetailPage($vehiclesDetail)
+{
+    $dv = '<ul id="inv-display">';
+    foreach ($vehiclesDetail as $vehiclesDetails) {
+        $dv .= '<li>';
+        $dv .= "<img src='$vehiclesDetails[invImage]' alt='Image of $vehiclesDetails[invMake] $vehiclesDetails[invModel] on phpmotors.com'>";
+        $dv .= '<div class="namePrice">';
+        $dv .= '<hr>';
+        $dv .= "<h2>$vehiclesDetails[invMake] $vehiclesDetails[invModel]</h2>";
+        $dv .= "<a href='/phpmotors/vehicles/index.php?action=detailVehicle' id='detailVehicle'>";
+        $dv . "$vehiclesDetails[invMake] $vehiclesDetails[invModel]";
+        $dv .= "<span>$vehiclesDetails[invPrice]</span>";
+        $dv .= '</div>';
+        $dv .= '</li>';
+    }
+    $dv .= '</ul>';
+    return $dv;
 }
