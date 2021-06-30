@@ -278,7 +278,7 @@ switch ($action) {
             $message = "<p class='notice'>Sorry, 
             no vehicle information could be found.</p>";
         }
-        include '../view/vehicle-detail.php';
+        //include '../view/vehicle-detail.php';
         break;
     default:
         $classificationList = buildClassificationList($classifications);
