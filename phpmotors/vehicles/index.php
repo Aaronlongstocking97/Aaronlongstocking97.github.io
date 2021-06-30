@@ -274,11 +274,10 @@ switch ($action) {
             FILTER_SANITIZE_STRING
         );
         $vehiclesDetail = getVehiclesByClassification($invMake, $invModel);
-        if (empty($_GET)) {
+        if (empty($invMake) || empty($invModel)) {
             $message = "<p class='notice'>Sorry, 
             no vehicle information could be found.</p>";
-        } else {
-            header('location: /phpmotors/vehicles/vehicle-detail.php');
+            exit;
         }
         // '../view/vehicle-detail.php';
         break;
