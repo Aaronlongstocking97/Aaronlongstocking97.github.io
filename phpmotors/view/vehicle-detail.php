@@ -6,9 +6,9 @@
     <title><?php echo $classificationName; ?> vehicles | PHP Motors, Inc.</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PHP Motors classification page">
+    <meta name="description" content="PHP Motors vehicle details page">
     <meta name="author" content="Aaron Jones">
-    <link rel="stylesheet" type="text/css" href="/phpmotors/css/classification.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="/phpmotors/css/vehicle-detail.css" media="screen">
 </head>
 
 <body>

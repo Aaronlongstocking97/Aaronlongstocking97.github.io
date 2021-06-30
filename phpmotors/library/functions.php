@@ -33,7 +33,8 @@ function buildVehiclesDisplay($vehicles)
         $dv .= '<div class="namePrice">';
         $dv .= '<hr>';
         $dv .= "<h2>$vehicle[invMake] $vehicle[invModel]</h2>";
-        $dv .= "<a href='/phpmotors/vehicles/index.php?action=vehicle-page' id='vehicle-page'>Add Vehicle</a>";
+        $dv .= "<a href='/phpmotors/vehicles/index.php?action=detailVehicle' id='detailVehicle'>";
+        $dv . "$vehicle[invMake] $vehicle[invModel]";
         $dv .= "<span>$vehicle[invPrice]</span>";
         $dv .= '</div>';
         $dv .= '</li>';
