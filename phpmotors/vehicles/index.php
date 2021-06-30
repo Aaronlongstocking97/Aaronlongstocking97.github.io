@@ -274,7 +274,7 @@ switch ($action) {
             FILTER_SANITIZE_STRING
         );
         $vehiclesDetail = getVehiclesByClassification($invMake, $invModel);
-        if (!count($vehiclesDetail)) {
+        if (empty($_GET)) {
             $message = "<p class='notice'>Sorry, 
             no vehicle information could be found.</p>";
         } else {
