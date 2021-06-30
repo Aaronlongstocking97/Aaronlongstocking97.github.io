@@ -90,8 +90,6 @@ function buildVehiclesDetailPage($vehiclesDetail)
         $dv .= '<div class="namePrice">';
         $dv .= '<hr>';
         $dv .= "<h2>$vehiclesDetails[invMake] $vehiclesDetails[invModel]</h2>";
-        $dv .= "<a href='/phpmotors/vehicles/index.php?action=detailVehicle' id='detailVehicle'>";
-        $dv . "$vehiclesDetails[invMake] $vehiclesDetails[invModel]";
         $dv .= "<span>$vehiclesDetails[invPrice]</span>";
         $dv .= '</div>';
         $dv .= '</li>';
