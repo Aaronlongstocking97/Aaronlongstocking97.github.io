@@ -276,6 +276,8 @@ switch ($action) {
             no details could be found.</p>";
         } else {
             $details = buildVehiclesDetailPage($vehiclesDetail);
+            array_pop($vehiclesDetail);
+            $_SESSION['vehiclesDetail'] = $vehiclesDetail;
         }
         include '../view/vehicle-detail.php';
         break;
