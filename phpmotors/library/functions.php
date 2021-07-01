@@ -32,7 +32,7 @@ function buildVehiclesDisplay($vehicles)
         $dv .= "<img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
         $dv .= '<div class="namePrice">';
         $dv .= '<hr>';
-        $dv .= "<a href='/phpmotors/vehicles/index.php?action=detailVehicle&$vehicle[invMake]=' id='detailVehicle'>";
+        $dv .= "<a href='/phpmotors/vehicles/index.php?action=detailVehicle&invMake=" . $_SESSION['vehicles']['invMake'] . "'>";
         $dv . "'$vehicle[invMake] $vehicle[invModel]'</a>";
         $dv .= "<span>$vehicle[invPrice]</span>";
         $dv .= '</div>';
@@ -42,6 +42,8 @@ function buildVehiclesDisplay($vehicles)
     return $dv;
 }
 // <a href="/phpmotors/accounts/?action=client-update&clientId= 
+// <a href="/phpmotors/accounts/?action=client-update&clientId=  <?php echo $_SESSION['clientData']['clientId']
+//>">Update Account Information</a>
 // Check the value of the $clientEmail variable, after having been
 // sanitized, to see if it "looks" like a valid email address.
 function checkEmail($clientEmail)
