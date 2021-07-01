@@ -251,6 +251,8 @@ switch ($action) {
             FILTER_SANITIZE_STRING
         );
         $vehicles = getVehiclesByClassification($classificationName);
+        array_pop($vehicles);
+        $_SESSION['vehicles'] = $vehicles;
         if (!count($vehicles)) {
             $message = "<p class='notice'>Sorry, 
             no $classificationName could be found.</p>";
