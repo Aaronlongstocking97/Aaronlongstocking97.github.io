@@ -251,8 +251,6 @@ switch ($action) {
             FILTER_SANITIZE_STRING
         );
         $vehicles = getVehiclesByClassification($classificationName);
-        array_pop($vehicles);
-        $_SESSION['vehicles'] = $vehicles;
         if (!count($vehicles)) {
             $message = "<p class='notice'>Sorry, 
             no $classificationName could be found.</p>";
@@ -271,12 +269,13 @@ switch ($action) {
             FILTER_SANITIZE_STRING
         );
         $vehiclesDetail = getVehiclesById($invId);
-        var_dump($vehiclesDetail);
-        exit;
-        if (empty($invMake) || empty($invModel)) {
+        // var_dump($vehiclesDetail);
+        // exit;
+        if (!count($vehiclesDetail)) {
             $message = "<p class='notice'>Sorry, 
-            no vehicle information could be found.</p>";
-            exit;
+            no details could be found.</p>";
+        } else {
+            $vehicleDetail = buildVehiclesDetailPage($vehiclesDetail);
         }
         include '../view/vehicle-detail.php';
         break;
