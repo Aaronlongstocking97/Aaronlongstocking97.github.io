@@ -21,7 +21,7 @@
             <?php echo $navList; ?>
         </nav>
         <main>
-            <h1 id="content"><?php echo $_SESSION['invMake'] . $details['invModel']; ?></h1>
+            <h1 id="content"><?php echo $_SESSION['invId']['invMake'] . $details['invModel']; ?></h1>
             <?php
             if (isset($message)) {
                 echo $message;
