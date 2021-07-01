@@ -265,17 +265,12 @@ switch ($action) {
         break;
     case 'detailVehicle':
 
-        $invMake = filter_input(
+        $invId = filter_input(
             INPUT_GET,
-            'invMake',
+            'invId',
             FILTER_SANITIZE_STRING
         );
-        $invModel = filter_input(
-            INPUT_GET,
-            'invModel',
-            FILTER_SANITIZE_STRING
-        );
-        $vehiclesDetail = getVehiclesByClassification($invMake, $invModel);
+        $vehiclesDetail = getVehiclesByClassification($invId);
         if (empty($invMake) || empty($invModel)) {
             $message = "<p class='notice'>Sorry, 
             no vehicle information could be found.</p>";
