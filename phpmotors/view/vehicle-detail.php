@@ -28,8 +28,8 @@
             }
             ?>
             <?php
-            if (isset($Details)) {
-                echo $Details;
+            if (isset($details)) {
+                echo $details;
             }
             ?>
             <hr id="line-break">
