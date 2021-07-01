@@ -21,7 +21,7 @@
             <?php echo $navList; ?>
         </nav>
         <main>
-            <h1 id="content"><?php echo $invMake, $invModel; ?></h1>
+            <h1 id="content"><?php echo $classificationName; ?></h1>
             <?php
             if (isset($message)) {
                 echo $message;
