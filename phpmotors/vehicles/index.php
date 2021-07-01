@@ -262,7 +262,7 @@ switch ($action) {
         include '../view/classification.php';
         break;
     case 'detailVehicle':
-        include '../view/vehicle-detail.php';
+
         $invMake = filter_input(
             INPUT_GET,
             'invMake',
@@ -279,7 +279,7 @@ switch ($action) {
             no vehicle information could be found.</p>";
             exit;
         }
-        // '../view/vehicle-detail.php';
+        include '../view/vehicle-detail.php';
         break;
     default:
         $classificationList = buildClassificationList($classifications);
