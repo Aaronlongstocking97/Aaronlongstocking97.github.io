@@ -270,7 +270,9 @@ switch ($action) {
             'invId',
             FILTER_SANITIZE_STRING
         );
-        $vehiclesDetail = getVehiclesByClassification($invId);
+        $vehiclesDetail = getVehiclesById($invId);
+        var_dump($vehiclesDetail);
+        exit;
         if (empty($invMake) || empty($invModel)) {
             $message = "<p class='notice'>Sorry, 
             no vehicle information could be found.</p>";
