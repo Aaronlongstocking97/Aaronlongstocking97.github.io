@@ -84,14 +84,13 @@ function buildClassificationList($classifications)
 
 function buildVehiclesDetailPage($vehiclesDetail)
 {
-    $dv = '<ul id="inv-display">';
-    foreach ($vehiclesDetail as $vehiclesDetails) {
+    $dv = '<ul id="inv-display">'; {
         $dv .= '<li>';
-        $dv .= "<img src='$vehiclesDetails[invThumbnail]' alt='Image of $vehiclesDetails[invMake] $vehiclesDetails[invModel] on phpmotors.com'>";
+        $dv .= "<img src='$vehiclesDetail[invThumbnail]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
         $dv .= '<div class="namePrice">';
         $dv .= '<hr>';
-        $dv .= "<h2>$vehiclesDetails[invMake] $vehiclesDetails[invModel]</h2>";
-        $dv .= "<span>$vehiclesDetails[invPrice]</span>";
+        $dv .= "<h2>$vehiclesDetail[invMake] $vehiclesDetail[invModel]</h2>";
+        $dv .= "<span>$vehiclesDetail[invPrice]</span>";
         $dv .= '</div>';
         $dv .= '</li>';
     }
