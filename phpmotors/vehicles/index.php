@@ -275,7 +275,7 @@ switch ($action) {
             $message = "<p class='notice'>Sorry, 
             no details could be found.</p>";
         } else {
-            $vehicleDetail = buildVehiclesDetailPage($vehiclesDetail);
+            $Details = buildVehiclesDetailPage($vehiclesDetail);
         }
         include '../view/vehicle-detail.php';
         break;

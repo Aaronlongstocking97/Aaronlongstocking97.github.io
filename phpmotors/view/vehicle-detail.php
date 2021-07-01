@@ -21,15 +21,15 @@
             <?php echo $navList; ?>
         </nav>
         <main>
-            <h1 id="content"><?php echo $invMake; ?> vehicles</h1>
+            <h1 id="content"> vehicles</h1>
             <?php
             if (isset($message)) {
                 echo $message;
             }
             ?>
             <?php
-            if (isset($detailedVehicleDisplay)) {
-                echo $detailedVehicleDisplayy;
+            if (isset($Details)) {
+                echo $Details;
             }
             ?>
             <hr id="line-break">
