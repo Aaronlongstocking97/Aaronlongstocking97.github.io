@@ -154,6 +154,13 @@ footer p {
     max-width: 100%;
 }
 
+#inv-display span {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
 /*4.  Large Screen Styles (Media Queries begin here) */
 @media only screen and (min-width: 700px) {
     body {
