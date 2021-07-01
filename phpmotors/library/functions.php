@@ -97,3 +97,21 @@ function buildVehiclesDetailPage($vehiclesDetail)
     $dv .= '</ul>';
     return $dv;
 }
+
+// General Message function
+function message($msg = '')
+{
+    if (!empty($msg)) {
+        // set message to session
+        $_SESSION['message'] = $msg;
+    } else {
+        // get the message
+        return $_SESSION['message'];
+    }
+}
+
+// clear a session message
+function clearMessage()
+{
+    unset($_SESSION['message']);
+}

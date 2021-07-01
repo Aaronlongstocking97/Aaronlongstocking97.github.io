@@ -178,7 +178,7 @@ function getVehiclesByClassification($classificationName)
 function getVehiclesByMakeModel($invMake, $invModel)
 {
     $db = phpmotorsConnect();
-    $sql = 'SELECT * FROM inventory WHERE invmake AND invmodel = :invMake, :invModel';
+    $sql = 'SELECT * FROM inventory WHERE invMake = :invMake, invModel = :invModel';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':invMake', $invMake, PDO::PARAM_STR);
     $stmt->bindValue(':invModel', $invModel, PDO::PARAM_STR);
