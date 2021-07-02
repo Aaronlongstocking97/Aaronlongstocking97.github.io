@@ -99,10 +99,10 @@ function buildVehiclesDetailPage($vehiclesDetail)
     $dv  = '<div>';
     $dv .= '<section>';
     $dv .= "<img src='$vehiclesDetail[invThumbnail]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
-    $dv .= "<p>Price: " . "$" . "$number</p>";
+    $dv .= "<h2>Price: " . "$" . "$number</h2>";
     $dv .= '<section>';
     $dv .= '<section>';
-    $dv .= "<p>$vehiclesDetail[invMake] $vehiclesDetail[invModel]" . " Details</p>";
+    $dv .= "<h2>$vehiclesDetail[invMake] $vehiclesDetail[invModel]" . " Details</h2>";
     $dv .= '<ul>';
     $dv .= "<li>$vehiclesDetail[invDescription]</li>";
     $dv .= "<li>Color: " . "$vehiclesDetail[invColor]</li>";
