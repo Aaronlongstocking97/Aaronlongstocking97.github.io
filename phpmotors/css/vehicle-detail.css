@@ -116,7 +116,7 @@ header {
 
 #content {
     font-size: 20px;
-    font-weight: lighter;
+    font-weight: bold;
 }
 
 .split {
@@ -125,7 +125,8 @@ header {
 
 .split .left {
     width: 50%;
-    font-size: 30px;
+    font-size: 25px;
+    font-weight: 600;
 }
 
 .left img {

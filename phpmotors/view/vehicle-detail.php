@@ -32,8 +32,8 @@
                 echo $details;
             }
             ?>
-            <hr id="line-break">
         </main>
+        <hr id="line-break">
         <footer>
             <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>
         </footer>
