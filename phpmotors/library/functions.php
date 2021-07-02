@@ -31,7 +31,7 @@ function buildVehiclesDisplay($vehicles)
         $price = $vehicle['invPrice'];
         $number = number_format($price);
         $dv .= '<li>';
-        $dv .= "<img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
+        $dv .= "<img src='$vehicle[invImage]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
         $dv .= '<div class="namePrice">';
         $dv .= '<hr>';
         $dv .= "<a href='/phpmotors/vehicles/index.php?action=detailVehicle&invId=" . $vehicle['invId'] . "'>";
