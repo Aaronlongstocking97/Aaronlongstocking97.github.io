@@ -100,7 +100,7 @@ function buildVehiclesDetailPage($vehiclesDetail)
     $dv .= '<section class="left">';
     $dv .= "<img src='$vehiclesDetail[invThumbnail]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
     $dv .= "<p>Price: " . "$" . "$number</p>";
-    $dv .= '<section>';
+    $dv .= '</section>';
     $dv .= '<section class="right">';
     $dv .= "<p>$vehiclesDetail[invMake] $vehiclesDetail[invModel]" . " Details</p>";
     $dv .= '<ul>';
