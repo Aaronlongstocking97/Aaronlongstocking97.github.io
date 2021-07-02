@@ -134,11 +134,16 @@ header {
 
 .split .right {
     width: 50%;
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .right ul {
-    list-style: none;
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.right li {
+    padding: 20px;
 }
 
 .right .shade1 {
