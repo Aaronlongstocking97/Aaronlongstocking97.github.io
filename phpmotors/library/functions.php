@@ -91,7 +91,7 @@ function buildVehiclesDetailPage($vehiclesDetail)
     $dv .= '<div class="namePrice">';
     $dv .= '<hr>';
     $dv .= "<h2>$vehiclesDetail[invMake] $vehiclesDetail[invModel]</h2>";
-    $dv .= "<span>$vehiclesDetail[invPrice]</span>";
+    $dv .= "<span>number_format($vehiclesDetail[invPrice])</span>";
     $dv .= '</div>';
     $dv .= '</li>';
     $dv .= '</ul>';
