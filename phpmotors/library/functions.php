@@ -96,12 +96,12 @@ function buildVehiclesDetailPage($vehiclesDetail)
 {
     $price = $vehiclesDetail['invPrice'];
     $number = number_format($price);
-    $dv  = '<div>';
-    $dv .= '<section>';
+    $dv  = '<div id="split">';
+    $dv .= '<section id="left">';
     $dv .= "<img src='$vehiclesDetail[invThumbnail]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
     $dv .= "<p>Price: " . "$" . "$number</p>";
     $dv .= '<section>';
-    $dv .= '<section>';
+    $dv .= '<section id="right">';
     $dv .= "<p>$vehiclesDetail[invMake] $vehiclesDetail[invModel]" . " Details</p>";
     $dv .= '<ul>';
     $dv .= "<li>$vehiclesDetail[invDescription]</li>";
