@@ -96,15 +96,20 @@ function buildVehiclesDetailPage($vehiclesDetail)
 {
     $price = $vehiclesDetail['invPrice'];
     $number = number_format($price);
-    $dv = '<ul id="inv-display">';
-    $dv .= '<li>';
+    $dv  = '<div>';
+    $dv .= '<section>';
     $dv .= "<img src='$vehiclesDetail[invThumbnail]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
-    $dv .= '<div class="namePrice">';
-    $dv .= "<h2>$vehiclesDetail[invMake] $vehiclesDetail[invModel]</h2>";
-    $dv .= "<span>" . "$" . "$number</span>";
-    $dv .= '</div>';
-    $dv .= '</li>';
+    $dv .= "<p>Price: " . "$" . "$number</p>";
+    $dv .= '<section>';
+    $dv .= '<section>';
+    $dv .= "<p>$vehiclesDetail[invMake] $vehiclesDetail[invModel]" . " Details</p>";
+    $dv .= '<ul>';
+    $dv .= "<li>$vehiclesDetail[invDescription]</li>";
+    $dv .= "<li>Color: " . "$vehiclesDetail[invColor]</li>";
+    $dv .= "<li># in Stock: " . "$vehiclesDetail[invStock]</li>";
     $dv .= '</ul>';
+    $dv .= '</section>';
+    $dv .= '<div>';
     return $dv;
 }
 
