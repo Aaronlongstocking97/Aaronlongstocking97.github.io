@@ -119,6 +119,18 @@ header {
     font-weight: lighter;
 }
 
+.split {
+    font-size: 20px;
+}
+
+.split .left {
+    font-size: 30px;
+}
+
+.split .right {
+    font-size: 25px;
+}
+
 #line-break {
     border-top: 3px solid black;
     margin-top: 0px;
