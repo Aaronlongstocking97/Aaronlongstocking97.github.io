@@ -98,7 +98,8 @@ function buildVehiclesDetailPage($vehiclesDetail)
     $number = number_format($price);
     $dv  = '<div class="split">';
     $dv .= '<section class="left">';
-    $dv .= "<img src='$vehiclesDetail[invThumbnail]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
+    $dv .= "<img src='$vehiclesDetail[invThumbnail]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'";
+    $dv .= "class='size'>";
     $dv .= "<p>Price: " . "$" . "$number</p>";
     $dv .= '</section>';
     $dv .= '<section class="right">';
