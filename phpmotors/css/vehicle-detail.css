@@ -120,15 +120,25 @@ header {
 }
 
 .split {
-    font-size: 20px;
+    display: flex;
 }
 
 .split .left {
+    width: 50%;
     font-size: 30px;
 }
 
+.left img {
+    width: 90%;
+}
+
 .split .right {
+    width: 50%;
     font-size: 25px;
+}
+
+.right ul {
+    list-style: none;
 }
 
 #line-break {
