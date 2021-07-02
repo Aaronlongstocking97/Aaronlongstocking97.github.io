@@ -93,7 +93,7 @@ function buildClassificationList($classifications)
 function buildVehiclesDetailPage($vehiclesDetail)
 {
     $price = $vehiclesDetail['invPrice'];
-    $number = number_format($price, ',');
+    $number = number_format($price);
     $dv = '<ul id="inv-display">';
     $dv .= '<li>';
     $dv .= "<img src='$vehiclesDetail[invThumbnail]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
