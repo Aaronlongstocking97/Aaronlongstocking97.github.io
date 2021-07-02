@@ -141,6 +141,10 @@ header {
     list-style: none;
 }
 
+.right .shade {
+    background-color: lightgray;
+}
+
 #line-break {
     border-top: 3px solid black;
     margin-top: 0px;
