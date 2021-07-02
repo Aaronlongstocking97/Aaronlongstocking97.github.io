@@ -26,6 +26,8 @@ function buildNavigation($classifications)
 
 function buildVehiclesDisplay($vehicles)
 {
+    $price = $vehicles['invPrice'];
+    $number = number_format($price);
     $dv = '<ul id="inv-display">';
     foreach ($vehicles as $vehicle) {
         $dv .= '<li>';
@@ -35,7 +37,7 @@ function buildVehiclesDisplay($vehicles)
         $dv .= "<a href='/phpmotors/vehicles/index.php?action=detailVehicle&invId=" . $vehicle['invId'] . "'>";
         $dv .=  $vehicle['invMake'] . $vehicle['invModel'];
         $dv .= "</a>";
-        $dv .= "<span>$vehicle[invPrice]</span>";
+        $dv .= "<span>$number</span>";
         $dv .= '</div>';
         $dv .= '</li>';
     }
