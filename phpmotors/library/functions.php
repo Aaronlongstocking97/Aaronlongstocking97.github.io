@@ -104,9 +104,9 @@ function buildVehiclesDetailPage($vehiclesDetail)
     $dv .= '<section class="right">';
     $dv .= "<p>$vehiclesDetail[invMake] $vehiclesDetail[invModel]" . " Details</p>";
     $dv .= '<ul>';
-    $dv .= "<li class='shade'>$vehiclesDetail[invDescription]</li>";
+    $dv .= "<li class='shade1'>$vehiclesDetail[invDescription]</li>";
     $dv .= "<li>Color: " . "$vehiclesDetail[invColor]</li>";
-    $dv .= "<li class='shade'># in Stock: " . "$vehiclesDetail[invStock]</li>";
+    $dv .= "<li class='shade2'># in Stock: " . "$vehiclesDetail[invStock]</li>";
     $dv .= '</ul>';
     $dv .= '</section>';
     $dv .= '<div>';

@@ -141,8 +141,12 @@ header {
     list-style: none;
 }
 
-.right .shade {
-    background-color: lightgray;
+.right .shade1 {
+    background-color: #f1f0f1;
+}
+
+.right .shade2 {
+    background-color: #f1f0f1;
 }
 
 #line-break {
