@@ -123,21 +123,21 @@ header {
     display: flex;
 }
 
-.split .left {
+.left.split {
     width: 50%;
     font-size: 30px;
 }
 
-.left img {
+img.left {
     width: 90%;
 }
 
-.split .right {
+.right.split {
     width: 50%;
     font-size: 25px;
 }
 
-.right ul {
+ul.right {
     list-style: none;
 }
 
