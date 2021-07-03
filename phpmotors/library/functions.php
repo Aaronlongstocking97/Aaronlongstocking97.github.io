@@ -31,7 +31,6 @@ function buildVehiclesDisplay($vehicles)
         $price = $vehicle['invPrice'];
         $number = number_format($price);
         $dv .= '<li>';
-        $dv .= '<div class="boxes">';
         $dv .= "<img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
         $dv .= '<div class="namePrice">';
         $dv .= '<hr id="line-break">';
@@ -40,14 +39,13 @@ function buildVehiclesDisplay($vehicles)
         $dv .= "</a>";
         $dv .= "<span>" . "$" . "$number</span>";
         $dv .= '</div>';
-        $dv .= '</div>';
         $dv .= '</li>';
     }
     $dv .= '</ul>';
     return $dv;
 }
-// <a href="/phpmotors/accounts/?action=client-update&clientId= 
-// <a href="/phpmotors/accounts/?action=client-update&clientId=  <?php echo $_SESSION['clientData']['clientId']
+//$dv .= '<div class="boxes">';
+//$dv .= '</div>';
 //>">Update Account Information</a>
 // Check the value of the $clientEmail variable, after having been
 // sanitized, to see if it "looks" like a valid email address.
