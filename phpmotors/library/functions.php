@@ -33,7 +33,7 @@ function buildVehiclesDisplay($vehicles)
         $dv .= '<li>';
         $dv .= "<img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
         $dv .= '<div class="namePrice">';
-        $dv .= '<hr id="line-break">';
+        $dv .= '<hr id="divider">';
         $dv .= "<a href='/phpmotors/vehicles/index.php?action=detailVehicle&invId=" . $vehicle['invId'] . "'>";
         $dv .=  $vehicle['invMake'] . $vehicle['invModel'];
         $dv .= "</a>";
