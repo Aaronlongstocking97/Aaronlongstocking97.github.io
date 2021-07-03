@@ -262,15 +262,15 @@ footer p {
     #inv-display li {
         max-width: 200px;
         text-align: center;
-        height: 250px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         border: 1px #ccc solid;
         border-radius: 10px;
+        margin-bottom: 0%;
     }
 
-    #inv-display img {
+    #inv-display li img {
         height: auto;
     }
 
