@@ -163,9 +163,7 @@ footer p {
 
 #inv-display span {
     display: flex;
-    /* flex-direction: column; */
     padding-top: 15px;
-    /* padding-bottom: 30px; */
 }
 
 /*
@@ -256,17 +254,13 @@ footer p {
 
     /* For vehicle display in classification view */
     #inv-display {
+        display: flex;
         justify-content: space-evenly;
-        flex-wrap: nowrap;
-    }
-
-    #inv-display h2 {
-        font-size: 1rem;
+        flex-wrap: unset;
     }
 
     #inv-display li {
         max-width: 200px;
-        flex: 1 0 auto;
         text-align: center;
         height: 250px;
         display: flex;
@@ -282,6 +276,7 @@ footer p {
 
     #inv-display span {
         flex-direction: column;
+        padding-bottom: 30px;
     }
 
     #inv-display hr {
