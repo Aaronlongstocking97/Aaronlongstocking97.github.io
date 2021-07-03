@@ -256,8 +256,8 @@ footer p {
 
     /* For vehicle display in classification view */
     #inv-display {
-        justify-content: flex-start;
-        padding-left: 0px;
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
     }
 
     #inv-display h2 {
