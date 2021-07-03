@@ -276,6 +276,10 @@ footer p {
         border-radius: 10px;
     }
 
+    #inv-display img {
+        height: auto;
+    }
+
     #inv-display hr {
         border-top: 3px solid black;
     }
