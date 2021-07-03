@@ -139,6 +139,7 @@ footer p {
 
 #inv-display {
     margin: 0;
+    padding: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -160,9 +161,7 @@ footer p {
     border-radius: 10px;
 }
 
-
-
-/* #inv-display span {
+#inv-display span {
     display: flex;
     flex-direction: column;
     padding-top: 15px;
@@ -170,6 +169,8 @@ footer p {
 }
 
 
+
+/*
 #inv-display {
     margin: 0;
     padding: 0;
