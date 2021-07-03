@@ -280,6 +280,10 @@ footer p {
         height: auto;
     }
 
+    #inv-display span {
+        flex-direction: column;
+    }
+
     #inv-display hr {
         border-top: 3px solid black;
     }
