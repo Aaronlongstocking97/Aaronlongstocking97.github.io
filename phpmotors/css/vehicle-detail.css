@@ -203,6 +203,7 @@ footer p {
 
     .split {
         display: flex;
+        padding-bottom: 40px;
     }
 
     .split .left {
