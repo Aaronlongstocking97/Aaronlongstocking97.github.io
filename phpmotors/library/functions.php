@@ -36,7 +36,7 @@ function buildVehiclesDisplay($vehicles)
         $dv .= '<hr id="divider">';
         $dv .= "<a href='/phpmotors/vehicles/index.php?action=detailVehicle&invId=" . $vehicle['invId'] . "'>";
         $dv .=  $vehicle['invMake'] . $vehicle['invModel'];
-        $dv .= "</a>";
+        $dv .= '</a>';
         $dv .= "<span>" . "$" . "$number</span>";
         $dv .= '</div>';
         $dv .= '</li>';
