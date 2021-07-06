@@ -107,7 +107,7 @@ function buildVehiclesDetailPage($vehiclesDetail)
     $dv .= "<li class='shade2'># in Stock: " . "$vehiclesDetail[invStock]</li>";
     $dv .= '</ul>';
     $dv .= '</section>';
-    $dv .= '<div>';
+    $dv .= '</div>';
     return $dv;
 }
 
