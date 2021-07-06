@@ -120,7 +120,6 @@ header {
 
 #line-break {
     border-top: 3px solid black;
-    /* margin-top: 0px; */
 }
 
 footer {
@@ -139,24 +138,16 @@ footer p {
 #inv-display {
     margin: 0;
     padding: 0;
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-evenly; */
 }
 
 #inv-display li {
     margin-bottom: 2.5em;
     list-style-type: none;
-    /* flex: 1 1 auto;
-    display: flex;
-    flex-direction: column; */
 }
 
 #inv-display li img {
     max-width: 100%;
     height: 90%;
-    /* height: auto; */
     border-radius: 10px;
 }
 
@@ -164,27 +155,6 @@ footer p {
     display: flex;
     padding-top: 15px;
 }
-
-/*
-#inv-display {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-#inv-display li {
-    margin-bottom: .5em;
-    border: 1px #ccc solid;
-    list-style-type: none;
-    flex: 1 1 auto;
-}
-
-#inv-display li img {
-    max-width: 100%;
-} */
-
-
 
 /*4.  Large Screen Styles (Media Queries begin here) */
 @media only screen and (min-width: 700px) {
@@ -224,33 +194,6 @@ footer p {
         padding-bottom: 2%;
     }
 
-    /* 
-    /* For vehicle display in classification view *
-    #inv-display {
-        flex-flow: row wrap;
-        justify-content: flex-start;
-    }
-
-    #inv-display h2 {
-        font-size: 1rem;
-    }
-
-    #inv-display li {
-        max-width: 200px;
-        flex: 1 0 auto;
-        text-align: center;
-        height: 250px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    #inv-display div {
-        width: 100%;
-    } */
-
-
-
     /* For vehicle display in classification view */
     #inv-display {
         display: flex;
@@ -281,8 +224,4 @@ footer p {
     #inv-display hr {
         border-top: 3px solid black;
     }
-
-    /* #inv-display div {
-        width: 100%;
-    } */
 }

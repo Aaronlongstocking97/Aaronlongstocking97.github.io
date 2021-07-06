@@ -43,7 +43,6 @@ function buildVehiclesDisplay($vehicles)
     $dv .= '</ul>';
     return $dv;
 }
-//$dv .= '<hr id="divider">';
 //>">Update Account Information</a>
 // Check the value of the $clientEmail variable, after having been
 // sanitized, to see if it "looks" like a valid email address.
@@ -82,13 +81,6 @@ function buildClassificationList($classifications)
     $classificationList .= '</select>';
     return $classificationList;
 }
-
-// number_format(
-//     float $num,
-//     int $decimals = 0,
-//     string|null $decimal_separator = ".",
-//     string|null $thousands_separator = ","
-// ): string
 
 function buildVehiclesDetailPage($vehiclesDetail)
 {
