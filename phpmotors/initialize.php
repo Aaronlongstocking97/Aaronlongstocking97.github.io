@@ -11,5 +11,5 @@ require_once ROOT . '/library/connections.php';
 require_once ROOT . '/model/main-model.php';
 require_once ROOT . '/model/accounts-model.php';
 require_once ROOT . '/model/vehicles-model.php';
-require_once ROOT . '/model/uploads.php';
+require_once ROOT . '/model/uploads-model.php';
 require_once ROOT . '/library/functions.php';
