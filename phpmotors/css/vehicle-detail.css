@@ -70,8 +70,10 @@ body {
 }
 
 #logo {
-    padding: 5px;
-    height: 90px;
+    /* padding: 5px;
+    height: 90px; */
+    padding-bottom: 10px;
+    /* width: 50%; */
 }
 
 header p {
@@ -126,6 +128,10 @@ header {
 
 .left img {
     width: 90%;
+}
+
+.split .right {
+    font-weight: 600;
 }
 
 .right ul {
