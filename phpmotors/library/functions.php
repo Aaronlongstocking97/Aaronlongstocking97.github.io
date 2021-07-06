@@ -95,18 +95,18 @@ function buildVehiclesDetailPage($vehiclesDetail)
     $price = $vehiclesDetail['invPrice'];
     $number = number_format($price);
     $dv  = '<div class="split">';
-    $dv .= '<section class="left">';
+    $dv .= '<div class="left">';
     $dv .= "<img src='$vehiclesDetail[invImage]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
     $dv .= "<p>Price: " . "$" . "$number</p>";
-    $dv .= '</section>';
-    $dv .= '<section class="right">';
+    $dv .= '</div>';
+    $dv .= '<div class="right">';
     $dv .= "<p>$vehiclesDetail[invMake] $vehiclesDetail[invModel]" . " Details</p>";
     $dv .= '<ul>';
     $dv .= "<li class='shade1'>$vehiclesDetail[invDescription]</li>";
     $dv .= "<li>Color: " . "$vehiclesDetail[invColor]</li>";
     $dv .= "<li class='shade2'># in Stock: " . "$vehiclesDetail[invStock]</li>";
     $dv .= '</ul>';
-    $dv .= '</section>';
+    $dv .= '</div>';
     $dv .= '</div>';
     return $dv;
 }
