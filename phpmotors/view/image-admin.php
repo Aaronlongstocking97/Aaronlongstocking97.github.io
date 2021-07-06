@@ -47,6 +47,12 @@ if (isset($_SESSION['message'])) {
                 <input type="hidden" name="action" value="upload">
             </form>
             <hr id="line-break">
+            <h2>Existing Images</h2>
+            <p class="notice">If deleting an image, delete the thumbnail too and vice versa.</p>
+            <?php
+            if (isset($imageDisplay)) {
+                echo $imageDisplay;
+            } ?>
         </main>
         <footer>
             <?php include $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>
