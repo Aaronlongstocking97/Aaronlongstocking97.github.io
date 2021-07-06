@@ -8,10 +8,10 @@ if (isset($_SESSION['message'])) {
 
 <head>
     <meta charset="UTF-8">
-    <title id="page-title">Admin Page | PHP Motors</title>
+    <title id="page-title">Image Management | PHP Motors</title>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PHP Motors admin page">
+    <meta name="description" content="PHP Motors image management page">
     <meta name="author" content="Aaron Jones">
     <link rel="stylesheet" type="text/css" href="/phpmotors/css/login.css" media="screen">
 </head>
@@ -25,37 +25,27 @@ if (isset($_SESSION['message'])) {
             <?php echo $navList; ?>
         </nav>
         <main id="main-content">
-            <?php
-            echo "<h1 id='displayName'>" . $_SESSION['clientData']['clientFirstname'] . "    " . $_SESSION['clientData']['clientLastname'] . "</h1>" ?>
+            <h2>Add New Vehicle Image</h2>
             <?php
             if (isset($message)) {
                 echo $message;
-            }
-            ?>
-            <span>You are logged in.</span>
-            <?php
-            echo "<ul>"
-                . "<li>First name:  " . $_SESSION['clientData']['clientFirstname'] . "</li>"
-                . "<li>Last name:   " . $_SESSION['clientData']['clientLastname'] . "</li>"
-                . "<li>Email:   " . $_SESSION['clientData']['clientEmail'] . "</li>"
-                . "</ul>" ?>
-            <h2 id='accountManage'>Account Management</h2>
-            <span>Use this link to update account information.</span>
-            <br>
-            <div>&nbsp;</div>
-            <a href="/phpmotors/accounts/?action=client-update&clientId=  <?php echo $_SESSION['clientData']['clientId'] ?>">Update Account Information</a>
-            <div>&nbsp;</div>
-            <?php
-            $level = $_SESSION['clientData']['clientLevel'];
-            if ($level > 1) {
-                echo "<h2 id='adminInvManage'>Inventory Management</h2>"
-                    . "<span>Use this link to manage the inventory.</span>"
-                    . "<br>"
-                    . "<div>&nbsp;</div>"
-                    . '<a href="/phpmotors/vehicles/?action=vehicle-man" id="vehicle-man">Vehicle Management</a>'
-                    . "<div>&nbsp;</div>";
-            }
-            ?>
+            } ?>
+
+            <form action="/phpmotors/uploads/" method="post" enctype="multipart/form-data">
+                <label for="invItem">Vehicle</label>
+                <?php echo $prodSelect; ?>
+                <fieldset>
+                    <label>Is this the main image for the vehicle?</label>
+                    <label for="priYes" class="pImage">Yes</label>
+                    <input type="radio" name="imgPrimary" id="priYes" class="pImage" value="1">
+                    <label for="priNo" class="pImage">No</label>
+                    <input type="radio" name="imgPrimary" id="priNo" class="pImage" checked value="0">
+                </fieldset>
+                <label>Upload Image:</label>
+                <input type="file" name="file1">
+                <input type="submit" class="regbtn" value="Upload">
+                <input type="hidden" name="action" value="upload">
+            </form>
             <hr id="line-break">
         </main>
         <footer>
