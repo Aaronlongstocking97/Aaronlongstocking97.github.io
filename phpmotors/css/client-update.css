@@ -45,7 +45,7 @@ body {
 #login {
     color: #3a3a3a;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.3rem;
     position: absolute;
     top: 30px;
     right: 30px;
@@ -54,7 +54,7 @@ body {
 #User {
     color: #3a3a3a;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.3rem;
     position: absolute;
     top: 30px;
     right: 100px;
@@ -63,15 +63,14 @@ body {
 #logout {
     color: #3a3a3a;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 1.3rem;
     position: absolute;
     top: 30px;
     right: 30px;
 }
 
 #logo {
-    padding: 5px;
-    height: 90px;
+    padding-bottom: 10px;
 }
 
 header p {
