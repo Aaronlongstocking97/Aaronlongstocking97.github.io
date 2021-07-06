@@ -119,12 +119,7 @@ header {
     font-weight: bold;
 }
 
-.split {
-    display: flex;
-}
-
 .split .left {
-    width: 50%;
     font-size: 25px;
     font-weight: 600;
 }
@@ -133,14 +128,10 @@ header {
     width: 90%;
 }
 
-.split .right {
-    width: 50%;
-    font-size: 20px;
-}
-
 .right ul {
     list-style-type: none;
     padding-left: 0px;
+    padding-bottom: 50px;
 }
 
 .right li {
@@ -201,6 +192,23 @@ footer p {
         font-size: 30px;
         margin-bottom: 5%;
         margin-top: 4%;
+    }
+
+    .split {
+        display: flex;
+    }
+
+    .split .left {
+        width: 50%;
+    }
+
+    .split .right {
+        width: 50%;
+        font-size: 20px;
+    }
+
+    .right ul {
+        padding-bottom: 0px;
     }
 
     footer p {
