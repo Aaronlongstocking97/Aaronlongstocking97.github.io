@@ -13,15 +13,6 @@ $classifications = getClassifications();
 // Build a navigation bar using the $classifications array
 $navList = buildNavigation($classifications);
 
-// Build the select list
-// $classifList = '<select name="classificationId">';
-// foreach ($classifications as $classification) {
-//     $classifList .= "<option value='
-//         '$classification[classificationId]'>
-//         $classification[classificationName]</option>";
-// }
-// $classifList .= '</select>';
-
 // Get the value from the action name - value pair
 $action = filter_input(INPUT_POST, 'action');
 if ($action == NULL) {
