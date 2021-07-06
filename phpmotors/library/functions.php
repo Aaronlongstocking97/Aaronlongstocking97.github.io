@@ -34,7 +34,7 @@ function buildVehiclesDisplay($vehicles)
         $dv .= "<img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
         $dv .= '<div class="namePrice">';
         $dv .= '<hr id="divider">';
-        $dv .= "<a href='/phpmotors/vehicles/index.php?action=detailVehicle&invId='" . $vehicle['invId'] . "'>";
+        $dv .= "<a href='/phpmotors/vehicles/index.php?action=detailVehicle&invId=" . $vehicle['invId'] . "'>";
         $dv .=  $vehicle['invMake'] . $vehicle['invModel'];
         $dv .= "</a>";
         $dv .= "<span>" . "$" . "$number</span>";
