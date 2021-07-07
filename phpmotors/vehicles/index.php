@@ -236,15 +236,15 @@ switch ($action) {
         }
         break;
     case 'classification':
-        $classificationName = filter_input(
+        $imgPrimary = filter_input(
             INPUT_GET,
-            'classificationName',
+            'imgPrimary',
             FILTER_SANITIZE_STRING
         );
-        $vehicles = getVehiclesByClassification($classificationName);
+        $vehicles = getVehiclesByClassification($imgPrimary);
         if (!count($vehicles)) {
             $message = "<p class='notice'>Sorry, 
-            no $classificationName could be found.</p>";
+            no cars could be found.</p>";
         } else {
             $vehicleDisplay = buildVehiclesDisplay($vehicles);
         }
