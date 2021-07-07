@@ -162,16 +162,24 @@ function deleteVehicle($invId)
 }
 
 // Get the list of vehicles by classification name
-function getVehiclesByClassification($imgPath)
+// Pulling the primary thumbnail image from the images table
+// This pull of information will display through the classification view
+// REQUIRED - imgPrimary and thumbnails('TN') and NAVIGATION NAME
+// CONNECTING - inventory AND images THROUGH invId
+//// CONNECTING - inventory AND carclassification THROUGH classificationId
+// invId will be an ARRAY['information from both tables']
+// Taking a number through and using it as an array (ex:vehicle-detail.php)
+// Taking the NAVIGATION NAME through the getClassifications()
+function getVehiclesByClassification($imgPrimary)
 {
     $db = phpmotorsConnect();
-    $sql = 'SELECT * FROM inventory WHERE invId IN (SELECT invId FROM images WHERE imgPath = :imgPath LIKE "%tn%")';
+    $sql = 'SELECT * FROM inventory WHERE invId IN (SELECT invId FROM images WHERE imgPrimary = :imgPrimary)';
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(':imgPath', $imgPath, PDO::PARAM_STR);
+    $stmt->bindValue(':imgPrimary', $imgPrimary, PDO::PARAM_INT);
     $stmt->execute();
-    $vehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $primaryVehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
-    return $vehicles;
+    return $primaryVehicles;
 }
 
 // function getVehiclesByClassification($classificationName)

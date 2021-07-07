@@ -236,19 +236,22 @@ switch ($action) {
         }
         break;
     case 'classification':
-        $imgPath = filter_input(
+        // Getting the PRIMARY IMAGES through an int 0 OR 1
+        $imgPrimary = filter_input(
             INPUT_GET,
-            'imgPath',
+            'imgPrimary',
             FILTER_SANITIZE_STRING
         );
-        $vehicles = getVehiclesByClassification($imgPath);
-        if (!count($vehicles)) {
+        // Takes the INT(imgPrimary) into to the function
+        $primaryVehicles = getVehiclesByClassification($imgPrimary);
+        // Returns the invId ARRAY[Two Table Values] and assigns it a variable name
+        if (!count($primaryVehicles)) {
             $message = "<p class='notice'>Sorry, 
             no cars could be found.</p>";
-            echo $imgPath;
-            exit;
         } else {
-            $vehicleDisplay = buildVehiclesDisplay($vehicles);
+            // Takes the $primaryVehicles[ARRAY] into the function 
+            $vehicleDisplay = buildVehiclesDisplay($primaryVehicles);
+            // Returns the CLASSIFICATION DISPLAY and assigns it a variable name
         }
         // echo $vehicleDisplay;
         // exit;

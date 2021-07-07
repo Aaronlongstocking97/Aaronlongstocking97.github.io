@@ -23,18 +23,18 @@ function buildNavigation($classifications)
     return $navList;
 }
 
-function buildVehiclesDisplay($vehicles)
+function buildVehiclesDisplay($primaryVehicles)
 {
     $dv = '<ul id="inv-display">';
-    foreach ($vehicles as $vehicle) {
-        $price = $vehicle['invPrice'];
+    foreach ($primaryVehicles as $primaryVehicle) {
+        $price = $primaryVehicle['invPrice'];
         $number = number_format($price);
         $dv .= '<li>';
-        $dv .= "<img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
+        $dv .= "<img src='$primaryVehicle[invThumbnail]' alt='Image of $primaryVehicle[invMake] $primaryVehicle[invModel] on phpmotors.com'>";
         $dv .= '<div class="namePrice">';
         $dv .= '<hr>';
-        $dv .= "<a href='/phpmotors/vehicles/index.php?action=detailVehicle&invId=" . $vehicle['invId'] . "'>";
-        $dv .=  $vehicle['invMake'] . $vehicle['invModel'];
+        $dv .= "<a href='/phpmotors/vehicles/index.php?action=detailVehicle&invId=" . $primaryVehicle['invId'] . "'>";
+        $dv .=  $primaryVehicle['invMake'] . $primaryVehicle['invModel'];
         $dv .= '</a>';
         $dv .= "<span>" . "$" . "$number</span>";
         $dv .= '</div>';
