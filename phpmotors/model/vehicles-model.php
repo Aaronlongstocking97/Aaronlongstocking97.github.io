@@ -162,12 +162,12 @@ function deleteVehicle($invId)
 }
 
 // Get the list of vehicles by classification name
-function getVehiclesByClassification($imgPrimary)
+function getVehiclesByClassification($imgPath)
 {
     $db = phpmotorsConnect();
-    $sql = 'SELECT * FROM inventory WHERE invId IN ((SELECT invId FROM images WHERE imgPrimary = :imgPrimary, imgPath LIKE "%tn%"))';
+    $sql = 'SELECT * FROM inventory WHERE invId IN (SELECT invId FROM images WHERE imgPath = :imgPath LIKE "%tn%")';
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(':imgPrimary', $imgPrimary, PDO::PARAM_STR);
+    $stmt->bindValue(':imgPath', $imgPath, PDO::PARAM_STR);
     $stmt->execute();
     $vehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
