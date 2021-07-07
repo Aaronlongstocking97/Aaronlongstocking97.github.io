@@ -170,17 +170,21 @@ function deleteVehicle($invId)
 // invId will be an ARRAY['information from both tables']
 // Taking a number through and using it as an array (ex:vehicle-detail.php)
 // Taking the NAVIGATION NAME through the getClassifications()
-function getVehiclesByClassification($imgPrimary)
+function getVehiclesByClassification($imgPrimary, $imgPath)
 {
     $db = phpmotorsConnect();
-    $sql = 'SELECT * FROM inventory WHERE invId IN (SELECT invId FROM images WHERE imgPrimary = :imgPrimary)';
+    $sql = 'SELECT imgId, imgPath, imgPrimary, inventory.invId, invMake, invModel, invPrice
+    FROM images JOIN inventory ON images.invId = inventory.invId';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':imgPrimary', $imgPrimary, PDO::PARAM_INT);
+    $stmt->bindValue(':imgPath', $imgPath, PDO::PARAM_STR);
     $stmt->execute();
     $primaryVehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
     return $primaryVehicles;
 }
+//$sql = 'SELECT imgId, imgPath, imgName, imgDate, inventory.invId, 
+// invMake, invModel FROM images JOIN inventory ON images.invId = inventory.invId';
 
 // function getVehiclesByClassification($classificationName)
 // {

@@ -240,10 +240,15 @@ switch ($action) {
         $imgPrimary = filter_input(
             INPUT_GET,
             'imgPrimary',
-            FILTER_SANITIZE_NUMBER_INT
+            FILTER_SANITIZE_STRING
+        );
+        $imgPath = filter_input(
+            INPUT_GET,
+            'imgPath',
+            FILTER_SANITIZE_STRING
         );
         // Takes the INT(imgPrimary) into to the function
-        $primaryVehicles = getVehiclesByClassification($imgPrimary);
+        $primaryVehicles = getVehiclesByClassification($imgPrimary, $imgPath);
         // Returns the invId ARRAY[Two Table Values] and assigns it a variable name
         if (!count($primaryVehicles)) {
             $message = "<p class='notice'>Sorry, 
