@@ -236,12 +236,12 @@ switch ($action) {
         }
         break;
     case 'classification':
-        $imgPath = filter_input(
+        $imgPrimary = filter_input(
             INPUT_GET,
-            'imgPath',
+            'imgPrimary',
             FILTER_SANITIZE_STRING
         );
-        $vehicles = getVehiclesByClassification($imgPath);
+        $vehicles = getVehiclesByClassification($imgPrimary);
         if (!count($vehicles)) {
             $message = "<p class='notice'>Sorry, 
             no cars could be found.</p>";
