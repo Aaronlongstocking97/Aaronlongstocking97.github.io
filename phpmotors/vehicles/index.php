@@ -236,17 +236,29 @@ switch ($action) {
         }
         break;
     case 'classification':
+        $classificationName = filter_input(
+            INPUT_GET,
+            'classificationName',
+            FILTER_SANITIZE_STRING
+        );
+        $vehicles = getVehiclesByClassification($classificationName);
+        if (!count($vehicles)) {
+            $message = "<p class='notice'>Sorry, 
+            no $classificationName could be found.</p>";
+        } else {
+            $vehicleDisplay = buildVehiclesDisplay($vehicles);
+        }
         // Getting the PRIMARY IMAGES through an int 0 OR 1
-        $imgPrimary = filter_input(
-            INPUT_GET,
-            'imgPrimary',
-            FILTER_SANITIZE_STRING
-        );
-        $imgPath = filter_input(
-            INPUT_GET,
-            'imgPath',
-            FILTER_SANITIZE_STRING
-        );
+        // $imgPrimary = filter_input(
+        //     INPUT_GET,
+        //     'imgPrimary',
+        //     FILTER_SANITIZE_STRING
+        // );
+        // $imgPath = filter_input(
+        //     INPUT_GET,
+        //     'imgPath',
+        //     FILTER_SANITIZE_STRING
+        // );
         // Takes the INT(imgPrimary) into to the function
         $primaryVehicles = getVehiclesByClassification($imgPrimary, $imgPath);
         // Returns the invId ARRAY[Two Table Values] and assigns it a variable name
