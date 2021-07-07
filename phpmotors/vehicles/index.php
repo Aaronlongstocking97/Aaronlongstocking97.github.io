@@ -245,6 +245,8 @@ switch ($action) {
         if (!count($vehicles)) {
             $message = "<p class='notice'>Sorry, 
             no cars could be found.</p>";
+            echo $imgPath;
+            exit;
         } else {
             $vehicleDisplay = buildVehiclesDisplay($vehicles);
         }
