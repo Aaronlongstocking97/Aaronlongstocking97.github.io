@@ -177,7 +177,7 @@ function getVehiclesByClassification($imgPrimary)
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':imgPrimary', $imgPrimary, PDO::PARAM_INT);
     $stmt->execute();
-    $primaryVehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $primaryVehicles = $stmt->fetch(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
     return $primaryVehicles;
 }
