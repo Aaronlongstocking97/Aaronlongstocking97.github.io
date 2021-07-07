@@ -165,7 +165,7 @@ function deleteVehicle($invId)
 function getVehiclesByClassification($imgPrimary)
 {
     $db = phpmotorsConnect();
-    $sql = 'SELECT * FROM inventory WHERE invId IN (SELECT invId FROM images WHERE imgPrimary = :imgPrimary, WHERE imgPath LIKE "%tn%")';
+    $sql = 'SELECT * FROM inventory WHERE invId IN ((SELECT invId FROM images WHERE imgPrimary = :imgPrimary) AND (WHERE imgPath LIKE "%tn%"))';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':imgPrimary', $imgPrimary, PDO::PARAM_STR);
     $stmt->execute();
