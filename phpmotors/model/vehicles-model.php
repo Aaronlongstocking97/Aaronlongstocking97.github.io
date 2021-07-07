@@ -175,7 +175,7 @@ function getVehiclesByClassification($imgPrimary)
     $db = phpmotorsConnect();
     $sql = 'SELECT * FROM inventory WHERE invId IN (SELECT invId FROM images WHERE imgPrimary = :imgPrimary)';
     $stmt = $db->prepare($sql);
-    $stmt->bindValue(':imgPrimary', $imgPrimary, PDO::PARAM_STR);
+    $stmt->bindValue(':imgPrimary', $imgPrimary, PDO::PARAM_INT);
     $stmt->execute();
     $primaryVehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();

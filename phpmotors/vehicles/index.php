@@ -240,7 +240,7 @@ switch ($action) {
         $imgPrimary = filter_input(
             INPUT_GET,
             'imgPrimary',
-            FILTER_SANITIZE_STRING
+            FILTER_SANITIZE_NUMBER_INT
         );
         // Takes the INT(imgPrimary) into to the function
         $primaryVehicles = getVehiclesByClassification($imgPrimary);
