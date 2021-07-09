@@ -170,52 +170,37 @@ function deleteVehicle($invId)
 // invId will be an ARRAY['information from both tables']
 // Taking a number through and using it as an array (ex:vehicle-detail.php)
 // Taking the NAVIGATION NAME through the getClassifications()
-function getVehiclesByClassification($imgPrimary, $imgPath)
-{
-    $db = phpmotorsConnect();
-    $sql = 'SELECT imgPath, inventory.invId, invMake, invModel, invPrice
-    FROM images JOIN inventory ON images.invId = inventory.invId';
-    $stmt = $db->prepare($sql);
-    $stmt->bindValue(':imgPrimary', $imgPrimary, PDO::PARAM_INT);
-    $stmt->bindValue(':imgPath', $imgPath, PDO::PARAM_STR);
-    $stmt->execute();
-    $primaryVehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    $stmt->closeCursor();
-    return $primaryVehicles;
-}
-
-// function getVehiclesByClassification($classificationName)
-// {
-//         $db = phpmotorsConnect();
-//         $sql = 'SELECT i.invId, invMake, invModel, img.imgPath as invThumbnail, invPrice, invStock, invColor, classificationId 
-//         FROM inventory i
-//                 JOIN images img
-// 	                ON i.invId = img.invId
-//         WHERE classificationId IN (SELECT classificationId FROM carclassification WHERE classificationName = :classificationName)
-//                 AND img.imgPath LIKE "%-tn%"
-//                 AND img.imgPrimary = 1';
-//         $stmt = $db->prepare($sql);
-//         $stmt->bindValue(':classificationName', $classificationName, PDO::PARAM_STR);
-//         $stmt->execute();
-//         $vehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//         $stmt->closeCursor();
-//         return $vehicles;
-// }
-
-//$sql = 'SELECT imgId, imgPath, imgName, imgDate, inventory.invId, 
-// invMake, invModel FROM images JOIN inventory ON images.invId = inventory.invId';
-
-// function getVehiclesByClassification($classificationName)
+// function getVehiclesByClassification($imgPrimary, $imgPath)
 // {
 //     $db = phpmotorsConnect();
-//     $sql = 'SELECT * FROM inventory WHERE classificationId IN (SELECT classificationId FROM carclassification WHERE classificationName = :classificationName)';
+//     $sql = 'SELECT imgPath, inventory.invId, invMake, invModel, invPrice
+//     FROM images JOIN inventory ON images.invId = inventory.invId';
 //     $stmt = $db->prepare($sql);
-//     $stmt->bindValue(':classificationName', $classificationName, PDO::PARAM_STR);
+//     $stmt->bindValue(':imgPrimary', $imgPrimary, PDO::PARAM_INT);
+//     $stmt->bindValue(':imgPath', $imgPath, PDO::PARAM_STR);
 //     $stmt->execute();
-//     $vehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+//     $primaryVehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
 //     $stmt->closeCursor();
-//     return $vehicles;
+//     return $primaryVehicles;
 // }
+
+function getVehiclesByClassification($classificationName)
+{
+    $db = phpmotorsConnect();
+    $sql = 'SELECT i.invId, invMake, invModel, img.imgPath as invThumbnail, invPrice, invStock, invColor, classificationId 
+        FROM inventory i
+                JOIN images img
+	                ON i.invId = img.invId
+        WHERE classificationId IN (SELECT classificationId FROM carclassification WHERE classificationName = :classificationName)
+                AND img.imgPath LIKE "%-tn%"
+                AND img.imgPrimary = 1';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':classificationName', $classificationName, PDO::PARAM_STR);
+    $stmt->execute();
+    $vehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $vehicles;
+}
 
 // Get the list of vehicles by classification name
 function getVehiclesById($invId)
