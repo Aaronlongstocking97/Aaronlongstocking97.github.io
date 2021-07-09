@@ -82,12 +82,13 @@ function buildClassificationList($classifications)
     return $classificationList;
 }
 
-function buildVehiclesDetailPage($vehiclesDetail)
+function buildVehiclesDetailPage($vehiclesDetail, $vehicleThumbnail)
 {
     $price = $vehiclesDetail['invPrice'];
     $number = number_format($price);
     $dv  = '<div class="split">';
     $dv .= '<div class="left">';
+    $dv .= "<img src='$vehicleThumbnail[invThumbnail]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
     $dv .= "<img src='$vehiclesDetail[invImage]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
     $dv .= "<p>Price: " . "$" . "$number</p>";
     $dv .= '</div>';

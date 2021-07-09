@@ -166,24 +166,10 @@ function deleteVehicle($invId)
 // This pull of information will display through the classification view
 // REQUIRED - imgPrimary and thumbnails('TN') and NAVIGATION NAME
 // CONNECTING - inventory AND images THROUGH invId
-//// CONNECTING - inventory AND carclassification THROUGH classificationId
+// CONNECTING - inventory AND carclassification THROUGH classificationId
 // invId will be an ARRAY['information from both tables']
 // Taking a number through and using it as an array (ex:vehicle-detail.php)
 // Taking the NAVIGATION NAME through the getClassifications()
-// function getVehiclesByClassification($imgPrimary, $imgPath)
-// {
-//     $db = phpmotorsConnect();
-//     $sql = 'SELECT imgPath, inventory.invId, invMake, invModel, invPrice
-//     FROM images JOIN inventory ON images.invId = inventory.invId';
-//     $stmt = $db->prepare($sql);
-//     $stmt->bindValue(':imgPrimary', $imgPrimary, PDO::PARAM_INT);
-//     $stmt->bindValue(':imgPath', $imgPath, PDO::PARAM_STR);
-//     $stmt->execute();
-//     $primaryVehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
-//     $stmt->closeCursor();
-//     return $primaryVehicles;
-// }
-
 function getVehiclesByClassification($classificationName)
 {
     $db = phpmotorsConnect();
@@ -202,24 +188,24 @@ function getVehiclesByClassification($classificationName)
     return $vehicles;
 }
 
+// ! The AS command is used to rename a column or table with an alias.
+//      # An alias only exists for the duration of the query.
+// ! The IN operator allows you to specify multiple values in a WHERE clause.
+//      * The IN operator is a shorthand for multiple OR conditions.
+// ! The WHERE clause can be combined with AND, OR, and NOT operators.
+// ! The AND and OR operators are used to filter records based on 
+// ! more than one condition:
+//      * The AND operator displays a record if all the conditions 
+//      * separated by AND are TRUE.
+//      * The OR operator displays a record if any of the conditions 
+//      * separated by OR is TRUE.
+// ! The NOT operator displays a record if the condition(s) is NOT TRUE.
+// ! The LIKE operator is used in a WHERE clause to search for a 
+// ! specified pattern in a column.
+// ! There are two wildcards often used in conjunction with the LIKE operator:
+//      * The percent sign (%) represents zero, one, or multiple characters
+//      * The underscore sign (_) represents one, single character
 // Get the list of vehicles by classification name
-// - The AS command is used to rename a column or table with an alias.
-//      - An alias only exists for the duration of the query.
-// - The IN operator allows you to specify multiple values in a WHERE clause.
-//      - The IN operator is a shorthand for multiple OR conditions.
-// - The WHERE clause can be combined with AND, OR, and NOT operators.
-// - The AND and OR operators are used to filter records based on 
-//   more than one condition:
-//      - The AND operator displays a record if all the conditions 
-//        separated by AND are TRUE.
-//      - The OR operator displays a record if any of the conditions 
-//        separated by OR is TRUE.
-// - The NOT operator displays a record if the condition(s) is NOT TRUE.
-// - The LIKE operator is used in a WHERE clause to search for a 
-//   specified pattern in a column.
-// - There are two wildcards often used in conjunction with the LIKE operator:
-//      - The percent sign (%) represents zero, one, or multiple characters
-//      - The underscore sign (_) represents one, single character
 function getVehiclesById($invId)
 {
     $db = phpmotorsConnect();
@@ -230,7 +216,6 @@ function getVehiclesById($invId)
                 WHERE i.invId = :invId
                 AND imgPrimary = 1
                 AND imgPath NOT LIKE "%-tn%"';
-    // $sql = 'SELECT * FROM inventory WHERE invId = :invId';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
     $stmt->execute();
@@ -248,6 +233,23 @@ function getVehiclesById($invId)
 // invDescription
 // invColor
 // invStock
+function getThumbnailImages($invId)
+{
+    $db = phpmotorsConnect();
+    $sql = 'SELECT i.invId, invMake, invModel, img.imgPath as invThumbnail
+    FROM inventory i
+            JOIN images img
+                ON i.invId = img.invId
+                WHERE i.invId = :invId
+                AND imgPrimary = 0
+                AND imgPath LIKE "%-tn%"';
+    $stmt = $db->prepare($sql);
+    $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
+    $stmt->execute();
+    $vehicleThumbnail = $stmt->fetch(PDO::FETCH_ASSOC);
+    $stmt->closeCursor();
+    return $vehicleThumbnail;
+}
 
 // Get information for all vehicles
 function getVehicles()

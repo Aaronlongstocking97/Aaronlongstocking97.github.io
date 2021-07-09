@@ -288,11 +288,12 @@ switch ($action) {
         $vehiclesDetail = getVehiclesById($invId);
         // var_dump($vehiclesDetail);
         // exit;
-        if (!count($vehiclesDetail)) {
+        $vehicleThumbnail = getThumbnailImages($invId);
+        if (!count($vehiclesDetail, $vehicleThumbnail)) {
             $message = "<p class='notice'>Sorry, 
             no details could be found.</p>";
         } else {
-            $details = buildVehiclesDetailPage($vehiclesDetail);
+            $details = buildVehiclesDetailPage($vehiclesDetail, $vehicleThumbnail);
         }
         include '../view/vehicle-detail.php';
         break;
