@@ -226,8 +226,7 @@ function getVehiclesById($invId)
         FROM inventory i
                 JOIN images img
 	                ON i.invId = img.invId
-        WHERE i.invId IN (SELECT * FROM inventory WHERE invId = :invId)
-                AND img.imgPath LIKE "%-tn%"
+        WHERE  img.imgPath LIKE "%-tn%"
                 AND img.imgPrimary = 1';
     // $sql = 'SELECT * FROM inventory WHERE invId = :invId';
     $stmt = $db->prepare($sql);
