@@ -226,8 +226,7 @@ function getVehiclesById($invId)
         FROM inventory i
                 JOIN images img
 	                ON i.invId = img.invId
-        WHERE  img.imgPath LIKE "%-tn%"
-                AND img.imgPrimary = 1';
+        WHERE img.imgPrimary = 1';
     // $sql = 'SELECT * FROM inventory WHERE invId = :invId';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
