@@ -285,13 +285,21 @@ switch ($action) {
             'invId',
             FILTER_SANITIZE_STRING
         );
-        $vehiclesDetail = getVehiclesById($invId);
-        // var_dump($vehiclesDetail);
-        // exit;
+
         $vehicleThumbnail = getThumbnailImages($invId);
-        if (!count($vehiclesDetail, $vehicleThumbnail)) {
+
+        if (!count($vehicleThumbnail)) {
             $message = "<p class='notice'>Sorry, 
-            no details could be found.</p>";
+            no vehicle thumbnails could be found.</p>";
+        }
+
+        $vehiclesDetail = getVehiclesById($invId);
+
+        if (!count($vehiclesDetail)) {
+            $message = "<p class='notice'>Sorry, 
+            no vehicle details could be found.</p>";
+            // var_dump($vehiclesDetail);
+            // exit;
         } else {
             $details = buildVehiclesDetailPage($vehiclesDetail, $vehicleThumbnail);
         }
