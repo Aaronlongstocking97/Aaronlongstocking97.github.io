@@ -203,10 +203,33 @@ function getVehiclesByClassification($classificationName)
 }
 
 // Get the list of vehicles by classification name
+// - The AS command is used to rename a column or table with an alias.
+//      - An alias only exists for the duration of the query.
+// - The IN operator allows you to specify multiple values in a WHERE clause.
+//      - The IN operator is a shorthand for multiple OR conditions.
+// - The WHERE clause can be combined with AND, OR, and NOT operators.
+// - The AND and OR operators are used to filter records based on 
+//   more than one condition:
+//      - The AND operator displays a record if all the conditions 
+//        separated by AND are TRUE.
+//      - The OR operator displays a record if any of the conditions 
+//        separated by OR is TRUE.
+// - The LIKE operator is used in a WHERE clause to search for a 
+//   specified pattern in a column.
+// - There are two wildcards often used in conjunction with the LIKE operator:
+//      - The percent sign (%) represents zero, one, or multiple characters
+//      - The underscore sign (_) represents one, single character
 function getVehiclesById($invId)
 {
     $db = phpmotorsConnect();
-    $sql = 'SELECT * FROM inventory WHERE invId = :invId';
+    $sql = 'SELECT i.invId, invMake, invModel, img.imgPath as invImage, invThumbnail, invPrice, invStock, invColor, invDescription
+        FROM inventory i
+                JOIN images img
+	                ON i.invId = img.invId
+        WHERE i.invId IN (SELECT * FROM inventory WHERE invId = :invId)
+                AND img.imgPath LIKE "%-tn%"
+                AND img.imgPrimary = 1';
+    // $sql = 'SELECT * FROM inventory WHERE invId = :invId';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
     $stmt->execute();
@@ -214,6 +237,16 @@ function getVehiclesById($invId)
     $stmt->closeCursor();
     return $vehiclesDetail;
 }
+
+// invId
+// invMake
+// invModel
+// invPrice
+// - imgPath
+//      - invThumbnail, invImage
+// invDescription
+// invColor
+// invStock
 
 // Get information for all vehicles
 function getVehicles()
