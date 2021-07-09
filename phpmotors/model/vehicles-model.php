@@ -228,7 +228,7 @@ function getVehiclesById($invId)
                 JOIN images img
 	                ON i.invId = img.invId
         WHERE NOT img.imgPath = "%-tn%"
-        AND img.imgPrimary > 0';
+        AND img.imgPrimary > 1';
     // $sql = 'SELECT * FROM inventory WHERE invId = :invId';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
