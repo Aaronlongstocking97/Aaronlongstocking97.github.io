@@ -227,7 +227,7 @@ function getVehiclesById($invId)
         FROM inventory i
                 JOIN images img
 	                ON i.invId = img.invId
-                    WHERE img.invId IN (SELECT img.invId FROM inventory WHERE invId = :invId)';
+                    WHERE i.invId IN (SELECT i.invId FROM inventory WHERE invId = :invId)';
     // $sql = 'SELECT * FROM inventory WHERE invId = :invId';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
