@@ -223,7 +223,7 @@ function getVehiclesByClassification($classificationName)
 function getVehiclesById($invId)
 {
     $db = phpmotorsConnect();
-    $sql = 'SELECT i.invId, img.imgPath as invMake, invModel, invImage, invThumbnail, invPrice, invStock, invColor, invDescription
+    $sql = 'SELECT i.invId, invMake, invModel, img.imgPath as invImage, invPrice, invStock, invColor, invDescription
         FROM inventory i
                 JOIN images img
 	                ON i.invId = img.invId
