@@ -224,10 +224,12 @@ function getVehiclesById($invId)
 {
     $db = phpmotorsConnect();
     $sql = 'SELECT i.invId, invMake, invModel, img.imgPath as invImage, invPrice, invStock, invColor, invDescription
-        FROM inventory i
-                JOIN images img
-	                ON i.invId = img.invId
-                    WHERE invId IN (SELECT invId FROM inventory WHERE invId = :invId)';
+    FROM inventory i
+            JOIN images img
+                ON i.invId = img.invId
+                WHERE i.invId = :invId
+                AND imgPrimary = 1
+                AND imgPath NOT LIKE "%-tn%"';
     // $sql = 'SELECT * FROM inventory WHERE invId = :invId';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
