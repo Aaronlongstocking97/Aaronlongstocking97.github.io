@@ -214,6 +214,7 @@ function getVehiclesByClassification($classificationName)
 //        separated by AND are TRUE.
 //      - The OR operator displays a record if any of the conditions 
 //        separated by OR is TRUE.
+// - The NOT operator displays a record if the condition(s) is NOT TRUE.
 // - The LIKE operator is used in a WHERE clause to search for a 
 //   specified pattern in a column.
 // - There are two wildcards often used in conjunction with the LIKE operator:
@@ -226,7 +227,8 @@ function getVehiclesById($invId)
         FROM inventory i
                 JOIN images img
 	                ON i.invId = img.invId
-        WHERE img.imgPrimary = 1';
+        WHERE  img.imgPath NOT "%-tn%"
+        AND img.imgPrimary > 0';
     // $sql = 'SELECT * FROM inventory WHERE invId = :invId';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
