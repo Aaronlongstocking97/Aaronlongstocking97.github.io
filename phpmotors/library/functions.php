@@ -91,6 +91,8 @@ function buildVehiclesDetailPage($vehiclesDetail, $vehicleThumbnail)
     foreach ($vehicleThumbnail as $vehicleThumbnails) {
         $dv .= "<img src='$vehicleThumbnails[invThumbnail]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
     }
+    $dv .= '</div>';
+    $dv .= '<div class="middle">';
     $dv .= "<img src='$vehiclesDetail[invImage]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
     $dv .= "<p>Price: " . "$" . "$number</p>";
     $dv .= '</div>';
