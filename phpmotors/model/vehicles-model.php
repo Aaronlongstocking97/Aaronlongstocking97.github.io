@@ -246,7 +246,7 @@ function getThumbnailImages($invId)
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
     $stmt->execute();
-    $vehicleThumbnail = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $vehicleThumbnail = $stmt->fetch(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
     return $vehicleThumbnail;
 }
