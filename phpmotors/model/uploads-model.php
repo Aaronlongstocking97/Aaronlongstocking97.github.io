@@ -74,11 +74,11 @@ function checkExistingImage($imgName)
 function getThumbnailImages($invId)
 {
     $db = phpmotorsConnect();
-    $sql = 'SELECT i.invId, invMake, invModel, img.imgPath
+    $sql = 'SELECT i.invId, invMake, invModel, img.imgPath as imgPath
     FROM inventory i
             JOIN images img
                 ON i.invId = img.invId
-                WHERE img.invId = :invId
+                WHERE i.invId = :invId
                 AND imgPrimary = 0
                 AND imgPath LIKE "%-tn%"';
     $stmt = $db->prepare($sql);
