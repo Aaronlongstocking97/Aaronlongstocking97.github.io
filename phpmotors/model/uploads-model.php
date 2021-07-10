@@ -78,7 +78,7 @@ function getThumbnailImages($invId)
     FROM inventory i
             JOIN images img
                 ON i.invId = img.invId
-                WHERE i.invId = :invId
+                WHERE img.invId = :invId
                 AND imgPrimary = 0
                 AND imgPath LIKE "%-tn%"';
     $stmt = $db->prepare($sql);
