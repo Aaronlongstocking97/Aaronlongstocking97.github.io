@@ -89,7 +89,7 @@ function buildVehiclesDetailPage($vehiclesDetail, $vehicleThumbnail)
     $dv = '<div class="split">';
     $dv .= '<div class="left">';
     foreach ($vehicleThumbnail as $vehicleThumbnails) {
-        $dv .= "<img src='$vehicleThumbnails[invThumbnail]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
+        $dv .= "<img src='$vehicleThumbnails[imgPath]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
     }
     $dv .= "<img src='$vehiclesDetail[invImage]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
     $dv .= "<p>Price: " . "$" . "$number</p>";
