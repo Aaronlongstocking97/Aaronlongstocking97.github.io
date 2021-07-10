@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<!-- ?php echo $invMake;  -->
 
 <head>
     <meta charset="UTF-8">

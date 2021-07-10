@@ -250,34 +250,7 @@ switch ($action) {
         }
         include '../view/classification.php';
         break;
-        // Getting the PRIMARY IMAGES through an int 0 OR 1
-        // $imgPrimary = filter_input(
-        //     INPUT_GET,
-        //     'imgPrimary',
-        //     FILTER_SANITIZE_STRING
-        // );
-        // $imgPath = filter_input(
-        //     INPUT_GET,
-        //     'imgPath',
-        //     FILTER_SANITIZE_STRING
-        // );
-        // Takes the INT(imgPrimary) into to the function
-        // $primaryVehicles = getVehiclesByClassification($imgPrimary, $imgPath);
 
-        // $primaryVehicles = getVehiclesByClassification($imgPrimary, $imgPath);
-        // // Returns the invId ARRAY[Two Table Values] and assigns it a variable name
-        // if (!count($primaryVehicles)) {
-        //     $message = "<p class='notice'>Sorry, 
-        //     no cars could be found.</p>";
-        // } else {
-        //     // Takes the $primaryVehicles[ARRAY] into the function 
-        //     $vehicleDisplay = buildVehiclesDisplay($primaryVehicles);
-        //     // Returns the CLASSIFICATION DISPLAY and assigns it a variable name
-        // }
-        // echo $vehicleDisplay;
-        // exit;
-        // include '../view/classification.php';
-        // break;
     case 'detailVehicle':
 
         $invId = filter_input(
@@ -298,12 +271,10 @@ switch ($action) {
         if (!count($vehiclesDetail)) {
             $message = "<p class='notice'>Sorry, 
             no vehicle details could be found.</p>";
-            // var_dump($vehiclesDetail);
-            // exit;
         } else {
-            var_dump($vehiclesDetail);
-            var_dump($vehicleThumbnail);
-            exit;
+            // var_dump($vehiclesDetail);
+            // var_dump($vehicleThumbnail);
+            // exit;
             $details = buildVehiclesDetailPage($vehiclesDetail, $vehicleThumbnail);
         }
         include '../view/vehicle-detail.php';
