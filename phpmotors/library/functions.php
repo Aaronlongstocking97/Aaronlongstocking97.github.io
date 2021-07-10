@@ -88,7 +88,7 @@ function buildVehiclesDetailPage($vehiclesDetail, $vehicleThumbnail)
     $number = number_format($price);
     $dv = '<div class="split">';
     $dv .= '<div class="left">';
-    if ($vehicleThumbnail >= 1) {
+    if ($vehicleThumbnail > 1) {
         $dv = "<img src='$vehicleThumbnail[invThumbnail]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
     }
     $dv .= "<img src='$vehiclesDetail[invImage]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
