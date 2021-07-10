@@ -74,7 +74,7 @@ function checkExistingImage($imgName)
 function getThumbnailImages($invId)
 {
     $db = phpmotorsConnect();
-    $sql = 'SELECT i.invId, img.imgPath as invThumbnail
+    $sql = 'SELECT i.invId, invMake, invModel, img.imgPath as invThumbnail
     FROM inventory i
             JOIN images img
                 ON i.invId = img.invId
