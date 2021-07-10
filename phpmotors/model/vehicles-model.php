@@ -236,12 +236,11 @@ function getVehiclesById($invId)
 function getThumbnailImages($invId)
 {
     $db = phpmotorsConnect();
-    $sql = 'SELECT i.invId, invMake, invModel, img.imgPath as invThumbnail
+    $sql = 'SELECT i.invId, invMake, invModel, img.imgPath
     FROM inventory i
             JOIN images img
                 ON i.invId = img.invId
                 WHERE i.invId = :invId
-                AND imgPrimary = 0
                 AND imgPath LIKE "%-tn%"';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
