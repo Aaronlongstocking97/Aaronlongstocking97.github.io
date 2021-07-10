@@ -266,6 +266,11 @@ switch ($action) {
         //     no vehicle thumbnails could be found.</p>";
         // }
         $vehicleThumbnail = getThumbnailImages($invId);
+        if (!count($vehicleThumbnail)) {
+            $message = "<p class='notice'>Sorry, 
+            no vehicle details could be found.</p>";
+        }
+
         $vehiclesDetail = getVehiclesById($invId);
 
         if (!count($vehiclesDetail)) {
