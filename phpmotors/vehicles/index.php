@@ -261,7 +261,7 @@ switch ($action) {
 
         $vehicleThumbnail = getThumbnailImages($invId);
 
-        if (!count($vehicleThumbnail)) {
+        if (empty($vehicleThumbnail)) {
             $message = "<p class='notice'>Sorry, 
             no vehicle thumbnails could be found.</p>";
         }
