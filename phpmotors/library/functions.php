@@ -84,27 +84,26 @@ function buildClassificationList($classifications)
 
 function buildVehiclesDetailPage($vehiclesDetail, $vehicleThumbnail)
 {
-    if (isset($vehicleThumbnail)) {
+    $price = $vehiclesDetail['invPrice'];
+    $number = number_format($price);
+    $dv = '<div class="split">';
+    $dv .= '<div class="left">';
+    if ($vehicleThumbnail >= 1) {
         $dv = "<img src='$vehicleThumbnail[invThumbnail]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
-    } else {
-        $price = $vehiclesDetail['invPrice'];
-        $number = number_format($price);
-        $dv = '<div class="split">';
-        $dv .= '<div class="left">';
-        $dv .= "<img src='$vehiclesDetail[invImage]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
-        $dv .= "<p>Price: " . "$" . "$number</p>";
-        $dv .= '</div>';
-        $dv .= '<div class="right">';
-        $dv .= "<p>$vehiclesDetail[invMake] $vehiclesDetail[invModel]" . " Details</p>";
-        $dv .= '<ul>';
-        $dv .= "<li class='shade1'>$vehiclesDetail[invDescription]</li>";
-        $dv .= "<li>Color: " . "$vehiclesDetail[invColor]</li>";
-        $dv .= "<li class='shade2'># in Stock: " . "$vehiclesDetail[invStock]</li>";
-        $dv .= '</ul>';
-        $dv .= '</div>';
-        $dv .= '</div>';
-        return $dv;
     }
+    $dv .= "<img src='$vehiclesDetail[invImage]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
+    $dv .= "<p>Price: " . "$" . "$number</p>";
+    $dv .= '</div>';
+    $dv .= '<div class="right">';
+    $dv .= "<p>$vehiclesDetail[invMake] $vehiclesDetail[invModel]" . " Details</p>";
+    $dv .= '<ul>';
+    $dv .= "<li class='shade1'>$vehiclesDetail[invDescription]</li>";
+    $dv .= "<li>Color: " . "$vehiclesDetail[invColor]</li>";
+    $dv .= "<li class='shade2'># in Stock: " . "$vehiclesDetail[invStock]</li>";
+    $dv .= '</ul>';
+    $dv .= '</div>';
+    $dv .= '</div>';
+    return $dv;
 }
 
 // General Message function
