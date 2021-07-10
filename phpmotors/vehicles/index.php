@@ -259,12 +259,12 @@ switch ($action) {
             FILTER_SANITIZE_STRING
         );
 
-        $vehicleThumbnail = getThumbnailImages($invId);
+        // $vehicleThumbnail = getThumbnailImages($invId);
 
-        if (!count($vehicleThumbnail)) {
-            $message = "<p class='notice'>Sorry, 
-            no vehicle thumbnails could be found.</p>";
-        }
+        // if (!count($vehicleThumbnail)) {
+        //     $message = "<p class='notice'>Sorry, 
+        //     no vehicle thumbnails could be found.</p>";
+        // }
 
         $vehiclesDetail = getVehiclesById($invId);
 
@@ -275,6 +275,7 @@ switch ($action) {
             // var_dump($vehiclesDetail);
             // var_dump($vehicleThumbnail);
             // exit;
+            $vehicleThumbnail = getThumbnailImages($invId);
             $details = buildVehiclesDetailPage($vehiclesDetail, $vehicleThumbnail);
         }
         include '../view/vehicle-detail.php';
