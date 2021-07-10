@@ -236,7 +236,7 @@ function getVehiclesById($invId)
 function getThumbnailImages($invId)
 {
     $db = phpmotorsConnect();
-    $sql = 'SELECT i.invId, invMake, invModel, img.imgPath
+    $sql = 'SELECT i.invId, invMake, invModel, img.imgPath as invThumbnail
     FROM inventory i
             JOIN images img
                 ON i.invId = img.invId
