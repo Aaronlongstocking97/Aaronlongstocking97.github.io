@@ -94,9 +94,9 @@ function buildVehiclesDetailPage($vehiclesDetail, $vehicleThumbnail)
     $dv .= '</div>';
     $dv .= '<div class="middle">';
     $dv .= "<img src='$vehiclesDetail[invImage]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
-    $dv .= "<p>Price: " . "$" . "$number</p>";
     $dv .= '</div>';
     $dv .= '<div class="right">';
+    $dv .= "<p>Price: " . "$" . "$number</p>";
     $dv .= "<p>$vehiclesDetail[invMake] $vehiclesDetail[invModel]" . " Details</p>";
     $dv .= '<ul>';
     $dv .= "<li class='shade1'>$vehiclesDetail[invDescription]</li>";
