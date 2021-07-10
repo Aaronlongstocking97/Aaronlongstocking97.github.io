@@ -241,6 +241,7 @@ function getThumbnailImages($invId)
             JOIN images img
                 ON i.invId = img.invId
                 WHERE i.invId = :invId
+                AND imgPrimary = 0
                 AND imgPath LIKE "%-tn%"';
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
