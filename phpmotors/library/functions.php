@@ -84,7 +84,7 @@ function buildClassificationList($classifications)
 
 function buildVehiclesDetailPage($vehiclesDetail, $vehicleThumbnail)
 {
-    if (isset($vehicleThumbnail)) {
+    if (!isset($vehicleThumbnail)) {
         $dv = "<img src='$vehicleThumbnail[invThumbnail]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
     }
     $price = $vehiclesDetail['invPrice'];
