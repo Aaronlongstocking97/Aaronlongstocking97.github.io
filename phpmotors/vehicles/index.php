@@ -301,6 +301,9 @@ switch ($action) {
             // var_dump($vehiclesDetail);
             // exit;
         } else {
+            var_dump($vehiclesDetail);
+            var_dump($vehicleThumbnail);
+            exit;
             $details = buildVehiclesDetailPage($vehiclesDetail, $vehicleThumbnail);
         }
         include '../view/vehicle-detail.php';
