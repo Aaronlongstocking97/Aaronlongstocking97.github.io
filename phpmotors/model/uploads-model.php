@@ -74,7 +74,7 @@ function checkExistingImage($imgName)
 function getThumbnailImages($invId)
 {
     $db = phpmotorsConnect();
-    $sql = 'SELECT i.invId, invMake, invModel, img.imgPath as imgPath
+    $sql = 'SELECT i.invId, invMake, invModel, img.imgPath as invThumbnail
     FROM inventory i
             JOIN images img
                 ON i.invId = img.invId
@@ -84,7 +84,7 @@ function getThumbnailImages($invId)
     $stmt = $db->prepare($sql);
     $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
     $stmt->execute();
-    $vehicleThumbnail = $stmt->fetch(PDO::FETCH_ASSOC);
+    $vehicleThumbnail = $stmt->fetchAll(PDO::FETCH_ASSOC);
     $stmt->closeCursor();
     return $vehicleThumbnail;
 }
