@@ -102,7 +102,7 @@ function buildVehiclesDetailPage($vehiclesDetail, $vehicleThumbnail)
     $dv .= "<li class='shade1'>$vehiclesDetail[invDescription]</li>";
     $dv .= "<li>Color: " . "$vehiclesDetail[invColor]</li>";
     $dv .= "<li class='shade2'># in Stock: " . "$vehiclesDetail[invStock]</li>";
-    $dv .= '<p class="hidden">Vehicle Thumbnails</p>';
+    $dv .= '<li class="hidden">Vehicle Thumbnails</li>';
     $dv .= '</ul>';
     $dv .= '</div>';
     $dv .= '</div>';
