@@ -135,6 +135,10 @@ header {
     bottom: -14%;
 }
 
+.left img {
+    width: 50%;
+}
+
 .middle img {
     width: 90%;
 }
