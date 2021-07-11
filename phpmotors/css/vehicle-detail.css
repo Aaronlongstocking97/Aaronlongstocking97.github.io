@@ -118,12 +118,22 @@ header {
     font-weight: bold;
 }
 
-.split .left {
+/* .split .left {
     font-size: 25px;
     font-weight: 600;
+} */
+
+.split {
+    display: flex;
+    flex-direction: column;
 }
 
-.left img {
+.split .left {
+    display: flex;
+    justify-content: space-around;
+}
+
+.middle img {
     width: 90%;
 }
 
