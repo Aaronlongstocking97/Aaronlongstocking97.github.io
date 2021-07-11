@@ -88,7 +88,6 @@ function buildVehiclesDetailPage($vehiclesDetail, $vehicleThumbnail)
     $number = number_format($price);
     $dv = '<div class="split">';
     $dv .= '<div class="left">';
-    $dv .= '<p class="hidden">Vehicle Thumbnails</p>';
     foreach ($vehicleThumbnail as $vehicleThumbnails) {
         $dv .= "<img src='$vehicleThumbnails[invThumbnail]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
     }
@@ -103,6 +102,7 @@ function buildVehiclesDetailPage($vehiclesDetail, $vehicleThumbnail)
     $dv .= "<li class='shade1'>$vehiclesDetail[invDescription]</li>";
     $dv .= "<li>Color: " . "$vehiclesDetail[invColor]</li>";
     $dv .= "<li class='shade2'># in Stock: " . "$vehiclesDetail[invStock]</li>";
+    $dv .= '<p class="hidden">Vehicle Thumbnails</p>';
     $dv .= '</ul>';
     $dv .= '</div>';
     $dv .= '</div>';
