@@ -132,11 +132,11 @@ header {
     display: flex;
     justify-content: space-around;
     position: absolute;
-    bottom: -14%;
+    bottom: -30%;
 }
 
 .left img {
-    width: 50%;
+    width: 40%;
 }
 
 .middle img {
@@ -220,6 +220,8 @@ footer p {
     }
 
     .split .left {
+        position: unset;
+        bottom: 0;
         width: 50%;
     }
 
