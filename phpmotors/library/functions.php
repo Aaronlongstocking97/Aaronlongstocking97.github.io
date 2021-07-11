@@ -88,6 +88,7 @@ function buildVehiclesDetailPage($vehiclesDetail, $vehicleThumbnail)
     $number = number_format($price);
     $dv = '<div class="split">';
     $dv .= '<div class="left">';
+    $dv .= '<p class="hidden">Vehicle Thumbnails</p>';
     foreach ($vehicleThumbnail as $vehicleThumbnails) {
         $dv .= "<img src='$vehicleThumbnails[invThumbnail]' alt='Image of $vehiclesDetail[invMake] $vehiclesDetail[invModel] on phpmotors.com'>";
     }
