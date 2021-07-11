@@ -131,6 +131,8 @@ header {
 .split .left {
     display: flex;
     justify-content: space-around;
+    position: absolute;
+    bottom: -14%;
 }
 
 .middle img {
