@@ -234,6 +234,10 @@ footer p {
         padding-bottom: 0px;
     }
 
+    .hidden {
+        display: none;
+    }
+
     footer p {
         font-size: 15px;
     }
