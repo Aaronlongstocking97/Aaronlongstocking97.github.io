@@ -50,6 +50,6 @@ document.querySelector('#food').innerHTML = FAVFOODS;
 favoriteFoods.pop();
 
 // Step 7: repeat Step 2
-document.querySelector('#food').textContent = favoriteFoods;
+document.querySelector('#food').innerHTML = FAVFOODS;
 
 
