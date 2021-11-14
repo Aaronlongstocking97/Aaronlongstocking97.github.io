@@ -1,24 +1,24 @@
 /* Lesson 2 */
 
 /* VARIABLES */
-let name = 'Aaron Jones';
+
 // Step 1: declare and instantiate a variable to hold your name
 let theNameElement = document.querySelector('#name');
 
 // Step 2: place the value of the name variable into the HTML file (hint: document.querySelector())
-document.querySelector('#name');
+document.querySelector('#name').innerHTML = 'Aaron Jones';
 
 // Step 3: declare and instantiate a variable to hold the current year
-
+let theYearElement = document.querySelector('#year');
 
 // Step 4: place the value of the current year variable into the HTML file
-
+document.querySelector('#year').innerHTML = '2021';
 
 // Step 5: declare and instantiate a variable to hold the name of your picture
-
+let thePhotoElement = document.querySelector('#Photo');
 
 // Step 6: copy your image into the "images" folder
-
+document.querySelector('#year').innerHTML = '2021';
 // Step 7: place the value of the picture variable into the HTML file (hint: document.querySelector().setAttribute())
 
 
