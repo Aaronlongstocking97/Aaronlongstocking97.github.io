@@ -1,7 +1,7 @@
 /* Lesson 2 */
 
 /* VARIABLES */
-
+let name = "Aaron Jones";
 // Step 1: declare and instantiate a variable to hold your name
 
 
