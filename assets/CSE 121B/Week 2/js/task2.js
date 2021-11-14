@@ -3,10 +3,10 @@
 /* VARIABLES */
 let name = 'Aaron Jones';
 // Step 1: declare and instantiate a variable to hold your name
-
+let theNameElement = document.querySelector('#name');
 
 // Step 2: place the value of the name variable into the HTML file (hint: document.querySelector())
-
+document.querySelector('#name');
 
 // Step 3: declare and instantiate a variable to hold the current year
 
