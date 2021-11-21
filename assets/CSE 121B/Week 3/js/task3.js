@@ -60,7 +60,7 @@ document.querySelector('#divideNumbers').addEventListener('click', divideNumbers
 /* BUILT-IN METHODS */
 
 // Step 1: Declare and instantiate a variable of type Date to hold the current date
-const currentDate = new Date();
+let currentDate = new Date();
 // Step 2: Declare a variable to hold the current year
 let currentYear;
 // Step 3: Using the variable declared in Step 1, call the built-in getFullYear() method/function and assign it to the variable declared in Step 2
@@ -82,5 +82,5 @@ document.querySelector('#evens').textContent = numbers.filter(number => number %
 document.querySelector('#sumOfArray').textContent = numbers.reduce((sum, number) => sum + number, 0);
 // Step 6: Use the map array method to multiple each element in the array variable by 2 and assign the result to the HTML element with an ID of "multiplied"
 document.querySelector('#multiplied').textContent = numbers.map(number => number * 2);
-// Step 7: Use the map and reduce array methods to sum the array elements after multiplying each element by two.  Assign the result to the HTML element with an ID of "sumOfMultiplied"
+// Step 7: Use the map and reduce array methods to sum the array elements after multiplying each element by two. Assign the result to the HTML element with an ID of "sumOfMultiplied"
 document.querySelector('#sumOfMultiplied').textContent = numbers.map(number => number * 2).reduce((sum, number) => sum + number, 0);
