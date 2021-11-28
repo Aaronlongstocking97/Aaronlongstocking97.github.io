@@ -3,11 +3,16 @@
 /* DATA */
 
 // Step 1: Declare a new variable to hold information about yourself
-const info = {};
+let myInfo = {};
 // Step 2: Inside of the object, add a property named name with a value of your name as a string
-
+myInfo = {
+    name: 'Aaron Jones'
+};
 // Step 3: Add another property named photo with a value of the image path and name (used in Task 2) as a string
-
+myInfo = {
+    name: 'Aaron Jones',
+    photo: '/Week 4/images/IMG_3803.JPG'
+};
 // Step 4: Add another property named favoriteFoods with a value of an array of your favorite foods as strings ( hint: [] )
 
 // Step 5: Add another property named hobbies with a value of an array of your hobbies as strings
