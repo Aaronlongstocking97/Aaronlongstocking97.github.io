@@ -14,7 +14,7 @@ myInfo = {
     photo: '/Week 4/images/photo.JPG'
 };
 // Step 4: Add another property named favoriteFoods with a value of an array of your favorite foods as strings ( hint: [] )
-myInfo = {
+myInfo = { 
     name: 'Aaron Jones',
     photo: '/Week 4/images/photo.JPG',
     favoriteFoods: ['chocolate', 'iceCream', 'brownies', 'cookies', 'sourGummyWorms']
