@@ -100,30 +100,30 @@ const output = (temples) => {
 // Step 3: Using the built-in fetch method, call this absolute URL: 'https://byui-cse.github.io/cse121b-course/week05/temples.json'
 fetch("https://byui-cse.github.io/cse121b-course/week05/temples.json");
 // Step 4: Add a .then() method to turn the returned string into a JavaScript object ( hint: .json() )
-fetch("https://byui-cse.github.io/cse121b-course/week05/temples.json").then(
-  (result = result.json())
-);
+// fetch("https://byui-cse.github.io/cse121b-course/week05/temples.json").then(
+//   (result = result.json())
+// );
 // Step 5: Add another .then() method with a variable name to hold the temples and an empty arrow function
-fetch("https://byui-cse.github.io/cse121b-course/week05/temples.json")
-  .then((response) => response.json())
-  .then((temples) => {});
+// fetch("https://byui-cse.github.io/cse121b-course/week05/temples.json")
+//   .then((response) => response.json())
+//   .then((temples) => {});
 // Step 6: Inside of second .then() method, assign the list of temples (as a JSON object) to the temples variable
-fetch("https://byui-cse.github.io/cse121b-course/week05/temples.json")
-  .then((response) => response.json())
-  .then((temples) => {
-    templeList = temples;
-  });
+// fetch("https://byui-cse.github.io/cse121b-course/week05/temples.json")
+//   .then((response) => response.json())
+//   .then((temples) => {
+//     templeList = temples;
+//   });
 // Step 7: Finally, call the output function and pass it the list of temples
-fetch("https://byui-cse.github.io/cse121b-course/week05/temples.json")
-  .then((response) => response.json())
-  .then((temples) => {
-    templeList = temples;
-    output(templeList);
-  });
+// fetch("https://byui-cse.github.io/cse121b-course/week05/temples.json")
+//   .then((response) => response.json())
+//   .then((temples) => {
+//     templeList = temples;
+//     output(templeList);
+//   });
 // Step 8: Declare a function named reset that clears all of the <article> elements from the HTML element with an ID of temples
-const reset = () => {
-  document.querySelector("#temples").innerHTML = "";
-};
+// const reset = () => {
+//   document.querySelector("#temples").innerHTML = "";
+// };
 // Step 9: Declare a function named sortBy that does the following:
 // - Calls the reset function
 // - Sorts the global temple list by the currently selected value of the HTML element with an ID of sortBy
