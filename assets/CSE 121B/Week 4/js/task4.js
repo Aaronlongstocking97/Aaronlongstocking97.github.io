@@ -11,12 +11,12 @@ myInfo = {
 // Step 3: Add another property named photo with a value of the image path and name (used in Task 2) as a string
 myInfo = {
   name: "Aaron Jones",
-  photo: "/Week 4/images/photo.JPG",
+  photo: "/assets/CSE 121B/Week 4/images/photo.JPG",
 };
 // Step 4: Add another property named favoriteFoods with a value of an array of your favorite foods as strings ( hint: [] )
 myInfo = {
   name: "Aaron Jones",
-  photo: "/Week 4/images/photo.JPG",
+  photo: "/assets/CSE 121B/Week 4/images/photo.JPG",
   favoriteFoods: [
     "chocolate",
     "iceCream",
@@ -28,7 +28,7 @@ myInfo = {
 // Step 5: Add another property named hobbies with a value of an array of your hobbies as strings
 myInfo = {
   name: "Aaron Jones",
-  photo: "/Week 4/images/photo.JPG",
+  photo: "/assets/CSE 121B/Week 4/images/photo.JPG",
   favoriteFoods: [
     "chocolate",
     "iceCream",
@@ -42,7 +42,7 @@ myInfo = {
 // Step 6: Add another property named placesLived with a value of an empty array
 myInfo = {
   name: "Aaron Jones",
-  photo: "/Week 4/images/photo.JPG",
+  photo: "/assets/CSE 121B/Week 4/images/photo.JPG",
   favoriteFoods: [
     "chocolate",
     "iceCream",
@@ -57,7 +57,7 @@ myInfo = {
 // Step 7: Inside of the empty array above, add a new object with two properties: place and length and values of an empty string
 myInfo = {
   name: "Aaron Jones",
-  photo: "/Week 4/images/photo.JPG",
+  photo: "/assets/CSE 121B/Week 4/images/photo.JPG",
   favoriteFoods: [
     "chocolate",
     "iceCream",
@@ -77,7 +77,7 @@ myInfo = {
 // Step 8: For each property, add appropriate values as strings
 myInfo = {
   name: "Aaron Jones",
-  photo: "/Week 4/images/photo.JPG",
+  photo: "/assets/CSE 121B/Week 4/images/photo.JPG",
   favoriteFoods: [
     "chocolate",
     "iceCream",
@@ -96,7 +96,7 @@ myInfo = {
 // Step 9: Add additional objects with the same properties for each place you've lived
 myInfo = {
   name: "Aaron Jones",
-  photo: "/Week 4/images/photo.JPG",
+  photo: "/assets/CSE 121B/Week 4/images/photo.JPG",
   favoriteFoods: [
     "chocolate",
     "iceCream",
