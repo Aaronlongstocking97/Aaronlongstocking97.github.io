@@ -2,6 +2,7 @@
 /* Random Quote Generator */
 /* VARIABLES */
 
+/*** 
 // Step 1: declare and instantiate a variable to hold your name
 const NAME = "Aaron Jones";
 
@@ -21,7 +22,7 @@ const PICTURE = "/assets/CSE 121B/Week 2/images/IMG_3803.JPG";
 // Step 7: place the value of the picture variable into the HTML file (hint: document.querySelector().setAttribute())
 document.querySelector("img").setAttribute("src", PICTURE);
 
-/* ARRAYS */
+ ARRAYS 
 
 // Step 1: declare and instantiate an array variable to hold your favorite foods
 const FAVFOODS = ["Pork", " Sushi", " Ribs", " Bacon"];
@@ -49,3 +50,21 @@ favoriteFoods.pop();
 
 // Step 7: repeat Step 2
 document.querySelector("#food").innerHTML = FAVFOODS;
+***/
+
+const url = "https://pokeapi.co/api/v2/pokemon/ditto";
+const results = fetch(url);
+console.log(results);
+fetch("https://famous-quotes4.p.rapidapi.com/random?category=all&count=2", {
+  method: "GET",
+  headers: {
+    "x-rapidapi-host": "famous-quotes4.p.rapidapi.com",
+    "x-rapidapi-key": "22c3f5e831msh69107dfc8e3999dp1d8b43jsn2f0512073699",
+  },
+})
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((err) => {
+    console.error(err);
+  });
