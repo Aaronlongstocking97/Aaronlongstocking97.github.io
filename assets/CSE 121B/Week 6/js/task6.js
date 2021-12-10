@@ -78,6 +78,7 @@ function getQuote() {
     .then(function () {
       // Build the page for viewing
       buildPage();
+      console.log("buildPage");
     });
 }
 
