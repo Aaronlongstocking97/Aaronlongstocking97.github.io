@@ -51,6 +51,12 @@ favoriteFoods.pop();
 // Step 7: repeat Step 2
 document.querySelector("#food").innerHTML = FAVFOODS;
 ***/
+
+/* *************************************
+ *  Weather Site JavaScript Functions
+ ************************************* */
+console.log("My javascript is being read.");
+
 function getQuote() {
   const URL =
     "https://famous-quotes4.p.rapidapi.com/random?category=all&count=2";
