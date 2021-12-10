@@ -1,5 +1,5 @@
-/* Lesson 2 */
-
+/* Project Week 6 */
+/* Random Quote Generator */
 /* VARIABLES */
 
 // Step 1: declare and instantiate a variable to hold your name
