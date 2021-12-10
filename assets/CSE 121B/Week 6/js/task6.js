@@ -81,6 +81,19 @@ function getQuote() {
     });
 }
 
+function buildPage() {
+  let author = storage.getItem("someAuthor");
+  let category = storage.getItem("someCategory");
+  let text = storage.getItem("someText");
+
+  document.getElementById("author").innerHTML = author;
+  document.getElementById("category").innerHTML = category;
+  document.getElementById("text").innerHTML = text;
+} // end buildPage function
+
+// Setup localStorage
+var storage = window.localStorage;
+
 /***
 const url = "https://pokeapi.co/api/v2/pokemon/ditto";
 const results = fetch(url);
