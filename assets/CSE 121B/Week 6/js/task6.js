@@ -57,29 +57,37 @@ document.querySelector("#food").innerHTML = FAVFOODS;
  ************************************* */
 console.log("My javascript is being read.");
 
-function getQuote() {
+var idHeader = {
+  headers: {
+    "x-rapidapi-host": "famous-quotes4.p.rapidapi.com",
+    "x-rapidapi-key": "22c3f5e831msh69107dfc8e3999dp1d8b43jsn2f0512073699",
+  },
+};
+
+function getQuote(locale) {
   const URL =
-    "https://famous-quotes4.p.rapidapi.com/random?category=all&count=2";
-  fetch(URL, {
-    method: "GET",
-    headers: {
-      "x-rapidapi-host": "famous-quotes4.p.rapidapi.com",
-      "x-rapidapi-key": "22c3f5e831msh69107dfc8e3999dp1d8b43jsn2f0512073699",
-    },
-  })
+    "https://famous-quotes4.p.rapidapi.com/random?category=all&count=2" +
+    locale;
+  fetch(URL, idHeader)
     .then(function (response) {
-      console.log(response);
       if (response.ok) {
         return response.json();
       }
       throw new ERROR("Response not OK.");
     })
-    .catch((error) => console.log("There was a build error: ", error))
+
+    .then(function (data) {
+      // Let's see what we got back
+      console.log("Json object from getLocation function:");
+      console.log(data);
+    })
+
     .then(function () {
       // Build the page for viewing
       buildPage();
       console.log("buildPage");
-    });
+    })
+    .catch((error) => console.log("There was a build error: ", error));
 }
 
 function buildPage() {
