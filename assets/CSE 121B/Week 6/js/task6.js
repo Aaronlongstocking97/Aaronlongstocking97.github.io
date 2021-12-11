@@ -57,7 +57,7 @@ document.querySelector("#food").innerHTML = FAVFOODS;
  ************************************* */
 console.log("My javascript is being read.");
 
-function getQuote(idHeader) {
+function getQuote() {
   const URL =
     "https://famous-quotes4.p.rapidapi.com/random?category=all&count=2";
   fetch(URL, {
@@ -78,17 +78,16 @@ function getQuote(idHeader) {
       // Let's see what we got back
       console.log("Json object from Famous Quotes");
       console.log(data);
-      let someAuthor = data.properties.periods[0].author;
-      let someCategory = data.properties.periods[0].category;
-      let someId = data.properties.periods[0].id;
-      let someText = data.properties.periods[0].text;
+
+      let someAuthor = data[0].author;
+      let someCategory = data[0].category;
+      let someText = data[0].text;
 
       console.log("the author is: " + someAuthor);
 
       // Store data to localstorage
       storage.setItem("someAuthor", someAuthor);
       storage.setItem("someCategory", someCategory);
-      storage.setItem("someId", someId);
       storage.setItem("someText", someText);
     })
     .catch((error) => console.log("There was a build error: ", error))
@@ -102,12 +101,10 @@ function getQuote(idHeader) {
 function buildPage() {
   let author = storage.getItem("someAuthor");
   let category = storage.getItem("someCategory");
-  let id = storage.getItem("someId");
   let text = storage.getItem("someText");
 
   document.getElementById("author").innerHTML = author;
   document.getElementById("category").innerHTML = category;
-  document.getElementById("id").innerHTML = id;
   document.getElementById("text").innerHTML = text;
 } // end buildPage function
 
