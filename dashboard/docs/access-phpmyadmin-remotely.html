@@ -91,13 +91,13 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Edit the <em>apache/conf/extra/httpd-xampp.conf</em> file in your XAMPP installation directory (usually, <em>C:\xampp</em>).</p>
+<p>Edit the <em>etc/extra/httpd-xampp.conf</em> file in your XAMPP installation directory (usually, <em>/Applications/XAMPP</em>).</p>
 </li>
 <li>
 <p>Within this file, find the block below:</p>
 <div class="literalblock">
 <div class="content">
-<pre>&lt;Directory "/xampp/phpMyAdmin"&gt;
+<pre>&lt;Directory "/Applications/XAMPP/phpmyadmin"&gt;
   AllowOverride AuthConfig
   Require local
   ...</pre>
@@ -108,7 +108,7 @@
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>&lt;Directory "/xampp/phpMyAdmin"&gt;
+<pre>&lt;Directory "/Applications/XAMPP/phpmyadmin"&gt;
   AllowOverride AuthConfig
   Require all granted
   ...</pre>

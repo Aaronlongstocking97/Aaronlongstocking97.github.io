@@ -96,32 +96,21 @@ Virtual hosts created in this manner will not be accessible from other systems, 
 </table>
 </div>
 <div class="paragraph">
-<p>This guide walks you through the process of setting up wildcard virtual hosts with XAMPP, such that requests for <em>subdomain.localhost</em> are automatically served by the <em>subdomain/</em> directory of the main server document root. Follow the steps below:
- . Change to your XAMPP installation directory (typically, <em>C:\xampp</em>) and open the <em>httpd.conf</em> file in the <em>apache\conf\</em> subdirectory using your favourite text editor. Within the file, find the following line and uncomment it by removing the hash symbol (#) at the beginning of the line.</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>LoadModule vhost_alias_module modules/mod_vhost_alias.so</pre>
-</div>
+<p>This guide walks you through the process of setting up wildcard virtual hosts with XAMPP, such that requests for <em>subdomain.localhost</em> are automatically served by the <em>subdomain/</em> directory of the main server document root. Follow the steps below:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Next, edit the <em>httpd-vhosts.conf</em> file in the <em>apache\conf\extra\</em> subdirectory of your XAMPP installation directory.</p>
+<p>Open a new terminal and ensure you are logged in as an administrator.</p>
 </li>
 <li>
-<p>Replace the contents of this file with the following directives:</p>
+<p>Change to your XAMPP installation directory (typically, <em>/Applications/XAMPP</em>) and open the <em>httpd.conf</em> file in the <em>etc/</em> subdirectory using a text editor.</p>
+</li>
+<li>
+<p>Within the file, find the following line and uncomment it by removing the hash symbol (#) at the beginning of the line.</p>
 <div class="literalblock">
 <div class="content">
-<pre>UseCanonicalName Off
-&lt;VirtualHost *:80&gt;
-       DocumentRoot "C:/xampp/htdocs/"
-       ServerName localhost
-&lt;/VirtualHost&gt;
-&lt;VirtualHost *:80&gt;
-       ServerAlias *.localhost
-       VirtualDocumentRoot "C:/xampp/htdocs/%1/"
-&lt;/VirtualHost&gt;</pre>
+<pre>Include etc/extra/httpd-vhosts.conf</pre>
 </div>
 </div>
 <div class="imageblock">
@@ -129,22 +118,50 @@ Virtual hosts created in this manner will not be accessible from other systems, 
 <img src="./images/configure-wildcard-subdomains/image1.png" alt="image1">
 </div>
 </div>
-<div class="paragraph">
-<p>In this configuration, the first virtual host block configures how requests are handled by default. The second block configures wildcard virtual hosting for subdomains, such that requests for <em>subdomain.localhost</em> are automatically served by the <em>subdomain\</em> directory of the <em>C:\xampp\htdocs\</em> directory. In particular, notice the %1 placeholder, which matches the subdomain name from the request URL.</p>
-</div>
 </li>
 <li>
-<p>Restart Apache using the XAMPP control panel for your changes to take effect.</p>
-<div class="imageblock">
+<p>Open the <em>httpd-vhosts.conf</em> file in the <em>etc/extra/</em> subdirectory of your XAMPP installation directory using a text editor.</p>
+</li>
+<li>
+<p>Replace the contents of this file with the following directives:</p>
+<div class="literalblock">
 <div class="content">
-<img src="./images/configure-wildcard-subdomains/image2.png" alt="image2">
+<pre>UseCanonicalName Off
+&lt;VirtualHost *:80&gt;
+       DocumentRoot "/Applications/XAMPP/xamppfiles/htdocs/"
+       ServerName localhost
+&lt;/VirtualHost&gt;
+&lt;VirtualHost *:80&gt;
+       ServerAlias *.localhost
+       VirtualDocumentRoot "/Applications/XAMPP/xamppfiles/htdocs/%1/"
+&lt;/VirtualHost&gt;</pre>
 </div>
 </div>
 </li>
 </ol>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/configure-wildcard-subdomains/image2.png" alt="image2">
+</div>
+</div>
 <div class="paragraph">
-<p>At this point, your wildcard subdomains are configured. You can easily test this by using the Windows Explorer to create two new subdirectories at <em>C:\xampp\htdocs\app01\</em> and <em>C:\xampp\htdocs\app02\</em>. Within each subdirectory, create a file named <em>index.html</em> and fill it with some sample HTML content. Use different content for each file, so that you can easily distinguish that they&#8217;re being served from different directories - for example:</p>
+<p>In this configuration, the first virtual host block configures how requests are handled by default. The second block configures wildcard virtual hosting for subdomains, such that requests for <em>subdomain.localhost</em> are automatically served by the <em>subdomain/</em> directory of the <em>/Applications/XAMPP/htdocs/</em> directory. In particular, notice the %1 placeholder, which matches the subdomain name from the request URL.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Restart Apache using the XAMPP control panel for your changes to take effect.</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/configure-wildcard-subdomains/image3.png" alt="image3">
+</div>
+</div>
+<div class="paragraph">
+<p>At this point, your wildcard subdomains are configured. You can easily test this by creating two new subdirectories at <em>/Applications/XAMPP/xamppfiles/htdocs/app01/</em> and <em>/Applications/XAMPP/xamppfiles/htdocs/app02/</em>. Within each subdirectory, create a file named <em>index.html</em> and fill it with some sample HTML content. Use different content for each file, so that you can easily distinguish that they&#8217;re being served from different directories - for example:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -169,7 +186,7 @@ Virtual hosts created in this manner will not be accessible from other systems, 
 </div>
 </div>
 <div class="paragraph">
-<p>Since these domains do not actually exist in reality, you also need to map them to the local IP address. Open the file <em>C:\windows\system32\drivers\etc\hosts</em> in a text editor and add the following line to it:</p>
+<p>Since these domains do not actually exist, you also need to map them to the local IP address. Open the file <em>/etc/hosts</em> in a text editor and add the following line to it:</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -178,7 +195,7 @@ Virtual hosts created in this manner will not be accessible from other systems, 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./images/configure-wildcard-subdomains/image3.png" alt="image3">
+<img src="./images/configure-wildcard-subdomains/image4.png" alt="image4">
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -188,19 +205,7 @@ Virtual hosts created in this manner will not be accessible from other systems, 
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-You will need to do this every time you want to configure a new wildcard virtual host, because the Windows <em>hosts</em> file does not support wildcard entries. To avoid this step, you can use a DNS server or local DNS proxy that supports wildcards and therefore takes care of automatically resolving requests for <em>*.localhost</em> to the local IP address.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-On some versions of Windows, you will not be able to edit the <em>C:\windows\system32\drivers\etc\hosts</em> file without administrator privileges. You can edit the file by right-clicking the Notepad icon and selected the "Run as administrator" menu option, then entering administrator credentials (if required) and clicking "OK" or "Yes" to proceed.
+Instead of performing this step for each new subdomain, use a local DNS server like dnsmasq to automatically resolve requests for <em>*.localhost</em> to the local IP address. <a href="http://www.thekelleys.org.uk/dnsmasq/doc.html">Find out more about dnsmasq</a>, and <a href="http://stackoverflow.com/questions/22313142/wildcard-subdomains-with-dnsmasq">read this Stack Overflow thread for information on how to configure wildcard subdomains with dnsmasq</a>.
 </td>
 </tr>
 </table>
@@ -210,7 +215,7 @@ On some versions of Windows, you will not be able to edit the <em>C:\windows\sys
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="./images/configure-wildcard-subdomains/image4.png" alt="image4">
+<img src="./images/configure-wildcard-subdomains/image5.png" alt="image5">
 </div>
 </div>
     </article>

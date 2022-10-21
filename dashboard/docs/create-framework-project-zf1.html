@@ -95,13 +95,30 @@ This guide assumes that the new Zend Framework application will be accessible at
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><a href="http://framework.zend.com/downloads/latest">Download the latest version of the Zend Framework 1 minimal package</a> as a ZIP archive.</p>
+<p>Open a new terminal and ensure you are logged in as an administrator.</p>
 </li>
 <li>
-<p>Within your XAMPP installation directory (usually <em>C:\xampp</em>), create a new directory named <em>apps\</em> (if it doesn&#8217;t already exist). Then, within this new <em>apps\</em> directory, create a directory to hold your Zend Framework application and its related XAMPP configuration files. In this example, call the directory <em>myapp\</em>.</p>
+<p>Within your XAMPP installation directory (usually <em>/Applications/XAMPP/xamppfiles/</em>), create a new directory named <em>apps/</em> (if it doesn&#8217;t already exist). Then, within this new <em>apps/</em> directory, create a directory to hold your Zend Framework application and its related XAMPP configuration files. In this case, call the directory <em>myapp/</em>.</p>
+<div class="literalblock">
+<div class="content">
+<pre>cd /Applications/XAMPP/xamppfiles/
+mkdir apps
+mkdir apps/myapp</pre>
+</div>
+</div>
 </li>
 <li>
-<p>Extract the contents of the ZIP archive to the <em>myapp\ directory. This will produce a _ZendFramework-[x.y]-minimal.zip\</em> subdirectory in the <em>myapp</em>\ directory. Rename this newly-created subdirectory to <em>htdocs</em>.</p>
+<p><a href="http://framework.zend.com/downloads/latest">Download the latest version of the Zend Framework 1 minimal package</a> as a ZIP or TGZ archive.</p>
+</li>
+<li>
+<p>Extract the contents of the archive to the <em>myapp\</em> directory. This will produce a <em>ZendFramework-[x.y]-minimal.zip\</em> subdirectory in the <em>myapp\</em> directory. Rename this newly-created subdirectory to <em>htdocs</em>.</p>
+<div class="literalblock">
+<div class="content">
+<pre>cd /Applications/XAMPP/xamppfiles/apps/myapp
+tar -xzf /tmp/ZendFramework*.tar.gz
+mv ZendFramework* htdocs</pre>
+</div>
+</div>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -116,24 +133,30 @@ This new <em>htdocs</em> directory will be the main working directory for your Z
 </div>
 </li>
 <li>
-<p>Within the <em>myapp\</em> directory, create a new <em>conf\</em> subdirectory.</p>
+<p>Next, within the <em>myapp/</em> directory, create a new <em>conf/</em> subdirectory.</p>
+<div class="literalblock">
+<div class="content">
+<pre>cd /Applications/XAMPP/xamppfiles/apps/myapp
+mkdir conf</pre>
+</div>
+</div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Within the new <em>conf</em>\ subdirectory, use your text editor to create and populate a file named <em>ttpd-prefix.conf</em> with the following content:</p>
+<p>Within the new <em>conf/</em> subdirectory, use your text editor to create and populate a file named <em>httpd-prefix.conf</em> with the following content:</p>
 <div class="literalblock">
 <div class="content">
-<pre>Alias /myapp/ "C:/xampp/apps/myapp/htdocs/public/"
-Alias /myapp "C:/xampp/apps/myapp/htdocs/public"
-Include "C:/xampp/apps/myapp/conf/httpd-app.conf"</pre>
+<pre>Alias /myapp/ "/Applications/XAMPP/xamppfiles/apps/myapp/htdocs/public/"
+Alias /myapp "/Applications/XAMPP/xamppfiles/apps/myapp/htdocs/public"
+Include "/Applications/XAMPP/xamppfiles/apps/myapp/conf/httpd-app.conf"</pre>
 </div>
 </div>
 </li>
 <li>
-<p>Within the <em>conf</em>\ subdirectory, also create and populate a file named <em>httpd-app.conf</em> with the following content:</p>
+<p>Within the <em>conf/</em> subdirectory, also create and populate a file named <em>httpd-app.conf</em> with the following content:</p>
 <div class="literalblock">
 <div class="content">
-<pre>&lt;Directory C:/xampp/apps/myapp/htdocs/public&gt;
+<pre>&lt;Directory /Applications/XAMPP/xamppfiles/apps/myapp/htdocs/public&gt;
    Options +FollowSymLinks
    AllowOverride All
    Require all granted
@@ -145,10 +168,10 @@ Include "C:/xampp/apps/myapp/conf/httpd-app.conf"</pre>
 </div>
 </li>
 <li>
-<p>Edit the <em>httpd-xampp.conf</em> file in the <em>apache\conf\extra\</em> subdirectory of your XAMPP installation directory and add the following line at the end to include the <em>httpd-prefix.conf</em> file created earlier.</p>
+<p>Edit the <em>httpd-xampp.conf</em> file in the <em>etc/extra/</em> subdirectory of your XAMPP installation directory and add the following line at the end to include the <em>httpd-prefix.conf</em> created earlier.</p>
 <div class="literalblock">
 <div class="content">
-<pre>Include "C:/xampp/apps/myapp/conf/httpd-prefix.conf"</pre>
+<pre>Include "/Applications/XAMPP/xamppfiles/apps/myapp/conf/httpd-prefix.conf"</pre>
 </div>
 </div>
 <div class="admonitionblock note">
@@ -165,13 +188,10 @@ Remember to update the above file and directory paths so that they&#8217;re vali
 </div>
 </li>
 <li>
-<p>Launch a new Windows command shell using the "Shell" button in the XAMPP control panel.</p>
-</li>
-<li>
-<p>Within the command shell, change to the <em>myapp\htdocs\</em> directory and run the following commands to create a new stub project.</p>
+<p>Change to the <em>myapp/htdocs/</em> directory and run the following commands to create a new stub project.</p>
 <div class="literalblock">
 <div class="content">
-<pre>bin\zf.bat create project .</pre>
+<pre>/Applications/XAMPP/bin/php bin/zf.php create project .</pre>
 </div>
 </div>
 </li>

@@ -86,14 +86,14 @@
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Open your Windows command prompt by clicking the “Shell” button in the XAMPP control panel.</p>
+<p>Open a new terminal.</p>
 </li>
 <li>
-<p>Change to the <em>htdocs\</em> subdirectory of your XAMPP installation directory (typically <em>C:\xampp</em>) and create a new SQLite database file named <em>mydb.sq3</em> with the SQLite command-line client:</p>
+<p>Change to the <em>htdocs/</em> subdirectory of your XAMPP installation directory (typically <em>/Applications/XAMPP/xamppfiles</em>) and create a new SQLite database file named <em>mydb.sq3</em> with the SQLite command-line client:</p>
 <div class="literalblock">
 <div class="content">
-<pre>cd C:\xampp\htdocs
-sqlite3 mydb.sq3</pre>
+<pre>cd /Applications/XAMPP/xamppfiles/htdocs
+/Applications/XAMPP/bin/sqlite3 mydb.sq3</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -103,6 +103,18 @@ sqlite3 mydb.sq3</pre>
 <div class="content">
 <img src="./images/use-sqlite/image1.png" alt="image1">
 </div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+In case your user privileges don&#8217;t let you write to the <em>htdocs/</em> sub-directory, try logging in as an administrator.
+</td>
+</tr>
+</table>
 </div>
 </li>
 <li>
