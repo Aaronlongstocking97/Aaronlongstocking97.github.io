@@ -1,0 +1,467 @@
+---
+title: "Client Report - [Finding relationships in baseball]"
+subtitle: "Project 3"
+author: "[Aaron Jones]"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    title-block-banner: true
+    toc: true
+    toc-depth: 3
+    toc-location: body
+    number-sections: false
+    html-math-method: katex
+    code-fold: true
+    code-summary: "Show the code"
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+        source: false
+        toggle: true
+        caption: See code
+    
+---
+
+```{python}
+# | label: libraries
+# | include: false
+import pandas as pd
+import altair as alt
+import numpy as np
+import datadotworld as dw
+import sqlite3
+
+from IPython.display import Markdown
+from IPython.display import display
+from tabulate import tabulate
+```
+
+
+## Elevator pitch
+
+_When you hear the word “relationship” what is the first thing that comes to mind? Probably not baseball. But a relationship is simply a way to describe how two or more objects are connected. There are many relationships in baseball such as those between teams and managers, players and salaries, even stadiums and concession prices._
+
+_For this project, your client would like developed SQL queries that they can use to retrieve data for use on their website without needing Python. They would also like to see example Altair charts._
+
+```{python}
+# | label: project data
+# | code-summary: Making a Connection to the Project Data
+
+# connect to the SQLite database
+sqlite_file = 'lahmansbaseballdb.sqlite'
+conn = sqlite3.connect(sqlite_file)
+```
+
+## GRAND QUESTION 1
+
+__Write an SQL query to create a new dataframe about baseball players who attended BYU-Idaho. The new table should contain five columns: playerID, schoolID, salary, and the yearID/teamID associated with each salary. Order the table by salary (highest to lowest) and print out the table in your report.__
+
+```{python}
+# | label: GQ1 Table
+# | code-summary: Baseball Players Who Attended BYU-Idaho Ordered by Salary (Highest to Lowest)
+# | fig-align: center
+
+# Define the SQL query to retrieve the data
+query = '''
+SELECT DISTINCT 
+    p.playerID, 
+    cp.schoolID, 
+    s.salary, 
+    s.yearID, 
+    s.teamID
+FROM 
+    people AS p
+LEFT JOIN 
+    collegeplaying AS cp ON p.playerID = cp.playerID
+LEFT JOIN 
+    salaries AS s ON p.playerID = s.playerID
+WHERE 
+    cp.schoolID = 'idbyuid'
+ORDER BY 
+    s.salary DESC
+'''
+
+# Execute the query and fetch the results into a DataFrame
+byui_players = pd.read_sql_query(query, conn)
+
+# Print the resulting dataframe
+byui_players
+```
+
+_By examining this data, one can learn about the success and earning potential of baseball players who attended BYU-Idaho and which teams they played for during their careers. Additionally, one could analyze salary trends over time or by the team to gain further insights into the baseball industry._
+
+## GRAND QUESTION 2
+
+__This three-part question requires you to calculate batting average (number of hits divided by the number of at-bats)__
+
+__Part A.__
+_Write an SQL query that provides playerID, yearID, and batting average for players with at least 1 at bat that year. Sort the table from highest batting average to lowest, and then by playerid alphabetically. Show the top 5 results in your report._
+```{python}
+# | label: GQ2 Table 1
+# | code-summary: Top 5 Batting Averages for Players With at Least 1 at Bat
+# | fig-align: center
+
+# Define the SQL query to retrieve the data
+query = '''
+SELECT 
+    playerID, 
+    yearID, 
+    CAST(H AS FLOAT) / CAST(AB AS FLOAT) AS Batt_avg
+FROM 
+    batting
+WHERE 
+    AB >= 1
+ORDER BY 
+    Batt_avg DESC, 
+    playerID ASC
+LIMIT 5
+'''
+
+# Execute the query and fetch the results into a DataFrame
+batt_avg_1 = pd.read_sql_query(query, conn)
+
+# Print the resulting dataframe
+batt_avg_1
+```
+
+_The first table shows the names of the top five baseball players with the highest batting averages and the year they achieved those averages. The batting average is calculated for players with at least one at-bat that year. The 'Batt_avg' column represents the ratio of hits (H) to at-bats (AB), giving us insight into how well each player performed at bat._
+
+__Part B.__
+_Use the same query as above, but only include players with at least 10 at bats that year. Print the top 5 results._
+
+```{python}
+# | label: GQ2 Table 2
+# | code-summary: Top 5 Batting Averages for Players With at Least 10 at Bats
+# | fig-align: center
+
+# Define the SQL query to retrieve the data
+query = '''
+SELECT 
+    playerID, 
+    yearID, 
+    CAST(H AS FLOAT) / CAST(AB AS FLOAT) AS Batt_avg
+FROM 
+    batting
+WHERE 
+    AB >= 10
+ORDER BY 
+    Batt_avg DESC, 
+    playerID ASC
+LIMIT 5
+'''
+
+# execute the query and load the results into a DataFrame
+batt_avg_2 = pd.read_sql_query(query, conn)
+
+# print the top 5 results
+batt_avg_2
+```
+
+_The second table shows the names of the top five baseball players with the highest batting averages and the year they achieved those averages for players with at least one at-bat that year. By only showing results for players with at least ten at-bats, the code eliminates small sample sizes and gives a more accurate estimate of a player's ability to hit._
+
+__Part C.__
+_Now calculate the batting average for players over their entire careers (all years combined). Only include players with at least 100 at bats, and print the top 5 results._
+```{python}
+# | label: GQ2 Table 3
+# | code-summary: Top 5 Batting Averages for Players With at Least 100 at Bats
+# | fig-align: center
+
+# Define the SQL query to retrieve the data
+query = '''
+SELECT 
+    playerID, 
+    SUM(H) AS total_hits, 
+    SUM(AB) AS total_at_bats, 
+    ROUND(CAST(SUM(H) AS FLOAT) / CAST(SUM(AB) AS FLOAT), 3) AS career_batt_avg
+FROM 
+    batting
+GROUP BY 
+    playerID
+HAVING 
+    SUM(AB) >= 100
+ORDER BY 
+    career_batt_avg DESC, 
+    playerID ASC
+LIMIT 5
+'''
+
+# Execute the query and load the results into a DataFrame
+batt_avg_3 = pd.read_sql_query(query, conn)
+
+# Print the top 5 results
+print(batt_avg_3.to_markdown())
+
+# Find the player with the highest batting average
+highest_batt_avg_player = batt_avg_3.iloc[0]['playerID']
+highest_batt_avg = batt_avg_3.iloc[0]['career_batt_avg']
+
+# Print the player with the highest batting average
+print(
+    f"\nThe player with the highest career batting average is {highest_batt_avg_player}\nwith a career batting average of {highest_batt_avg}.")
+```
+
+_The third table shows the names of the top five baseball players with the highest career batting averages and players with at least 100 at-bats. The player with the highest batting average over their career among these five players is Ty Cobb (playerID: "cobbty01"), with a batting average of 0.366._
+
+## GRAND QUESTION 3
+
+__Pick any two baseball teams and compare them using a metric of your choice (average salary, home runs, number of wins, etc). Write an SQL query to get the data you need, then make a graph in Altair to visualize the comparison. What do you learn?__
+```{python}
+# | label: GQ3 Chart
+# | code-summary: Chart Comparing Wins and Losses of New York Yankees and Boston Red Sox
+# | fig-align: center
+
+# Define the SQL query to retrieve the data
+query = '''
+SELECT 
+    t.yearID AS Year, 
+    SUM(CASE WHEN t.teamID = 'NYA' THEN t.L ELSE 0 END) AS Yankees_Losses,
+    SUM(CASE WHEN t.teamID = 'BOS' THEN t.L ELSE 0 END) AS RedSox_Losses,
+    SUM(CASE WHEN t.teamID = 'NYA' THEN t.W ELSE 0 END) AS Yankees_wins,
+    SUM(CASE WHEN t.teamID = 'BOS' THEN t.W ELSE 0 END) AS RedSox_wins
+FROM 
+    teams AS t
+WHERE 
+    t.yearID >= 2000 AND t.yearID <= 2021
+GROUP BY 
+    t.yearID
+ORDER BY 
+    t.yearID ASC;
+'''
+
+# Load data into a dataframe
+df = pd.read_sql_query(query, conn)
+
+# Melt the data to make it easier to plot
+melted_df = pd.melt(df, id_vars=["Year"],
+                    var_name="Team_Info", value_name="Value")
+
+# Split the Team_Info column into separate columns for team and metric
+melted_df[['Team', 'Metric']] = melted_df['Team_Info'].str.split(
+    '_', expand=True)
+
+# Create the chart
+chart = alt.Chart(melted_df).mark_line().encode(
+    x="Year:O",
+    y=alt.Y("Value:Q", axis=alt.Axis(title="Value")),
+    color="Team:N",
+    strokeDash="Metric:N",
+    tooltip=['Year', 'Team', 'Value']
+).properties(title={'text': "Yankees vs Red Sox", 'subtitle': "Wins and Losses (2000 - 2021)"}
+             ).resolve_scale(
+    color='independent'
+).configure_axis(grid=True)
+
+# Show the chart
+chart
+
+```
+
+_The code compares the New York Yankees and the Boston Red Sox using a metric of wins and losses from the year 2000 to 2021. The data shows that the Yankees have more wins than losses for most years, while the Red Sox have a more inconsistent record with some years having more losses than wins. However, the Red Sox did win the World Series in 2004, 2007, 2013, and 2018._
+
+_The Altair chart displays the wins and losses for both teams over time, with the x-axis representing the year and the y-axis representing the value (i.e., wins or losses). The chart also uses different line styles to represent wins and losses and different colors to represent each team. The tooltip shows the year, team, and value when the user hovers over a point on the chart._
+
+_Overall, the data and chart show that the Yankees have had more success than the Red Sox over the past two decades in terms of wins and losses, but the Red Sox have had some notable successes with four World Series wins._
+
+```{python}
+# | label: GQ3 Text Output
+# | code-summary: Calculating What Team Has Won More Games
+# | fig-align: center
+
+# Define the SQL query to retrieve the data
+query = '''
+SELECT 
+    SUM(CASE WHEN t.teamID = 'NYA' THEN t.W ELSE 0 END) AS Yankees_wins,
+    SUM(CASE WHEN t.teamID = 'BOS' THEN t.W ELSE 0 END) AS RedSox_wins
+FROM 
+    teams AS t
+WHERE 
+    t.yearID >= 2000 AND t.yearID <= 2021;
+'''
+
+# Load data into a dataframe
+df = pd.read_sql_query(query, conn)
+
+# Calculate the total wins for each team
+yankees_total_wins = df['Yankees_wins'][0]
+redsox_total_wins = df['RedSox_wins'][0]
+
+# Print the overall answer
+if yankees_total_wins > redsox_total_wins:
+    print("The New York Yankees have won more games than \nthe Boston Red Sox over the past two decades.")
+elif redsox_total_wins > yankees_total_wins:
+    print("The Boston Red Sox have won more games than \nthe New York Yankees over the past two decades.")
+else:
+    print("The New York Yankees and the Boston Red Sox \nhave won the same number of games over the past two decades.")
+```
+
+_I calculated the number of wins over the past two decades to ensure that the New York Yankees are the true winners. We can see that the New York Yankees have had more wins during the last twenty years compared to the Boston Red Sox._
+
+## APPENDIX A (Additional Python Code)
+
+```{python}
+# connect to the SQLite database
+sqlite_file = 'lahmansbaseballdb.sqlite'
+conn = sqlite3.connect(sqlite_file)
+
+
+# Question #1
+
+# Define the SQL query to retrieve the data
+query = '''
+SELECT DISTINCT 
+    p.playerID, 
+    cp.schoolID, 
+    s.salary, 
+    s.yearID, 
+    s.teamID
+FROM 
+    people AS p
+JOIN 
+    collegeplaying AS cp ON p.playerID = cp.playerID
+JOIN 
+    salaries AS s ON p.playerID = s.playerID
+WHERE 
+    cp.schoolID = 'idbyuid'
+ORDER BY 
+    s.salary DESC
+'''
+
+# Execute the query and fetch the results into a DataFrame
+byui_players = pd.read_sql_query(query, conn)
+
+
+# Question #2
+
+# Part A.
+# Define the SQL query to retrieve the data
+query = '''
+SELECT 
+    playerID, 
+    yearID, 
+    CAST(H AS FLOAT) / CAST(AB AS FLOAT) AS Batt_avg
+FROM 
+    batting
+WHERE 
+    AB >= 1
+ORDER BY 
+    Batt_avg DESC, 
+    playerID ASC
+LIMIT 5
+'''
+
+# Execute the query and fetch the results into a DataFrame
+batt_avg_1 = pd.read_sql_query(query, conn)
+
+# Part B.
+# Define the SQL query to retrieve the data
+query = '''
+SELECT 
+    playerID, 
+    yearID, 
+    CAST(H AS FLOAT) / CAST(AB AS FLOAT) AS Batt_avg
+FROM 
+    batting
+WHERE 
+    AB >= 10
+ORDER BY 
+    Batt_avg DESC, 
+    playerID ASC
+LIMIT 5
+'''
+
+# execute the query and load the results into a DataFrame
+batt_avg_2 = pd.read_sql_query(query, conn)
+
+# Part C.
+# Define the SQL query to retrieve the data
+query = '''
+SELECT 
+    playerID, 
+    SUM(H) AS total_hits, 
+    SUM(AB) AS total_at_bats, 
+    ROUND(CAST(SUM(H) AS FLOAT) / CAST(SUM(AB) AS FLOAT), 3) AS career_batt_avg
+FROM 
+    batting
+GROUP BY 
+    playerID
+HAVING 
+    SUM(AB) >= 100
+ORDER BY 
+    career_batt_avg DESC, 
+    playerID ASC
+LIMIT 5
+'''
+
+# Execute the query and load the results into a DataFrame
+batt_avg_3 = pd.read_sql_query(query, conn)
+
+# Find the player with the highest batting average
+highest_batt_avg_player = batt_avg_3.iloc[0]['playerID']
+highest_batt_avg = batt_avg_3.iloc[0]['career_batt_avg']
+
+
+# Question #3
+
+# Part #1
+# Define the SQL query to retrieve the data
+query = '''
+SELECT 
+    t.yearID AS Year, 
+    SUM(CASE WHEN t.teamID = 'NYA' THEN t.L ELSE 0 END) AS Yankees_Losses,
+    SUM(CASE WHEN t.teamID = 'BOS' THEN t.L ELSE 0 END) AS RedSox_Losses,
+    SUM(CASE WHEN t.teamID = 'NYA' THEN t.W ELSE 0 END) AS Yankees_wins,
+    SUM(CASE WHEN t.teamID = 'BOS' THEN t.W ELSE 0 END) AS RedSox_wins
+FROM 
+    teams AS t
+WHERE 
+    t.yearID >= 2000 AND t.yearID <= 2021
+GROUP BY 
+    t.yearID
+ORDER BY 
+    t.yearID ASC;
+'''
+
+# Load data into a dataframe
+df = pd.read_sql_query(query, conn)
+
+# Melt the data to make it easier to plot
+melted_df = pd.melt(df, id_vars=["Year"],
+                    var_name="Team_Info", value_name="Value")
+
+# Split the Team_Info column into separate columns for team and metric
+melted_df[['Team', 'Metric']] = melted_df['Team_Info'].str.split(
+    '_', expand=True)
+
+# Create the chart
+chart = alt.Chart(melted_df).mark_line().encode(
+    x="Year:O",
+    y=alt.Y("Value:Q", axis=alt.Axis(title="Value")),
+    color="Team:N",
+    strokeDash="Metric:N",
+    tooltip=['Year', 'Team', 'Value']
+).properties(title={'text': "Yankees vs Red Sox", 'subtitle': "Wins and Losses (2000 - 2021)"}
+             ).resolve_scale(
+    color='independent'
+).configure_axis(grid=True)
+
+
+# Part #2
+# Define the SQL query to retrieve the data
+query = '''
+SELECT 
+    SUM(CASE WHEN t.teamID = 'NYA' THEN t.W ELSE 0 END) AS Yankees_wins,
+    SUM(CASE WHEN t.teamID = 'BOS' THEN t.W ELSE 0 END) AS RedSox_wins
+FROM 
+    teams AS t
+WHERE 
+    t.yearID >= 2000 AND t.yearID <= 2021;
+'''
+
+# Load data into a dataframe
+df = pd.read_sql_query(query, conn)
+
+# Calculate the total wins for each team
+yankees_total_wins = df['Yankees_wins'][0]
+redsox_total_wins = df['RedSox_wins'][0]
+```
