@@ -8,6 +8,7 @@ bin-release/
 .settings/
 .vscode/
 .git/
+.DS_Store/
 
 # Executables
 *.swf
