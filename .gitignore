@@ -8,7 +8,7 @@ bin-release/
 .settings/
 .vscode/
 .git/
-.DS_Store/
+.DS_Store
 
 # Executables
 *.swf
@@ -18,4 +18,5 @@ bin-release/
 
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+# information for Eclipse / Flash Builder..vscode/
+.DS_Store
