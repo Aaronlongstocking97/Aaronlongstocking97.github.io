@@ -1,0 +1,416 @@
+---
+title: "Client Report - [Can you predict that]"
+subtitle: "Project 4"
+author: "[Aaron Jones]"
+format:
+  html:
+    self-contained: true
+    page-layout: full
+    title-block-banner: true
+    toc: true
+    toc-depth: 3
+    toc-location: body
+    number-sections: false
+    html-math-method: katex
+    code-fold: true
+    code-summary: "Show the code"
+    code-overflow: wrap
+    code-copy: hover
+    code-tools:
+        source: false
+        toggle: true
+        caption: See code
+    
+---
+
+```{python}
+# | label: libraries
+# | include: false
+import matplotlib
+import pandas as pd
+import altair as alt
+import numpy as np
+import seaborn as sns
+
+from urllib.request import urlopen
+
+from IPython.display import Markdown
+from IPython.display import display
+
+from tabulate import tabulate
+
+from sklearn import tree
+from sklearn import metrics
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.naive_bayes import GaussianNB
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+from sklearn.metrics import classification_report
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import LabelEncoder
+```
+
+
+## Elevator pitch
+
+_The clean air act of 1970 was the beginning of the end for the use of asbestos in home building. By 1976, the U.S. Environmental Protection Agency (EPA) was given a uthority to restrict the use of asbestos in paint. Homes built during and before this period are known to have materials with asbestos_
+
+_The state of Colorado has a large portion of their residential dwelling data that is missing the year built and they would like you to build a predictive model that can classify if a house is built pre 1980._
+
+_Colorado gave you home sales data for the city of Denver from 2013 on which to train your model. They said all the column names should be descriptive enough for your modeling and that they would like you to use the latest machine learning methods._
+
+```{python}
+# | label: project data
+# | code-summary: Read and format project data
+
+# Pull the data and assign each data set to a variable
+dwellings_denver = pd.read_csv(
+    "https://raw.githubusercontent.com/byuidatascience/data4dwellings/master/data-raw/dwellings_denver/dwellings_denver.csv")
+
+dwellings_ml = pd.read_csv(
+    "https://raw.githubusercontent.com/byuidatascience/data4dwellings/master/data-raw/dwellings_ml/dwellings_ml.csv")
+
+dwellings_neighborhoods_ml = pd.read_csv(
+    "https://raw.githubusercontent.com/byuidatascience/data4dwellings/master/data-raw/dwellings_neighborhoods_ml/dwellings_neighborhoods_ml.csv")
+
+```
+
+
+## GRAND QUESTION 1
+
+__Create 2-3 charts that evaluate potential relationships between the home variables and before1980. Explain what you learn from the charts that could help a machine learning algorithm.__
+
+```{python}
+# | label: GQ1 chart
+# | code-summary: Finding The Relationship Between Bathrooms and Year Built
+# | #| fig-align: center
+
+# select data for houses built before 1980 and where numbaths < 10
+df_before1980 = dwellings_ml[(dwellings_ml['before1980'] == 1) & (
+    dwellings_ml['numbaths'] < 10)].head(5000)
+
+chart = alt.Chart(df_before1980).mark_bar().encode(
+    x=alt.X('numbaths:Q', bin=True, axis=alt.Axis(
+        title="Number of Bathrooms")),
+    y=alt.Y('count():Q', axis=alt.Axis(title='Houses Built')),
+    color=alt.Color('numbaths:Q', legend=None),
+    tooltip=[alt.Tooltip('numbaths:Q', bin=True, title='Bathrooms'), alt.Tooltip(
+        'count():Q', title='Houses With x Bathrooms')]
+).properties(
+    title={
+        'text': ["Number of Bathrooms vs. Year Built"],
+        'subtitle': ["Homes built before 1980"],
+        'fontSize': 16
+    },
+    width=400
+
+).configure_axis(
+    grid=True,
+    labelFontSize=12,
+    titleFontSize=14
+)
+
+chart
+```
+
+_This chart shows the distribution of the number of bathrooms in houses built before 1980. For example, you can see that the most common number of bathrooms is 1, followed by 2. This information could be useful for a machine learning algorithm to predict the number of bathrooms in a house based on other variables such as the square footage or location. Additionally, it could be useful to identify any outliers or unusual patterns in the data that may need to be addressed before modeling. Additionally, it could be useful to identify any differences in the distribution of number of bathrooms between houses built before and after 1980, which could be indicative of changes in housing trends or standards over time._
+
+```{python}
+# | label: GQ1 chart 2
+# | code-summary: Finding The Relationship Between Housing Conditions
+# | fig-align: center
+
+# Filter the data to include houses built before 1980 and select relevant columns
+condition_before1980 = dwellings_denver.loc[dwellings_denver['yrbuilt'] <= 1980, [
+    'yrbuilt', 'condition']]
+
+# Group the data by year built and condition and count the number of houses for each group
+condition_counts = condition_before1980.groupby(
+    ['yrbuilt', 'condition']).size().reset_index(name='count')
+
+# Sort the data by year built and condition
+condition_counts = condition_counts.sort_values(['yrbuilt', 'condition'])
+
+# A chart that visualizes the relationship between year built, condition, and number of houses
+chart = alt.Chart(condition_counts).mark_bar().encode(
+    x=alt.X("yrbuilt", axis=alt.Axis(format="d", title="Year Built")),
+    y=alt.Y("count:Q", title="Number of Houses"),
+    color=alt.Color("condition:N", title="Condition"),
+    tooltip=[alt.Tooltip('yrbuilt', title='Year Built'),
+             alt.Tooltip('count', title='Number of Houses'),
+             alt.Tooltip('condition', title='Condition')]
+).properties(
+    title={
+        'text': ["The Relationships Between Housing Conditions"],
+        'subtitle': ["A comparison of the Year Built, the Condition,", "and the Number of Houses Prior to 1980"],
+        'fontSize': 18
+    },
+    width=400
+
+).configure_axis(
+    labelFontSize=12,
+    titleFontSize=14
+)
+
+chart
+
+```
+
+_From the chart, we can see that most houses built before 1980 have an average condition. This information can be useful for a machine learning algorithm that is trying to predict the condition of a house based on its age, as it suggests that the age of the house alone may not be a strong predictor of its condition. The algorithm may need to consider other factors such as maintenance and upkeep history, materials used in construction, and location to accurately predict the condition of a house._
+
+## GRAND QUESTION 2
+
+__Build a classification model labeling houses as being built “before 1980” or “during or after 1980”. Your goal is to reach or exceed 90% accuracy. Explain your final model choice (algorithm, tuning parameters, etc) and describe what other models you tried.__
+
+```{python}
+# | label: GQ2 Model 1
+# | code-summary: Testing Different Models and There Accuracy
+# | #| fig-align: center
+
+# Prepare data and drop columns
+X = dwellings_ml.drop(columns=['before1980', 'parcel', 'yrbuilt'])
+y = dwellings_ml['before1980']
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.34, random_state=76)
+
+# Train and evaluate GaussianNB model
+gnb = GaussianNB()
+gnb.fit(X_train, y_train)
+gnb_pred = gnb.predict(X_test)
+gnb_accuracy = accuracy_score(y_test, gnb_pred)
+
+# Train and evaluate RandomForestClassifier model
+rfc = RandomForestClassifier()
+rfc.fit(X_train, y_train)
+rfc_pred = rfc.predict(X_test)
+rfc_accuracy = accuracy_score(y_test, rfc_pred)
+
+# Train and evaluate DecisionTreeClassifier model
+dtc = DecisionTreeClassifier()
+dtc.fit(X_train, y_train)
+dtc_pred = dtc.predict(X_test)
+dtc_accuracy = metrics.accuracy_score(y_test, dtc_pred)
+
+# Print results
+print("GaussianNB accuracy:", gnb_accuracy)
+print("RandomForestClassifier accuracy:", rfc_accuracy)
+print("DecisionTreeClassifier accuracy:", dtc_accuracy)
+```
+
+_After testing the three models on the dwellings_ml dataset, the Random Forest Classifier achieved the highest accuracy with an accuracy score of approximately 0.92. The GaussianNB model had the lowest accuracy, with an accuracy score of approximately 0.67, while the Decision Tree Classifier had an accuracy score of approximately 0.90._
+
+_Based on the results of this solution, the Random Forest Classifier model achieves the highest accuracy of around 92%, which exceeds our goal of 90% accuracy. Therefore, the best choice is the Random Forest Classifier as our final model. I didn't perform any tuning of the models in this solution, but that could be an avenue for further exploration to potentially improve the model performance._
+
+
+## GRAND QUESTION 3
+
+__Justify your classification model by discussing the most important features selected by your model. This discussion should include a chart and a description of the features.__
+
+```{python}
+# | label: GQ3 Chart
+# | code-summary: Feature Importance Chart
+# | fig-align: center
+
+# Get feature importances from the random forest classifier
+importances = rfc.feature_importances_
+
+# Create a dataframe with feature names and importances
+features_df = pd.DataFrame({
+    'feature': X.columns,
+    'importance': importances
+})
+
+# Sort the dataframe by importance score
+features_df = features_df.sort_values(by='importance', ascending=False)
+
+# Create a chart to visualize the feature importances
+chart = alt.Chart(features_df).mark_bar().encode(
+    x=alt.X('importance', title="Level of Importance"),
+    y=alt.Y('feature', sort='-x', title="Feature Names"),
+    tooltip=[alt.Tooltip('importance', title="Level of Importance"),
+             alt.Tooltip('feature', title="Feature Names")]
+).properties(
+    title={
+        'text': ["Classification Model and Its Important Features"],
+        'subtitle': ["Data retrieved from a Random Forest Classifier Model"],
+        'fontSize': 18,
+    },
+    width=400
+
+).configure_axis(
+    labelFontSize=10,
+    titleFontSize=16
+)
+
+chart
+
+```
+
+_According to the chart, the most important features for the classification model are:_
+
+_arcstyle_ONE-STORY: A one story home._
+
+_livearea: The square footage that is liveable._
+
+_stories: The number of stories._
+
+_netprice: The net selling price._
+
+_tasp: The tax assesed selling price._
+
+_numbaths: The number of bathrooms._
+
+_sprice: The selling price._
+
+_gartype_Att: An attached garage._ 
+
+_These features provide important information for predicting whether a dwelling was built before 1980 or not. For example, the size and selling price of a dwelling can be an indicator of its age and the level of development in the area. Similarly, the number of bathrooms and bedrooms can indicate the size and quality of the dwelling. The total number of units and the year the dwelling was built can also provide valuable information._
+
+_In summary, the Altair chart and the feature importance scores show that the classification model is based on important features that provide valuable information for predicting whether a dwelling was built before 1980 or not._
+
+
+## GRAND QUESTION 4
+
+__Describe the quality of your classification model using 2-3 different evaluation metrics. You also need to explain how to interpret each of the evaluation metrics you use.__
+
+```{python}
+# | label: GQ4 Evaluation Metric 1 Part 1
+# | code-summary: Print out Generated confusion matrix
+# | fig-align: center
+
+# Get predictions for test data
+y_pred = rfc.predict(X_test)
+
+# Confusion matrix
+conf_matrix = metrics.confusion_matrix(y_test, y_pred)
+print('Confusion Matrix:\n', conf_matrix)
+```
+
+_The first metric I used was a confusion matrix. A confusion matrix is a table that compares the predicted labels of the model with the actual labels of the test set. The matrix contains four values: true positives (TP), false positives (FP), false negatives (FN), and true negatives (TN). In this case, a true positive means the model predicted that a dwelling was built before 1980 and it was actually built before 1980. A false positive means the model predicted that a dwelling was built before 1980, but it was actually built after 1980. A false negative means the model predicted that a dwelling was built after 1980, but it was actually built before 1980. A true negative means the model predicted that a dwelling was built after 1980 and it was actually built after 1980. We can use these values to calculate metrics such as accuracy, precision, and recall._
+
+```{python}
+# | label: GQ4 Evaluation Metric 1 Part 2
+# | code-summary: Display generated confusion matrix
+# | fig-align: center
+
+# Get predictions for test data
+cm_estimator_chart = ConfusionMatrixDisplay.from_estimator(
+    rfc, X_test, y_test)
+
+cm_estimator_chart
+```
+
+_The confusion matrix shows the distribution of true positives, true negatives, false positives, and false negatives for the Random Forest Classifier model. We can use this matrix to calculate the precision, recall, and F1-scores for the model._
+
+```{python}
+# | label: GQ4 Evaluation Metric 2
+# | code-summary: Generate precision and recall metrics
+# | fig-align: center
+
+# Calculate precision, recall, f1-score, and support for the random forest classifier model
+rfc_report = classification_report(y_test, rfc_pred)
+
+print(rfc_report)
+```
+
+_Precision:_
+_The proportion of true positive results among all positive results (true positives + false positives). In this case, the precision for class 0 (houses built after 1980) is 0.76, which means that among all the houses that the model predicted as built after 1980, 76% were actually built after 1980. The precision for class 1 (houses built before 1980) is 0.77, which means that among all the houses that the model predicted as built before 1980, 77% were actually built before 1980._
+
+_Recall:_ 
+_The proportion of true positive results among all actual positive results (true positives + false negatives). In this case, the recall for class 0 is 0.77, which means that the model correctly identified 77% of the houses that were actually built after 1980. The recall for class 1 is 0.76, which means that the model correctly identified 76% of the houses that were actually built before 1980._
+
+_F1-score:_
+_The harmonic mean of precision and recall, and provides a way to balance the trade-off between precision and recall. In this case, the F1-score for class 0 is 0.76, and for class 1 it is also 0.76. This means that the model performs similarly for both classes in terms of balancing precision and recall._
+
+_Support:_ 
+_The number of samples in each class. In this case, the support for class 0 is 661, and for class 1 it is 669. This means that there are 661 houses built after 1980 in the test set, and 669 houses built before 1980 in the test set._
+
+
+## APPENDIX A (Additional Python Code)
+
+```{python}
+
+# Pull the data and assign each data set to a variable
+dwellings_denver = pd.read_csv(
+    "https://raw.githubusercontent.com/byuidatascience/data4dwellings/master/data-raw/dwellings_denver/dwellings_denver.csv")
+
+dwellings_ml = pd.read_csv(
+    "https://raw.githubusercontent.com/byuidatascience/data4dwellings/master/data-raw/dwellings_ml/dwellings_ml.csv")
+
+dwellings_neighborhoods_ml = pd.read_csv(
+    "https://raw.githubusercontent.com/byuidatascience/data4dwellings/master/data-raw/dwellings_neighborhoods_ml/dwellings_neighborhoods_ml.csv")
+
+
+# Question #1
+
+# select data for houses built before 1980 and where numbaths < 10
+df_before1980 = dwellings_ml[(dwellings_ml['before1980'] == 1) & (
+    dwellings_ml['numbaths'] < 10)].head(5000)
+
+
+# Question #2
+
+# Prepare data and drop columns
+X = dwellings_ml.drop(columns=['before1980', 'parcel', 'yrbuilt'])
+y = dwellings_ml['before1980']
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.34, random_state=76)
+
+# Train and evaluate GaussianNB model
+gnb = GaussianNB()
+gnb.fit(X_train, y_train)
+gnb_pred = gnb.predict(X_test)
+gnb_accuracy = accuracy_score(y_test, gnb_pred)
+
+# Train and evaluate RandomForestClassifier model
+rfc = RandomForestClassifier()
+rfc.fit(X_train, y_train)
+rfc_pred = rfc.predict(X_test)
+rfc_accuracy = accuracy_score(y_test, rfc_pred)
+
+# Train and evaluate DecisionTreeClassifier model
+dtc = DecisionTreeClassifier()
+dtc.fit(X_train, y_train)
+dtc_pred = dtc.predict(X_test)
+dtc_accuracy = metrics.accuracy_score(y_test, dtc_pred)
+
+
+# Question #3
+
+# Get feature importances from the random forest classifier
+importances = rfc.feature_importances_
+
+# Create a dataframe with feature names and importances
+features_df = pd.DataFrame({
+    'feature': X.columns,
+    'importance': importances
+})
+
+# Sort the dataframe by importance score
+features_df = features_df.sort_values(by='importance', ascending=False)
+
+
+# Question #4
+
+# Get predictions for test data
+y_pred = rfc.predict(X_test)
+
+# Confusion matrix
+conf_matrix = metrics.confusion_matrix(y_test, y_pred)
+
+# Get predictions for test data
+# cm_estimator_chart = ConfusionMatrixDisplay.from_estimator(
+#     rfc, X_test, y_test)
+
+# # Get predictions for test data
+# cm_predictions_chart = ConfusionMatrixDisplay.from_predictions(
+#     y_test, y_pred)
+
+# Calculate precision, recall, f1-score, and support for the random forest classifier model
+rfc_report = classification_report(y_test, rfc_pred)
+
+```
